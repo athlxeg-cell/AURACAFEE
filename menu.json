@@ -217,9 +217,10 @@
       "description_en": "Sourdough toast with smashed avocado & poached egg",
       "description_ar": "توست سواردو مع أفوكادو مهروس وبيض مسلوق",
       "price": 175,
-      "image": "https://images.unsplash.com/photo-1551336181-da4b0c88c03d?w=400&q=75",
+      "image": "/images/ideas-pret-ideaspret--instagram-photos-and-videos.webp",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "video_url": ""
     },
     {
       "id": "item-014",
