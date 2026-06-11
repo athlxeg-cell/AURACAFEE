@@ -74,7 +74,8 @@
       "price": 65,
       "image": "https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=400&q=75",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "video_url": "https://youtu.be/1nPi_r5z_Mk?si=KSVmEQC9QTX2qHmY"
     },
     {
       "id": "item-002",
