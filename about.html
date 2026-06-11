@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#080F18">
+  <meta name="description" content="About AURA Lounge & Café">
+  <title>AURA — About Us</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230D1B2A'/><text x='16' y='22' font-size='16' text-anchor='middle' font-family='serif' fill='%23C9A96E'>A</text></svg>">
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+<header class="navbar">
+  <div class="nav-left">
+    <div class="brand">
+      <img class="brand-logo" src="images/logo.png" alt="AURA" onerror="this.style.display='none'">
+      <div class="brand-text">
+        <span class="brand-name" id="brand-name">AURA</span>
+        <span class="brand-tag"  id="brand-tag">Lounge &amp; Café</span>
+      </div>
+    </div>
+  </div>
+  <div class="nav-right">
+    <a href="index.html" class="nav-link" id="menu-link">Menu</a>
+    <div class="lang-toggle">
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="ar">ع</button>
+    </div>
+  </div>
+</header>
+
+<!-- ── CONTENT ── -->
+<div class="view">
+
+  <!-- Hero -->
+  <div class="about-hero">
+    <h1 class="about-hero-title" id="about-title">About Us</h1>
+    <div class="about-hero-rule"><span></span><i>✦</i><span></span></div>
+  </div>
+
+  <div class="about-body">
+
+    <!-- About text -->
+    <div class="about-section">
+      <h2 class="about-section-title" id="our-story-title">Our Story</h2>
+      <p class="about-text" id="about-text">Loading…</p>
+    </div>
+
+    <div class="about-rule"></div>
+
+    <!-- Contact -->
+    <div class="about-section">
+      <h2 class="about-section-title" id="contact-title">Contact &amp; Find Us</h2>
+      <div class="contact-grid" id="contact-grid"><!-- populated by JS --></div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <div class="footer-brand" id="footer-brand">AURA</div>
+  <div class="footer-contact" id="footer-contact"></div>
+  <p class="footer-copy">© 2024 AURA Lounge &amp; Café</p>
+</footer>
+
+<script>
+(function () {
+  let lang = localStorage.getItem('aura-lang') || 'en';
+  let menu = null;
+
+  const t = {
+    en: { about: 'About Us', story: 'Our Story', contact: 'Contact & Find Us', menu: 'View Menu' },
+    ar: { about: 'من نحن',   story: 'قصتنا',     contact: 'تواصل معنا',         menu: 'القائمة' },
+  };
+  const l = (en, ar) => lang === 'ar' ? ar : en;
+
+  function setLang(newLang) {
+    lang = newLang;
+    localStorage.setItem('aura-lang', lang);
+    document.documentElement.lang = lang;
+    document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+    if (menu) render();
+  }
+
+  async function loadAndRender() {
+    try {
+      const res = await fetch('menu.json?_=' + Math.floor(Date.now() / 60000));
+      menu = await res.json();
+      render();
+    } catch {
+      document.getElementById('about-text').textContent = 'Could not load content.';
+    }
+  }
+
+  function render() {
+    const r = menu.restaurant;
+    const c = r.contact || {};
+
+    // Branding
+    document.getElementById('brand-name').textContent   = l(r.name_en, r.name_ar);
+    document.getElementById('brand-tag').textContent    = l(r.tagline_en, r.tagline_ar);
+    document.getElementById('footer-brand').textContent = l(r.name_en, r.name_ar);
+    document.getElementById('menu-link').textContent    = t[lang].menu;
+    document.getElementById('about-title').textContent  = t[lang].about;
+    document.getElementById('our-story-title').textContent = t[lang].story;
+    document.getElementById('contact-title').textContent   = t[lang].contact;
+    document.title = l(r.name_en, r.name_ar) + ' — ' + t[lang].about;
+
+    // About text
+    document.getElementById('about-text').textContent = l(r.about_en || '', r.about_ar || '') || '—';
+
+    // Contact grid
+    const items = [];
+    if (c.phone)     items.push({ icon: '📞', label: 'Phone', value: c.phone, href: 'tel:' + c.phone });
+    if (c.whatsapp)  items.push({ icon: '💬', label: 'WhatsApp', value: 'Chat on WhatsApp', href: 'https://wa.me/' + c.whatsapp.replace(/\D/g,'') });
+    if (c.instagram) items.push({ icon: '📷', label: 'Instagram', value: '@auralounge.eg', href: c.instagram });
+    if (c.facebook)  items.push({ icon: '👤', label: 'Facebook', value: 'Facebook Page', href: c.facebook });
+    if (c.tiktok)    items.push({ icon: '🎵', label: 'TikTok', value: 'TikTok', href: c.tiktok });
+    const addr = l(c.address_en || '', c.address_ar || '');
+    if (addr) items.push({ icon: '📍', label: l('Address','العنوان'), value: addr, href: c.maps_url || 'https://maps.google.com/?q=' + encodeURIComponent(addr) });
+
+    document.getElementById('contact-grid').innerHTML = items.map(item => `
+      <a class="contact-item" href="${item.href}" target="${item.href.startsWith('tel') ? '_self' : '_blank'}" rel="noopener">
+        <span class="contact-item-icon">${item.icon}</span>
+        <div>
+          <span class="contact-item-label">${item.label}</span>
+          ${item.value}
+        </div>
+      </a>`).join('');
+
+    // Footer contact
+    document.getElementById('footer-contact').innerHTML = items.map(item =>
+      `<a class="footer-link" href="${item.href}" target="${item.href.startsWith('tel') ? '_self' : '_blank'}" rel="noopener"><span>${item.icon}</span>${item.label}</a>`
+    ).join('');
+  }
+
+  function init() {
+    document.documentElement.lang = lang;
+    document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.querySelectorAll('.lang-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+      b.addEventListener('click', () => setLang(b.dataset.lang));
+    });
+    loadAndRender();
+  }
+
+  document.addEventListener('DOMContentLoaded', init);
+})();
+</script>
+</body>
+</html>

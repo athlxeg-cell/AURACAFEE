@@ -1,17 +1,15 @@
 /* ============================================================
-   AURA CAFÉ — Admin Panel Logic
-   Password checked via Netlify Function (never in source code)
+   AURA CAFÉ — Admin Panel
+   Password → /api/update-menu (Vercel function, never in code)
    ============================================================ */
 'use strict';
 
-/* ── State ─────────────────────────────────────────────────── */
 let menu = null;
+let adminPw = '';
 let parsedImport = [];
-let adminPassword = ''; // held in memory only (not stored)
 
-/* ── DOM shorthand ─────────────────────────────────────────── */
 const $ = id => document.getElementById(id);
-const $$ = sel => document.querySelectorAll(sel);
+const $$ = s  => document.querySelectorAll(s);
 
 /* ── Toast ─────────────────────────────────────────────────── */
 function toast(msg, type = 'ok') {
@@ -19,81 +17,62 @@ function toast(msg, type = 'ok') {
   el.textContent = msg;
   el.className = `show ${type}`;
   clearTimeout(el._t);
-  el._t = setTimeout(() => el.classList.remove('show'), 4000);
+  el._t = setTimeout(() => el.classList.remove('show'), 4500);
 }
 
-/* ── Step navigation ───────────────────────────────────────── */
+/* ── Step nav ───────────────────────────────────────────────── */
 function goStep(id) {
   $$('.step-panel').forEach(p => p.classList.remove('active'));
   $$('.step-btn').forEach(b => b.classList.toggle('active', b.dataset.step === id));
   $(id).classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
-  // Refresh whichever panel we're on
-  if (id === 'step-photos')    renderPhotoGrid();
-  if (id === 'step-visibility') { renderVisibility(); updateStats(); }
+  if (id === 'step-photos')     renderPhotoGrid();
+  if (id === 'step-visibility') { renderVisTable(); updateStats(); }
 }
-window.goStep = goStep; // expose for inline onclick
+window.goStep = goStep;
 
 /* ══════════════════════════════════════════════════════════════
-   AUTH — password verified via Netlify serverless function
-   The password never lives in client code.
+   AUTH
 ══════════════════════════════════════════════════════════════ */
 async function login() {
   const pw = $('pw-input').value.trim();
   if (!pw) return;
-
-  $('login-err').style.display     = 'none';
-  $('login-loading').style.display = 'block';
-  $('login-btn').disabled           = true;
+  $('login-err').style.display  = 'none';
+  $('login-spin').style.display = 'block';
+  $('login-btn').disabled       = true;
 
   try {
-    // Call the Netlify function (no password in code, just sent for verification)
     const res = await fetch('/api/update-menu', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ password: pw, menuData: null, checkOnly: true }),
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: pw, checkOnly: true }),
     });
-
-    $('login-loading').style.display = 'none';
+    $('login-spin').style.display = 'none';
     $('login-btn').disabled = false;
 
-    // 200 = correct, 401 = wrong, 500 = env not configured yet
-    if (res.status === 200 || res.status === 412) {
-      // 412 = password ok but no menu data passed — that's fine, we just wanted auth check
-      adminPassword = pw;
+    if (res.status === 200) {
+      adminPw = pw;
       $('login-screen').style.display = 'none';
-      $('admin-app').style.display     = 'block';
+      $('admin-app').style.display    = 'block';
       loadMenu();
     } else if (res.status === 401) {
       $('login-err').style.display = 'block';
-      $('login-err').textContent   = '❌ Incorrect password';
-      $('pw-input').value = '';
-      $('pw-input').focus();
+      $('pw-input').value = ''; $('pw-input').focus();
     } else {
-      // Netlify function not yet configured — allow local mode
-      const text = await res.text();
-      if (text.includes('env vars not configured') || res.status === 500) {
-        // Local / dev mode: just skip to app
-        adminPassword = pw;
-        $('login-screen').style.display = 'none';
-        $('admin-app').style.display     = 'block';
-        $('login-loading').style.display = 'none';
-        loadMenu();
-        toast('⚠ Netlify not configured — using local mode. Changes can only be downloaded.', 'err');
-      } else {
-        $('login-err').textContent   = '❌ Server error. Try again.';
-        $('login-err').style.display = 'block';
-      }
+      // Local / env not set — allow with warning
+      adminPw = pw;
+      $('login-screen').style.display = 'none';
+      $('admin-app').style.display    = 'block';
+      loadMenu();
+      toast('⚠ Vercel not configured — download-only mode', 'err');
     }
   } catch {
-    // Network error / local file system (no server) — allow local mode with fixed password
-    $('login-loading').style.display = 'none';
+    $('login-spin').style.display = 'none';
     $('login-btn').disabled = false;
-    adminPassword = pw;
+    adminPw = pw;
     $('login-screen').style.display = 'none';
-    $('admin-app').style.display     = 'block';
+    $('admin-app').style.display    = 'block';
     loadMenu();
-    toast('⚠ Running in local mode (no server). Changes can only be downloaded.', 'err');
+    toast('⚠ Local mode — download only', 'err');
   }
 }
 
@@ -104,139 +83,165 @@ async function loadMenu() {
   try {
     const res = await fetch('../menu.json?_=' + Date.now());
     menu = await res.json();
-    // Ensure defaults
-    menu.items.forEach(i => {
-      if (i.visible === undefined) i.visible = true;
-    });
-    renderCategories();
-    updateCatHints();
-    renderPhotoGrid();
-    renderVisibility();
-    updateStats();
-  } catch (e) {
-    toast('Could not load menu.json', 'err');
-  }
+    menu.items.forEach(i => { if (i.visible === undefined) i.visible = true; });
+    refreshAll();
+  } catch { toast('Could not load menu.json', 'err'); }
 }
 
-function markUnsaved() {
-  $('unsaved-badge').style.display = 'inline-block';
+function refreshAll() {
+  syncCatDropdowns();
+  renderCatList();
+  renderPhotoGrid();
+  renderVisTable();
+  updateStats();
+  loadContactForm();
+  loadAboutForm();
 }
+
+function markUnsaved() { $('unsaved-badge').style.display = 'inline-block'; }
 
 /* ══════════════════════════════════════════════════════════════
    STEP 1 — CATEGORIES
 ══════════════════════════════════════════════════════════════ */
-function renderCategories() {
-  const list = $('cat-list');
-  if (!list) return;
-
+function renderCatList() {
+  const el = $('cat-list');
+  if (!el || !menu) return;
   if (!menu.categories.length) {
-    list.innerHTML = '<p style="color:var(--muted);font-size:.83rem;text-align:center;padding:24px">No categories yet. Add one above.</p>';
+    el.innerHTML = '<p style="color:var(--muted);text-align:center;padding:24px;font-size:.83rem">No categories yet.</p>';
     return;
   }
-
-  list.innerHTML = menu.categories.map((cat, idx) => {
+  el.innerHTML = menu.categories.map((cat, idx) => {
+    const count = menu.items.filter(i => i.category === cat.id).length;
     const imgEl = cat.image
-      ? `<div class="cat-row-img"><img src="${cat.image}" alt="" onerror="this.style.display='none'"></div>`
+      ? `<div class="cat-row-img"><img src="${cat.image}" onerror="this.style.display='none'" alt=""></div>`
       : `<div class="cat-row-img">${cat.icon || '🍽️'}</div>`;
-    const count = (menu.items || []).filter(i => i.category === cat.id).length;
     return `
-      <div class="cat-row" data-catid="${cat.id}">
+      <div class="cat-row">
         ${imgEl}
         <div class="cat-row-info">
           <div class="cat-row-name">${cat.name_en} / <span dir="rtl">${cat.name_ar}</span></div>
           <div class="cat-row-meta">ID: <code>${cat.id}</code> &nbsp;•&nbsp; ${count} item${count !== 1 ? 's' : ''}</div>
         </div>
         <div class="cat-row-order">
-          <button class="order-btn" data-dir="up"   data-idx="${idx}" title="Move up">▲</button>
-          <button class="order-btn" data-dir="down" data-idx="${idx}" title="Move down">▼</button>
+          <button class="order-btn" data-dir="up"   data-idx="${idx}">▲</button>
+          <button class="order-btn" data-dir="down" data-idx="${idx}">▼</button>
         </div>
-        <div class="cat-row-actions">
-          <button class="btn btn-icon" data-edit-cat="${cat.id}" title="Edit">✏️</button>
-          <button class="btn btn-icon btn-danger btn-sm" data-del-cat="${cat.id}" title="Delete">🗑</button>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-icon" data-edit-cat="${cat.id}">✏️</button>
+          <button class="btn btn-icon btn-danger btn-sm" data-del-cat="${cat.id}">🗑</button>
         </div>
       </div>`;
   }).join('');
 
-  // Bind
-  list.querySelectorAll('[data-edit-cat]').forEach(b => b.addEventListener('click', () => editCategory(b.dataset.editCat)));
-  list.querySelectorAll('[data-del-cat]').forEach(b  => b.addEventListener('click', () => deleteCategory(b.dataset.delCat)));
-  list.querySelectorAll('.order-btn').forEach(b => b.addEventListener('click', () => moveCat(+b.dataset.idx, b.dataset.dir)));
+  el.querySelectorAll('[data-edit-cat]').forEach(b => b.addEventListener('click', () => editCat(b.dataset.editCat)));
+  el.querySelectorAll('[data-del-cat]').forEach(b  => b.addEventListener('click', () => delCat(b.dataset.delCat)));
+  el.querySelectorAll('.order-btn').forEach(b => b.addEventListener('click', () => moveCat(+b.dataset.idx, b.dataset.dir)));
 }
 
-function saveCategoryForm() {
+function saveCatForm() {
   const id   = $('edit-cat-id').value || toId($('cat-name-en').value);
   const en   = $('cat-name-en').value.trim();
   const ar   = $('cat-name-ar').value.trim();
-  const img  = $('cat-image').value.trim();
-  if (!en || !ar) { toast('Name EN and AR are required', 'err'); return; }
+  const img  = $('cat-image-url').value.trim();
+  if (!en || !ar) { toast('Name EN and AR required', 'err'); return; }
 
-  const existing = menu.categories.find(c => c.id === id);
-  if (existing) {
-    existing.name_en = en; existing.name_ar = ar;
-    if (img) existing.image = img;
-  } else {
-    menu.categories.push({ id, name_en: en, name_ar: ar, image: img, visible: true });
-  }
+  const ex = menu.categories.find(c => c.id === id);
+  if (ex) { ex.name_en = en; ex.name_ar = ar; if (img) ex.image = img; }
+  else menu.categories.push({ id, name_en: en, name_ar: ar, image: img, visible: true });
 
   clearCatForm();
-  renderCategories();
-  updateCatHints();
+  renderCatList();
+  syncCatDropdowns();
   markUnsaved();
   toast('Category saved');
 }
 
-function editCategory(id) {
+function editCat(id) {
   const cat = menu.categories.find(c => c.id === id);
   if (!cat) return;
-  $('edit-cat-id').value = cat.id;
-  $('cat-name-en').value = cat.name_en;
-  $('cat-name-ar').value = cat.name_ar;
-  $('cat-image').value   = cat.image || '';
-  updatePreview('cat-image', 'cat-img-preview');
+  $('edit-cat-id').value  = cat.id;
+  $('cat-name-en').value  = cat.name_en;
+  $('cat-name-ar').value  = cat.name_ar;
+  $('cat-image-url').value = cat.image || '';
+  previewUrl('cat-image-url', 'cat-img-prev');
   $('cat-form-title').textContent = 'Edit Category';
-  $('cat-name-en').focus();
   $('cat-name-en').scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
-function deleteCategory(id) {
-  const count = menu.items.filter(i => i.category === id).length;
-  if (!confirm(`Delete this category? It has ${count} item(s). Items will remain but their category will be unassigned.`)) return;
+function delCat(id) {
+  const n = menu.items.filter(i => i.category === id).length;
+  if (!confirm(`Delete this category? ${n} item(s) will become uncategorised.`)) return;
   menu.categories = menu.categories.filter(c => c.id !== id);
   menu.items.forEach(i => { if (i.category === id) i.category = ''; });
-  renderCategories();
-  updateCatHints();
-  markUnsaved();
-  toast('Category deleted');
+  renderCatList(); syncCatDropdowns(); markUnsaved(); toast('Category deleted');
 }
 
 function moveCat(idx, dir) {
-  const cats = menu.categories;
-  if (dir === 'up'   && idx > 0)              [cats[idx-1], cats[idx]] = [cats[idx], cats[idx-1]];
-  if (dir === 'down' && idx < cats.length - 1)[cats[idx+1], cats[idx]] = [cats[idx], cats[idx+1]];
-  renderCategories();
-  markUnsaved();
+  const a = menu.categories;
+  if (dir === 'up'   && idx > 0)       [a[idx-1], a[idx]] = [a[idx], a[idx-1]];
+  if (dir === 'down' && idx < a.length-1)[a[idx+1], a[idx]] = [a[idx], a[idx+1]];
+  renderCatList(); markUnsaved();
 }
 
 function clearCatForm() {
-  $('edit-cat-id').value = '';
-  $('cat-name-en').value = '';
-  $('cat-name-ar').value = '';
-  $('cat-image').value   = '';
-  $('cat-img-preview').innerHTML = '<span>Image preview</span>';
+  ['edit-cat-id','cat-name-en','cat-name-ar','cat-image-url'].forEach(id => { const el=$(id); if(el) el.value=''; });
+  const p = $('cat-img-prev'); if(p) p.innerHTML='<span>Preview</span>';
   $('cat-form-title').textContent = 'Add New Category';
 }
 
-function updateCatHints() {
-  const hint = $('cat-ids-hint');
-  if (!hint) return;
-  const ids = menu.categories.map(c => `<code>${c.id}</code>`).join('  ');
-  hint.innerHTML = ids || '<em>no categories yet</em>';
-  // Sync category dropdowns in other panels
-  ['photo-filter-cat', 'vis-filter-cat', 'edit-cat-sel'].forEach(selId => {
-    const sel = $(selId);
-    if (!sel) return;
-    const all = selId === 'edit-cat-sel' ? '' : '<option value="all">All categories</option>';
-    sel.innerHTML = all + menu.categories.map(c => `<option value="${c.id}">${c.name_en}</option>`).join('');
+/* ── Category image upload ── */
+async function uploadCatImage() {
+  const file = $('cat-image-file').files[0];
+  if (!file) return;
+  await uploadImageFile(file, url => {
+    $('cat-image-url').value = url;
+    previewUrl('cat-image-url', 'cat-img-prev');
+    toast('Image uploaded: ' + url);
+  });
+}
+
+/* ══════════════════════════════════════════════════════════════
+   STEP 1.5 — ADD SINGLE ITEM (manual)
+══════════════════════════════════════════════════════════════ */
+function saveManualItem() {
+  const en = $('m-name-en').value.trim();
+  const ar = $('m-name-ar').value.trim();
+  const price = parseFloat($('m-price').value);
+  if (!en || !ar || isNaN(price)) { toast('Name EN, Name AR and Price required', 'err'); return; }
+
+  const item = {
+    id: 'item-' + Date.now(),
+    category: $('m-category').value,
+    name_en: en, name_ar: ar,
+    description_en: $('m-desc-en').value.trim(),
+    description_ar: $('m-desc-ar').value.trim(),
+    price, image: $('m-image-url').value.trim(),
+    video_url: $('m-video-url').value.trim(),
+    visible: true, featured: $('m-featured').checked,
+  };
+  menu.items.push(item);
+  clearManualForm();
+  syncCatDropdowns();
+  updateStats();
+  markUnsaved();
+  toast('✓ Item added! Go to Step 4 to set visibility or Step 3 to add a photo.');
+}
+
+function clearManualForm() {
+  ['m-name-en','m-name-ar','m-desc-en','m-desc-ar','m-price','m-image-url','m-video-url'].forEach(id => {
+    const el = $(id); if (el) el.value = '';
+  });
+  const p = $('m-img-prev'); if (p) p.innerHTML = '<span>Preview</span>';
+  const f = $('m-featured'); if (f) f.checked = false;
+}
+
+async function uploadManualImage() {
+  const file = $('m-image-file').files[0];
+  if (!file) return;
+  await uploadImageFile(file, url => {
+    $('m-image-url').value = url;
+    previewUrl('m-image-url', 'm-img-prev');
+    toast('Image uploaded');
   });
 }
 
@@ -247,397 +252,448 @@ function parseCSV() {
   const raw = $('csv-input').value.trim();
   if (!raw) { toast('Paste CSV data first', 'err'); return; }
 
-  const lines = raw.split('\n').filter(l => l.trim());
-  parsedImport = lines.map((line, i) => {
-    // Support both comma and tab separators
+  parsedImport = raw.split('\n').filter(l => l.trim()).map((line, i) => {
     const sep = line.includes('\t') ? '\t' : ',';
     const parts = line.split(sep).map(p => p.trim().replace(/^["']|["']$/g, ''));
-    const [name_en='', name_ar='', description_en='', description_ar='', price='', category=''] = parts;
+    const [name_en='', name_ar='', description_en='', description_ar='', price='', category='', image='', video_url=''] = parts;
     const errors = [];
     if (!name_en) errors.push('Missing Name EN');
     if (!name_ar) errors.push('Missing Name AR');
     const priceNum = parseFloat(price);
     if (isNaN(priceNum)) errors.push('Invalid price');
     if (category && !menu.categories.find(c => c.id === category)) errors.push(`Unknown category "${category}"`);
-    return { name_en, name_ar, description_en, description_ar, price: priceNum, category, errors, line: i + 1 };
+    return { name_en, name_ar, description_en, description_ar, price: priceNum, category, image, video_url, errors, line: i + 1 };
   });
 
-  const wrap    = $('import-preview-wrap');
-  const preview = $('import-preview');
-  const count   = $('import-count');
-
-  wrap.style.display = 'block';
-  count.textContent  = parsedImport.length;
-
-  preview.innerHTML = parsedImport.map(row => `
+  $('import-preview-wrap').style.display = 'block';
+  $('import-count').textContent = parsedImport.length;
+  $('import-preview').innerHTML = parsedImport.map(r => `
     <div class="import-row">
-      <span style="color:var(--muted);min-width:24px;font-size:.7rem">${row.line}</span>
-      <span style="flex:1"><strong>${row.name_en}</strong> / ${row.name_ar}</span>
-      <span>${isNaN(row.price) ? '—' : row.price + ' EGP'}</span>
-      <span style="color:var(--muted);font-size:.72rem">${row.category || '—'}</span>
-      <span>${row.errors.length ? `<span class="err">⚠ ${row.errors.join(', ')}</span>` : '<span class="ok">✓</span>'}</span>
+      <span style="color:var(--muted);min-width:22px;font-size:.7rem">${r.line}</span>
+      <span style="flex:1"><strong>${r.name_en}</strong> / ${r.name_ar}</span>
+      <span style="white-space:nowrap">${isNaN(r.price)?'—':r.price+' EGP'}</span>
+      <span style="color:var(--muted);font-size:.72rem">${r.category||'—'}</span>
+      <span>${r.errors.length ? `<span class="err">⚠ ${r.errors.join(', ')}</span>` : '<span class="ok">✓</span>'}</span>
     </div>`).join('');
 
-  const hasErrors = parsedImport.some(r => r.errors.length > 0);
-  $('confirm-import-btn').disabled = hasErrors;
-  if (hasErrors) toast('Fix errors before importing', 'err');
-  else toast(`${parsedImport.length} items ready to import`);
+  const bad = parsedImport.some(r => r.errors.length);
+  $('confirm-import-btn').disabled = bad;
+  toast(bad ? 'Fix errors before importing' : `${parsedImport.length} items ready`, bad ? 'err' : 'ok');
 }
 
 function confirmImport() {
-  const valid = parsedImport.filter(r => !r.errors.length);
-  valid.forEach(row => {
+  parsedImport.filter(r => !r.errors.length).forEach(r => {
     menu.items.push({
-      id: 'item-' + Date.now() + '-' + Math.random().toString(36).slice(2,6),
-      category: row.category,
-      name_en: row.name_en,
-      name_ar: row.name_ar,
-      description_en: row.description_en,
-      description_ar: row.description_ar,
-      price: row.price,
-      image: '',
-      visible: true,
-      featured: false,
+      id: 'item-' + Date.now() + '-' + Math.random().toString(36).slice(2,5),
+      category: r.category, name_en: r.name_en, name_ar: r.name_ar,
+      description_en: r.description_en, description_ar: r.description_ar,
+      price: r.price, image: r.image || '', video_url: r.video_url || '',
+      visible: true, featured: false,
     });
   });
+  const n = parsedImport.filter(r=>!r.errors.length).length;
   parsedImport = [];
   $('csv-input').value = '';
   $('import-preview-wrap').style.display = 'none';
   $('confirm-import-btn').disabled = true;
-  markUnsaved();
-  toast(`✓ ${valid.length} items imported! Go to Step 3 to add photos.`);
+  updateStats(); markUnsaved();
+  toast(`✓ ${n} items imported!`);
 }
 
 /* ══════════════════════════════════════════════════════════════
-   STEP 3 — ASSIGN PHOTOS
+   STEP 3 — PHOTOS
 ══════════════════════════════════════════════════════════════ */
 function renderPhotoGrid() {
   const grid = $('photo-grid');
   if (!grid || !menu) return;
 
-  const q       = ($('photo-search') || {value:''}).value.toLowerCase();
-  const catF    = ($('photo-filter-cat') || {value:'all'}).value;
-  const noImg   = ($('photo-no-image-only') || {checked:false}).checked;
+  const q    = ($('photo-search')||{value:''}).value.toLowerCase();
+  const catF = ($('photo-filter-cat')||{value:'all'}).value;
+  const noImg= ($('photo-no-img')||{checked:false}).checked;
 
-  const items = menu.items.filter(item => {
-    const matchCat  = catF === 'all' || item.category === catF;
-    const matchQ    = !q || item.name_en.toLowerCase().includes(q) || item.name_ar.includes(q);
-    const matchImg  = !noImg || !item.image;
+  const items = menu.items.filter(i => {
+    const matchCat = catF==='all' || i.category===catF;
+    const matchQ   = !q || i.name_en.toLowerCase().includes(q) || i.name_ar.includes(q);
+    const matchImg = !noImg || !i.image;
     return matchCat && matchQ && matchImg;
   });
 
   if (!items.length) {
-    grid.innerHTML = '<p style="color:var(--muted);font-size:.83rem;grid-column:1/-1;text-align:center;padding:32px">No items match your filter.</p>';
+    grid.innerHTML = '<p style="color:var(--muted);font-size:.83rem;grid-column:1/-1;text-align:center;padding:32px">No items match.</p>';
     return;
   }
 
   grid.innerHTML = items.map(item => {
-    const cat  = menu.categories.find(c => c.id === item.category);
-    const catN = cat ? cat.name_en : item.category || '—';
-    const imgHtml = item.image
-      ? `<img src="${item.image}" alt="${item.name_en}" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'">`
-      : `🍽️`;
+    const cat = menu.categories.find(c => c.id === item.category);
+    const thumb = item.image
+      ? `<img src="${item.image}" alt="" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'">`
+      : '🍽️';
     return `
       <div class="photo-card">
-        <div class="photo-thumb">${imgHtml}</div>
+        <div class="photo-thumb">${thumb}</div>
         <div class="photo-body">
           <div class="photo-name">${item.name_en}</div>
-          <div class="photo-cat">${catN}</div>
-          <input class="fi photo-url" type="url" placeholder="Paste image URL…"
-                 value="${item.image || ''}" data-item-id="${item.id}"
-                 style="font-size:.72rem;padding:7px 10px">
-          <button class="btn btn-gold full-w btn-sm" style="margin-top:6px" data-apply-photo="${item.id}">
-            Apply
-          </button>
+          <div class="photo-cat">${cat ? cat.name_en : item.category||'—'}</div>
+
+          <!-- Upload file -->
+          <label class="btn btn-outline btn-sm full-w" style="margin-bottom:6px;justify-content:center;cursor:pointer">
+            📁 Upload Image
+            <input type="file" accept="image/*" style="display:none" data-upload-for="${item.id}">
+          </label>
+
+          <!-- OR paste URL -->
+          <input class="fi photo-url-input" type="url" placeholder="Or paste image URL…"
+                 value="${item.image||''}" data-item-id="${item.id}" style="font-size:.72rem;padding:7px 10px;margin-bottom:4px">
+
+          <!-- Optional video -->
+          <input class="fi" type="url" placeholder="YouTube URL (optional)"
+                 value="${item.video_url||''}" data-video-id="${item.id}" style="font-size:.72rem;padding:7px 10px;margin-bottom:6px">
+
+          <button class="btn btn-gold full-w btn-sm" data-apply-photo="${item.id}">Apply</button>
         </div>
       </div>`;
   }).join('');
 
+  // Bind file upload inputs
+  grid.querySelectorAll('input[data-upload-for]').forEach(input => {
+    input.addEventListener('change', async () => {
+      const file = input.files[0];
+      const id   = input.dataset.uploadFor;
+      if (!file) return;
+      const btn = input.closest('.photo-card').querySelector('[data-apply-photo]');
+      btn.textContent = 'Uploading…'; btn.disabled = true;
+      await uploadImageFile(file, url => {
+        const urlInput = grid.querySelector(`[data-item-id="${id}"]`);
+        if (urlInput) urlInput.value = url;
+        toast('Image uploaded');
+      });
+      btn.textContent = 'Apply'; btn.disabled = false;
+    });
+  });
+
+  // Bind apply buttons
   grid.querySelectorAll('[data-apply-photo]').forEach(btn => {
     btn.addEventListener('click', () => {
       const id  = btn.dataset.applyPhoto;
       const url = grid.querySelector(`[data-item-id="${id}"]`).value.trim();
+      const vid = grid.querySelector(`[data-video-id="${id}"]`).value.trim();
       const item = menu.items.find(i => i.id === id);
-      if (item) { item.image = url; markUnsaved(); renderPhotoGrid(); toast('Photo saved'); }
+      if (item) { item.image = url; item.video_url = vid; markUnsaved(); toast('Saved'); renderPhotoGrid(); }
     });
+  });
+}
+
+/* ══════════════════════════════════════════════════════════════
+   IMAGE UPLOAD HELPER
+══════════════════════════════════════════════════════════════ */
+async function uploadImageFile(file, onSuccess) {
+  return new Promise(resolve => {
+    const reader = new FileReader();
+    reader.onload = async e => {
+      const base64  = e.target.result; // includes data:image/...;base64, prefix
+      const content = base64.split(',')[1]; // raw base64
+
+      try {
+        const res = await fetch('/api/upload-image', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            password: adminPw,
+            filename: file.name,
+            content,
+            mimeType: file.type,
+          }),
+        });
+        const data = await res.json();
+        if (res.ok) { onSuccess(data.url); }
+        else { toast('Upload failed: ' + (data.error || 'Unknown error'), 'err'); }
+      } catch { toast('Network error during upload', 'err'); }
+      resolve();
+    };
+    reader.readAsDataURL(file);
   });
 }
 
 /* ══════════════════════════════════════════════════════════════
    STEP 4 — VISIBILITY
 ══════════════════════════════════════════════════════════════ */
-function renderVisibility() {
+function renderVisTable() {
   const tbody = $('vis-tbody');
   if (!tbody || !menu) return;
 
-  const q    = ($('vis-search') || {value:''}).value.toLowerCase();
-  const catF = ($('vis-filter-cat') || {value:'all'}).value;
-
-  const items = menu.items.filter(item => {
-    const matchCat = catF === 'all' || item.category === catF;
-    const matchQ   = !q || item.name_en.toLowerCase().includes(q) || item.name_ar.includes(q);
+  const q    = ($('vis-search')||{value:''}).value.toLowerCase();
+  const catF = ($('vis-filter-cat')||{value:'all'}).value;
+  const items = menu.items.filter(i => {
+    const matchCat = catF==='all' || i.category===catF;
+    const matchQ   = !q || i.name_en.toLowerCase().includes(q) || i.name_ar.includes(q);
     return matchCat && matchQ;
   });
 
   if (!items.length) {
-    tbody.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:32px;color:var(--muted)">No items match filter</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:32px;color:var(--muted)">No items match</td></tr>`;
     return;
   }
-
-  const currency = menu.restaurant.currency_en;
-
+  const cur = menu.restaurant.currency_en;
   tbody.innerHTML = items.map(item => {
     const cat = menu.categories.find(c => c.id === item.category);
     const thumb = item.image
-      ? `<img class="thumb" src="${item.image}" alt="" onerror="this.style.display='none'">`
+      ? `<img class="thumb" src="${item.image}" onerror="this.style.display='none'" alt="">`
       : `<div class="thumb-ph">🍽️</div>`;
-    return `
-      <tr>
-        <td>${thumb}</td>
-        <td>
-          <strong>${item.name_en}</strong><br>
-          <small style="color:var(--muted)" dir="rtl">${item.name_ar}</small>
-        </td>
-        <td><span class="pill pill-gold">${cat ? cat.name_en : item.category || '—'}</span></td>
-        <td><strong style="color:var(--gold)">${item.price} ${currency}</strong></td>
-        <td>
-          <label class="toggle" title="Toggle visibility">
-            <input type="checkbox" ${item.visible !== false ? 'checked' : ''} data-vis="${item.id}">
-            <span class="toggle-track"></span>
-          </label>
-        </td>
-        <td>
-          <label class="toggle" title="Toggle featured">
-            <input type="checkbox" ${item.featured ? 'checked' : ''} data-feat="${item.id}">
-            <span class="toggle-track"></span>
-          </label>
-        </td>
-        <td>
-          <div class="actions">
-            <button class="btn btn-icon" data-edit-item="${item.id}" title="Edit">✏️</button>
-            <button class="btn btn-icon btn-danger btn-sm" data-del-item="${item.id}" title="Delete">🗑</button>
-          </div>
-        </td>
-      </tr>`;
+    return `<tr>
+      <td>${thumb}</td>
+      <td><strong>${item.name_en}</strong><br><small dir="rtl" style="color:var(--muted)">${item.name_ar}</small></td>
+      <td><span class="pill pill-gold">${cat?cat.name_en:item.category||'—'}</span></td>
+      <td><strong style="color:var(--gold)">${item.price} ${cur}</strong></td>
+      <td>
+        <label class="toggle"><input type="checkbox" ${item.visible!==false?'checked':''} data-vis="${item.id}"><span class="toggle-track"></span></label>
+      </td>
+      <td>
+        <label class="toggle"><input type="checkbox" ${item.featured?'checked':''} data-feat="${item.id}"><span class="toggle-track"></span></label>
+      </td>
+      <td>
+        <div class="actions">
+          <button class="btn btn-icon" data-edit-item="${item.id}">✏️</button>
+          <button class="btn btn-icon btn-danger btn-sm" data-del-item="${item.id}">🗑</button>
+        </div>
+      </td>
+    </tr>`;
   }).join('');
 
-  // Bind toggles
-  tbody.querySelectorAll('[data-vis]').forEach(cb => {
-    cb.addEventListener('change', () => {
-      const item = menu.items.find(i => i.id === cb.dataset.vis);
-      if (item) { item.visible = cb.checked; markUnsaved(); updateStats(); }
-    });
-  });
-  tbody.querySelectorAll('[data-feat]').forEach(cb => {
-    cb.addEventListener('change', () => {
-      const item = menu.items.find(i => i.id === cb.dataset.feat);
-      if (item) { item.featured = cb.checked; markUnsaved(); }
-    });
-  });
+  tbody.querySelectorAll('[data-vis]').forEach(cb => cb.addEventListener('change', () => {
+    const i = menu.items.find(x => x.id===cb.dataset.vis); if(i){i.visible=cb.checked;markUnsaved();updateStats();}
+  }));
+  tbody.querySelectorAll('[data-feat]').forEach(cb => cb.addEventListener('change', () => {
+    const i = menu.items.find(x => x.id===cb.dataset.feat); if(i){i.featured=cb.checked;markUnsaved();}
+  }));
   tbody.querySelectorAll('[data-edit-item]').forEach(b => b.addEventListener('click', () => openEditModal(b.dataset.editItem)));
-  tbody.querySelectorAll('[data-del-item]').forEach(b  => b.addEventListener('click', () => deleteItem(b.dataset.delItem)));
+  tbody.querySelectorAll('[data-del-item]').forEach(b  => b.addEventListener('click', () => delItem(b.dataset.delItem)));
 }
 
 function updateStats() {
   if (!menu) return;
-  const total    = menu.items.length;
-  const visible  = menu.items.filter(i => i.visible !== false).length;
-  const hidden   = total - visible;
-  const featured = menu.items.filter(i => i.featured).length;
-  $('vis-total')  .textContent = total;
-  $('vis-visible').textContent = visible;
-  $('vis-hidden') .textContent = hidden;
-  $('vis-featured').textContent = featured;
+  const total = menu.items.length;
+  const vis   = menu.items.filter(i => i.visible!==false).length;
+  $('stat-total').textContent   = total;
+  $('stat-visible').textContent = vis;
+  $('stat-hidden').textContent  = total - vis;
+  $('stat-featured').textContent= menu.items.filter(i=>i.featured).length;
 }
 
-function deleteItem(id) {
-  const item = menu.items.find(i => i.id === id);
-  if (!item || !confirm(`Delete "${item.name_en}"?`)) return;
-  menu.items = menu.items.filter(i => i.id !== id);
-  renderVisibility();
-  updateStats();
-  markUnsaved();
-  toast('Item deleted');
+function delItem(id) {
+  const i = menu.items.find(x => x.id===id);
+  if (!i || !confirm(`Delete "${i.name_en}"?`)) return;
+  menu.items = menu.items.filter(x => x.id!==id);
+  renderVisTable(); updateStats(); markUnsaved(); toast('Item deleted');
 }
 
 /* ── Edit item modal ── */
 function openEditModal(id) {
-  const item = menu.items.find(i => i.id === id);
+  const item = menu.items.find(i => i.id===id);
   if (!item) return;
-
-  $('edit-item-id').value  = id;
-  $('edit-name-en').value  = item.name_en;
-  $('edit-name-ar').value  = item.name_ar;
-  $('edit-desc-en').value  = item.description_en || '';
-  $('edit-desc-ar').value  = item.description_ar || '';
-  $('edit-price').value    = item.price;
-  $('edit-image').value    = item.image || '';
-  $('edit-visible').checked  = item.visible !== false;
+  $('edit-item-id').value    = id;
+  $('edit-name-en').value    = item.name_en;
+  $('edit-name-ar').value    = item.name_ar;
+  $('edit-desc-en').value    = item.description_en||'';
+  $('edit-desc-ar').value    = item.description_ar||'';
+  $('edit-price').value      = item.price;
+  $('edit-image').value      = item.image||'';
+  $('edit-video').value      = item.video_url||'';
+  $('edit-visible').checked  = item.visible!==false;
   $('edit-featured').checked = !!item.featured;
-
-  updateCatHints(); // ensure dropdown populated
-  const sel = $('edit-cat-sel');
-  if (sel) sel.value = item.category;
-
-  updatePreview('edit-image', 'edit-img-preview');
+  syncCatDropdowns();
+  $('edit-cat-sel').value    = item.category;
+  previewUrl('edit-image','edit-img-prev');
   $('edit-modal').classList.add('open');
 }
 
 function saveEditModal() {
   const id   = $('edit-item-id').value;
-  const item = menu.items.find(i => i.id === id);
+  const item = menu.items.find(i => i.id===id);
   if (!item) return;
-
   const en = $('edit-name-en').value.trim();
   const ar = $('edit-name-ar').value.trim();
-  if (!en || !ar) { toast('Name EN and AR are required', 'err'); return; }
-
-  item.name_en        = en;
-  item.name_ar        = ar;
+  if (!en||!ar) { toast('Name EN and AR required','err'); return; }
+  item.name_en = en; item.name_ar = ar;
   item.description_en = $('edit-desc-en').value.trim();
   item.description_ar = $('edit-desc-ar').value.trim();
-  item.price          = parseFloat($('edit-price').value) || item.price;
-  item.category       = $('edit-cat-sel').value;
-  item.image          = $('edit-image').value.trim();
-  item.visible        = $('edit-visible').checked;
-  item.featured       = $('edit-featured').checked;
-
+  item.price     = parseFloat($('edit-price').value)||item.price;
+  item.category  = $('edit-cat-sel').value;
+  item.image     = $('edit-image').value.trim();
+  item.video_url = $('edit-video').value.trim();
+  item.visible   = $('edit-visible').checked;
+  item.featured  = $('edit-featured').checked;
   $('edit-modal').classList.remove('open');
-  renderVisibility();
-  renderPhotoGrid();
-  updateStats();
-  markUnsaved();
-  toast('Item updated');
+  renderVisTable(); renderPhotoGrid(); updateStats(); markUnsaved(); toast('Item updated');
+}
+
+async function uploadEditImage() {
+  const file = $('edit-image-file').files[0];
+  if (!file) return;
+  await uploadImageFile(file, url => { $('edit-image').value = url; previewUrl('edit-image','edit-img-prev'); toast('Image uploaded'); });
 }
 
 /* ══════════════════════════════════════════════════════════════
-   STEP 5 — SAVE & PUBLISH
+   STEP 5 — CONTACT & ABOUT
 ══════════════════════════════════════════════════════════════ */
-function downloadJSON() {
-  const json = JSON.stringify(menu, null, 2);
-  const blob = new Blob([json], { type: 'application/json' });
-  const url  = URL.createObjectURL(blob);
-  const a    = Object.assign(document.createElement('a'), { href: url, download: 'menu.json' });
-  a.click();
-  URL.revokeObjectURL(url);
-  $('unsaved-badge').style.display = 'none';
-  toast('menu.json downloaded — upload it to GitHub to publish');
+function loadContactForm() {
+  if (!menu) return;
+  const c = menu.restaurant.contact || {};
+  const fields = ['phone','whatsapp','instagram','facebook','tiktok','address_en','address_ar','maps_url'];
+  fields.forEach(f => { const el = $('c-'+f); if(el) el.value = c[f]||''; });
 }
 
-async function pushToGitHub() {
-  const pw = $('save-password').value.trim();
-  if (!pw) { toast('Enter your admin password to confirm', 'err'); return; }
+function saveContact() {
+  if (!menu.restaurant.contact) menu.restaurant.contact = {};
+  const c = menu.restaurant.contact;
+  ['phone','whatsapp','instagram','facebook','tiktok','address_en','address_ar','maps_url'].forEach(f => {
+    const el = $('c-'+f); if(el) c[f] = el.value.trim();
+  });
+  markUnsaved(); toast('Contact info saved (remember to Save & Publish)');
+}
 
+function loadAboutForm() {
+  if (!menu) return;
+  const r = menu.restaurant;
+  const fields = ['name_en','name_ar','tagline_en','tagline_ar','about_en','about_ar'];
+  fields.forEach(f => { const el = $('r-'+f); if(el) el.value = r[f]||''; });
+}
+
+function saveAbout() {
+  const r = menu.restaurant;
+  ['name_en','name_ar','tagline_en','tagline_ar','about_en','about_ar'].forEach(f => {
+    const el = $('r-'+f); if(el) r[f] = el.value.trim();
+  });
+  markUnsaved(); toast('Restaurant info saved (remember to Save & Publish)');
+}
+
+/* ══════════════════════════════════════════════════════════════
+   STEP 6 — SAVE & PUBLISH
+══════════════════════════════════════════════════════════════ */
+function downloadJSON() {
+  const blob = new Blob([JSON.stringify(menu, null, 2)], { type: 'application/json' });
+  const url  = URL.createObjectURL(blob);
+  const a    = Object.assign(document.createElement('a'), { href: url, download: 'menu.json' });
+  a.click(); URL.revokeObjectURL(url);
+  $('unsaved-badge').style.display = 'none';
+  toast('Downloaded — upload menu.json to GitHub to publish');
+}
+
+async function publishToGitHub() {
+  const pw  = $('save-pw').value.trim();
+  if (!pw) { toast('Enter admin password to confirm', 'err'); return; }
   const btn = $('push-btn');
-  btn.disabled = true;
-  btn.textContent = 'Saving…';
+  btn.disabled = true; btn.textContent = 'Publishing…';
   $('push-status').textContent = '';
 
   try {
-    const res = await fetch('/api/update-menu', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+    const res  = await fetch('/api/update-menu', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ password: pw, menuData: menu }),
     });
-
     const data = await res.json().catch(() => ({}));
-
     if (res.ok) {
       $('unsaved-badge').style.display = 'none';
-      $('save-password').value = '';
+      $('save-pw').value = '';
       $('push-status').textContent = '✓ Published! Site updates in ~30s';
       $('push-status').style.color = 'var(--green)';
-      toast('✅ Menu published to GitHub!');
+      toast('✅ Menu published!');
     } else {
-      $('push-status').textContent = '❌ ' + (data.error || 'Error — check Netlify env vars');
+      $('push-status').textContent = '❌ ' + (data.error||'Error — check Vercel env vars');
       $('push-status').style.color = 'var(--red)';
-      toast(data.error || 'Push failed', 'err');
+      toast(data.error||'Push failed','err');
     }
-  } catch (e) {
+  } catch {
     $('push-status').textContent = '❌ Network error — try downloading instead';
     $('push-status').style.color = 'var(--red)';
-    toast('Network error', 'err');
+    toast('Network error','err');
   }
-
-  btn.disabled = false;
-  btn.textContent = '🚀 Save & Publish';
+  btn.disabled = false; btn.textContent = '🚀 Save & Publish';
 }
 
 /* ══════════════════════════════════════════════════════════════
    HELPERS
 ══════════════════════════════════════════════════════════════ */
 function toId(str) {
-  return str.toLowerCase().trim().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+  return str.toLowerCase().trim().replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,'');
 }
 
-function updatePreview(inputId, previewId) {
-  const url = $(inputId).value.trim();
+function previewUrl(inputId, previewId) {
+  const url = $(inputId) ? $(inputId).value.trim() : '';
   const el  = $(previewId);
   if (!el) return;
   el.innerHTML = url
-    ? `<img src="${url}" alt="preview" onerror="this.parentElement.innerHTML='<span>Image not found</span>'">`
-    : '<span>Image preview</span>';
+    ? `<img src="${url}" onerror="this.parentElement.innerHTML='<span>Image not found</span>'" style="max-width:100%;max-height:160px;border-radius:6px;object-fit:contain">`
+    : '<span>Preview</span>';
+}
+
+function syncCatDropdowns() {
+  if (!menu) return;
+  const hint = $('cat-ids-hint');
+  if (hint) hint.innerHTML = menu.categories.map(c=>`<code>${c.id}</code>`).join(' ') || '<em>no categories</em>';
+
+  ['photo-filter-cat','vis-filter-cat','edit-cat-sel','m-category'].forEach(selId => {
+    const sel = $(selId); if (!sel) return;
+    const all = selId==='edit-cat-sel'||selId==='m-category' ? '' : '<option value="all">All categories</option>';
+    sel.innerHTML = all + menu.categories.map(c=>`<option value="${c.id}">${c.name_en}</option>`).join('');
+  });
 }
 
 /* ══════════════════════════════════════════════════════════════
    INIT
 ══════════════════════════════════════════════════════════════ */
 document.addEventListener('DOMContentLoaded', () => {
-  /* ── Login ── */
   $('login-btn').addEventListener('click', login);
-  $('pw-input').addEventListener('keydown', e => { if (e.key === 'Enter') login(); });
+  $('pw-input').addEventListener('keydown', e => { if(e.key==='Enter') login(); });
 
-  /* ── Step nav ── */
-  $$('.step-btn').forEach(btn =>
-    btn.addEventListener('click', () => goStep(btn.dataset.step)));
+  $$('.step-btn').forEach(b => b.addEventListener('click', () => goStep(b.dataset.step)));
 
-  /* ── Category form ── */
-  $('save-cat-btn').addEventListener('click', saveCategoryForm);
+  // Categories
+  $('save-cat-btn').addEventListener('click', saveCatForm);
   $('clear-cat-btn').addEventListener('click', clearCatForm);
-  $('cat-image').addEventListener('input', () => updatePreview('cat-image', 'cat-img-preview'));
+  $('cat-image-url').addEventListener('input', () => previewUrl('cat-image-url','cat-img-prev'));
+  $('cat-image-file').addEventListener('change', uploadCatImage);
 
-  /* ── Bulk import ── */
+  // Manual add
+  $('save-manual-btn').addEventListener('click', saveManualItem);
+  $('clear-manual-btn').addEventListener('click', clearManualForm);
+  $('m-image-url').addEventListener('input', () => previewUrl('m-image-url','m-img-prev'));
+  $('m-image-file').addEventListener('change', uploadManualImage);
+
+  // Bulk import
   $('parse-btn').addEventListener('click', parseCSV);
   $('confirm-import-btn').addEventListener('click', confirmImport);
   $('load-example-btn').addEventListener('click', () => {
     $('csv-input').value =
 `Cappuccino, كابوتشينو, Espresso with steamed milk foam, إسبريسو مع رغوة الحليب, 85, hot-drinks
 Iced Latte, لاتيه مثلج, Cold espresso over ice, إسبريسو بارد على الثلج, 95, cold-drinks
-Mango Smoothie, عصير مانجو, Fresh mango blended, مانجو طازج, 110, smoothies
-Grilled Chicken Sandwich, ساندويتش دجاج مشوي, Grilled chicken with garlic sauce, دجاج مشوي بصلصة الثوم, 165, sandwiches`;
+Mango Smoothie, عصير مانجو, Fresh mango blended with ice, مانجو طازج ممزوج مع الثلج, 110, smoothies`;
   });
 
-  /* ── Photo grid filters ── */
-  ['photo-search', 'photo-filter-cat', 'photo-no-image-only'].forEach(id => {
-    const el = $(id);
-    if (el) el.addEventListener(el.type === 'checkbox' ? 'change' : 'input', renderPhotoGrid);
+  // Photo grid filters
+  ['photo-search','photo-filter-cat','photo-no-img'].forEach(id => {
+    const el = $(id); if(el) el.addEventListener(el.type==='checkbox'?'change':'input', renderPhotoGrid);
   });
 
-  /* ── Visibility filters ── */
-  ['vis-search', 'vis-filter-cat'].forEach(id => {
-    const el = $(id);
-    if (el) el.addEventListener('input', renderVisibility);
+  // Visibility filters
+  ['vis-search','vis-filter-cat'].forEach(id => {
+    const el=$(id); if(el) el.addEventListener('input', renderVisTable);
   });
-  $('show-all-btn').addEventListener('click', () => {
-    menu.items.forEach(i => i.visible = true);
-    renderVisibility(); updateStats(); markUnsaved(); toast('All items visible');
-  });
-  $('hide-all-btn').addEventListener('click', () => {
-    if (!confirm('Hide ALL items from the menu?')) return;
-    menu.items.forEach(i => i.visible = false);
-    renderVisibility(); updateStats(); markUnsaved(); toast('All items hidden');
-  });
+  $('show-all-btn').addEventListener('click', () => { menu.items.forEach(i=>i.visible=true); renderVisTable(); updateStats(); markUnsaved(); toast('All visible'); });
+  $('hide-all-btn').addEventListener('click', () => { if(!confirm('Hide ALL items?')) return; menu.items.forEach(i=>i.visible=false); renderVisTable(); updateStats(); markUnsaved(); toast('All hidden'); });
 
-  /* ── Edit modal ── */
+  // Edit modal
   $('edit-modal-close').addEventListener('click', () => $('edit-modal').classList.remove('open'));
   $('edit-cancel-btn').addEventListener('click',  () => $('edit-modal').classList.remove('open'));
   $('edit-save-btn').addEventListener('click', saveEditModal);
-  $('edit-image').addEventListener('input', () => updatePreview('edit-image', 'edit-img-preview'));
-  $('edit-modal').addEventListener('click', e => {
-    if (e.target === $('edit-modal')) $('edit-modal').classList.remove('open');
-  });
+  $('edit-image').addEventListener('input', () => previewUrl('edit-image','edit-img-prev'));
+  $('edit-image-file').addEventListener('change', uploadEditImage);
+  $('edit-modal').addEventListener('click', e => { if(e.target===$('edit-modal')) $('edit-modal').classList.remove('open'); });
 
-  /* ── Save ── */
+  // Contact & About
+  $('save-contact-btn').addEventListener('click', saveContact);
+  $('save-about-btn').addEventListener('click', saveAbout);
+
+  // Save & Publish
   $('download-btn').addEventListener('click', downloadJSON);
-  $('push-btn').addEventListener('click', pushToGitHub);
+  $('push-btn').addEventListener('click', publishToGitHub);
 });
