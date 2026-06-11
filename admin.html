@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA Admin — Menu Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-deep: #0D1B2A;
+      --navy: #162032;
+      --navy-light: #1E2D42;
+      --navy-card: #1A2A3E;
+      --gold: #C9A96E;
+      --gold-dark: #A8843A;
+      --gold-light: #E8D5A3;
+      --white: #FFFFFF;
+      --off-white: #F5F0E8;
+      --text-muted: #8899AA;
+      --border: rgba(201,169,110,0.2);
+      --red: #E05252;
+      --green: #52C07E;
+      --radius: 14px;
+      --radius-sm: 8px;
+      --transition: 0.25s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--navy-deep);
+      color: var(--off-white);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+    }
+    a { color: var(--gold); }
+    input, select, textarea, button { font-family: inherit; }
+
+    /* ---- Login Screen ---- */
+    #login-screen {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,169,110,0.1), transparent 70%), var(--navy-deep);
+    }
+
+    .login-card {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 48px 40px;
+      width: 100%;
+      max-width: 380px;
+      text-align: center;
+    }
+
+    .login-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--gold);
+      letter-spacing: 6px;
+      margin-bottom: 4px;
+    }
+
+    .login-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+
+    .login-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-align: left;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .login-input {
+      width: 100%;
+      background: var(--navy);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      color: var(--off-white);
+      font-size: 0.95rem;
+      outline: none;
+      transition: var(--transition);
+      margin-bottom: 16px;
+    }
+
+    .login-input:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201,169,110,0.1);
+    }
+
+    .login-error {
+      display: none;
+      color: var(--red);
+      font-size: 0.8rem;
+      margin-bottom: 12px;
+    }
+
+    /* ---- App shell ---- */
+    #admin-app { display: none; }
+
+    .admin-nav {
+      background: var(--navy);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .admin-brand {
+      font-family: 'Playfair Display', serif;
+      color: var(--gold);
+      font-size: 1.2rem;
+      letter-spacing: 3px;
+    }
+
+    .admin-brand small {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      margin-left: 8px;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    #save-indicator {
+      display: none;
+      align-items: center;
+      gap: 6px;
+      background: rgba(201,169,110,0.15);
+      border: 1px solid var(--gold-dark);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 0.75rem;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* ---- Tabs ---- */
+    .tab-bar {
+      display: flex;
+      gap: 4px;
+      padding: 16px 24px 0;
+      border-bottom: 1px solid var(--border);
+      overflow-x: auto;
+    }
+
+    .tab-btn {
+      padding: 10px 18px;
+      border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: transparent;
+      border: 1px solid transparent;
+      border-bottom: none;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .tab-btn.active {
+      color: var(--gold);
+      background: var(--navy-card);
+      border-color: var(--border);
+      position: relative;
+    }
+
+    .tab-panel { display: none; padding: 24px; }
+    .tab-panel.active { display: block; }
+
+    /* ---- Stats row ---- */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .stat-card {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .stat-val {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    /* ---- Toolbar ---- */
+    .toolbar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .toolbar-input {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 9px 14px;
+      color: var(--off-white);
+      font-size: 0.85rem;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .toolbar-input:focus {
+      border-color: var(--gold);
+    }
+
+    #search-items { min-width: 200px; }
+
+    /* ---- Table ---- */
+    .tbl-wrap {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead tr {
+      background: var(--navy-light);
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 12px 16px;
+      font-size: 0.85rem;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      vertical-align: middle;
+    }
+
+    tbody tr:hover { background: rgba(255,255,255,0.02); }
+    tbody tr:last-child td { border-bottom: none; }
+
+    .tbl-thumb {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .tbl-thumb-placeholder {
+      width: 50px;
+      height: 50px;
+      background: var(--navy-light);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+
+    .cat-pill {
+      background: rgba(201,169,110,0.1);
+      border: 1px solid var(--border);
+      color: var(--gold-light);
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    .status-pill {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .status-pill.avail {
+      background: rgba(82,192,126,0.12);
+      color: var(--green);
+    }
+
+    .status-pill.unavail {
+      background: rgba(224,82,82,0.1);
+      color: var(--red);
+    }
+
+    .featured-pill {
+      font-size: 0.75rem;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .action-btns {
+      display: flex;
+      gap: 6px;
+    }
+
+    .btn-icon {
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-icon:hover {
+      border-color: var(--gold);
+      background: rgba(201,169,110,0.1);
+    }
+
+    /* ---- Buttons ---- */
+    .btn {
+      padding: 10px 20px;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      letter-spacing: 0.3px;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy-deep);
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--off-white);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .btn-danger {
+      background: rgba(224,82,82,0.15);
+      border: 1px solid rgba(224,82,82,0.3);
+      color: var(--red);
+    }
+
+    /* ---- Modal ---- */
+    #modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .modal {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      width: 100%;
+      max-width: 600px;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .modal-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.4rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px;
+    }
+
+    .modal-close:hover { color: var(--off-white); }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group.full { grid-column: 1 / -1; }
+
+    label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+
+    .form-input {
+      background: var(--navy);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      color: var(--off-white);
+      font-size: 0.9rem;
+      outline: none;
+      transition: var(--transition);
+      width: 100%;
+    }
+
+    .form-input:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201,169,110,0.1);
+    }
+
+    textarea.form-input {
+      resize: vertical;
+      min-height: 72px;
+    }
+
+    .checkbox-row {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--off-white);
+      cursor: pointer;
+      font-weight: normal;
+    }
+
+    .checkbox-label input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--gold);
+      cursor: pointer;
+    }
+
+    #img-preview {
+      background: var(--navy);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 8px;
+    }
+
+    .modal-footer {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ---- Save panel ---- */
+    .save-panel {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .save-panel h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .save-panel p {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .save-panel .form-grid {
+      margin-bottom: 16px;
+    }
+
+    code {
+      background: var(--navy);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-size: 0.8rem;
+      color: var(--gold-light);
+      font-family: monospace;
+    }
+
+    /* ---- Toast ---- */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 12px 24px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      z-index: 999;
+      transition: transform 0.3s ease;
+      min-width: 260px;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .toast.success {
+      border-color: rgba(82,192,126,0.4);
+      color: var(--green);
+    }
+
+    .toast.error {
+      border-color: rgba(224,82,82,0.4);
+      color: var(--red);
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 600px) {
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .form-grid { grid-template-columns: 1fr; }
+      .tab-panel { padding: 16px; }
+      .admin-nav { padding: 0 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= LOGIN ================= -->
+  <div id="login-screen">
+    <div class="login-card">
+      <div class="login-logo">AURA</div>
+      <div class="login-sub">Admin Panel</div>
+      <label class="login-label" for="admin-password">Password</label>
+      <input class="login-input" id="admin-password" type="password" placeholder="Enter admin password" autofocus>
+      <p class="login-error" id="login-error">❌ Incorrect password. Please try again.</p>
+      <button class="btn btn-gold" id="login-btn" style="width:100%">Sign In</button>
+      <p style="margin-top:16px;font-size:0.75rem;color:var(--text-muted)">
+        Default password: <code>aura2024</code><br>
+        Change it in <code>js/admin.js</code> → <code>PASSWORD_HASH</code>
+      </p>
+    </div>
+  </div>
+
+  <!-- ================= ADMIN APP ================= -->
+  <div id="admin-app">
+
+    <!-- Navbar -->
+    <nav class="admin-nav">
+      <div class="admin-brand">
+        AURA <small>ADMIN</small>
+      </div>
+      <div class="nav-right">
+        <span id="save-indicator">⚠ Unsaved changes</span>
+        <button class="btn btn-gold" id="export-btn">⬇ Download menu.json</button>
+        <a href="index.html" target="_blank" class="btn btn-outline">👁 View Menu</a>
+      </div>
+    </nav>
+
+    <!-- Tabs -->
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="tab-items">📋 Menu Items</button>
+      <button class="tab-btn" data-tab="tab-save">💾 Save to GitHub</button>
+    </div>
+
+    <!-- ---- Tab: Items ---- -->
+    <div class="tab-panel active" id="tab-items">
+
+      <!-- Stats -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-val" id="stat-total">—</div>
+          <div class="stat-label">Total Items</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val" id="stat-available">—</div>
+          <div class="stat-label">Available</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val" id="stat-featured">—</div>
+          <div class="stat-label">Featured</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val" id="stat-cats">—</div>
+          <div class="stat-label">Categories</div>
+        </div>
+      </div>
+
+      <!-- Toolbar -->
+      <div class="toolbar">
+        <button class="btn btn-gold" id="add-item-btn">+ Add Item</button>
+        <input class="toolbar-input" id="search-items" type="search" placeholder="🔍 Search items...">
+        <select class="toolbar-input" id="filter-category">
+          <option value="all">All Categories</option>
+        </select>
+      </div>
+
+      <!-- Table -->
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Photo</th>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Status</th>
+              <th>Featured</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="items-tbody">
+            <tr><td colspan="7" style="text-align:center;padding:32px;color:var(--text-muted)">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ---- Tab: Save ---- -->
+    <div class="tab-panel" id="tab-save">
+
+      <div class="save-panel">
+        <h3>⬇ Option 1: Download &amp; Upload Manually</h3>
+        <p>
+          Click <strong>Download menu.json</strong> in the top bar, then replace the <code>menu.json</code>
+          file in your GitHub repo or hosting folder. The website updates automatically.
+        </p>
+        <button class="btn btn-gold" onclick="document.getElementById('export-btn').click()">⬇ Download menu.json</button>
+      </div>
+
+      <div class="save-panel">
+        <h3>🔗 Option 2: Save Directly to GitHub</h3>
+        <p>
+          Enter your GitHub details to push the menu directly from this page. Your Personal Access Token (PAT)
+          needs <strong>Contents: Read &amp; Write</strong> permission.<br>
+          Create one at: <a href="https://github.com/settings/tokens/new" target="_blank">github.com/settings/tokens/new</a>
+        </p>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>GitHub Username / Org</label>
+            <input class="form-input" id="gh-owner" type="text" placeholder="e.g. hakamsaffour">
+          </div>
+          <div class="form-group">
+            <label>Repository Name</label>
+            <input class="form-input" id="gh-repo" type="text" placeholder="e.g. aura-menu">
+          </div>
+          <div class="form-group full">
+            <label>Personal Access Token (not saved, session only)</label>
+            <input class="form-input" id="gh-token" type="password" placeholder="ghp_xxxxxxxxxxxxxxxx">
+          </div>
+        </div>
+        <button class="btn btn-gold" id="gh-save-btn">🚀 Push to GitHub</button>
+      </div>
+
+      <div class="save-panel">
+        <h3>🌐 Free Hosting Options</h3>
+        <p>
+          <strong>GitHub Pages</strong> — Free, fast CDN, perfect for static sites.<br>
+          Enable in your repo: Settings → Pages → Deploy from branch <code>main</code>.<br><br>
+          <strong>Netlify</strong> — Free tier, auto-deploy on git push, custom domain support.<br>
+          Connect your GitHub repo at <a href="https://netlify.com" target="_blank">netlify.com</a>.<br><br>
+          <strong>Images</strong> — Use <a href="https://cloudinary.com" target="_blank">Cloudinary</a> free tier
+          (25 GB/month). Paste the image URLs into item cards above.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= ITEM MODAL ================= -->
+  <div id="modal-overlay">
+    <div class="modal" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-title">Add New Item</h2>
+        <button class="modal-close" id="cancel-modal-btn" aria-label="Close">×</button>
+      </div>
+
+      <input type="hidden" id="item-id">
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="item-name-en">Name (English) *</label>
+          <input class="form-input" id="item-name-en" type="text" placeholder="e.g. Cappuccino">
+        </div>
+        <div class="form-group">
+          <label for="item-name-ar">Name (Arabic) *</label>
+          <input class="form-input" id="item-name-ar" type="text" placeholder="e.g. كابوتشينو" dir="rtl">
+        </div>
+        <div class="form-group">
+          <label for="item-desc-en">Description (English)</label>
+          <textarea class="form-input" id="item-desc-en" placeholder="Short description..."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="item-desc-ar">Description (Arabic)</label>
+          <textarea class="form-input" id="item-desc-ar" placeholder="وصف قصير..." dir="rtl"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="item-price">Price (EGP) *</label>
+          <input class="form-input" id="item-price" type="number" min="0" step="0.5" placeholder="85">
+        </div>
+        <div class="form-group">
+          <label for="item-category">Category</label>
+          <select class="form-input" id="item-category"></select>
+        </div>
+        <div class="form-group full">
+          <label for="item-image">Image URL (Cloudinary or any public URL)</label>
+          <input class="form-input" id="item-image" type="url" placeholder="https://res.cloudinary.com/...">
+          <div id="img-preview">
+            <span style="color:var(--text-muted);font-size:0.85rem">Image preview will appear here</span>
+          </div>
+        </div>
+        <div class="form-group full">
+          <div class="checkbox-row">
+            <label class="checkbox-label">
+              <input type="checkbox" id="item-available" checked>
+              Available (not sold out)
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" id="item-featured">
+              ★ Featured (Chef's Pick)
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-outline" id="cancel-modal-btn-2" onclick="document.getElementById('cancel-modal-btn').click()">Cancel</button>
+        <button class="btn btn-gold" id="save-item-btn">Save Item</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= TOAST ================= -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

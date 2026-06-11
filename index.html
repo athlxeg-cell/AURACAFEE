@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0D1B2A">
+  <meta name="description" content="AURA Lounge & Café — Explore our full menu">
+  <title>AURA — Menu</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon placeholder (replace with your logo) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-brand">
+      <!-- Replace src with your logo path -->
+      <img class="nav-logo"
+           src="images/logo.png"
+           alt="AURA Logo"
+           onerror="this.style.display='none'">
+      <div class="nav-brand-text">
+        <span class="nav-name" id="nav-name">AURA</span>
+        <span class="nav-tagline" id="nav-tagline">Lounge &amp; Café</span>
+      </div>
+    </div>
+
+    <div class="nav-actions">
+      <div class="lang-toggle" role="group" aria-label="Language selector">
+        <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+        <button class="lang-btn" data-lang="ar" aria-label="Arabic">ع</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero" role="banner">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+
+      <!-- Logo: replace src with real logo, fallback is SVG monogram -->
+      <img class="hero-logo"
+           src="images/logo.png"
+           alt="AURA"
+           onerror="this.style.display='none';document.getElementById('hero-logo-fallback').style.display='flex'">
+      <div class="hero-logo-fallback" id="hero-logo-fallback" style="display:none">
+        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="40" cy="40" r="38" fill="none" stroke="#C9A96E" stroke-width="1.5" opacity="0.6"/>
+          <text x="40" y="52" font-family="Playfair Display, serif" font-size="28" font-weight="700"
+                fill="#C9A96E" text-anchor="middle" letter-spacing="2">A</text>
+        </svg>
+      </div>
+
+      <h1 class="hero-title" id="hero-title">AURA</h1>
+      <p class="hero-subtitle" id="hero-subtitle">Lounge &amp; Café</p>
+
+      <div class="hero-divider">
+        <span></span>
+        <i>✦</i>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ SEARCH ============ -->
+  <div class="search-wrap" role="search">
+    <span class="search-icon" aria-hidden="true">🔍</span>
+    <input
+      class="search-input"
+      id="search-input"
+      type="search"
+      placeholder="Search menu..."
+      aria-label="Search menu items"
+      autocomplete="off"
+      spellcheck="false">
+  </div>
+
+  <!-- ============ CATEGORY TABS ============ -->
+  <section class="category-section" aria-label="Menu categories">
+    <div class="category-scroll" id="cat-scroll" role="tablist">
+      <!-- Populated by JS -->
+    </div>
+  </section>
+
+  <!-- ============ MENU ============ -->
+  <main class="menu-section" id="menu-section" role="main" aria-label="Menu items">
+    <!-- Loading shimmer -->
+    <div id="menu-container">
+      <div class="menu-grid">
+        <div class="shimmer"></div>
+        <div class="shimmer"></div>
+        <div class="shimmer"></div>
+        <div class="shimmer"></div>
+        <div class="shimmer"></div>
+        <div class="shimmer"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-logo" id="footer-logo">AURA</div>
+    <p class="footer-text">© 2024 AURA Lounge &amp; Café — All rights reserved</p>
+  </footer>
+
+  <!-- Script -->
+  <script src="js/app.js"></script>
+</body>
+</html>
