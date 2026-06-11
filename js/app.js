@@ -1,241 +1,244 @@
-/* ============================================
-   AURA CAFE — Main Menu Application
-   ============================================ */
+/* ============================================================
+   AURA CAFÉ — Customer Menu Application
+   View-only · Fast · Mobile-first · EN/AR
+   ============================================================ */
+(function () {
+  'use strict';
 
-const App = (() => {
-  // ---- State ----
-  let menuData = null;
-  let currentLang = localStorage.getItem('aura-lang') || 'en';
-  let currentCategory = 'all';
-  let searchQuery = '';
+  /* ---- State ---- */
+  let menu = null;
+  let lang = localStorage.getItem('aura-lang') || 'en';
+  let activeCat = 'all';
+  let searchQ = '';
 
-  // ---- i18n ----
-  const i18n = {
+  /* ---- Strings ---- */
+  const t = {
     en: {
-      all: 'All Items',
-      search: 'Search menu...',
-      featured: 'Chef\'s Pick',
-      unavailable: 'Sold Out',
-      noResults: 'No items found',
-      noResultsSub: 'Try a different search term',
+      all: 'All', search: 'Search menu…',
+      featured: "Chef's Pick", soldout: 'Sold Out',
+      noResults: 'No items found', noResultsSub: 'Try a different search',
     },
     ar: {
-      all: 'الكل',
-      search: 'ابحث في المنيو...',
-      featured: 'اختيار الشيف',
-      unavailable: 'نفد المخزون',
-      noResults: 'لا توجد عناصر',
-      noResultsSub: 'جرب بحثاً مختلفاً',
-    }
+      all: 'الكل', search: 'ابحث في المنيو…',
+      featured: 'اختيار الشيف', soldout: 'نفد',
+      noResults: 'لا توجد عناصر', noResultsSub: 'جرب بحثاً آخر',
+    },
   };
 
-  // ---- DOM refs ----
+  /* ---- DOM helpers ---- */
   const $ = id => document.getElementById(id);
+  const qs = sel => document.querySelector(sel);
 
-  // ---- Fetch menu.json ----
+  /* ── FETCH MENU ──────────────────────────────────────────── */
   async function loadMenu() {
     try {
-      const res = await fetch('menu.json?v=' + Date.now());
-      if (!res.ok) throw new Error('Failed to load menu');
-      menuData = await res.json();
+      const res = await fetch('menu.json?_=' + Math.floor(Date.now() / 60000));
+      if (!res.ok) throw new Error(res.statusText);
+      menu = await res.json();
       render();
     } catch (e) {
-      console.error(e);
-      document.getElementById('menu-container').innerHTML =
-        `<div class="empty-state">
-          <div class="empty-icon">⚠️</div>
-          <p>Could not load menu. Please try again.</p>
-        </div>`;
+      $('menu-content').innerHTML =
+        `<div class="empty">
+           <div class="empty-icon">⚠️</div>
+           <p class="empty-text">Could not load menu. Please refresh.</p>
+         </div>`;
     }
   }
 
-  // ---- Language toggle ----
-  function setLanguage(lang) {
-    currentLang = lang;
-    localStorage.setItem('aura-lang', lang);
-    document.documentElement.lang = lang;
-    document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
-    document.querySelectorAll('.lang-btn').forEach(b => {
-      b.classList.toggle('active', b.dataset.lang === lang);
-    });
+  /* ── LANGUAGE ────────────────────────────────────────────── */
+  function setLang(l) {
+    lang = l;
+    localStorage.setItem('aura-lang', l);
+    document.documentElement.lang = l;
+    document.body.dir = l === 'ar' ? 'rtl' : 'ltr';
+    document.querySelectorAll('.lang-btn').forEach(b =>
+      b.classList.toggle('active', b.dataset.lang === l));
     render();
   }
 
-  // ---- Category filter ----
+  /* ── CATEGORY FILTER ─────────────────────────────────────── */
   function setCategory(id) {
-    currentCategory = id;
-    document.querySelectorAll('.cat-btn').forEach(b => {
-      b.classList.toggle('active', b.dataset.cat === id);
-    });
+    activeCat = id;
+    document.querySelectorAll('.cat-tab').forEach(b =>
+      b.classList.toggle('active', b.dataset.cat === id));
     // Scroll active tab into view
-    const activeBtn = document.querySelector(`.cat-btn[data-cat="${id}"]`);
-    if (activeBtn) activeBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-    renderMenuItems();
+    const active = qs(`.cat-tab[data-cat="${id}"]`);
+    if (active) active.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+    renderItems();
   }
 
-  // ---- Search ----
-  function handleSearch(e) {
-    searchQuery = e.target.value.toLowerCase().trim();
-    renderMenuItems();
+  /* ── SEARCH ──────────────────────────────────────────────── */
+  function onSearch(e) {
+    searchQ = e.target.value.toLowerCase().trim();
+    renderItems();
   }
 
-  // ---- Build categories ----
-  function renderCategories() {
-    const t = i18n[currentLang];
-    const scroll = $('cat-scroll');
-    if (!scroll) return;
+  /* ── RENDER CATEGORY TABS ────────────────────────────────── */
+  function renderTabs() {
+    const container = $('cat-tabs');
+    if (!container) return;
 
-    const allCats = [{ id: 'all', name_en: t.all, name_ar: t.all, icon: '🍽️' }, ...menuData.categories];
+    const allTab = { id: 'all', name_en: t[lang].all, name_ar: t[lang].all, image: '' };
+    const cats = [allTab, ...menu.categories.filter(c => c.visible !== false)];
 
-    scroll.innerHTML = allCats.map(cat => `
-      <button class="cat-btn ${cat.id === currentCategory ? 'active' : ''}"
-              data-cat="${cat.id}"
-              aria-label="${currentLang === 'ar' ? cat.name_ar : cat.name_en}">
-        <span class="cat-icon">${cat.icon || '🍽️'}</span>
-        <span>${currentLang === 'ar' ? cat.name_ar : cat.name_en}</span>
-      </button>
-    `).join('');
+    container.innerHTML = cats.map(cat => {
+      const name = lang === 'ar' ? cat.name_ar : cat.name_en;
+      const imgEl = cat.image
+        ? `<img class="cat-tab-img" src="${cat.image}" alt="${name}" loading="lazy"
+               onerror="this.parentElement.innerHTML='<div class=\\'cat-tab-img\\' style=\\'font-size:1.1rem\\'>🍽️</div>'">`
+        : `<div class="cat-tab-img">${cat.icon || '🍽️'}</div>`;
+      return `
+        <button class="cat-tab ${cat.id === activeCat ? 'active' : ''}"
+                data-cat="${cat.id}"
+                role="tab"
+                aria-selected="${cat.id === activeCat}"
+                aria-label="${name}">
+          ${imgEl}
+          <span>${name}</span>
+        </button>`;
+    }).join('');
 
-    scroll.querySelectorAll('.cat-btn').forEach(btn => {
-      btn.addEventListener('click', () => setCategory(btn.dataset.cat));
-    });
+    container.querySelectorAll('.cat-tab').forEach(btn =>
+      btn.addEventListener('click', () => setCategory(btn.dataset.cat)));
   }
 
-  // ---- Build menu items ----
-  function renderMenuItems() {
-    const container = $('menu-container');
-    if (!container || !menuData) return;
+  /* ── RENDER ITEMS ────────────────────────────────────────── */
+  function renderItems() {
+    const container = $('menu-content');
+    if (!container) return;
 
-    const t = i18n[currentLang];
-    const currency = currentLang === 'ar' ? menuData.restaurant.currency_ar : menuData.restaurant.currency_en;
+    const currency = lang === 'ar' ? menu.restaurant.currency_ar : menu.restaurant.currency_en;
 
-    // Filter items
-    let items = menuData.items.filter(item => {
-      const matchCat = currentCategory === 'all' || item.category === currentCategory;
-      const name = (currentLang === 'ar' ? item.name_ar : item.name_en).toLowerCase();
-      const desc = (currentLang === 'ar' ? item.description_ar : item.description_en).toLowerCase();
-      const matchSearch = !searchQuery || name.includes(searchQuery) || desc.includes(searchQuery);
-      return matchCat && matchSearch;
+    // Filter
+    let items = menu.items.filter(item => {
+      if (item.visible === false) return false;
+      const matchCat = activeCat === 'all' || item.category === activeCat;
+      if (!matchCat) return false;
+      if (!searchQ) return true;
+      const name = (lang === 'ar' ? item.name_ar : item.name_en).toLowerCase();
+      const desc = (lang === 'ar' ? (item.description_ar || '') : (item.description_en || '')).toLowerCase();
+      return name.includes(searchQ) || desc.includes(searchQ);
     });
 
     if (items.length === 0) {
       container.innerHTML = `
-        <div class="empty-state">
+        <div class="empty">
           <div class="empty-icon">🔍</div>
-          <p>${t.noResults}</p>
-          <p style="margin-top:6px;font-size:0.8rem;">${t.noResultsSub}</p>
+          <p class="empty-text">${t[lang].noResults}</p>
+          <p class="empty-text" style="font-size:.75rem;margin-top:4px">${t[lang].noResultsSub}</p>
         </div>`;
       return;
     }
 
-    // Group by category if showing all
-    if (currentCategory === 'all' && !searchQuery) {
+    // Group by category when showing all (no search)
+    if (activeCat === 'all' && !searchQ) {
       const groups = {};
-      menuData.categories.forEach(cat => { groups[cat.id] = []; });
-      items.forEach(item => {
-        if (groups[item.category]) groups[item.category].push(item);
-      });
+      menu.categories.forEach(c => { groups[c.id] = []; });
+      items.forEach(i => { if (groups[i.category]) groups[i.category].push(i); });
 
-      container.innerHTML = menuData.categories.map(cat => {
-        const catItems = groups[cat.id];
-        if (!catItems || catItems.length === 0) return '';
-        return `
-          <div class="category-group" id="cat-${cat.id}">
-            <div class="section-header">
-              <h2 class="section-title">${cat.icon} ${currentLang === 'ar' ? cat.name_ar : cat.name_en}</h2>
-              <div class="section-line"></div>
-            </div>
-            <div class="menu-grid">
-              ${catItems.map(item => buildCard(item, currency, t)).join('')}
-            </div>
-          </div>`;
-      }).join('');
+      container.innerHTML = menu.categories
+        .filter(c => c.visible !== false && groups[c.id] && groups[c.id].length)
+        .map(cat => {
+          const catName = lang === 'ar' ? cat.name_ar : cat.name_en;
+          const imgEl = cat.image
+            ? `<img src="${cat.image}" alt="${catName}" loading="lazy" onerror="this.style.display='none'">`
+            : `<div style="font-size:1.2rem">${cat.icon || '🍽️'}</div>`;
+          return `
+            <section class="cat-section" id="sect-${cat.id}">
+              <div class="cat-heading">
+                <div class="cat-heading-img">${imgEl}</div>
+                <h2 class="cat-heading-title">${catName}</h2>
+                <div class="cat-heading-line"></div>
+              </div>
+              <ul class="items-list" role="list">
+                ${groups[cat.id].map(item => buildCard(item, currency)).join('')}
+              </ul>
+            </section>`;
+        }).join('');
     } else {
-      container.innerHTML = `<div class="menu-grid">${items.map(item => buildCard(item, currency, t)).join('')}</div>`;
+      container.innerHTML = `
+        <ul class="items-list" role="list">
+          ${items.map(item => buildCard(item, currency)).join('')}
+        </ul>`;
     }
   }
 
-  // ---- Build single card ----
-  function buildCard(item, currency, t) {
-    const name = currentLang === 'ar' ? item.name_ar : item.name_en;
-    const desc = currentLang === 'ar' ? item.description_ar : item.description_en;
+  /* ── BUILD CARD ──────────────────────────────────────────── */
+  function buildCard(item, currency) {
+    const name = lang === 'ar' ? item.name_ar : item.name_en;
+    const desc = lang === 'ar' ? (item.description_ar || '') : (item.description_en || '');
+    const avail = item.available !== false;
+
     const imgHtml = item.image
-      ? `<img class="card-img" src="${item.image}" alt="${name}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'card-img-placeholder\\'>🍽️</div>'">`
-      : `<div class="card-img-placeholder">🍽️</div>`;
+      ? `<img class="item-img" src="${item.image}" alt="${name}" loading="lazy"
+             onerror="this.parentElement.innerHTML='<div class=\\'item-img-placeholder\\'>🍽️</div>'">`
+      : `<div class="item-img-placeholder">🍽️</div>`;
+
+    const badge = item.featured && avail
+      ? `<span class="item-badge badge-featured">${t[lang].featured}</span>`
+      : !avail
+      ? `<span class="item-badge badge-soldout">${t[lang].soldout}</span>`
+      : '';
 
     return `
-      <div class="menu-card ${item.available ? '' : 'unavailable'}" role="article">
-        <div class="card-img-wrap">
-          ${imgHtml}
-          ${item.featured ? `<span class="featured-badge">${t.featured}</span>` : ''}
-          ${!item.available ? `<div class="unavailable-overlay"><span class="unavailable-label">${t.unavailable}</span></div>` : ''}
-        </div>
-        <div class="card-body">
-          <h3 class="card-name">${name}</h3>
-          <p class="card-desc">${desc}</p>
-          <div class="card-footer">
-            <span class="card-price">${item.price}<span>${currency}</span></span>
+      <li class="item-card ${!avail ? 'sold-out' : ''}" role="article">
+        <div class="item-img-wrap">${imgHtml}</div>
+        <div class="item-body">
+          <div>
+            <p class="item-name">${name}</p>
+            ${desc ? `<p class="item-desc">${desc}</p>` : ''}
+          </div>
+          <div class="item-footer">
+            <span class="item-price">${item.price}<span class="item-price-currency"> ${currency}</span></span>
+            ${badge}
           </div>
         </div>
-      </div>`;
+      </li>`;
   }
 
-  // ---- Hero & Branding ----
+  /* ── BRANDING ────────────────────────────────────────────── */
   function renderBranding() {
-    if (!menuData) return;
-    const r = menuData.restaurant;
-    const name = currentLang === 'ar' ? r.name_ar : r.name_en;
-    const tagline = currentLang === 'ar' ? r.tagline_ar : r.tagline_en;
+    if (!menu) return;
+    const r = menu.restaurant;
+    const name    = lang === 'ar' ? r.name_ar    : r.name_en;
+    const tagline = lang === 'ar' ? r.tagline_ar : r.tagline_en;
 
-    const heroTitle = $('hero-title');
-    const heroSub = $('hero-subtitle');
-    const navName = $('nav-name');
-    const navTag = $('nav-tagline');
-
-    if (heroTitle) heroTitle.textContent = name;
-    if (heroSub) heroSub.textContent = tagline;
-    if (navName) navName.textContent = name;
-    if (navTag) navTag.textContent = tagline;
-
-    // Search placeholder
-    const searchEl = $('search-input');
-    if (searchEl) searchEl.placeholder = i18n[currentLang].search;
-
-    // Page title
+    [['brand-name', name], ['hero-title', name], ['footer-name', name]].forEach(([id, val]) => {
+      const el = $(id); if (el) el.textContent = val;
+    });
+    const bt = $('brand-tag'), hs = $('hero-sub');
+    if (bt) bt.textContent = tagline;
+    if (hs) hs.textContent = tagline;
     document.title = `${name} — Menu`;
+    const si = $('search-input'); if (si) si.placeholder = t[lang].search;
   }
 
-  // ---- Full render ----
+  /* ── FULL RENDER ─────────────────────────────────────────── */
   function render() {
     renderBranding();
-    renderCategories();
-    renderMenuItems();
+    renderTabs();
+    renderItems();
   }
 
-  // ---- Init ----
+  /* ── INIT ────────────────────────────────────────────────── */
   function init() {
-    // Language buttons
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
-    });
+    // Apply saved language immediately
+    document.documentElement.lang = lang;
+    document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.querySelectorAll('.lang-btn').forEach(b =>
+      b.classList.toggle('active', b.dataset.lang === lang));
 
-    // Apply saved lang
-    document.documentElement.lang = currentLang;
-    document.body.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-    document.querySelectorAll('.lang-btn').forEach(b => {
-      b.classList.toggle('active', b.dataset.lang === currentLang);
-    });
+    // Wire language buttons
+    document.querySelectorAll('.lang-btn').forEach(b =>
+      b.addEventListener('click', () => setLang(b.dataset.lang)));
 
-    // Search
-    const searchEl = $('search-input');
-    if (searchEl) {
-      searchEl.addEventListener('input', handleSearch);
-    }
+    // Wire search
+    const si = $('search-input');
+    if (si) si.addEventListener('input', onSearch);
 
+    // Load data
     loadMenu();
   }
 
-  return { init };
+  document.addEventListener('DOMContentLoaded', init);
 })();
-
-document.addEventListener('DOMContentLoaded', App.init);

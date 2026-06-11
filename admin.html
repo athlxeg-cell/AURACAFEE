@@ -3,822 +3,642 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AURA Admin — Menu Manager</title>
+  <meta name="robots" content="noindex, nofollow">
+  <title>AURA Admin</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Cloudinary Upload Widget (free, unsigned) -->
+  <script src="https://upload-widget.cloudinary.com/global/all.js" defer></script>
+
   <style>
+    /* ============================================================
+       AURA Admin — Styles
+       ============================================================ */
     :root {
-      --navy-deep: #0D1B2A;
-      --navy: #162032;
-      --navy-light: #1E2D42;
-      --navy-card: #1A2A3E;
-      --gold: #C9A96E;
-      --gold-dark: #A8843A;
-      --gold-light: #E8D5A3;
-      --white: #FFFFFF;
-      --off-white: #F5F0E8;
-      --text-muted: #8899AA;
-      --border: rgba(201,169,110,0.2);
-      --red: #E05252;
-      --green: #52C07E;
-      --radius: 14px;
-      --radius-sm: 8px;
-      --transition: 0.25s ease;
+      --n9: #07111A; --n8: #0D1B2A; --n7: #132336; --n6: #1A2D45; --n5: #213654;
+      --gold: #C9A96E; --gold-lt: #E2CEAD; --gold-dk: #9A7735;
+      --cream: #F5F0E8; --muted: #7A8FA6;
+      --border: rgba(201,169,110,.2);
+      --green: #4CAF82; --red: #E05555; --blue: #4A9FD8;
+      --r: 12px; --r-sm: 8px; --r-pill: 100px;
+      --ease: cubic-bezier(.4,0,.2,1);
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: var(--navy-deep);
-      color: var(--off-white);
-      font-family: 'Inter', sans-serif;
-      min-height: 100vh;
+    body { background: var(--n8); color: var(--cream); font-family: 'Inter', sans-serif; min-height: 100vh; }
+    button { cursor: pointer; font-family: inherit; border: none; background: none; }
+    input, select, textarea { font-family: inherit; }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      background: var(--n7); border: 1px solid var(--border); border-radius: 4px;
+      padding: 1px 6px; font-size: .78rem; color: var(--gold-lt); font-family: monospace;
     }
-    a { color: var(--gold); }
-    input, select, textarea, button { font-family: inherit; }
 
-    /* ---- Login Screen ---- */
+    /* ────────────────────────────────────────────────────────
+       LOGIN SCREEN
+    ──────────────────────────────────────────────────────── */
     #login-screen {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,169,110,0.1), transparent 70%), var(--navy-deep);
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      background: radial-gradient(ellipse 80% 60% at 50% 10%, rgba(201,169,110,.08), transparent 65%), var(--n9);
     }
-
-    .login-card {
-      background: var(--navy-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 48px 40px;
-      width: 100%;
-      max-width: 380px;
-      text-align: center;
+    .login-box {
+      background: var(--n7); border: 1px solid var(--border); border-radius: var(--r);
+      padding: 44px 36px; width: 100%; max-width: 360px; text-align: center;
     }
-
-    .login-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      color: var(--gold);
-      letter-spacing: 6px;
-      margin-bottom: 4px;
-    }
-
-    .login-sub {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 32px;
-    }
-
-    .login-label {
-      display: block;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      text-align: left;
-      margin-bottom: 6px;
-      letter-spacing: 0.5px;
-    }
-
+    .login-logo { font-family: 'Playfair Display', serif; font-size: 1.9rem; color: var(--gold); letter-spacing: 5px; }
+    .login-sub  { font-size: .7rem; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 32px; margin-top: 2px; }
+    .login-label { display: block; font-size: .75rem; font-weight: 700; color: var(--muted); text-align: left; margin-bottom: 6px; }
     .login-input {
-      width: 100%;
-      background: var(--navy);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 12px 16px;
-      color: var(--off-white);
-      font-size: 0.95rem;
-      outline: none;
-      transition: var(--transition);
-      margin-bottom: 16px;
+      width: 100%; background: var(--n8); border: 1px solid var(--border); border-radius: var(--r-sm);
+      padding: 11px 14px; color: var(--cream); font-size: .9rem; outline: none;
+      transition: .2s var(--ease); margin-bottom: 14px;
     }
+    .login-input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,169,110,.1); }
+    .login-err { color: var(--red); font-size: .78rem; margin-bottom: 12px; display: none; }
+    .login-loading { color: var(--muted); font-size: .78rem; margin-bottom: 12px; display: none; }
 
-    .login-input:focus {
-      border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(201,169,110,0.1);
+    /* ────────────────────────────────────────────────────────
+       BUTTONS
+    ──────────────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 9px 18px; border-radius: var(--r-sm); font-size: .82rem; font-weight: 600;
+      cursor: pointer; transition: .2s var(--ease); border: 1px solid transparent; white-space: nowrap;
     }
+    .btn-gold    { background: var(--gold); color: var(--n9); }
+    .btn-gold:hover { background: var(--gold-lt); }
+    .btn-outline { background: transparent; border-color: var(--border); color: var(--cream); }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .btn-danger  { background: rgba(224,85,85,.12); border-color: rgba(224,85,85,.3); color: var(--red); }
+    .btn-danger:hover { background: rgba(224,85,85,.2); }
+    .btn-sm { padding: 6px 12px; font-size: .75rem; }
+    .btn-icon { padding: 7px 10px; border: 1px solid var(--border); border-radius: 8px; font-size: .85rem; }
+    .btn-icon:hover { border-color: var(--gold); background: rgba(201,169,110,.08); }
+    .btn[disabled] { opacity: .5; cursor: not-allowed; }
+    .full-w { width: 100%; justify-content: center; }
 
-    .login-error {
-      display: none;
-      color: var(--red);
-      font-size: 0.8rem;
-      margin-bottom: 12px;
-    }
-
-    /* ---- App shell ---- */
+    /* ────────────────────────────────────────────────────────
+       APP SHELL
+    ──────────────────────────────────────────────────────── */
     #admin-app { display: none; }
 
-    .admin-nav {
-      background: var(--navy);
-      border-bottom: 1px solid var(--border);
-      padding: 0 24px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+    .topbar {
+      background: var(--n7); border-bottom: 1px solid var(--border);
+      padding: 0 20px; height: 56px;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .topbar-brand { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.1rem; letter-spacing: 3px; }
+    .topbar-brand small { font-family: 'Inter', sans-serif; font-size: .65rem; color: var(--muted); letter-spacing: 1px; }
+    .topbar-right { display: flex; gap: 8px; align-items: center; }
+
+    #unsaved-badge {
+      display: none; background: rgba(201,169,110,.12); border: 1px solid var(--gold-dk);
+      border-radius: var(--r-pill); padding: 3px 10px; font-size: .7rem; color: var(--gold); font-weight: 700;
     }
 
-    .admin-brand {
-      font-family: 'Playfair Display', serif;
-      color: var(--gold);
-      font-size: 1.2rem;
-      letter-spacing: 3px;
+    /* ── STEP NAV ── */
+    .step-nav {
+      display: flex; overflow-x: auto; border-bottom: 1px solid var(--border);
+      background: var(--n8); padding: 0 16px; scrollbar-width: none;
     }
-
-    .admin-brand small {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.7rem;
-      color: var(--text-muted);
-      letter-spacing: 1px;
-      margin-left: 8px;
+    .step-nav::-webkit-scrollbar { display: none; }
+    .step-btn {
+      flex-shrink: 0; display: flex; align-items: center; gap: 8px;
+      padding: 14px 16px; border-bottom: 2px solid transparent;
+      color: var(--muted); font-size: .8rem; font-weight: 600;
+      cursor: pointer; transition: .2s; white-space: nowrap;
     }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 12px;
+    .step-num {
+      width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid var(--muted);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .65rem; font-weight: 700; flex-shrink: 0;
     }
+    .step-btn.active { color: var(--gold); border-bottom-color: var(--gold); }
+    .step-btn.active .step-num { border-color: var(--gold); background: var(--gold); color: var(--n9); }
+    .step-btn.done .step-num { border-color: var(--green); background: var(--green); color: #fff; }
+    .step-btn.done .step-num::after { content: '✓'; }
+    .step-btn.done .step-num span { display: none; }
 
-    #save-indicator {
-      display: none;
-      align-items: center;
-      gap: 6px;
-      background: rgba(201,169,110,0.15);
-      border: 1px solid var(--gold-dark);
-      border-radius: 20px;
-      padding: 4px 12px;
-      font-size: 0.75rem;
-      color: var(--gold);
-      font-weight: 600;
+    .step-panel { display: none; padding: 24px 20px 80px; max-width: 900px; margin: 0 auto; }
+    .step-panel.active { display: block; }
+
+    /* ── PANEL HEADER ── */
+    .panel-header { margin-bottom: 20px; }
+    .panel-title { font-size: 1.1rem; font-weight: 700; color: var(--gold); margin-bottom: 4px; }
+    .panel-desc  { font-size: .8rem; color: var(--muted); line-height: 1.5; }
+
+    /* ── FORM ── */
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-group { display: flex; flex-direction: column; gap: 5px; }
+    .form-group.full { grid-column: 1/-1; }
+    label { font-size: .73rem; font-weight: 700; color: var(--muted); letter-spacing: .4px; }
+    .fi {
+      background: var(--n7); border: 1px solid var(--border); border-radius: var(--r-sm);
+      padding: 9px 13px; color: var(--cream); font-size: .875rem; outline: none;
+      transition: .2s; width: 100%;
     }
+    .fi:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,169,110,.1); }
+    .fi::placeholder { color: var(--muted); }
+    textarea.fi { resize: vertical; min-height: 66px; }
 
-    /* ---- Tabs ---- */
-    .tab-bar {
-      display: flex;
-      gap: 4px;
-      padding: 16px 24px 0;
-      border-bottom: 1px solid var(--border);
-      overflow-x: auto;
+    /* ── CARD ── */
+    .card {
+      background: var(--n7); border: 1px solid var(--border); border-radius: var(--r);
+      padding: 20px; margin-bottom: 16px;
     }
+    .card-title { font-size: .85rem; font-weight: 700; color: var(--cream); margin-bottom: 12px; }
 
-    .tab-btn {
-      padding: 10px 18px;
-      border-radius: var(--radius-sm) var(--radius-sm) 0 0;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      background: transparent;
-      border: 1px solid transparent;
-      border-bottom: none;
-      cursor: pointer;
-      transition: var(--transition);
-      white-space: nowrap;
-    }
-
-    .tab-btn.active {
-      color: var(--gold);
-      background: var(--navy-card);
-      border-color: var(--border);
-      position: relative;
-    }
-
-    .tab-panel { display: none; padding: 24px; }
-    .tab-panel.active { display: block; }
-
-    /* ---- Stats row ---- */
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-
-    .stat-card {
-      background: var(--navy-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px;
-      text-align: center;
-    }
-
-    .stat-val {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-
-    .stat-label {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      font-weight: 500;
-      letter-spacing: 0.5px;
-    }
-
-    /* ---- Toolbar ---- */
-    .toolbar {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
-
-    .toolbar-input {
-      background: var(--navy-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 9px 14px;
-      color: var(--off-white);
-      font-size: 0.85rem;
-      outline: none;
-      transition: var(--transition);
-    }
-
-    .toolbar-input:focus {
-      border-color: var(--gold);
-    }
-
-    #search-items { min-width: 200px; }
-
-    /* ---- Table ---- */
+    /* ── TABLE ── */
     .tbl-wrap {
-      background: var(--navy-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      overflow-x: auto;
+      background: var(--n7); border: 1px solid var(--border); border-radius: var(--r);
+      overflow: hidden; overflow-x: auto;
     }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    thead tr {
-      background: var(--navy-light);
-      border-bottom: 1px solid var(--border);
-    }
-
+    table { width: 100%; border-collapse: collapse; min-width: 500px; }
+    thead tr { background: var(--n6); border-bottom: 1px solid var(--border); }
     th {
-      padding: 12px 16px;
-      text-align: left;
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--text-muted);
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      white-space: nowrap;
+      padding: 10px 14px; text-align: left; font-size: .68rem;
+      font-weight: 700; color: var(--muted); letter-spacing: .5px; text-transform: uppercase; white-space: nowrap;
     }
-
-    td {
-      padding: 12px 16px;
-      font-size: 0.85rem;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
-      vertical-align: middle;
-    }
-
-    tbody tr:hover { background: rgba(255,255,255,0.02); }
+    td { padding: 10px 14px; font-size: .82rem; border-bottom: 1px solid rgba(255,255,255,.04); vertical-align: middle; }
     tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover { background: rgba(255,255,255,.02); }
 
-    .tbl-thumb {
-      width: 50px;
-      height: 50px;
-      object-fit: cover;
-      border-radius: 8px;
-      display: block;
+    .thumb { width: 48px; height: 48px; object-fit: cover; border-radius: 8px; display: block; background: var(--n6); }
+    .thumb-ph { width: 48px; height: 48px; background: var(--n6); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
+
+    .pill {
+      display: inline-block; padding: 2px 9px; border-radius: var(--r-pill);
+      font-size: .67rem; font-weight: 700; letter-spacing: .4px;
     }
+    .pill-green { background: rgba(76,175,130,.12); border: 1px solid rgba(76,175,130,.3); color: var(--green); }
+    .pill-red   { background: rgba(224,85,85,.1);   border: 1px solid rgba(224,85,85,.25);  color: var(--red); }
+    .pill-gold  { background: rgba(201,169,110,.1); border: 1px solid var(--border); color: var(--gold); }
 
-    .tbl-thumb-placeholder {
-      width: 50px;
-      height: 50px;
-      background: var(--navy-light);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-    }
+    .actions { display: flex; gap: 6px; }
 
-    .cat-pill {
-      background: rgba(201,169,110,0.1);
+    /* ── TOGGLE SWITCH ── */
+    .toggle { position: relative; width: 36px; height: 20px; flex-shrink: 0; }
+    .toggle input { opacity: 0; width: 0; height: 0; }
+    .toggle-track {
+      position: absolute; inset: 0; background: var(--n5);
+      border-radius: var(--r-pill); cursor: pointer; transition: .2s;
       border: 1px solid var(--border);
-      color: var(--gold-light);
-      font-size: 0.7rem;
-      font-weight: 600;
-      padding: 3px 10px;
-      border-radius: 20px;
     }
-
-    .status-pill {
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 20px;
+    .toggle-track::after {
+      content: ''; position: absolute; top: 3px; left: 3px;
+      width: 12px; height: 12px; background: var(--muted);
+      border-radius: 50%; transition: .2s;
     }
+    .toggle input:checked + .toggle-track { background: rgba(76,175,130,.25); border-color: var(--green); }
+    .toggle input:checked + .toggle-track::after { transform: translateX(16px); background: var(--green); }
 
-    .status-pill.avail {
-      background: rgba(82,192,126,0.12);
-      color: var(--green);
+    /* ── TOOLBAR ── */
+    .toolbar { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; align-items: center; }
+
+    /* ── CATEGORY ROW ── */
+    .cat-row {
+      background: var(--n7); border: 1px solid var(--border); border-radius: var(--r);
+      padding: 14px 16px; display: flex; align-items: center; gap: 14px;
+      margin-bottom: 10px;
     }
-
-    .status-pill.unavail {
-      background: rgba(224,82,82,0.1);
-      color: var(--red);
+    .cat-row-img {
+      width: 52px; height: 52px; border-radius: 10px; object-fit: cover;
+      background: var(--n6); border: 1px solid var(--border); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
     }
+    .cat-row-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 9px; }
+    .cat-row-info { flex: 1; min-width: 0; }
+    .cat-row-name { font-weight: 700; font-size: .9rem; }
+    .cat-row-meta { font-size: .73rem; color: var(--muted); margin-top: 2px; }
+    .cat-row-actions { display: flex; gap: 6px; flex-shrink: 0; }
+    .cat-row-order { display: flex; flex-direction: column; gap: 2px; }
+    .order-btn { background: var(--n6); border: 1px solid var(--border); border-radius: 4px; padding: 2px 6px; font-size: .7rem; color: var(--muted); }
+    .order-btn:hover { border-color: var(--gold); color: var(--gold); }
 
-    .featured-pill {
-      font-size: 0.75rem;
-      color: var(--gold);
-      font-weight: 600;
+    /* ── BULK IMPORT ── */
+    .csv-area {
+      background: var(--n9); border: 1px solid var(--border); border-radius: var(--r);
+      padding: 14px; width: 100%; min-height: 140px;
+      color: var(--cream); font-family: monospace; font-size: .8rem;
+      resize: vertical; outline: none; line-height: 1.6;
     }
+    .csv-area:focus { border-color: var(--gold); }
+    .csv-hint { font-size: .72rem; color: var(--muted); margin-top: 6px; line-height: 1.6; }
 
-    .action-btns {
-      display: flex;
-      gap: 6px;
+    .import-preview {
+      background: var(--n9); border: 1px solid var(--border); border-radius: var(--r);
+      max-height: 320px; overflow-y: auto;
     }
-
-    .btn-icon {
-      background: var(--navy-light);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 6px 10px;
-      font-size: 0.85rem;
-      cursor: pointer;
-      transition: var(--transition);
+    .import-row {
+      display: flex; gap: 12px; padding: 10px 14px;
+      border-bottom: 1px solid rgba(255,255,255,.04); align-items: center;
+      font-size: .8rem;
     }
+    .import-row:last-child { border-bottom: none; }
+    .import-row .err { color: var(--red); font-size: .7rem; }
+    .import-row .ok  { color: var(--green); font-size: .7rem; }
 
-    .btn-icon:hover {
-      border-color: var(--gold);
-      background: rgba(201,169,110,0.1);
+    /* ── PHOTO GRID ── */
+    .photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+    .photo-card {
+      background: var(--n7); border: 1px solid var(--border); border-radius: var(--r);
+      overflow: hidden;
     }
-
-    /* ---- Buttons ---- */
-    .btn {
-      padding: 10px 20px;
-      border-radius: var(--radius-sm);
-      font-size: 0.85rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition);
-      border: none;
-      letter-spacing: 0.3px;
+    .photo-thumb {
+      height: 130px; background: var(--n6); position: relative;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.5rem;
     }
+    .photo-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .photo-body { padding: 10px 12px; }
+    .photo-name { font-size: .8rem; font-weight: 600; margin-bottom: 6px; }
+    .photo-cat  { font-size: .67rem; color: var(--muted); margin-bottom: 8px; }
+    .photo-url  { width: 100%; margin-bottom: 6px; }
 
-    .btn-gold {
-      background: var(--gold);
-      color: var(--navy-deep);
+    /* ── MODAL ── */
+    .modal-bg {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,.75); z-index: 300;
+      align-items: center; justify-content: center; padding: 20px;
     }
-
-    .btn-gold:hover {
-      background: var(--gold-light);
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--off-white);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--gold);
-      color: var(--gold);
-    }
-
-    .btn-danger {
-      background: rgba(224,82,82,0.15);
-      border: 1px solid rgba(224,82,82,0.3);
-      color: var(--red);
-    }
-
-    /* ---- Modal ---- */
-    #modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.7);
-      z-index: 200;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-    }
-
+    .modal-bg.open { display: flex; }
     .modal {
-      background: var(--navy-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 32px;
-      width: 100%;
-      max-width: 600px;
-      max-height: 90vh;
-      overflow-y: auto;
+      background: var(--n7); border: 1px solid var(--border); border-radius: var(--r);
+      padding: 28px; width: 100%; max-width: 520px;
+      max-height: 90vh; overflow-y: auto;
     }
-
-    .modal-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 24px;
+    .modal-head {
+      display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;
     }
+    .modal-title { font-size: 1rem; font-weight: 700; color: var(--gold); }
+    .modal-close { color: var(--muted); font-size: 1.3rem; line-height: 1; }
+    .modal-close:hover { color: var(--cream); }
+    .modal-foot { display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); }
 
-    .modal-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--gold);
+    /* ── IMG PREVIEW ── */
+    .img-preview {
+      background: var(--n8); border: 1px dashed var(--border); border-radius: var(--r-sm);
+      min-height: 90px; display: flex; align-items: center; justify-content: center;
+      margin-top: 8px; overflow: hidden;
     }
+    .img-preview img { max-width: 100%; max-height: 160px; border-radius: 6px; object-fit: contain; }
+    .img-preview span { color: var(--muted); font-size: .8rem; }
 
-    .modal-close {
-      background: none;
-      border: none;
-      color: var(--text-muted);
-      font-size: 1.4rem;
-      cursor: pointer;
-      line-height: 1;
-      padding: 4px;
+    /* ── STATS ── */
+    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
+    .stat { background: var(--n7); border: 1px solid var(--border); border-radius: var(--r); padding: 16px; text-align: center; }
+    .stat-n { font-size: 1.8rem; font-weight: 700; color: var(--gold); line-height: 1; }
+    .stat-l { font-size: .67rem; color: var(--muted); margin-top: 3px; font-weight: 600; letter-spacing: .4px; }
+
+    /* ── TOAST ── */
+    #toast {
+      position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(80px);
+      background: var(--n6); border: 1px solid var(--border); border-radius: var(--r-pill);
+      padding: 10px 22px; font-size: .82rem; font-weight: 600; z-index: 999;
+      transition: transform .3s var(--ease); white-space: nowrap; box-shadow: 0 8px 24px rgba(0,0,0,.5);
     }
+    #toast.show { transform: translateX(-50%) translateY(0); }
+    #toast.ok  { border-color: rgba(76,175,130,.5); color: var(--green); }
+    #toast.err { border-color: rgba(224,85,85,.5);  color: var(--red); }
 
-    .modal-close:hover { color: var(--off-white); }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .form-group.full { grid-column: 1 / -1; }
-
-    label {
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      letter-spacing: 0.5px;
-    }
-
-    .form-input {
-      background: var(--navy);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 10px 14px;
-      color: var(--off-white);
-      font-size: 0.9rem;
-      outline: none;
-      transition: var(--transition);
-      width: 100%;
-    }
-
-    .form-input:focus {
-      border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(201,169,110,0.1);
-    }
-
-    textarea.form-input {
-      resize: vertical;
-      min-height: 72px;
-    }
-
-    .checkbox-row {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .checkbox-label {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.85rem;
-      color: var(--off-white);
-      cursor: pointer;
-      font-weight: normal;
-    }
-
-    .checkbox-label input[type="checkbox"] {
-      width: 16px;
-      height: 16px;
-      accent-color: var(--gold);
-      cursor: pointer;
-    }
-
-    #img-preview {
-      background: var(--navy);
-      border: 1px dashed var(--border);
-      border-radius: var(--radius-sm);
-      padding: 16px;
-      min-height: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 8px;
-    }
-
-    .modal-footer {
-      display: flex;
-      gap: 12px;
-      justify-content: flex-end;
-      margin-top: 24px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
-    }
-
-    /* ---- Save panel ---- */
-    .save-panel {
-      background: var(--navy-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      margin-bottom: 24px;
-    }
-
-    .save-panel h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--gold);
-      margin-bottom: 8px;
-    }
-
-    .save-panel p {
-      font-size: 0.83rem;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-      line-height: 1.6;
-    }
-
-    .save-panel .form-grid {
-      margin-bottom: 16px;
-    }
-
-    code {
-      background: var(--navy);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 2px 6px;
-      font-size: 0.8rem;
-      color: var(--gold-light);
-      font-family: monospace;
-    }
-
-    /* ---- Toast ---- */
-    .toast {
-      position: fixed;
-      bottom: 24px;
-      left: 50%;
-      transform: translateX(-50%) translateY(80px);
-      background: var(--navy-card);
-      border: 1px solid var(--border);
-      border-radius: 30px;
-      padding: 12px 24px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      z-index: 999;
-      transition: transform 0.3s ease;
-      min-width: 260px;
-      text-align: center;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-    }
-
-    .toast.show {
-      transform: translateX(-50%) translateY(0);
-    }
-
-    .toast.success {
-      border-color: rgba(82,192,126,0.4);
-      color: var(--green);
-    }
-
-    .toast.error {
-      border-color: rgba(224,82,82,0.4);
-      color: var(--red);
-    }
-
-    /* ---- Responsive ---- */
-    @media (max-width: 600px) {
+    /* ── RESPONSIVE ── */
+    @media (max-width: 560px) {
       .stats-row { grid-template-columns: repeat(2, 1fr); }
       .form-grid { grid-template-columns: 1fr; }
-      .tab-panel { padding: 16px; }
-      .admin-nav { padding: 0 16px; }
+      .topbar-right .btn span { display: none; }
+      .step-panel { padding: 16px 14px 80px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ================= LOGIN ================= -->
-  <div id="login-screen">
-    <div class="login-card">
-      <div class="login-logo">AURA</div>
-      <div class="login-sub">Admin Panel</div>
-      <label class="login-label" for="admin-password">Password</label>
-      <input class="login-input" id="admin-password" type="password" placeholder="Enter admin password" autofocus>
-      <p class="login-error" id="login-error">❌ Incorrect password. Please try again.</p>
-      <button class="btn btn-gold" id="login-btn" style="width:100%">Sign In</button>
-      <p style="margin-top:16px;font-size:0.75rem;color:var(--text-muted)">
-        Default password: <code>aura2024</code><br>
-        Change it in <code>js/admin.js</code> → <code>PASSWORD_HASH</code>
-      </p>
+<!-- ╔══════════════════════════════════════════════════════════╗
+     ║  LOGIN SCREEN                                           ║
+     ╚══════════════════════════════════════════════════════════╝ -->
+<div id="login-screen">
+  <div class="login-box">
+    <div class="login-logo">AURA</div>
+    <div class="login-sub">Admin Panel</div>
+    <label class="login-label" for="pw-input">Password</label>
+    <input class="login-input" id="pw-input" type="password" placeholder="Enter admin password" autofocus>
+    <p class="login-err"     id="login-err">❌ Incorrect password</p>
+    <p class="login-loading" id="login-loading">Verifying…</p>
+    <button class="btn btn-gold full-w" id="login-btn">Sign In →</button>
+    <p style="margin-top:16px;font-size:.72rem;color:var(--muted)">
+      Password is set in your Netlify dashboard → Environment variables<br>
+      Variable name: <code>ADMIN_PASSWORD</code>
+    </p>
+  </div>
+</div>
+
+<!-- ╔══════════════════════════════════════════════════════════╗
+     ║  ADMIN APP                                              ║
+     ╚══════════════════════════════════════════════════════════╝ -->
+<div id="admin-app">
+
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="topbar-brand">AURA <small>ADMIN</small></div>
+    <div class="topbar-right">
+      <span id="unsaved-badge">● Unsaved changes</span>
+      <a href="index.html" target="_blank" class="btn btn-outline btn-sm">
+        <span>👁</span> <span>View Site</span>
+      </a>
     </div>
   </div>
 
-  <!-- ================= ADMIN APP ================= -->
-  <div id="admin-app">
+  <!-- Step Navigation -->
+  <nav class="step-nav" id="step-nav">
+    <button class="step-btn active" data-step="step-categories">
+      <span class="step-num"><span>1</span></span> Categories
+    </button>
+    <button class="step-btn" data-step="step-import">
+      <span class="step-num"><span>2</span></span> Bulk Import
+    </button>
+    <button class="step-btn" data-step="step-photos">
+      <span class="step-num"><span>3</span></span> Assign Photos
+    </button>
+    <button class="step-btn" data-step="step-visibility">
+      <span class="step-num"><span>4</span></span> Visibility
+    </button>
+    <button class="step-btn" data-step="step-save">
+      <span class="step-num"><span>5</span></span> Save &amp; Publish
+    </button>
+  </nav>
 
-    <!-- Navbar -->
-    <nav class="admin-nav">
-      <div class="admin-brand">
-        AURA <small>ADMIN</small>
-      </div>
-      <div class="nav-right">
-        <span id="save-indicator">⚠ Unsaved changes</span>
-        <button class="btn btn-gold" id="export-btn">⬇ Download menu.json</button>
-        <a href="index.html" target="_blank" class="btn btn-outline">👁 View Menu</a>
-      </div>
-    </nav>
-
-    <!-- Tabs -->
-    <div class="tab-bar">
-      <button class="tab-btn active" data-tab="tab-items">📋 Menu Items</button>
-      <button class="tab-btn" data-tab="tab-save">💾 Save to GitHub</button>
+  <!-- ═══════════════════════════════════════════════════════
+       STEP 1 — CATEGORIES
+  ═══════════════════════════════════════════════════════ -->
+  <div class="step-panel active" id="step-categories">
+    <div class="panel-header">
+      <h2 class="panel-title">Step 1 — Manage Categories</h2>
+      <p class="panel-desc">Create categories and assign an image to each. The image shows in the tab bar on the menu site.</p>
     </div>
 
-    <!-- ---- Tab: Items ---- -->
-    <div class="tab-panel active" id="tab-items">
-
-      <!-- Stats -->
-      <div class="stats-row">
-        <div class="stat-card">
-          <div class="stat-val" id="stat-total">—</div>
-          <div class="stat-label">Total Items</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-val" id="stat-available">—</div>
-          <div class="stat-label">Available</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-val" id="stat-featured">—</div>
-          <div class="stat-label">Featured</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-val" id="stat-cats">—</div>
-          <div class="stat-label">Categories</div>
-        </div>
-      </div>
-
-      <!-- Toolbar -->
-      <div class="toolbar">
-        <button class="btn btn-gold" id="add-item-btn">+ Add Item</button>
-        <input class="toolbar-input" id="search-items" type="search" placeholder="🔍 Search items...">
-        <select class="toolbar-input" id="filter-category">
-          <option value="all">All Categories</option>
-        </select>
-      </div>
-
-      <!-- Table -->
-      <div class="tbl-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Photo</th>
-              <th>Name</th>
-              <th>Category</th>
-              <th>Price</th>
-              <th>Status</th>
-              <th>Featured</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody id="items-tbody">
-            <tr><td colspan="7" style="text-align:center;padding:32px;color:var(--text-muted)">Loading...</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- ---- Tab: Save ---- -->
-    <div class="tab-panel" id="tab-save">
-
-      <div class="save-panel">
-        <h3>⬇ Option 1: Download &amp; Upload Manually</h3>
-        <p>
-          Click <strong>Download menu.json</strong> in the top bar, then replace the <code>menu.json</code>
-          file in your GitHub repo or hosting folder. The website updates automatically.
-        </p>
-        <button class="btn btn-gold" onclick="document.getElementById('export-btn').click()">⬇ Download menu.json</button>
-      </div>
-
-      <div class="save-panel">
-        <h3>🔗 Option 2: Save Directly to GitHub</h3>
-        <p>
-          Enter your GitHub details to push the menu directly from this page. Your Personal Access Token (PAT)
-          needs <strong>Contents: Read &amp; Write</strong> permission.<br>
-          Create one at: <a href="https://github.com/settings/tokens/new" target="_blank">github.com/settings/tokens/new</a>
-        </p>
-        <div class="form-grid">
-          <div class="form-group">
-            <label>GitHub Username / Org</label>
-            <input class="form-input" id="gh-owner" type="text" placeholder="e.g. hakamsaffour">
-          </div>
-          <div class="form-group">
-            <label>Repository Name</label>
-            <input class="form-input" id="gh-repo" type="text" placeholder="e.g. aura-menu">
-          </div>
-          <div class="form-group full">
-            <label>Personal Access Token (not saved, session only)</label>
-            <input class="form-input" id="gh-token" type="password" placeholder="ghp_xxxxxxxxxxxxxxxx">
-          </div>
-        </div>
-        <button class="btn btn-gold" id="gh-save-btn">🚀 Push to GitHub</button>
-      </div>
-
-      <div class="save-panel">
-        <h3>🌐 Free Hosting Options</h3>
-        <p>
-          <strong>GitHub Pages</strong> — Free, fast CDN, perfect for static sites.<br>
-          Enable in your repo: Settings → Pages → Deploy from branch <code>main</code>.<br><br>
-          <strong>Netlify</strong> — Free tier, auto-deploy on git push, custom domain support.<br>
-          Connect your GitHub repo at <a href="https://netlify.com" target="_blank">netlify.com</a>.<br><br>
-          <strong>Images</strong> — Use <a href="https://cloudinary.com" target="_blank">Cloudinary</a> free tier
-          (25 GB/month). Paste the image URLs into item cards above.
-        </p>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- ================= ITEM MODAL ================= -->
-  <div id="modal-overlay">
-    <div class="modal" role="dialog" aria-modal="true">
-      <div class="modal-header">
-        <h2 class="modal-title" id="modal-title">Add New Item</h2>
-        <button class="modal-close" id="cancel-modal-btn" aria-label="Close">×</button>
-      </div>
-
-      <input type="hidden" id="item-id">
-
+    <!-- Add category form -->
+    <div class="card">
+      <div class="card-title" id="cat-form-title">Add New Category</div>
+      <input type="hidden" id="edit-cat-id">
       <div class="form-grid">
         <div class="form-group">
-          <label for="item-name-en">Name (English) *</label>
-          <input class="form-input" id="item-name-en" type="text" placeholder="e.g. Cappuccino">
+          <label>Name (English) *</label>
+          <input class="fi" id="cat-name-en" type="text" placeholder="e.g. Hot Drinks">
         </div>
         <div class="form-group">
-          <label for="item-name-ar">Name (Arabic) *</label>
-          <input class="form-input" id="item-name-ar" type="text" placeholder="e.g. كابوتشينو" dir="rtl">
-        </div>
-        <div class="form-group">
-          <label for="item-desc-en">Description (English)</label>
-          <textarea class="form-input" id="item-desc-en" placeholder="Short description..."></textarea>
-        </div>
-        <div class="form-group">
-          <label for="item-desc-ar">Description (Arabic)</label>
-          <textarea class="form-input" id="item-desc-ar" placeholder="وصف قصير..." dir="rtl"></textarea>
-        </div>
-        <div class="form-group">
-          <label for="item-price">Price (EGP) *</label>
-          <input class="form-input" id="item-price" type="number" min="0" step="0.5" placeholder="85">
-        </div>
-        <div class="form-group">
-          <label for="item-category">Category</label>
-          <select class="form-input" id="item-category"></select>
+          <label>Name (Arabic) *</label>
+          <input class="fi" id="cat-name-ar" type="text" placeholder="مشروبات ساخنة" dir="rtl">
         </div>
         <div class="form-group full">
-          <label for="item-image">Image URL (Cloudinary or any public URL)</label>
-          <input class="form-input" id="item-image" type="url" placeholder="https://res.cloudinary.com/...">
-          <div id="img-preview">
-            <span style="color:var(--text-muted);font-size:0.85rem">Image preview will appear here</span>
-          </div>
-        </div>
-        <div class="form-group full">
-          <div class="checkbox-row">
-            <label class="checkbox-label">
-              <input type="checkbox" id="item-available" checked>
-              Available (not sold out)
-            </label>
-            <label class="checkbox-label">
-              <input type="checkbox" id="item-featured">
-              ★ Featured (Chef's Pick)
-            </label>
-          </div>
+          <label>Category Image URL <span style="color:var(--muted);font-weight:400">(Cloudinary or any public URL)</span></label>
+          <input class="fi" id="cat-image" type="url" placeholder="https://res.cloudinary.com/…">
+          <div class="img-preview" id="cat-img-preview"><span>Image preview</span></div>
         </div>
       </div>
+      <div style="display:flex;gap:8px;margin-top:14px">
+        <button class="btn btn-gold"    id="save-cat-btn">Save Category</button>
+        <button class="btn btn-outline" id="clear-cat-btn">Clear</button>
+      </div>
+    </div>
 
-      <div class="modal-footer">
-        <button class="btn btn-outline" id="cancel-modal-btn-2" onclick="document.getElementById('cancel-modal-btn').click()">Cancel</button>
-        <button class="btn btn-gold" id="save-item-btn">Save Item</button>
+    <!-- Category list -->
+    <div id="cat-list"><!-- populated by JS --></div>
+
+    <button class="btn btn-gold" style="margin-top:16px" onclick="goStep('step-import')">
+      Next: Bulk Import →
+    </button>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       STEP 2 — BULK IMPORT
+  ═══════════════════════════════════════════════════════ -->
+  <div class="step-panel" id="step-import">
+    <div class="panel-header">
+      <h2 class="panel-title">Step 2 — Bulk Import Menu Items</h2>
+      <p class="panel-desc">
+        Paste your menu in CSV format, one item per line.<br>
+        <strong>Format:</strong> <code>Name EN, Name AR, Description EN, Description AR, Price, Category ID</code>
+      </p>
+    </div>
+
+    <div class="card">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+        <div class="card-title" style="margin:0">Paste CSV Data</div>
+        <button class="btn btn-outline btn-sm" id="load-example-btn">Load example</button>
       </div>
+      <textarea class="csv-area" id="csv-input" placeholder="Cappuccino, كابوتشينو, Espresso with steamed milk, إسبريسو مع حليب, 85, hot-drinks
+Latte, لاتيه, Smooth latte, لاتيه ناعم, 90, hot-drinks"></textarea>
+      <div class="csv-hint">
+        Available category IDs: <span id="cat-ids-hint" style="color:var(--gold-lt)">add categories first</span><br>
+        Leave Description blank if not needed. Price is a number (no currency symbol).
+      </div>
+    </div>
+
+    <div style="display:flex;gap:8px;margin-bottom:16px">
+      <button class="btn btn-outline" id="parse-btn">Preview Import</button>
+      <button class="btn btn-gold"    id="confirm-import-btn" disabled>✓ Confirm Import</button>
+    </div>
+
+    <!-- Preview -->
+    <div id="import-preview-wrap" style="display:none">
+      <div class="card-title" style="margin-bottom:10px">Preview (<span id="import-count">0</span> items)</div>
+      <div class="import-preview" id="import-preview"></div>
+    </div>
+
+    <div style="display:flex;gap:8px;margin-top:20px">
+      <button class="btn btn-outline" onclick="goStep('step-categories')">← Back</button>
+      <button class="btn btn-gold"    onclick="goStep('step-photos')">Next: Assign Photos →</button>
     </div>
   </div>
 
-  <!-- ================= TOAST ================= -->
-  <div class="toast" id="toast"></div>
+  <!-- ═══════════════════════════════════════════════════════
+       STEP 3 — ASSIGN PHOTOS
+  ═══════════════════════════════════════════════════════ -->
+  <div class="step-panel" id="step-photos">
+    <div class="panel-header">
+      <h2 class="panel-title">Step 3 — Assign Photos to Items</h2>
+      <p class="panel-desc">
+        Paste a Cloudinary (or any public) image URL for each item.<br>
+        Upload photos free at <a href="https://cloudinary.com" target="_blank">cloudinary.com</a> → copy the image URL.
+      </p>
+    </div>
 
-  <script src="js/admin.js"></script>
+    <div class="toolbar">
+      <input class="fi" id="photo-search" type="search" placeholder="🔍 Filter items…" style="min-width:180px">
+      <select class="fi" id="photo-filter-cat" style="min-width:160px">
+        <option value="all">All categories</option>
+      </select>
+      <label style="display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(--muted);font-weight:normal;cursor:pointer">
+        <input type="checkbox" id="photo-no-image-only" style="accent-color:var(--gold)">
+        Missing photo only
+      </label>
+    </div>
+
+    <div class="photo-grid" id="photo-grid"><!-- populated by JS --></div>
+
+    <div style="display:flex;gap:8px;margin-top:20px">
+      <button class="btn btn-outline" onclick="goStep('step-import')">← Back</button>
+      <button class="btn btn-gold"    onclick="goStep('step-visibility')">Next: Visibility →</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       STEP 4 — VISIBILITY
+  ═══════════════════════════════════════════════════════ -->
+  <div class="step-panel" id="step-visibility">
+    <div class="panel-header">
+      <h2 class="panel-title">Step 4 — Item Visibility</h2>
+      <p class="panel-desc">Toggle which items are shown on the public menu. Useful for temporarily hiding sold-out or seasonal items.</p>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-row">
+      <div class="stat"><div class="stat-n" id="vis-total">0</div><div class="stat-l">TOTAL ITEMS</div></div>
+      <div class="stat"><div class="stat-n" id="vis-visible">0</div><div class="stat-l">VISIBLE</div></div>
+      <div class="stat"><div class="stat-n" id="vis-hidden">0</div><div class="stat-l">HIDDEN</div></div>
+      <div class="stat"><div class="stat-n" id="vis-featured">0</div><div class="stat-l">FEATURED</div></div>
+    </div>
+
+    <div class="toolbar">
+      <input class="fi" id="vis-search" type="search" placeholder="🔍 Search…" style="min-width:160px">
+      <select class="fi" id="vis-filter-cat" style="min-width:160px">
+        <option value="all">All categories</option>
+      </select>
+      <button class="btn btn-outline btn-sm" id="show-all-btn">Show All</button>
+      <button class="btn btn-outline btn-sm" id="hide-all-btn">Hide All</button>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Photo</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Visible</th>
+            <th>Featured</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="vis-tbody">
+          <tr><td colspan="7" style="text-align:center;padding:32px;color:var(--muted)">Loading…</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="display:flex;gap:8px;margin-top:20px">
+      <button class="btn btn-outline" onclick="goStep('step-photos')">← Back</button>
+      <button class="btn btn-gold"    onclick="goStep('step-save')">Next: Save &amp; Publish →</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       STEP 5 — SAVE & PUBLISH
+  ═══════════════════════════════════════════════════════ -->
+  <div class="step-panel" id="step-save">
+    <div class="panel-header">
+      <h2 class="panel-title">Step 5 — Save &amp; Publish</h2>
+      <p class="panel-desc">Choose how to save your menu. Option A is easiest. Option B is automatic once set up.</p>
+    </div>
+
+    <!-- Option A -->
+    <div class="card">
+      <div class="card-title">Option A — Download &amp; Upload (No setup required)</div>
+      <p style="font-size:.8rem;color:var(--muted);line-height:1.6;margin-bottom:14px">
+        1. Click <strong>Download menu.json</strong><br>
+        2. Go to your GitHub repo → click on <code>menu.json</code> → click the ✏️ edit icon → paste the content<br>
+        3. Commit the change → Netlify auto-deploys in ~30 seconds
+      </p>
+      <button class="btn btn-gold" id="download-btn">⬇ Download menu.json</button>
+    </div>
+
+    <!-- Option B -->
+    <div class="card">
+      <div class="card-title">Option B — Push Directly to GitHub (Automatic, recommended)</div>
+      <p style="font-size:.8rem;color:var(--muted);line-height:1.6;margin-bottom:14px">
+        Requires <code>GITHUB_TOKEN</code>, <code>GITHUB_OWNER</code>, <code>GITHUB_REPO</code> set in Netlify environment variables.
+        See the setup guide. Once configured, one click publishes everything.
+      </p>
+
+      <div style="display:flex;gap:8px;margin-bottom:14px">
+        <div class="form-group" style="flex:1">
+          <label>Enter your admin password to confirm</label>
+          <input class="fi" id="save-password" type="password" placeholder="Admin password">
+        </div>
+      </div>
+
+      <div style="display:flex;gap:8px;align-items:center">
+        <button class="btn btn-gold" id="push-btn">🚀 Save &amp; Publish</button>
+        <span id="push-status" style="font-size:.78rem;color:var(--muted)"></span>
+      </div>
+    </div>
+
+    <button class="btn btn-outline" onclick="goStep('step-visibility')">← Back</button>
+  </div>
+
+</div><!-- /#admin-app -->
+
+<!-- ── EDIT ITEM MODAL ── -->
+<div class="modal-bg" id="edit-modal">
+  <div class="modal">
+    <div class="modal-head">
+      <h3 class="modal-title" id="edit-modal-title">Edit Item</h3>
+      <button class="modal-close" id="edit-modal-close">×</button>
+    </div>
+    <input type="hidden" id="edit-item-id">
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Name (English) *</label>
+        <input class="fi" id="edit-name-en" type="text">
+      </div>
+      <div class="form-group">
+        <label>Name (Arabic) *</label>
+        <input class="fi" id="edit-name-ar" type="text" dir="rtl">
+      </div>
+      <div class="form-group">
+        <label>Description (English)</label>
+        <textarea class="fi" id="edit-desc-en"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Description (Arabic)</label>
+        <textarea class="fi" id="edit-desc-ar" dir="rtl"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Price (EGP) *</label>
+        <input class="fi" id="edit-price" type="number" min="0" step=".5">
+      </div>
+      <div class="form-group">
+        <label>Category</label>
+        <select class="fi" id="edit-cat-sel"></select>
+      </div>
+      <div class="form-group full">
+        <label>Image URL</label>
+        <input class="fi" id="edit-image" type="url" placeholder="https://…">
+        <div class="img-preview" id="edit-img-preview"><span>Preview</span></div>
+      </div>
+      <div class="form-group full">
+        <div style="display:flex;gap:20px">
+          <label style="display:flex;align-items:center;gap:7px;font-weight:normal;font-size:.85rem;cursor:pointer">
+            <input type="checkbox" id="edit-visible" style="accent-color:var(--gold)"> Visible on menu
+          </label>
+          <label style="display:flex;align-items:center;gap:7px;font-weight:normal;font-size:.85rem;cursor:pointer">
+            <input type="checkbox" id="edit-featured" style="accent-color:var(--gold)"> ★ Featured
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-outline" id="edit-cancel-btn">Cancel</button>
+      <button class="btn btn-gold"    id="edit-save-btn">Save Item</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<script src="js/admin.js"></script>
 </body>
 </html>
