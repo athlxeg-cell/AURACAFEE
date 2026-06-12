@@ -19,12 +19,11 @@
 <!-- ── NAVBAR ── -->
 <header class="navbar" id="navbar">
   <div class="nav-left">
-    <!-- shown only in items view -->
-    <button class="back-btn" id="back-btn" aria-label="Back to categories">
+    <button class="back-btn" id="back-btn" aria-label="Go back">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
     </button>
     <div class="brand">
-      <img class="brand-logo" src="images/logo.png" alt="AURA" onerror="this.style.display='none'">
+      <img class="brand-logo" src="images/logo-white.png" alt="AURA" onerror="this.style.display='none'">
       <div class="brand-text">
         <span class="brand-name" id="brand-name">AURA</span>
         <span class="brand-tag"  id="brand-tag">Lounge &amp; Café</span>
@@ -41,16 +40,17 @@
 </header>
 
 <!-- ══════════════════════════════════════
-     VIEW 1 — CATEGORIES
+     VIEW 1 — SECTIONS (landing)
 ══════════════════════════════════════ -->
-<div id="view-categories" class="view">
+<div id="view-sections" class="view">
 
   <!-- Hero -->
   <div class="hero">
     <div class="hero-glow"></div>
     <div class="hero-content">
       <div class="hero-logo-wrap">
-        <img src="images/logo.png" alt="AURA" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <img src="images/logo-white.png" alt="AURA"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="hero-logo-svg" style="display:none">
           <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" width="64" height="64">
             <circle cx="32" cy="32" r="30" fill="none" stroke="#C9A96E" stroke-width="1" opacity=".5"/>
@@ -64,10 +64,35 @@
     </div>
   </div>
 
+  <!-- Sections grid -->
+  <main class="sec-grid-wrap" aria-label="Menu sections">
+    <div class="sec-grid" id="sec-grid">
+      <!-- shimmer placeholders -->
+      <div class="cat-card-shimmer" style="height:160px;border-radius:14px;"></div>
+      <div class="cat-card-shimmer" style="height:160px;border-radius:14px;"></div>
+      <div class="cat-card-shimmer" style="height:160px;border-radius:14px;"></div>
+    </div>
+  </main>
+
+</div>
+
+<!-- ══════════════════════════════════════
+     VIEW 2 — CATEGORIES
+══════════════════════════════════════ -->
+<div id="view-categories" class="view" style="display:none">
+
+  <!-- Section header banner -->
+  <div class="section-header" id="section-header">
+    <div class="section-header-icon" id="section-header-icon"></div>
+    <div>
+      <div class="section-header-name" id="section-header-name"></div>
+      <div class="section-header-desc" id="section-header-desc"></div>
+    </div>
+  </div>
+
   <!-- Category grid -->
   <main class="cat-grid-wrap" aria-label="Menu categories">
     <div class="cat-grid" id="cat-grid">
-      <!-- shimmer -->
       <div class="cat-card-shimmer"></div>
       <div class="cat-card-shimmer"></div>
       <div class="cat-card-shimmer"></div>
@@ -78,7 +103,7 @@
 </div>
 
 <!-- ══════════════════════════════════════
-     VIEW 2 — ITEMS
+     VIEW 3 — ITEMS
 ══════════════════════════════════════ -->
 <div id="view-items" class="view" style="display:none">
 
@@ -117,14 +142,13 @@
       <div class="detail-price-row">
         <span class="detail-price" id="detail-price"></span>
       </div>
-      <!-- Optional video -->
       <div id="detail-video" class="detail-video" style="display:none"></div>
     </div>
   </div>
 </div>
 
 <!-- ══════════════════════════════════════
-     SHARED FOOTER (contact info)
+     FOOTER
 ══════════════════════════════════════ -->
 <footer class="site-footer" id="site-footer">
   <div class="footer-brand" id="footer-brand">AURA</div>

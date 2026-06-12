@@ -253,21 +253,89 @@
 
   <!-- Step tabs -->
   <nav class="step-nav">
-    <button class="step-btn active" data-step="step-cats">1 · Categories</button>
-    <button class="step-btn" data-step="step-add">2 · Add Item</button>
-    <button class="step-btn" data-step="step-import">3 · Bulk Import</button>
-    <button class="step-btn" data-step="step-photos">4 · Photos</button>
-    <button class="step-btn" data-step="step-visibility">5 · Visibility</button>
-    <button class="step-btn" data-step="step-info">6 · Info &amp; Contact</button>
-    <button class="step-btn" data-step="step-save">7 · Save &amp; Publish</button>
+    <button class="step-btn active" data-step="step-sections">1 · Sections</button>
+    <button class="step-btn" data-step="step-cats">2 · Categories</button>
+    <button class="step-btn" data-step="step-add">3 · Add Item</button>
+    <button class="step-btn" data-step="step-import">4 · Bulk Import</button>
+    <button class="step-btn" data-step="step-photos">5 · Photos</button>
+    <button class="step-btn" data-step="step-visibility">6 · Visibility</button>
+    <button class="step-btn" data-step="step-info">7 · Info &amp; Contact</button>
+    <button class="step-btn" data-step="step-save">8 · Save &amp; Publish</button>
   </nav>
 
   <main class="admin-main">
 
     <!-- ─────────────────────────────
-         STEP 1: CATEGORIES
+         STEP 1: SECTIONS
     ───────────────────────────────── -->
-    <div class="step-panel active" id="step-cats">
+    <div class="step-panel active" id="step-sections">
+
+      <!-- Add / Edit Section form -->
+      <div class="card">
+        <div class="card-title">🗂️ <span id="sec-form-title">Add New Section</span></div>
+        <input type="hidden" id="edit-sec-id">
+        <p class="section-hint">Sections are the top-level menus customers see first — e.g. Main Menu, Delivery, Breakfast. Each section contains categories.</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="label">Name (English) *</label>
+            <input id="sec-name-en" class="fi" type="text" placeholder="e.g. Main Menu">
+          </div>
+          <div class="form-group">
+            <label class="label">Name (Arabic) *</label>
+            <input id="sec-name-ar" class="fi" type="text" placeholder="القائمة الرئيسية" dir="rtl">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="label">Description (English)</label>
+            <input id="sec-desc-en" class="fi" type="text" placeholder="Full dine-in experience…">
+          </div>
+          <div class="form-group">
+            <label class="label">Description (Arabic)</label>
+            <input id="sec-desc-ar" class="fi" type="text" placeholder="تجربة الجلوس الكاملة…" dir="rtl">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="label">Section Image</label>
+          <label class="btn btn-outline btn-sm" style="cursor:pointer;margin-bottom:8px">
+            📁 Upload Image
+            <input id="sec-image-file" type="file" accept="image/*" style="display:none">
+          </label>
+          <span style="color:var(--muted);font-size:.75rem;margin-left:8px">or paste URL below</span>
+          <input id="sec-image-url" class="fi" type="url" placeholder="https://… (auto-filled after upload)" style="margin-top:8px">
+          <div id="sec-img-prev" class="img-prev-box"><span>Preview</span></div>
+        </div>
+
+        <div class="form-group">
+          <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:.84rem;color:var(--text)">
+            <label class="toggle" style="flex-shrink:0">
+              <input id="sec-visible" type="checkbox" checked>
+              <span class="toggle-track"></span>
+            </label>
+            Visible to customers
+          </label>
+        </div>
+
+        <div class="btn-row">
+          <button id="save-sec-btn"  class="btn btn-gold">Save Section</button>
+          <button id="clear-sec-btn" class="btn btn-muted">Clear</button>
+        </div>
+      </div>
+
+      <!-- Section list -->
+      <div class="card">
+        <div class="card-title">📋 Your Sections</div>
+        <div id="sec-list"></div>
+      </div>
+    </div>
+
+    <!-- ─────────────────────────────
+         STEP 2: CATEGORIES
+    ───────────────────────────────── -->
+    <div class="step-panel" id="step-cats">
 
       <!-- Add / Edit form -->
       <div class="card">
@@ -283,6 +351,14 @@
             <label class="label">Name (Arabic)</label>
             <input id="cat-name-ar" class="fi" type="text" placeholder="مشروبات ساخنة" dir="rtl">
           </div>
+        </div>
+
+        <div class="form-group">
+          <label class="label">Section *</label>
+          <select id="cat-section" class="fi">
+            <option value="">— Select a section —</option>
+          </select>
+          <p class="input-hint">Which top-level section does this category belong to?</p>
         </div>
 
         <div class="form-group">

@@ -22,10 +22,14 @@ function toast(msg, type = 'ok') {
 
 /* ── Step nav ───────────────────────────────────────────────── */
 function goStep(id) {
-  $$('.step-panel').forEach(p => p.classList.remove('active'));
+  $$('.step-panel').forEach(p => {
+    p.classList.remove('active');
+    p.style.display = '';   // let CSS handle it
+  });
   $$('.step-btn').forEach(b => b.classList.toggle('active', b.dataset.step === id));
   $(id).classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (id === 'step-sections')   renderSecList();
   if (id === 'step-photos')     renderPhotoGrid();
   if (id === 'step-visibility') { renderVisTable(); updateStats(); }
 }
@@ -58,7 +62,6 @@ async function login() {
       $('login-err').style.display = 'block';
       $('pw-input').value = ''; $('pw-input').focus();
     } else {
-      // Local / env not set — allow with warning
       adminPw = pw;
       $('login-screen').style.display = 'none';
       $('admin-app').style.display    = 'block';
@@ -83,13 +86,18 @@ async function loadMenu() {
   try {
     const res = await fetch('../menu.json?_=' + Date.now());
     menu = await res.json();
+    if (!menu.sections)    menu.sections    = [];
+    if (!menu.categories)  menu.categories  = [];
+    if (!menu.items)       menu.items       = [];
     menu.items.forEach(i => { if (i.visible === undefined) i.visible = true; });
     refreshAll();
   } catch { toast('Could not load menu.json', 'err'); }
 }
 
 function refreshAll() {
+  syncSecDropdowns();
   syncCatDropdowns();
+  renderSecList();
   renderCatList();
   renderPhotoGrid();
   renderVisTable();
@@ -101,7 +109,138 @@ function refreshAll() {
 function markUnsaved() { $('unsaved-badge').style.display = 'inline-block'; }
 
 /* ══════════════════════════════════════════════════════════════
-   STEP 1 — CATEGORIES
+   STEP 1 — SECTIONS
+══════════════════════════════════════════════════════════════ */
+function renderSecList() {
+  const el = $('sec-list');
+  if (!el || !menu) return;
+  if (!menu.sections.length) {
+    el.innerHTML = '<p style="color:var(--muted);text-align:center;padding:24px;font-size:.83rem">No sections yet. Add one above.</p>';
+    return;
+  }
+
+  const emojis = { 'main-menu': '🍽️', 'delivery': '🛵', 'breakfast': '🌅' };
+
+  el.innerHTML = menu.sections.map((sec, idx) => {
+    const catCount = menu.categories.filter(c => c.section === sec.id).length;
+    const imgEl = sec.image
+      ? `<div class="cat-row-img"><img src="${sec.image}" onerror="this.style.display='none'" alt=""></div>`
+      : `<div class="cat-row-img">${emojis[sec.id] || '📋'}</div>`;
+    const vis = sec.visible !== false;
+    return `
+      <div class="cat-row">
+        ${imgEl}
+        <div class="cat-row-info">
+          <div class="cat-row-name">${sec.name_en} / <span dir="rtl">${sec.name_ar}</span>
+            ${!vis ? '<span class="pill" style="background:rgba(255,255,255,.06);color:var(--muted);margin-left:6px">Hidden</span>' : ''}
+          </div>
+          <div class="cat-row-meta">ID: <code>${sec.id}</code> &nbsp;•&nbsp; ${catCount} category${catCount !== 1 ? 'ies' : 'y'}</div>
+        </div>
+        <div class="cat-row-order">
+          <button class="order-btn" data-dir="up"   data-idx="${idx}">▲</button>
+          <button class="order-btn" data-dir="down" data-idx="${idx}">▼</button>
+        </div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-icon" data-edit-sec="${sec.id}">✏️</button>
+          <button class="btn btn-icon btn-danger btn-sm" data-del-sec="${sec.id}">🗑</button>
+        </div>
+      </div>`;
+  }).join('');
+
+  el.querySelectorAll('[data-edit-sec]').forEach(b  => b.addEventListener('click', () => editSec(b.dataset.editSec)));
+  el.querySelectorAll('[data-del-sec]').forEach(b   => b.addEventListener('click', () => delSec(b.dataset.delSec)));
+  el.querySelectorAll('.order-btn').forEach(b => b.addEventListener('click', () => moveSec(+b.dataset.idx, b.dataset.dir)));
+}
+
+function saveSecForm() {
+  const existingId = $('edit-sec-id').value;
+  const en  = $('sec-name-en').value.trim();
+  const ar  = $('sec-name-ar').value.trim();
+  const img = $('sec-image-url').value.trim();
+  const vis = $('sec-visible').checked;
+  if (!en || !ar) { toast('Name EN and AR are required', 'err'); return; }
+
+  const id = existingId || toId(en);
+
+  const ex = menu.sections.find(s => s.id === id);
+  if (ex) {
+    ex.name_en       = en;
+    ex.name_ar       = ar;
+    ex.description_en = $('sec-desc-en').value.trim();
+    ex.description_ar = $('sec-desc-ar').value.trim();
+    if (img) ex.image = img;
+    ex.visible = vis;
+  } else {
+    menu.sections.push({
+      id,
+      name_en:       en,
+      name_ar:       ar,
+      description_en: $('sec-desc-en').value.trim(),
+      description_ar: $('sec-desc-ar').value.trim(),
+      image:  img,
+      visible: vis,
+    });
+  }
+
+  clearSecForm();
+  renderSecList();
+  syncSecDropdowns();
+  syncCatDropdowns();
+  markUnsaved();
+  toast('Section saved');
+}
+
+function editSec(id) {
+  const sec = menu.sections.find(s => s.id === id);
+  if (!sec) return;
+  $('edit-sec-id').value    = sec.id;
+  $('sec-name-en').value    = sec.name_en;
+  $('sec-name-ar').value    = sec.name_ar;
+  $('sec-desc-en').value    = sec.description_en || '';
+  $('sec-desc-ar').value    = sec.description_ar || '';
+  $('sec-image-url').value  = sec.image || '';
+  $('sec-visible').checked  = sec.visible !== false;
+  previewUrl('sec-image-url', 'sec-img-prev');
+  $('sec-form-title').textContent = 'Edit Section';
+  $('sec-name-en').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function delSec(id) {
+  const catCount = menu.categories.filter(c => c.section === id).length;
+  if (!confirm(`Delete this section? ${catCount} categor${catCount !== 1 ? 'ies' : 'y'} will be unassigned.`)) return;
+  menu.sections = menu.sections.filter(s => s.id !== id);
+  menu.categories.forEach(c => { if (c.section === id) c.section = ''; });
+  renderSecList(); syncSecDropdowns(); syncCatDropdowns(); markUnsaved(); toast('Section deleted');
+}
+
+function moveSec(idx, dir) {
+  const a = menu.sections;
+  if (dir === 'up'   && idx > 0)         [a[idx-1], a[idx]] = [a[idx], a[idx-1]];
+  if (dir === 'down' && idx < a.length-1) [a[idx+1], a[idx]] = [a[idx], a[idx+1]];
+  renderSecList(); markUnsaved();
+}
+
+function clearSecForm() {
+  ['edit-sec-id','sec-name-en','sec-name-ar','sec-desc-en','sec-desc-ar','sec-image-url'].forEach(id => {
+    const el = $(id); if (el) el.value = '';
+  });
+  const p = $('sec-img-prev'); if (p) p.innerHTML = '<span>Preview</span>';
+  const v = $('sec-visible'); if (v) v.checked = true;
+  $('sec-form-title').textContent = 'Add New Section';
+}
+
+async function uploadSecImage() {
+  const file = $('sec-image-file').files[0];
+  if (!file) return;
+  await uploadImageFile(file, url => {
+    $('sec-image-url').value = url;
+    previewUrl('sec-image-url', 'sec-img-prev');
+    toast('Image uploaded: ' + url);
+  });
+}
+
+/* ══════════════════════════════════════════════════════════════
+   STEP 2 — CATEGORIES
 ══════════════════════════════════════════════════════════════ */
 function renderCatList() {
   const el = $('cat-list');
@@ -112,6 +251,7 @@ function renderCatList() {
   }
   el.innerHTML = menu.categories.map((cat, idx) => {
     const count = menu.items.filter(i => i.category === cat.id).length;
+    const sec   = menu.sections.find(s => s.id === cat.section);
     const imgEl = cat.image
       ? `<div class="cat-row-img"><img src="${cat.image}" onerror="this.style.display='none'" alt=""></div>`
       : `<div class="cat-row-img">${cat.icon || '🍽️'}</div>`;
@@ -120,7 +260,7 @@ function renderCatList() {
         ${imgEl}
         <div class="cat-row-info">
           <div class="cat-row-name">${cat.name_en} / <span dir="rtl">${cat.name_ar}</span></div>
-          <div class="cat-row-meta">ID: <code>${cat.id}</code> &nbsp;•&nbsp; ${count} item${count !== 1 ? 's' : ''}</div>
+          <div class="cat-row-meta">ID: <code>${cat.id}</code> &nbsp;•&nbsp; ${count} item${count !== 1 ? 's' : ''} &nbsp;•&nbsp; Section: <code>${sec ? sec.name_en : (cat.section || 'none')}</code></div>
         </div>
         <div class="cat-row-order">
           <button class="order-btn" data-dir="up"   data-idx="${idx}">▲</button>
@@ -143,11 +283,17 @@ function saveCatForm() {
   const en   = $('cat-name-en').value.trim();
   const ar   = $('cat-name-ar').value.trim();
   const img  = $('cat-image-url').value.trim();
+  const sec  = $('cat-section').value;
   if (!en || !ar) { toast('Name EN and AR required', 'err'); return; }
 
   const ex = menu.categories.find(c => c.id === id);
-  if (ex) { ex.name_en = en; ex.name_ar = ar; if (img) ex.image = img; }
-  else menu.categories.push({ id, name_en: en, name_ar: ar, image: img, visible: true });
+  if (ex) {
+    ex.name_en = en; ex.name_ar = ar;
+    if (img) ex.image = img;
+    ex.section = sec;
+  } else {
+    menu.categories.push({ id, name_en: en, name_ar: ar, image: img, section: sec, visible: true });
+  }
 
   clearCatForm();
   renderCatList();
@@ -159,10 +305,12 @@ function saveCatForm() {
 function editCat(id) {
   const cat = menu.categories.find(c => c.id === id);
   if (!cat) return;
-  $('edit-cat-id').value  = cat.id;
-  $('cat-name-en').value  = cat.name_en;
-  $('cat-name-ar').value  = cat.name_ar;
-  $('cat-image-url').value = cat.image || '';
+  $('edit-cat-id').value    = cat.id;
+  $('cat-name-en').value    = cat.name_en;
+  $('cat-name-ar').value    = cat.name_ar;
+  $('cat-image-url').value  = cat.image || '';
+  syncSecDropdowns();   // ensure options are populated
+  $('cat-section').value    = cat.section || '';
   previewUrl('cat-image-url', 'cat-img-prev');
   $('cat-form-title').textContent = 'Edit Category';
   $('cat-name-en').scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -178,7 +326,7 @@ function delCat(id) {
 
 function moveCat(idx, dir) {
   const a = menu.categories;
-  if (dir === 'up'   && idx > 0)       [a[idx-1], a[idx]] = [a[idx], a[idx-1]];
+  if (dir === 'up'   && idx > 0)        [a[idx-1], a[idx]] = [a[idx], a[idx-1]];
   if (dir === 'down' && idx < a.length-1)[a[idx+1], a[idx]] = [a[idx], a[idx+1]];
   renderCatList(); markUnsaved();
 }
@@ -186,10 +334,10 @@ function moveCat(idx, dir) {
 function clearCatForm() {
   ['edit-cat-id','cat-name-en','cat-name-ar','cat-image-url'].forEach(id => { const el=$(id); if(el) el.value=''; });
   const p = $('cat-img-prev'); if(p) p.innerHTML='<span>Preview</span>';
+  const s = $('cat-section'); if(s) s.value='';
   $('cat-form-title').textContent = 'Add New Category';
 }
 
-/* ── Category image upload ── */
 async function uploadCatImage() {
   const file = $('cat-image-file').files[0];
   if (!file) return;
@@ -201,7 +349,7 @@ async function uploadCatImage() {
 }
 
 /* ══════════════════════════════════════════════════════════════
-   STEP 1.5 — ADD SINGLE ITEM (manual)
+   STEP 3 — ADD SINGLE ITEM (manual)
 ══════════════════════════════════════════════════════════════ */
 function saveManualItem() {
   const en = $('m-name-en').value.trim();
@@ -224,7 +372,7 @@ function saveManualItem() {
   syncCatDropdowns();
   updateStats();
   markUnsaved();
-  toast('✓ Item added! Go to Step 4 to set visibility or Step 3 to add a photo.');
+  toast('✓ Item added! Go to Step 5 to set visibility or Step 4 to add a photo.');
 }
 
 function clearManualForm() {
@@ -246,7 +394,7 @@ async function uploadManualImage() {
 }
 
 /* ══════════════════════════════════════════════════════════════
-   STEP 2 — BULK IMPORT
+   STEP 4 — BULK IMPORT
 ══════════════════════════════════════════════════════════════ */
 function parseCSV() {
   const raw = $('csv-input').value.trim();
@@ -301,7 +449,7 @@ function confirmImport() {
 }
 
 /* ══════════════════════════════════════════════════════════════
-   STEP 3 — PHOTOS
+   STEP 5 — PHOTOS
 ══════════════════════════════════════════════════════════════ */
 function renderPhotoGrid() {
   const grid = $('photo-grid');
@@ -334,27 +482,19 @@ function renderPhotoGrid() {
         <div class="photo-body">
           <div class="photo-name">${item.name_en}</div>
           <div class="photo-cat">${cat ? cat.name_en : item.category||'—'}</div>
-
-          <!-- Upload file -->
           <label class="btn btn-outline btn-sm full-w" style="margin-bottom:6px;justify-content:center;cursor:pointer">
             📁 Upload Image
             <input type="file" accept="image/*" style="display:none" data-upload-for="${item.id}">
           </label>
-
-          <!-- OR paste URL -->
           <input class="fi photo-url-input" type="url" placeholder="Or paste image URL…"
                  value="${item.image||''}" data-item-id="${item.id}" style="font-size:.72rem;padding:7px 10px;margin-bottom:4px">
-
-          <!-- Optional video -->
           <input class="fi" type="url" placeholder="YouTube URL (optional)"
                  value="${item.video_url||''}" data-video-id="${item.id}" style="font-size:.72rem;padding:7px 10px;margin-bottom:6px">
-
           <button class="btn btn-gold full-w btn-sm" data-apply-photo="${item.id}">Apply</button>
         </div>
       </div>`;
   }).join('');
 
-  // Bind file upload inputs
   grid.querySelectorAll('input[data-upload-for]').forEach(input => {
     input.addEventListener('change', async () => {
       const file = input.files[0];
@@ -371,7 +511,6 @@ function renderPhotoGrid() {
     });
   });
 
-  // Bind apply buttons
   grid.querySelectorAll('[data-apply-photo]').forEach(btn => {
     btn.addEventListener('click', () => {
       const id  = btn.dataset.applyPhoto;
@@ -390,19 +529,13 @@ async function uploadImageFile(file, onSuccess) {
   return new Promise(resolve => {
     const reader = new FileReader();
     reader.onload = async e => {
-      const base64  = e.target.result; // includes data:image/...;base64, prefix
-      const content = base64.split(',')[1]; // raw base64
-
+      const base64  = e.target.result;
+      const content = base64.split(',')[1];
       try {
         const res = await fetch('/api/upload-image', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            password: adminPw,
-            filename: file.name,
-            content,
-            mimeType: file.type,
-          }),
+          body: JSON.stringify({ password: adminPw, filename: file.name, content, mimeType: file.type }),
         });
         const data = await res.json();
         if (res.ok) { onSuccess(data.url); }
@@ -415,7 +548,7 @@ async function uploadImageFile(file, onSuccess) {
 }
 
 /* ══════════════════════════════════════════════════════════════
-   STEP 4 — VISIBILITY
+   STEP 6 — VISIBILITY
 ══════════════════════════════════════════════════════════════ */
 function renderVisTable() {
   const tbody = $('vis-tbody');
@@ -444,18 +577,12 @@ function renderVisTable() {
       <td><strong>${item.name_en}</strong><br><small dir="rtl" style="color:var(--muted)">${item.name_ar}</small></td>
       <td><span class="pill pill-gold">${cat?cat.name_en:item.category||'—'}</span></td>
       <td><strong style="color:var(--gold)">${item.price} ${cur}</strong></td>
-      <td>
-        <label class="toggle"><input type="checkbox" ${item.visible!==false?'checked':''} data-vis="${item.id}"><span class="toggle-track"></span></label>
-      </td>
-      <td>
-        <label class="toggle"><input type="checkbox" ${item.featured?'checked':''} data-feat="${item.id}"><span class="toggle-track"></span></label>
-      </td>
-      <td>
-        <div class="actions">
-          <button class="btn btn-icon" data-edit-item="${item.id}">✏️</button>
-          <button class="btn btn-icon btn-danger btn-sm" data-del-item="${item.id}">🗑</button>
-        </div>
-      </td>
+      <td><label class="toggle"><input type="checkbox" ${item.visible!==false?'checked':''} data-vis="${item.id}"><span class="toggle-track"></span></label></td>
+      <td><label class="toggle"><input type="checkbox" ${item.featured?'checked':''} data-feat="${item.id}"><span class="toggle-track"></span></label></td>
+      <td><div class="actions">
+        <button class="btn btn-icon" data-edit-item="${item.id}">✏️</button>
+        <button class="btn btn-icon btn-danger btn-sm" data-del-item="${item.id}">🗑</button>
+      </div></td>
     </tr>`;
   }).join('');
 
@@ -473,10 +600,10 @@ function updateStats() {
   if (!menu) return;
   const total = menu.items.length;
   const vis   = menu.items.filter(i => i.visible!==false).length;
-  $('stat-total').textContent   = total;
-  $('stat-visible').textContent = vis;
-  $('stat-hidden').textContent  = total - vis;
-  $('stat-featured').textContent= menu.items.filter(i=>i.featured).length;
+  $('stat-total').textContent    = total;
+  $('stat-visible').textContent  = vis;
+  $('stat-hidden').textContent   = total - vis;
+  $('stat-featured').textContent = menu.items.filter(i=>i.featured).length;
 }
 
 function delItem(id) {
@@ -533,13 +660,14 @@ async function uploadEditImage() {
 }
 
 /* ══════════════════════════════════════════════════════════════
-   STEP 5 — CONTACT & ABOUT
+   STEP 7 — CONTACT & ABOUT
 ══════════════════════════════════════════════════════════════ */
 function loadContactForm() {
   if (!menu) return;
   const c = menu.restaurant.contact || {};
-  const fields = ['phone','whatsapp','instagram','facebook','tiktok','address_en','address_ar','maps_url'];
-  fields.forEach(f => { const el = $('c-'+f); if(el) el.value = c[f]||''; });
+  ['phone','whatsapp','instagram','facebook','tiktok','address_en','address_ar','maps_url'].forEach(f => {
+    const el = $('c-'+f); if(el) el.value = c[f]||'';
+  });
 }
 
 function saveContact() {
@@ -554,8 +682,9 @@ function saveContact() {
 function loadAboutForm() {
   if (!menu) return;
   const r = menu.restaurant;
-  const fields = ['name_en','name_ar','tagline_en','tagline_ar','about_en','about_ar'];
-  fields.forEach(f => { const el = $('r-'+f); if(el) el.value = r[f]||''; });
+  ['name_en','name_ar','tagline_en','tagline_ar','about_en','about_ar'].forEach(f => {
+    const el = $('r-'+f); if(el) el.value = r[f]||'';
+  });
 }
 
 function saveAbout() {
@@ -567,7 +696,7 @@ function saveAbout() {
 }
 
 /* ══════════════════════════════════════════════════════════════
-   STEP 6 — SAVE & PUBLISH
+   STEP 8 — SAVE & PUBLISH
 ══════════════════════════════════════════════════════════════ */
 function downloadJSON() {
   const blob = new Blob([JSON.stringify(menu, null, 2)], { type: 'application/json' });
@@ -579,7 +708,7 @@ function downloadJSON() {
 }
 
 async function publishToGitHub() {
-  const pw  = $('save-pw').value.trim();
+  const pw = $('save-pw').value.trim();
   if (!pw) { toast('Enter admin password to confirm', 'err'); return; }
   const btn = $('push-btn');
   btn.disabled = true; btn.textContent = 'Publishing…';
@@ -626,6 +755,16 @@ function previewUrl(inputId, previewId) {
     : '<span>Preview</span>';
 }
 
+/* ── Populate section selector in category form ── */
+function syncSecDropdowns() {
+  if (!menu) return;
+  const sel = $('cat-section');
+  if (!sel) return;
+  sel.innerHTML = '<option value="">— Select a section —</option>' +
+    menu.sections.map(s => `<option value="${s.id}">${s.name_en}</option>`).join('');
+}
+
+/* ── Populate category dropdowns throughout admin ── */
 function syncCatDropdowns() {
   if (!menu) return;
   const hint = $('cat-ids-hint');
@@ -633,7 +772,7 @@ function syncCatDropdowns() {
 
   ['photo-filter-cat','vis-filter-cat','edit-cat-sel','m-category'].forEach(selId => {
     const sel = $(selId); if (!sel) return;
-    const all = selId==='edit-cat-sel'||selId==='m-category' ? '' : '<option value="all">All categories</option>';
+    const all = (selId==='edit-cat-sel'||selId==='m-category') ? '' : '<option value="all">All categories</option>';
     sel.innerHTML = all + menu.categories.map(c=>`<option value="${c.id}">${c.name_en}</option>`).join('');
   });
 }
@@ -646,6 +785,12 @@ document.addEventListener('DOMContentLoaded', () => {
   $('pw-input').addEventListener('keydown', e => { if(e.key==='Enter') login(); });
 
   $$('.step-btn').forEach(b => b.addEventListener('click', () => goStep(b.dataset.step)));
+
+  // Sections
+  $('save-sec-btn').addEventListener('click', saveSecForm);
+  $('clear-sec-btn').addEventListener('click', clearSecForm);
+  $('sec-image-url').addEventListener('input', () => previewUrl('sec-image-url','sec-img-prev'));
+  $('sec-image-file').addEventListener('change', uploadSecImage);
 
   // Categories
   $('save-cat-btn').addEventListener('click', saveCatForm);

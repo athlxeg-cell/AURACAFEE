@@ -9,7 +9,7 @@
     "about_en": "Welcome to AURA — a premium lounge and café experience. We craft every drink and dish with passion, using the finest ingredients to deliver moments worth savoring.",
     "about_ar": "مرحباً بك في أورا — تجربة لاونج وكافيه فاخرة. نصنع كل مشروب وطبق بشغف، باستخدام أجود المكونات لنقدم لك لحظات تستحق الاستمتاع بها.",
     "contact": {
-      "phone": "+20 1060705493",
+      "phone": "+20 100 000 0000",
       "whatsapp": "+20 100 000 0000",
       "instagram": "https://www.instagram.com/auralounge.eg/",
       "facebook": "",
@@ -19,9 +19,39 @@
       "maps_url": ""
     }
   },
+  "sections": [
+    {
+      "id": "main-menu",
+      "name_en": "Main Menu",
+      "name_ar": "القائمة الرئيسية",
+      "description_en": "Full dine-in experience — drinks, food & desserts",
+      "description_ar": "تجربة الجلوس الكاملة — مشروبات وأكل وحلويات",
+      "image": "",
+      "visible": true
+    },
+    {
+      "id": "delivery",
+      "name_en": "Delivery",
+      "name_ar": "توصيل",
+      "description_en": "Order from home — same great taste, delivered to you",
+      "description_ar": "اطلب من المنزل — نفس الطعم الرائع يوصلك",
+      "image": "",
+      "visible": true
+    },
+    {
+      "id": "breakfast",
+      "name_en": "Breakfast",
+      "name_ar": "فطار",
+      "description_en": "Morning specials served until 12pm",
+      "description_ar": "أكلات الصباح المميزة حتى الظهر",
+      "image": "",
+      "visible": true
+    }
+  ],
   "categories": [
     {
       "id": "hot-drinks",
+      "section": "main-menu",
       "name_en": "Hot Drinks",
       "name_ar": "مشروبات ساخنة",
       "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=200&q=70",
@@ -29,6 +59,7 @@
     },
     {
       "id": "cold-drinks",
+      "section": "main-menu",
       "name_en": "Cold Drinks",
       "name_ar": "مشروبات باردة",
       "image": "https://images.unsplash.com/photo-1499638673689-79a0b5115d87?w=200&q=70",
@@ -36,6 +67,7 @@
     },
     {
       "id": "smoothies",
+      "section": "main-menu",
       "name_en": "Smoothies",
       "name_ar": "سموذي",
       "image": "https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=200&q=70",
@@ -43,209 +75,181 @@
     },
     {
       "id": "sandwiches",
+      "section": "main-menu",
       "name_en": "Sandwiches",
       "name_ar": "ساندويتشات",
       "image": "https://images.unsplash.com/photo-1553909489-cd47e0907980?w=200&q=70",
       "visible": true
     },
     {
-      "id": "breakfast",
-      "name_en": "Breakfast",
-      "name_ar": "فطار",
-      "image": "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=200&q=70",
-      "visible": true
-    },
-    {
       "id": "desserts",
+      "section": "main-menu",
       "name_en": "Desserts",
       "name_ar": "حلويات",
       "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=200&q=70",
+      "visible": true
+    },
+    {
+      "id": "delivery-drinks",
+      "section": "delivery",
+      "name_en": "Drinks",
+      "name_ar": "مشروبات",
+      "image": "https://images.unsplash.com/photo-1499638673689-79a0b5115d87?w=200&q=70",
+      "visible": true
+    },
+    {
+      "id": "delivery-food",
+      "section": "delivery",
+      "name_en": "Food",
+      "name_ar": "أكل",
+      "image": "https://images.unsplash.com/photo-1553909489-cd47e0907980?w=200&q=70",
+      "visible": true
+    },
+    {
+      "id": "breakfast-items",
+      "section": "breakfast",
+      "name_en": "Breakfast",
+      "name_ar": "فطار",
+      "image": "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=200&q=70",
       "visible": true
     }
   ],
   "items": [
     {
-      "id": "item-001",
-      "category": "hot-drinks",
-      "name_en": "Espresso",
-      "name_ar": "إسبريسو",
+      "id": "item-001", "category": "hot-drinks",
+      "name_en": "Espresso", "name_ar": "إسبريسو",
       "description_en": "Strong Italian-style espresso shot",
       "description_ar": "شوت إسبريسو قوي على الطريقة الإيطالية",
-      "price": 65,
-      "image": "https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=400&q=75",
-      "visible": true,
-      "featured": false,
-      "video_url": "https://youtu.be/1nPi_r5z_Mk?si=KSVmEQC9QTX2qHmY"
+      "price": 65, "image": "https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=400&q=75",
+      "video_url": "", "visible": true, "featured": false
     },
     {
-      "id": "item-002",
-      "category": "hot-drinks",
-      "name_en": "Cappuccino",
-      "name_ar": "كابوتشينو",
+      "id": "item-002", "category": "hot-drinks",
+      "name_en": "Cappuccino", "name_ar": "كابوتشينو",
       "description_en": "Espresso with steamed milk foam",
       "description_ar": "إسبريسو مع رغوة الحليب",
-      "price": 85,
-      "image": "https://images.unsplash.com/photo-1534778101976-62847782c213?w=400&q=75",
-      "video_url": "",
-      "visible": true,
-      "featured": true
+      "price": 85, "image": "https://images.unsplash.com/photo-1534778101976-62847782c213?w=400&q=75",
+      "video_url": "", "visible": true, "featured": true
     },
     {
-      "id": "item-003",
-      "category": "hot-drinks",
-      "name_en": "Latte",
-      "name_ar": "لاتيه",
+      "id": "item-003", "category": "hot-drinks",
+      "name_en": "Latte", "name_ar": "لاتيه",
       "description_en": "Smooth espresso with velvety steamed milk",
       "description_ar": "إسبريسو ناعم مع حليب مبخر كريمي",
-      "price": 90,
-      "image": "https://images.unsplash.com/photo-1561047029-3000c68339ca?w=400&q=75",
-      "visible": true,
-      "featured": false
+      "price": 90, "image": "https://images.unsplash.com/photo-1561047029-3000c68339ca?w=400&q=75",
+      "video_url": "", "visible": true, "featured": false
     },
     {
-      "id": "item-004",
-      "category": "hot-drinks",
-      "name_en": "Turkish Coffee",
-      "name_ar": "قهوة تركي",
+      "id": "item-004", "category": "hot-drinks",
+      "name_en": "Turkish Coffee", "name_ar": "قهوة تركي",
       "description_en": "Traditional Turkish coffee, rich and aromatic",
       "description_ar": "قهوة تركية تقليدية غنية وعطرة",
-      "price": 60,
-      "image": "https://images.unsplash.com/photo-1578374173705-969cbe6f2d6b?w=400&q=75",
-      "visible": true,
-      "featured": false
+      "price": 60, "image": "https://images.unsplash.com/photo-1578374173705-969cbe6f2d6b?w=400&q=75",
+      "video_url": "", "visible": true, "featured": false
     },
     {
-      "id": "item-005",
-      "category": "cold-drinks",
-      "name_en": "Iced Latte",
-      "name_ar": "لاتيه مثلج",
+      "id": "item-005", "category": "cold-drinks",
+      "name_en": "Iced Latte", "name_ar": "لاتيه مثلج",
       "description_en": "Chilled espresso over ice with cold milk",
       "description_ar": "إسبريسو بارد فوق الثلج مع حليب بارد",
-      "price": 95,
-      "image": "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=400&q=75",
-      "visible": true,
-      "featured": true
+      "price": 95, "image": "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=400&q=75",
+      "video_url": "", "visible": true, "featured": true
     },
     {
-      "id": "item-006",
-      "category": "cold-drinks",
-      "name_en": "Iced Matcha",
-      "name_ar": "ماتشا مثلجة",
+      "id": "item-006", "category": "cold-drinks",
+      "name_en": "Iced Matcha", "name_ar": "ماتشا مثلجة",
       "description_en": "Premium Japanese matcha with cold milk",
       "description_ar": "ماتشا يابانية فاخرة مع حليب بارد",
-      "price": 105,
-      "image": "https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?w=400&q=75",
-      "visible": true,
-      "featured": false
+      "price": 105, "image": "https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?w=400&q=75",
+      "video_url": "", "visible": true, "featured": false
     },
     {
-      "id": "item-007",
-      "category": "cold-drinks",
-      "name_en": "Virgin Mojito",
-      "name_ar": "موهيتو",
+      "id": "item-007", "category": "cold-drinks",
+      "name_en": "Virgin Mojito", "name_ar": "موهيتو",
       "description_en": "Fresh mint, lime & sparkling water",
       "description_ar": "نعناع طازج وليمون ومياه فوارة",
-      "price": 80,
-      "image": "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=400&q=75",
-      "visible": true,
-      "featured": false
+      "price": 80, "image": "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=400&q=75",
+      "video_url": "", "visible": true, "featured": false
     },
     {
-      "id": "item-008",
-      "category": "smoothies",
-      "name_en": "Mango Bliss",
-      "name_ar": "مانجو بليس",
+      "id": "item-008", "category": "smoothies",
+      "name_en": "Mango Bliss", "name_ar": "مانجو بليس",
       "description_en": "Fresh mango, banana & orange juice",
       "description_ar": "مانجو طازج وموز وعصير برتقال",
-      "price": 110,
-      "image": "https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=400&q=75",
-      "visible": true,
-      "featured": true
+      "price": 110, "image": "https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=400&q=75",
+      "video_url": "", "visible": true, "featured": true
     },
     {
-      "id": "item-009",
-      "category": "smoothies",
-      "name_en": "Berry Burst",
-      "name_ar": "بيري بيرست",
+      "id": "item-009", "category": "smoothies",
+      "name_en": "Berry Burst", "name_ar": "بيري بيرست",
       "description_en": "Mixed berries, yogurt & honey",
       "description_ar": "توت مشكل وزبادي وعسل",
-      "price": 115,
-      "image": "https://images.unsplash.com/photo-1553530979-fbb9e4aee36f?w=400&q=75",
-      "visible": true,
-      "featured": false
+      "price": 115, "image": "https://images.unsplash.com/photo-1553530979-fbb9e4aee36f?w=400&q=75",
+      "video_url": "", "visible": true, "featured": false
     },
     {
-      "id": "item-010",
-      "category": "sandwiches",
-      "name_en": "Grilled Chicken Club",
-      "name_ar": "كلاب دجاج مشوي",
+      "id": "item-010", "category": "sandwiches",
+      "name_en": "Grilled Chicken Club", "name_ar": "كلاب دجاج مشوي",
       "description_en": "Grilled chicken, lettuce, tomato & garlic sauce",
       "description_ar": "دجاج مشوي وخس وطماطم وصلصة ثوم",
-      "price": 165,
-      "image": "https://images.unsplash.com/photo-1553909489-cd47e0907980?w=400&q=75",
-      "visible": true,
-      "featured": true
+      "price": 165, "image": "https://images.unsplash.com/photo-1553909489-cd47e0907980?w=400&q=75",
+      "video_url": "", "visible": true, "featured": true
     },
     {
-      "id": "item-011",
-      "category": "sandwiches",
-      "name_en": "Smoked Beef Panini",
-      "name_ar": "بانيني لحم مدخن",
+      "id": "item-011", "category": "sandwiches",
+      "name_en": "Smoked Beef Panini", "name_ar": "بانيني لحم مدخن",
       "description_en": "Smoked beef, cheddar & caramelized onion",
       "description_ar": "لحم بقري مدخن وشيدر وبصل مكرمل",
-      "price": 185,
-      "image": "https://images.unsplash.com/photo-1528736235302-52922df5c122?w=400&q=75",
-      "visible": true,
-      "featured": false
+      "price": 185, "image": "https://images.unsplash.com/photo-1528736235302-52922df5c122?w=400&q=75",
+      "video_url": "", "visible": true, "featured": false
     },
     {
-      "id": "item-012",
-      "category": "breakfast",
-      "name_en": "Full English Breakfast",
-      "name_ar": "فطار إنجليزي",
+      "id": "item-012", "category": "breakfast-items",
+      "name_en": "Full English Breakfast", "name_ar": "فطار إنجليزي",
       "description_en": "Eggs, beef sausage, beans, toast & hash brown",
       "description_ar": "بيض وسجق بقري وفول وتوست وهاش براون",
-      "price": 220,
-      "image": "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=400&q=75",
-      "visible": true,
-      "featured": true
+      "price": 220, "image": "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=400&q=75",
+      "video_url": "", "visible": true, "featured": true
     },
     {
-      "id": "item-013",
-      "category": "breakfast",
-      "name_en": "Avocado Toast",
-      "name_ar": "توست أفوكادو",
+      "id": "item-013", "category": "breakfast-items",
+      "name_en": "Avocado Toast", "name_ar": "توست أفوكادو",
       "description_en": "Sourdough toast with smashed avocado & poached egg",
       "description_ar": "توست سواردو مع أفوكادو مهروس وبيض مسلوق",
-      "price": 175,
-      "image": "/images/ideas-pret-ideaspret--instagram-photos-and-videos.webp",
-      "visible": true,
-      "featured": false,
-      "video_url": ""
+      "price": 175, "image": "https://images.unsplash.com/photo-1551336181-da4b0c88c03d?w=400&q=75",
+      "video_url": "", "visible": true, "featured": false
     },
     {
-      "id": "item-014",
-      "category": "desserts",
-      "name_en": "Lotus Cheesecake",
-      "name_ar": "تشيزكيك لوتس",
+      "id": "item-014", "category": "desserts",
+      "name_en": "Lotus Cheesecake", "name_ar": "تشيزكيك لوتس",
       "description_en": "Creamy cheesecake with Lotus Biscoff crumble",
       "description_ar": "تشيزكيك كريمي مع لوتس مفتت",
-      "price": 130,
-      "image": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=400&q=75",
-      "visible": true,
-      "featured": true
+      "price": 130, "image": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=400&q=75",
+      "video_url": "", "visible": true, "featured": true
     },
     {
-      "id": "item-015",
-      "category": "desserts",
-      "name_en": "Chocolate Lava Cake",
-      "name_ar": "كيكة لافا شوكولاتة",
+      "id": "item-015", "category": "desserts",
+      "name_en": "Chocolate Lava Cake", "name_ar": "كيكة لافا شوكولاتة",
       "description_en": "Warm chocolate cake with molten center",
       "description_ar": "كيكة شوكولاتة دافئة مع قلب منصهر",
-      "price": 120,
-      "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&q=75",
-      "visible": true,
-      "featured": false
+      "price": 120, "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&q=75",
+      "video_url": "", "visible": true, "featured": false
+    },
+    {
+      "id": "item-016", "category": "delivery-drinks",
+      "name_en": "Cappuccino", "name_ar": "كابوتشينو",
+      "description_en": "Espresso with steamed milk foam",
+      "description_ar": "إسبريسو مع رغوة الحليب",
+      "price": 85, "image": "https://images.unsplash.com/photo-1534778101976-62847782c213?w=400&q=75",
+      "video_url": "", "visible": true, "featured": false
+    },
+    {
+      "id": "item-017", "category": "delivery-food",
+      "name_en": "Grilled Chicken Club", "name_ar": "كلاب دجاج مشوي",
+      "description_en": "Grilled chicken, lettuce, tomato & garlic sauce",
+      "description_ar": "دجاج مشوي وخس وطماطم وصلصة ثوم",
+      "price": 165, "image": "https://images.unsplash.com/photo-1553909489-cd47e0907980?w=400&q=75",
+      "video_url": "", "visible": true, "featured": false
     }
   ]
 }
