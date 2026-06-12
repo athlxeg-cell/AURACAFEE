@@ -26,14 +26,27 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
-/* ── Background — solid dark navy matching brand identity ── */
+/* ── Background — velvet texture ── */
 body {
-  background-color: #0C1525;
+  background-color: #07111A;
+  background-image: url('../images/bg-texture.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
   color: var(--cream);
   font-family: 'Inter', sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
 }
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 12, 22, 0.52);
+  z-index: 0;
+  pointer-events: none;
+}
+body > * { position: relative; z-index: 1; }
 
 body[dir="rtl"] { font-family: 'Cairo', sans-serif; }
 img  { display: block; max-width: 100%; }
@@ -74,21 +87,12 @@ ul { list-style: none; }
 .back-btn:hover { border-color: var(--gold); color: var(--gold); }
 .back-btn.show { display: flex; }
 
-.brand { display: flex; align-items: center; gap: 9px; }
+.brand { display: flex; align-items: center; }
 .brand-logo {
-  height: 38px; width: auto;
+  height: 40px; width: auto;
   object-fit: contain;
-  /* SVG already uses gold — no filter needed */
-  opacity: .92;
+  opacity: .95;
 }
-.brand-text  { line-height: 1.1; }
-.brand-name  {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem; font-weight: 700; color: var(--gold);
-  letter-spacing: 3px; display: block;
-}
-body[dir="rtl"] .brand-name { font-family: 'Cairo', sans-serif; letter-spacing: 0; }
-.brand-tag { font-size: .58rem; color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase; }
 
 .nav-link {
   font-size: .78rem; font-weight: 600; color: var(--muted);
@@ -123,13 +127,12 @@ body[dir="rtl"] .brand-name { font-family: 'Cairo', sans-serif; letter-spacing: 
 }
 .hero-content { position: relative; z-index: 1; }
 .hero-logo-wrap {
-  width: 120px; height: auto;
-  margin: 0 auto 16px;
+  width: 200px; height: auto;
+  margin: 0 auto 8px;
 }
 .hero-logo-wrap img {
   width: 100%; height: auto; object-fit: contain;
-  /* SVG already uses gold — no filter needed */
-  opacity: .95;
+  opacity: .97;
 }
 .hero-logo-svg { display: flex; align-items: center; justify-content: center; }
 .hero-title {
