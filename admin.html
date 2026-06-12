@@ -461,36 +461,69 @@
     </div>
 
     <!-- ─────────────────────────────
-         STEP 3: BULK IMPORT
+         STEP 4: BULK IMPORT
     ───────────────────────────────── -->
     <div class="step-panel" id="step-import">
+
+      <!-- How-to card -->
+      <div class="card" style="background:rgba(201,169,110,.06);border-color:rgba(201,169,110,.25)">
+        <div class="card-title">📋 How Bulk Import Works</div>
+        <p class="section-hint" style="margin:0;line-height:1.9">
+          <strong style="color:var(--gold-light)">Step 1 — Download the template</strong> (pre-filled with your categories)<br>
+          <strong style="color:var(--gold-light)">Step 2 — Fill it in Excel</strong> — one row per item, columns are fixed<br>
+          <strong style="color:var(--gold-light)">Step 3 — Upload the file</strong> or paste the data below<br>
+          <strong style="color:var(--gold-light)">Step 4 — Review &amp; confirm</strong> — rows with errors are blocked, nothing breaks
+        </p>
+        <div class="btn-row" style="margin-top:16px">
+          <button id="dl-template-btn" class="btn btn-gold">⬇️ Download Import Template (.xlsx)</button>
+        </div>
+      </div>
+
+      <!-- Upload Excel file -->
       <div class="card">
-        <div class="card-title">📥 Bulk Import via CSV / Paste</div>
+        <div class="card-title">📁 Upload Excel File</div>
+        <p class="section-hint">Upload the filled-in template (.xlsx or .csv). The sheet must start with the header row.</p>
+        <label class="btn btn-outline" style="cursor:pointer;display:inline-flex;align-items:center;gap:6px">
+          📂 Choose File (.xlsx / .csv)
+          <input id="import-file-input" type="file" accept=".xlsx,.xls,.csv" style="display:none">
+        </label>
+        <span id="import-file-name" style="color:var(--muted);font-size:.78rem;margin-left:12px">No file chosen</span>
+      </div>
+
+      <!-- OR paste CSV -->
+      <div class="card">
+        <div class="card-title">📝 Or Paste CSV / Tab-Separated Data</div>
+
+        <div id="cat-ids-hint" style="margin-bottom:14px">Loading categories…</div>
+
         <p class="section-hint">
-          Paste rows in this order (tab or comma separated):<br>
-          <code style="color:var(--gold-light)">Name EN, Name AR, Description EN, Description AR, Price, Category ID, Image URL, Video URL</code><br>
-          Image URL and Video URL are optional. Category ID must match an existing category below.
+          Column order: <code style="color:var(--gold-light)">Name EN · Name AR · Desc EN · Desc AR · Price · Category ID · Image URL · Video URL</code>
         </p>
 
-        <div id="cat-ids-hint">Loading categories…</div>
-
-        <div class="form-group">
-          <label class="label">Paste Data</label>
-          <textarea id="csv-input" class="fi" style="min-height:160px;font-family:monospace;font-size:.78rem"
+        <div class="form-group" style="margin-top:12px">
+          <textarea id="csv-input" class="fi" style="min-height:140px;font-family:monospace;font-size:.78rem"
                     placeholder="Cappuccino, كابوتشينو, Espresso with foam, إسبريسو مع رغوة, 85, hot-drinks"></textarea>
         </div>
 
-        <div class="btn-row" style="margin-bottom:16px">
-          <button id="parse-btn"        class="btn btn-gold">Preview Import</button>
-          <button id="load-example-btn" class="btn btn-muted">Load Example</button>
+        <div class="btn-row">
+          <button id="parse-btn"        class="btn btn-gold">🔍 Preview Import</button>
+          <button id="load-example-btn" class="btn btn-muted">Load Example Row</button>
         </div>
+      </div>
 
-        <div id="import-preview-wrap">
-          <p style="color:var(--muted);font-size:.78rem;margin-bottom:8px">
-            <strong id="import-count">0</strong> rows detected:
+      <!-- Preview + confirm -->
+      <div id="import-preview-wrap" style="display:none">
+        <div class="card">
+          <div class="card-title">👁️ Import Preview</div>
+          <p style="color:var(--muted);font-size:.78rem;margin-bottom:12px">
+            <strong id="import-ok-count" style="color:var(--green)">0</strong> ready to import &nbsp;·&nbsp;
+            <strong id="import-err-count" style="color:var(--red)">0</strong> with errors (will be skipped)
           </p>
           <div id="import-preview"></div>
-          <button id="confirm-import-btn" class="btn btn-gold" disabled>✓ Confirm Import</button>
+          <div class="btn-row" style="margin-top:14px">
+            <button id="confirm-import-btn" class="btn btn-gold" disabled>✅ Confirm Import</button>
+            <button id="cancel-import-btn"  class="btn btn-muted">Cancel</button>
+          </div>
         </div>
       </div>
     </div>
@@ -655,6 +688,15 @@
         <button id="download-btn" class="btn btn-outline">⬇️ Download menu.json</button>
       </div>
 
+      <div class="save-box">
+        <h3>📊 Export Menu as Excel</h3>
+        <p>Download your entire menu as an Excel workbook — 3 sheets: Items, Categories, Sections. Use it as a backup, to share with your team, or to prepare a bulk import.</p>
+        <div class="btn-row">
+          <button id="export-excel-btn" class="btn btn-outline">📊 Export Menu (.xlsx)</button>
+          <button id="export-items-btn" class="btn btn-muted btn-sm">Items only</button>
+        </div>
+      </div>
+
       <div class="card" style="background:rgba(201,169,110,.06);border-color:rgba(201,169,110,.2)">
         <div class="card-title">🔗 Quick Links</div>
         <div class="btn-row">
@@ -746,6 +788,8 @@
 <!-- Toast -->
 <div id="toast"></div>
 
+<!-- SheetJS for Excel export/import -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script src="js/admin.js"></script>
 </body>
 </html>

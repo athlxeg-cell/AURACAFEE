@@ -85,11 +85,12 @@ function setLang(newLang) {
 function renderBranding() {
   if (!menu) return;
   const r = menu.restaurant;
-  $('brand-name').textContent   = t(r, 'name');
-  $('brand-tag').textContent    = t(r, 'tagline');
-  $('hero-title').textContent   = t(r, 'name');
-  $('hero-sub').textContent     = t(r, 'tagline');
-  $('footer-brand').textContent = t(r, 'name');
+  // Navbar brand text (small, alongside logo SVG)
+  const bn = $('brand-name'); if (bn) bn.textContent = t(r, 'name');
+  const bt = $('brand-tag');  if (bt) bt.textContent = t(r, 'tagline');
+  // Footer
+  const fb = $('footer-brand'); if (fb) fb.textContent = t(r, 'name');
+  // Hero uses the static SVG logo — no text elements to update
 }
 
 /* ============================================================

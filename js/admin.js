@@ -24,12 +24,13 @@ function toast(msg, type = 'ok') {
 function goStep(id) {
   $$('.step-panel').forEach(p => {
     p.classList.remove('active');
-    p.style.display = '';   // let CSS handle it
+    p.style.display = '';
   });
   $$('.step-btn').forEach(b => b.classList.toggle('active', b.dataset.step === id));
   $(id).classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
   if (id === 'step-sections')   renderSecList();
+  if (id === 'step-import')     syncCatDropdowns();
   if (id === 'step-photos')     renderPhotoGrid();
   if (id === 'step-visibility') { renderVisTable(); updateStats(); }
 }
@@ -394,58 +395,126 @@ async function uploadManualImage() {
 }
 
 /* ══════════════════════════════════════════════════════════════
-   STEP 4 — BULK IMPORT
+   STEP 4 — BULK IMPORT (CSV paste OR Excel file upload)
 ══════════════════════════════════════════════════════════════ */
-function parseCSV() {
-  const raw = $('csv-input').value.trim();
-  if (!raw) { toast('Paste CSV data first', 'err'); return; }
 
-  parsedImport = raw.split('\n').filter(l => l.trim()).map((line, i) => {
-    const sep = line.includes('\t') ? '\t' : ',';
-    const parts = line.split(sep).map(p => p.trim().replace(/^["']|["']$/g, ''));
-    const [name_en='', name_ar='', description_en='', description_ar='', price='', category='', image='', video_url=''] = parts;
+/* ── Parse a raw array of row arrays into import records ── */
+function parseRows(rows) {
+  // Skip header row if it starts with 'name' (case-insensitive)
+  const start = (rows[0] && String(rows[0][0]).toLowerCase().startsWith('name')) ? 1 : 0;
+  parsedImport = rows.slice(start).filter(r => r.some(c => String(c||'').trim())).map((cols, i) => {
+    const [name_en='', name_ar='', description_en='', description_ar='', price='', category='', image='', video_url='']
+      = cols.map(c => String(c ?? '').trim());
     const errors = [];
     if (!name_en) errors.push('Missing Name EN');
     if (!name_ar) errors.push('Missing Name AR');
     const priceNum = parseFloat(price);
-    if (isNaN(priceNum)) errors.push('Invalid price');
-    if (category && !menu.categories.find(c => c.id === category)) errors.push(`Unknown category "${category}"`);
-    return { name_en, name_ar, description_en, description_ar, price: priceNum, category, image, video_url, errors, line: i + 1 };
+    if (isNaN(priceNum) || priceNum < 0) errors.push('Invalid price');
+    if (!category) errors.push('Category ID is required');
+    else if (!menu.categories.find(c => c.id === category)) errors.push(`Unknown category "${category}"`);
+    return { name_en, name_ar, description_en, description_ar, price: priceNum, category, image, video_url, errors, line: start + i + 1 };
   });
+  showImportPreview();
+}
 
+/* ── Parse pasted CSV / TSV text ── */
+function parseCSV() {
+  const raw = $('csv-input').value.trim();
+  if (!raw) { toast('Paste data first, then click Preview', 'err'); return; }
+  const rows = raw.split('\n').filter(l => l.trim()).map(line => {
+    const sep = line.includes('\t') ? '\t' : ',';
+    return line.split(sep).map(p => p.trim().replace(/^["']|["']$/g, ''));
+  });
+  parseRows(rows);
+}
+
+/* ── Parse uploaded Excel / CSV file ── */
+function handleImportFile(file) {
+  if (!file) return;
+  $('import-file-name').textContent = file.name;
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      const wb = XLSX.read(e.target.result, { type: 'binary' });
+      const ws = wb.Sheets[wb.SheetNames[0]];
+      const rows = XLSX.utils.sheet_to_json(ws, { header: 1, defval: '' });
+      parseRows(rows);
+      toast(`File loaded: ${file.name}`);
+    } catch { toast('Could not read file. Use .xlsx or .csv', 'err'); }
+  };
+  reader.readAsBinaryString(file);
+}
+
+/* ── Render import preview table ── */
+function showImportPreview() {
+  if (!parsedImport.length) { toast('No data to preview', 'err'); return; }
+
+  const okCount  = parsedImport.filter(r => !r.errors.length).length;
+  const errCount = parsedImport.length - okCount;
+
+  $('import-ok-count').textContent  = okCount;
+  $('import-err-count').textContent = errCount;
   $('import-preview-wrap').style.display = 'block';
-  $('import-count').textContent = parsedImport.length;
-  $('import-preview').innerHTML = parsedImport.map(r => `
-    <div class="import-row">
-      <span style="color:var(--muted);min-width:22px;font-size:.7rem">${r.line}</span>
-      <span style="flex:1"><strong>${r.name_en}</strong> / ${r.name_ar}</span>
-      <span style="white-space:nowrap">${isNaN(r.price)?'—':r.price+' EGP'}</span>
-      <span style="color:var(--muted);font-size:.72rem">${r.category||'—'}</span>
-      <span>${r.errors.length ? `<span class="err">⚠ ${r.errors.join(', ')}</span>` : '<span class="ok">✓</span>'}</span>
-    </div>`).join('');
 
-  const bad = parsedImport.some(r => r.errors.length);
-  $('confirm-import-btn').disabled = bad;
-  toast(bad ? 'Fix errors before importing' : `${parsedImport.length} items ready`, bad ? 'err' : 'ok');
+  $('import-preview').innerHTML = parsedImport.map(r => {
+    const cat = menu.categories.find(c => c.id === r.category);
+    const sec = cat ? (menu.sections.find(s => s.id === cat.section) || {}).name_en || '' : '';
+    return `
+      <div class="import-row">
+        <span style="color:var(--muted);min-width:24px;font-size:.7rem">#${r.line}</span>
+        <span style="flex:1;min-width:0">
+          <strong style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${r.name_en || '—'}</strong>
+          <small dir="rtl" style="color:var(--muted)">${r.name_ar || ''}</small>
+        </span>
+        <span style="white-space:nowrap;color:var(--gold);font-size:.8rem">${isNaN(r.price)?'—':r.price+' EGP'}</span>
+        <span style="color:var(--muted);font-size:.72rem;white-space:nowrap">
+          ${cat ? cat.name_en : (r.category||'—')}${sec?' · '+sec:''}
+        </span>
+        <span style="white-space:nowrap">
+          ${r.errors.length
+            ? `<span class="err" title="${r.errors.join('; ')}">⚠ ${r.errors[0]}${r.errors.length>1?' +'+( r.errors.length-1):''}</span>`
+            : '<span class="ok">✓ OK</span>'}
+        </span>
+      </div>`;
+  }).join('');
+
+  // Only enable confirm when there are items with no errors
+  $('confirm-import-btn').disabled = okCount === 0;
+
+  const msg = errCount > 0
+    ? `${okCount} item${okCount!==1?'s':''} will be imported · ${errCount} skipped (errors)`
+    : `${okCount} items ready — no errors found`;
+  toast(msg, errCount > 0 ? 'err' : 'ok');
 }
 
 function confirmImport() {
-  parsedImport.filter(r => !r.errors.length).forEach(r => {
+  const valid = parsedImport.filter(r => !r.errors.length);
+  valid.forEach(r => {
     menu.items.push({
       id: 'item-' + Date.now() + '-' + Math.random().toString(36).slice(2,5),
-      category: r.category, name_en: r.name_en, name_ar: r.name_ar,
+      category: r.category,
+      name_en: r.name_en, name_ar: r.name_ar,
       description_en: r.description_en, description_ar: r.description_ar,
       price: r.price, image: r.image || '', video_url: r.video_url || '',
       visible: true, featured: false,
     });
   });
-  const n = parsedImport.filter(r=>!r.errors.length).length;
+  const n = valid.length;
+  const skipped = parsedImport.length - n;
   parsedImport = [];
   $('csv-input').value = '';
+  $('import-file-name').textContent = 'No file chosen';
   $('import-preview-wrap').style.display = 'none';
   $('confirm-import-btn').disabled = true;
   updateStats(); markUnsaved();
-  toast(`✓ ${n} items imported!`);
+  toast(`✅ ${n} item${n!==1?'s':''} imported${skipped?` · ${skipped} skipped`:''}!`);
+}
+
+function cancelImport() {
+  parsedImport = [];
+  $('import-preview-wrap').style.display = 'none';
+  $('csv-input').value = '';
+  $('import-file-name').textContent = 'No file chosen';
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -696,6 +765,101 @@ function saveAbout() {
 }
 
 /* ══════════════════════════════════════════════════════════════
+   EXCEL EXPORT & IMPORT TEMPLATE
+══════════════════════════════════════════════════════════════ */
+
+/* ── Column widths helper ── */
+function wscols(widths) {
+  return widths.map(w => ({ wch: w }));
+}
+
+/* ── Export full menu as Excel workbook ── */
+function exportMenuExcel(itemsOnly) {
+  if (!menu) return;
+  if (typeof XLSX === 'undefined') { toast('Excel library not loaded', 'err'); return; }
+
+  const wb = XLSX.utils.book_new();
+
+  // ─ Items sheet ─
+  const itemHeaders = ['ID','Name EN','Name AR','Description EN','Description AR','Price','Category ID','Image URL','Video URL','Visible','Featured'];
+  const itemRows = menu.items.map(it => [
+    it.id, it.name_en, it.name_ar,
+    it.description_en||'', it.description_ar||'',
+    it.price, it.category,
+    it.image||'', it.video_url||'',
+    it.visible!==false?'Yes':'No',
+    it.featured?'Yes':'No',
+  ]);
+  const wsItems = XLSX.utils.aoa_to_sheet([itemHeaders, ...itemRows]);
+  wsItems['!cols'] = wscols([16,20,20,30,30,8,16,30,30,8,8]);
+  XLSX.utils.book_append_sheet(wb, wsItems, 'Items');
+
+  if (!itemsOnly) {
+    // ─ Categories sheet ─
+    const catHeaders = ['ID','Name EN','Name AR','Section ID','Image URL','Visible'];
+    const catRows = menu.categories.map(c => [c.id, c.name_en, c.name_ar, c.section||'', c.image||'', c.visible!==false?'Yes':'No']);
+    const wsCats = XLSX.utils.aoa_to_sheet([catHeaders, ...catRows]);
+    wsCats['!cols'] = wscols([18,20,20,16,30,8]);
+    XLSX.utils.book_append_sheet(wb, wsCats, 'Categories');
+
+    // ─ Sections sheet ─
+    const secHeaders = ['ID','Name EN','Name AR','Description EN','Description AR','Visible'];
+    const secRows = menu.sections.map(s => [s.id, s.name_en, s.name_ar, s.description_en||'', s.description_ar||'', s.visible!==false?'Yes':'No']);
+    const wsSecs = XLSX.utils.aoa_to_sheet([secHeaders, ...secRows]);
+    wsSecs['!cols'] = wscols([16,18,18,35,35,8]);
+    XLSX.utils.book_append_sheet(wb, wsSecs, 'Sections');
+  }
+
+  const filename = itemsOnly ? 'AURA-items.xlsx' : 'AURA-menu-full.xlsx';
+  XLSX.writeFile(wb, filename);
+  toast(`✅ ${itemsOnly ? 'Items' : 'Full menu'} exported as Excel!`);
+}
+
+/* ── Download blank import template with valid category IDs pre-listed ── */
+function downloadImportTemplate() {
+  if (!menu) return;
+  if (typeof XLSX === 'undefined') { toast('Excel library not loaded', 'err'); return; }
+
+  const wb = XLSX.utils.book_new();
+
+  // ─ Template sheet ─
+  const headers = ['Name EN *','Name AR *','Description EN','Description AR','Price *','Category ID *','Image URL','Video URL'];
+  const example = ['Cappuccino','كابوتشينو','Espresso with steamed milk foam','إسبريسو مع رغوة الحليب',85,'hot-drinks','',''];
+  const wsTemplate = XLSX.utils.aoa_to_sheet([headers, example]);
+  wsTemplate['!cols'] = wscols([22,22,32,32,8,18,30,30]);
+  XLSX.utils.book_append_sheet(wb, wsTemplate, 'Items to Import');
+
+  // ─ Reference sheet: valid category IDs ─
+  const refHeaders = ['Category ID (use this exactly)','Category Name EN','Section'];
+  const refRows = menu.categories.map(c => {
+    const sec = menu.sections.find(s => s.id === c.section);
+    return [c.id, c.name_en, sec ? sec.name_en : ''];
+  });
+  const wsRef = XLSX.utils.aoa_to_sheet([refHeaders, ...refRows]);
+  wsRef['!cols'] = wscols([28,22,18]);
+  XLSX.utils.book_append_sheet(wb, wsRef, 'Valid Category IDs ← READ THIS');
+
+  // ─ Instructions sheet ─
+  const instrRows = [
+    ['AURA Bulk Import Instructions'],[''],
+    ['1. Fill in the "Items to Import" sheet — one item per row'],
+    ['2. Column A and B (Name EN / AR) are required'],
+    ['3. Column E (Price) must be a number'],
+    ['4. Column F (Category ID) must exactly match an ID from the "Valid Category IDs" sheet'],
+    ['5. Columns G and H (Image URL, Video URL) are optional — leave blank'],
+    ['6. Do NOT delete or rename the header row'],
+    ['7. Delete this sheet and the reference sheet before uploading (or just upload as-is — they are ignored)'],
+    [''],['Upload the file in Admin → Bulk Import → Upload Excel File'],
+  ];
+  const wsInstr = XLSX.utils.aoa_to_sheet(instrRows);
+  wsInstr['!cols'] = wscols([70]);
+  XLSX.utils.book_append_sheet(wb, wsInstr, 'Instructions');
+
+  XLSX.writeFile(wb, 'AURA-import-template.xlsx');
+  toast('✅ Import template downloaded!');
+}
+
+/* ══════════════════════════════════════════════════════════════
    STEP 8 — SAVE & PUBLISH
 ══════════════════════════════════════════════════════════════ */
 function downloadJSON() {
@@ -807,6 +971,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Bulk import
   $('parse-btn').addEventListener('click', parseCSV);
   $('confirm-import-btn').addEventListener('click', confirmImport);
+  $('cancel-import-btn').addEventListener('click', cancelImport);
+  $('dl-template-btn').addEventListener('click', downloadImportTemplate);
+  $('import-file-input').addEventListener('change', e => handleImportFile(e.target.files[0]));
   $('load-example-btn').addEventListener('click', () => {
     $('csv-input').value =
 `Cappuccino, كابوتشينو, Espresso with steamed milk foam, إسبريسو مع رغوة الحليب, 85, hot-drinks
@@ -841,4 +1008,8 @@ Mango Smoothie, عصير مانجو, Fresh mango blended with ice, مانجو ط
   // Save & Publish
   $('download-btn').addEventListener('click', downloadJSON);
   $('push-btn').addEventListener('click', publishToGitHub);
+
+  // Excel export
+  $('export-excel-btn').addEventListener('click', () => exportMenuExcel(false));
+  $('export-items-btn').addEventListener('click', () => exportMenuExcel(true));
 });

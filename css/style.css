@@ -26,29 +26,14 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
-/* ── Background texture ── */
+/* ── Background — solid dark navy matching brand identity ── */
 body {
-  background-color: var(--n800);
-  background-image: url('/images/bg-texture.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
+  background-color: #0C1525;
   color: var(--cream);
   font-family: 'Inter', sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
 }
-/* Dark overlay so text stays readable over the texture */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: rgba(8,15,24,.72);
-  pointer-events: none;
-  z-index: 0;
-}
-/* All real content sits above the overlay */
-body > * { position: relative; z-index: 1; }
 
 body[dir="rtl"] { font-family: 'Cairo', sans-serif; }
 img  { display: block; max-width: 100%; }
@@ -91,10 +76,9 @@ ul { list-style: none; }
 
 .brand { display: flex; align-items: center; gap: 9px; }
 .brand-logo {
-  height: 36px; width: auto;
+  height: 38px; width: auto;
   object-fit: contain;
-  /* white logo on dark bg */
-  filter: brightness(0) invert(1);
+  /* SVG already uses gold — no filter needed */
   opacity: .92;
 }
 .brand-text  { line-height: 1.1; }
@@ -144,8 +128,7 @@ body[dir="rtl"] .brand-name { font-family: 'Cairo', sans-serif; letter-spacing: 
 }
 .hero-logo-wrap img {
   width: 100%; height: auto; object-fit: contain;
-  /* white logo version */
-  filter: brightness(0) invert(1);
+  /* SVG already uses gold — no filter needed */
   opacity: .95;
 }
 .hero-logo-svg { display: flex; align-items: center; justify-content: center; }
