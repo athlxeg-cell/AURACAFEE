@@ -60,8 +60,8 @@
     {
       "id": "cold-drinks",
       "section": "main-menu",
-      "name_en": "ICED COFFEE",
-      "name_ar": "ايس كوفي",
+      "name_en": "Cold Drinks",
+      "name_ar": "مشروبات باردة",
       "image": "https://images.unsplash.com/photo-1499638673689-79a0b5115d87?w=200&q=70",
       "visible": true
     },
@@ -74,6 +74,14 @@
       "visible": true
     },
     {
+      "id": "sandwiches",
+      "section": "main-menu",
+      "name_en": "Sandwiches",
+      "name_ar": "ساندويتشات",
+      "image": "https://images.unsplash.com/photo-1553909489-cd47e0907980?w=200&q=70",
+      "visible": true
+    },
+    {
       "id": "desserts",
       "section": "main-menu",
       "name_en": "Desserts",
@@ -82,105 +90,33 @@
       "visible": true
     },
     {
+      "id": "delivery-drinks",
+      "section": "delivery",
+      "name_en": "Drinks",
+      "name_ar": "مشروبات",
+      "image": "https://images.unsplash.com/photo-1499638673689-79a0b5115d87?w=200&q=70",
+      "visible": true
+    },
+    {
+      "id": "delivery-food",
+      "section": "delivery",
+      "name_en": "Food",
+      "name_ar": "أكل",
+      "image": "https://images.unsplash.com/photo-1553909489-cd47e0907980?w=200&q=70",
+      "visible": true
+    },
+    {
+      "id": "breakfast-items",
+      "section": "breakfast",
+      "name_en": "Breakfast",
+      "name_ar": "فطار",
+      "image": "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=200&q=70",
+      "visible": true
+    },
+    {
       "id": "salad",
       "name_en": "SALAD",
       "name_ar": "سلطات",
-      "image": "",
-      "section": "main-menu",
-      "visible": true
-    },
-    {
-      "id": "appetizers",
-      "name_en": "APPETIZERS",
-      "name_ar": "المقبلات",
-      "image": "",
-      "section": "main-menu",
-      "visible": true
-    },
-    {
-      "id": "bbq",
-      "name_en": "BBQ",
-      "name_ar": "المشويات",
-      "image": "",
-      "section": "main-menu",
-      "visible": true
-    },
-    {
-      "id": "main-dishes",
-      "name_en": "MAIN DISHES",
-      "name_ar": "الاطباق الرئيسية",
-      "image": "",
-      "section": "main-menu",
-      "visible": true
-    },
-    {
-      "id": "pasta",
-      "name_en": "PASTA",
-      "name_ar": "باستا",
-      "image": "",
-      "section": "main-menu",
-      "visible": true
-    },
-    {
-      "id": "pizza",
-      "name_en": "PIZZA",
-      "name_ar": "بيتزا",
-      "image": "",
-      "section": "main-menu",
-      "visible": true
-    },
-    {
-      "id": "calzone-sandwichs",
-      "name_en": "CALZONE SANDWICHS",
-      "name_ar": "كاليزوني ساندويتش",
-      "image": "",
-      "section": "main-menu",
-      "visible": true
-    },
-    {
-      "id": "mnakish",
-      "name_en": "MNAKISH",
-      "name_ar": "مناقيش",
-      "image": "",
-      "section": "main-menu",
-      "visible": true
-    },
-    {
-      "id": "juices",
-      "name_en": "JUICES",
-      "name_ar": "عصائر",
-      "image": "",
-      "section": "main-menu",
-      "visible": true
-    },
-    {
-      "id": "mojito",
-      "name_en": "MOJITO",
-      "name_ar": "موخيتو",
-      "image": "",
-      "section": "main-menu",
-      "visible": true
-    },
-    {
-      "id": "frappe",
-      "name_en": "FRAPPE",
-      "name_ar": "فرابيه",
-      "image": "",
-      "section": "main-menu",
-      "visible": true
-    },
-    {
-      "id": "milkshake",
-      "name_en": "MILKSHAKE",
-      "name_ar": "ميلك شيك",
-      "image": "",
-      "section": "main-menu",
-      "visible": true
-    },
-    {
-      "id": "ice-cream",
-      "name_en": "ICE CREAM",
-      "name_ar": "ايس كريم",
       "image": "",
       "section": "main-menu",
       "visible": true
@@ -306,7 +242,7 @@
     },
     {
       "id": "item-010",
-      "category": "",
+      "category": "sandwiches",
       "name_en": "Grilled Chicken Club",
       "name_ar": "كلاب دجاج مشوي",
       "description_en": "Grilled chicken, lettuce, tomato & garlic sauce",
@@ -319,7 +255,7 @@
     },
     {
       "id": "item-011",
-      "category": "",
+      "category": "sandwiches",
       "name_en": "Smoked Beef Panini",
       "name_ar": "بانيني لحم مدخن",
       "description_en": "Smoked beef, cheddar & caramelized onion",
@@ -332,7 +268,7 @@
     },
     {
       "id": "item-012",
-      "category": "",
+      "category": "breakfast-items",
       "name_en": "Full English Breakfast",
       "name_ar": "فطار إنجليزي",
       "description_en": "Eggs, beef sausage, beans, toast & hash brown",
@@ -345,7 +281,7 @@
     },
     {
       "id": "item-013",
-      "category": "",
+      "category": "breakfast-items",
       "name_en": "Avocado Toast",
       "name_ar": "توست أفوكادو",
       "description_en": "Sourdough toast with smashed avocado & poached egg",
@@ -384,7 +320,7 @@
     },
     {
       "id": "item-016",
-      "category": "",
+      "category": "delivery-drinks",
       "name_en": "Cappuccino",
       "name_ar": "كابوتشينو",
       "description_en": "Espresso with steamed milk foam",
@@ -397,7 +333,7 @@
     },
     {
       "id": "item-017",
-      "category": "",
+      "category": "delivery-food",
       "name_en": "Grilled Chicken Club",
       "name_ar": "كلاب دجاج مشوي",
       "description_en": "Grilled chicken, lettuce, tomato & garlic sauce",
