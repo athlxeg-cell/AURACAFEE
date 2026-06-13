@@ -228,19 +228,6 @@
   ],
   "items": [
     {
-      "id": "item-1781312173067-9kz",
-      "category": "salad",
-      "name_en": "Oriental Salad",
-      "name_ar": "شرقي",
-      "description_en": "",
-      "description_ar": "",
-      "price": 89,
-      "image": "",
-      "video_url": "",
-      "visible": true,
-      "featured": false
-    },
-    {
       "id": "item-1781312173067-hxe",
       "category": "salad",
       "name_en": "Fattoush",
@@ -254,13 +241,13 @@
       "featured": true
     },
     {
-      "id": "item-1781312173067-k5x",
+      "id": "item-1781312173067-9kz",
       "category": "salad",
-      "name_en": "Tabbouleh",
-      "name_ar": "تبولة",
+      "name_en": "Oriental Salad",
+      "name_ar": "شرقي",
       "description_en": "",
       "description_ar": "",
-      "price": 129,
+      "price": 89,
       "image": "",
       "video_url": "",
       "visible": true,
@@ -280,6 +267,19 @@
       "featured": false
     },
     {
+      "id": "item-1781312173067-0az",
+      "category": "salad",
+      "name_en": "Chicken Caesar Salad",
+      "name_ar": "تشكن سيزر",
+      "description_en": "",
+      "description_ar": "",
+      "price": 185,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false
+    },
+    {
       "id": "item-1781312173067-p8y",
       "category": "salad",
       "name_en": "Arugula Salad",
@@ -293,13 +293,13 @@
       "featured": true
     },
     {
-      "id": "item-1781312173067-0az",
+      "id": "item-1781312173067-k5x",
       "category": "salad",
-      "name_en": "Chicken Caesar Salad",
-      "name_ar": "تشكن سيزر",
+      "name_en": "Tabbouleh",
+      "name_ar": "تبولة",
       "description_en": "",
       "description_ar": "",
-      "price": 185,
+      "price": 129,
       "image": "",
       "video_url": "",
       "visible": true,
@@ -508,7 +508,7 @@
       "description_en": "Shish Tawook | Kebab | Kofta",
       "description_ar": "شيش طاووق . كباب . كفتة",
       "price": 495,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-13-at-7.20.19-pm.jpeg",
       "video_url": "",
       "visible": true,
       "featured": false
@@ -1008,19 +1008,6 @@
       "featured": false
     },
     {
-      "id": "item-1781312173067-naq",
-      "category": "mnakish",
-      "name_en": "Za'atar Manakish",
-      "name_ar": "زعتر",
-      "description_en": "",
-      "description_ar": "",
-      "price": 135,
-      "image": "",
-      "video_url": "",
-      "visible": true,
-      "featured": false
-    },
-    {
       "id": "item-1781312173067-q3h",
       "category": "mnakish",
       "name_en": "Za'atar with Vegetables Manakish",
@@ -1045,6 +1032,19 @@
       "video_url": "",
       "visible": true,
       "featured": true
+    },
+    {
+      "id": "item-1781312173067-naq",
+      "category": "mnakish",
+      "name_en": "Za'atar Manakish",
+      "name_ar": "زعتر",
+      "description_en": "",
+      "description_ar": "",
+      "price": 135,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false
     },
     {
       "id": "item-1781312173067-6pd",
