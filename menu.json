@@ -192,6 +192,38 @@
       "image": "",
       "section": "main-menu",
       "visible": true
+    },
+    {
+      "id": "breakfast-dishes",
+      "name_en": "BREAKFAST DISHES",
+      "name_ar": "اطباق الفطار",
+      "image": "",
+      "section": "breakfast",
+      "visible": true
+    },
+    {
+      "id": "special-breakfast",
+      "name_en": "SPECIAL BREAKFAST",
+      "name_ar": "اطباق الفطار المميزة",
+      "image": "",
+      "section": "breakfast",
+      "visible": true
+    },
+    {
+      "id": "calzone-breakfast",
+      "name_en": "CALZONE BREAKFAST",
+      "name_ar": "كاليزوني",
+      "image": "",
+      "section": "breakfast",
+      "visible": true
+    },
+    {
+      "id": "manakish",
+      "name_en": "MANAKISH",
+      "name_ar": "مناقيش",
+      "image": "",
+      "section": "breakfast",
+      "visible": true
     }
   ],
   "items": [
