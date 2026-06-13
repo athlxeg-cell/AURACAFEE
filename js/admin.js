@@ -632,16 +632,32 @@ function renderVisTable() {
   });
 
   if (!items.length) {
-    tbody.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:32px;color:var(--muted)">No items match</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="8" style="text-align:center;padding:32px;color:var(--muted)">No items match</td></tr>`;
     return;
   }
+
+  // Build per-category ordered id lists (from global array order)
+  const catOrder = {};
+  menu.items.forEach(i => {
+    if (!catOrder[i.category]) catOrder[i.category] = [];
+    catOrder[i.category].push(i.id);
+  });
+
   const cur = menu.restaurant.currency_en;
   tbody.innerHTML = items.map(item => {
     const cat = menu.categories.find(c => c.id === item.category);
     const thumb = item.image
       ? `<img class="thumb" src="${item.image}" onerror="this.style.display='none'" alt="">`
       : `<div class="thumb-ph">🍽️</div>`;
+    const catList = catOrder[item.category] || [];
+    const catPos  = catList.indexOf(item.id);
+    const isFirst = catPos === 0;
+    const isLast  = catPos === catList.length - 1;
     return `<tr>
+      <td><div class="order-btns">
+        <button class="btn btn-icon btn-sm${isFirst?' vis-hidden':''}" data-move-up="${item.id}" title="Move up">▲</button>
+        <button class="btn btn-icon btn-sm${isLast?' vis-hidden':''}" data-move-down="${item.id}" title="Move down">▼</button>
+      </div></td>
       <td>${thumb}</td>
       <td><strong>${item.name_en}</strong><br><small dir="rtl" style="color:var(--muted)">${item.name_ar}</small></td>
       <td><span class="pill pill-gold">${cat?cat.name_en:item.category||'—'}</span></td>
@@ -663,6 +679,25 @@ function renderVisTable() {
   }));
   tbody.querySelectorAll('[data-edit-item]').forEach(b => b.addEventListener('click', () => openEditModal(b.dataset.editItem)));
   tbody.querySelectorAll('[data-del-item]').forEach(b  => b.addEventListener('click', () => delItem(b.dataset.delItem)));
+  tbody.querySelectorAll('[data-move-up]').forEach(b   => b.addEventListener('click', () => moveItem(b.dataset.moveUp, 'up')));
+  tbody.querySelectorAll('[data-move-down]').forEach(b => b.addEventListener('click', () => moveItem(b.dataset.moveDown, 'down')));
+}
+
+function moveItem(id, dir) {
+  const item = menu.items.find(x => x.id === id);
+  if (!item) return;
+  // All items in same category, in global array order
+  const catItems = menu.items.filter(x => x.category === item.category);
+  const catIdx   = catItems.findIndex(x => x.id === id);
+  const swapIdx  = dir === 'up' ? catIdx - 1 : catIdx + 1;
+  if (swapIdx < 0 || swapIdx >= catItems.length) return;
+  const swapItem = catItems[swapIdx];
+  // Swap positions in the global menu.items array
+  const idxA = menu.items.findIndex(x => x.id === id);
+  const idxB = menu.items.findIndex(x => x.id === swapItem.id);
+  [menu.items[idxA], menu.items[idxB]] = [menu.items[idxB], menu.items[idxA]];
+  renderVisTable();
+  markUnsaved();
 }
 
 function updateStats() {

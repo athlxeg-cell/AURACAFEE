@@ -151,6 +151,9 @@
     .pill { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: .7rem; font-weight: 600; }
     .pill-gold { background: rgba(201,169,110,.15); color: var(--gold-light); }
     .actions { display: flex; gap: 6px; }
+    .order-btns { display: flex; flex-direction: column; gap: 2px; align-items: center; }
+    .order-btns .btn { font-size: .65rem; padding: 2px 5px; line-height: 1; }
+    .vis-hidden { visibility: hidden; pointer-events: none; }
 
     /* Toggle switch */
     .toggle { position: relative; display: inline-block; width: 40px; height: 22px; }
@@ -220,7 +223,7 @@
       .form-row, .social-grid { grid-template-columns: 1fr; }
       .filter-bar .fi, .filter-bar select.fi { max-width: 100%; flex: 1; }
       #photo-grid { grid-template-columns: repeat(auto-fill, minmax(165px, 1fr)); }
-      .vis-table td:nth-child(4), .vis-table th:nth-child(4) { display: none; }
+      .vis-table td:nth-child(5), .vis-table th:nth-child(5) { display: none; }
     }
   </style>
 </head>
@@ -571,7 +574,7 @@
           <table class="vis-table">
             <thead>
               <tr>
-                <th>Photo</th><th>Name</th><th>Category</th><th>Price</th>
+                <th>Order</th><th>Photo</th><th>Name</th><th>Category</th><th>Price</th>
                 <th>Visible</th><th>Featured</th><th>Edit</th>
               </tr>
             </thead>
