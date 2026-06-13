@@ -2,21 +2,21 @@
   "restaurant": {
     "name_en": "AURA",
     "name_ar": "أورا",
-    "tagline_en": "Lounge & Café",
-    "tagline_ar": "لاونج وكافيه",
+    "tagline_en": "Elevating Every Moment",
+    "tagline_ar": "نرتقي بكل لحظة",
     "currency_en": "EGP",
     "currency_ar": "ج.م",
-    "about_en": "Welcome to AURA — a premium lounge and café experience. We craft every drink and dish with passion, using the finest ingredients to deliver moments worth savoring.",
-    "about_ar": "مرحباً بك في أورا — تجربة لاونج وكافيه فاخرة. نصنع كل مشروب وطبق بشغف، باستخدام أجود المكونات لنقدم لك لحظات تستحق الاستمتاع بها.",
+    "about_en": "Welcome to AURA, a premium dining and lounge destination where exceptional cuisine, outstanding service, and breathtaking views come together. Whether you're hosting a business meeting, enjoying quality time with family, or simply unwinding, AURA offers a refined atmosphere designed to make every visit memorable.",
+    "about_ar": "مرحبًا بكم في AURA، وجهتكم الراقية لتجربة استثنائية تجمع بين المذاق الفاخر والخدمة الرفيعة والإطلالة الساحرة. سواء كنتم تبحثون عن مكان مثالي لاجتماعات العمل، أو لقضاء أوقات مميزة مع العائلة، أو للاستمتاع بلحظات من الاسترخاء، فإن AURA يوفر أجواءً أنيقة وتجربة لا تُنسى في كل زيارة.",
     "contact": {
-      "phone": "+20 100 000 0000",
-      "whatsapp": "+20 100 000 0000",
+      "phone": "+20 150 011 6328",
+      "whatsapp": "+20 150 011 6328",
       "instagram": "https://www.instagram.com/auralounge.eg/",
-      "facebook": "",
+      "facebook": "https://www.facebook.com/share/1CgpXsS6Xw/",
       "tiktok": "",
-      "address_en": "Cairo, Egypt",
-      "address_ar": "القاهرة، مصر",
-      "maps_url": ""
+      "address_en": "Entrance 1, All Seasons Park Mall, Madinaty, New Cairo, Cairo, Egypt",
+      "address_ar": "مصر – القاهرة الجديدة – مدينتي – مول All Seasons Park – المدخل 1",
+      "maps_url": "https://maps.app.goo.gl/rpv7Pbzh4ChCHNPv5?g_st=ac"
     }
   },
   "sections": [
