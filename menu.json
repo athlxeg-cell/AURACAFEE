@@ -50,38 +50,6 @@
   ],
   "categories": [
     {
-      "id": "hot-drinks",
-      "section": "main-menu",
-      "name_en": "Hot Drinks",
-      "name_ar": "مشروبات ساخنة",
-      "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=200&q=70",
-      "visible": true
-    },
-    {
-      "id": "cold-drinks",
-      "section": "main-menu",
-      "name_en": "ICED COFFEE",
-      "name_ar": "ايس كوفي",
-      "image": "https://images.unsplash.com/photo-1499638673689-79a0b5115d87?w=200&q=70",
-      "visible": true
-    },
-    {
-      "id": "smoothies",
-      "section": "main-menu",
-      "name_en": "Smoothies",
-      "name_ar": "سموذي",
-      "image": "https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=200&q=70",
-      "visible": true
-    },
-    {
-      "id": "desserts",
-      "section": "main-menu",
-      "name_en": "Desserts",
-      "name_ar": "حلويات",
-      "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=200&q=70",
-      "visible": true
-    },
-    {
       "id": "salad",
       "name_en": "SALAD",
       "name_ar": "سلطات",
@@ -146,11 +114,43 @@
       "visible": true
     },
     {
+      "id": "hot-drinks",
+      "section": "main-menu",
+      "name_en": "Hot Drinks",
+      "name_ar": "مشروبات ساخنة",
+      "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=200&q=70",
+      "visible": true
+    },
+    {
+      "id": "soft-drinks",
+      "name_en": "SOFT DRINKS",
+      "name_ar": "سوفت درينك",
+      "image": "",
+      "section": "main-menu",
+      "visible": true
+    },
+    {
+      "id": "cold-drinks",
+      "section": "main-menu",
+      "name_en": "ICED COFFEE",
+      "name_ar": "ايس كوفي",
+      "image": "https://images.unsplash.com/photo-1499638673689-79a0b5115d87?w=200&q=70",
+      "visible": true
+    },
+    {
       "id": "juices",
       "name_en": "JUICES",
       "name_ar": "عصائر",
       "image": "",
       "section": "main-menu",
+      "visible": true
+    },
+    {
+      "id": "smoothies",
+      "section": "main-menu",
+      "name_en": "Smoothies",
+      "name_ar": "سموذي",
+      "image": "https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=200&q=70",
       "visible": true
     },
     {
@@ -178,17 +178,17 @@
       "visible": true
     },
     {
-      "id": "ice-cream",
-      "name_en": "ICE CREAM",
-      "name_ar": "ايس كريم",
-      "image": "",
+      "id": "desserts",
       "section": "main-menu",
+      "name_en": "Desserts",
+      "name_ar": "حلويات",
+      "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=200&q=70",
       "visible": true
     },
     {
-      "id": "soft-drinks",
-      "name_en": "SOFT DRINKS",
-      "name_ar": "سوفت درينك",
+      "id": "ice-cream",
+      "name_en": "ICE CREAM",
+      "name_ar": "ايس كريم",
       "image": "",
       "section": "main-menu",
       "visible": true
