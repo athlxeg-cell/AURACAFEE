@@ -290,8 +290,9 @@ function renderItemCards(items) {
     const desc   = t(item, 'description');
     const hasVid = item.video_url && item.video_url.trim();
 
+    const imgPos  = item.image_position ? `object-position:${item.image_position}` : '';
     const imgHtml = item.image
-      ? `<img src="${item.image}" alt="${name}" loading="lazy">`
+      ? `<img src="${item.image}" alt="${name}" loading="lazy" style="${imgPos}">`
       : `<div class="item-card-img-ph">🍽️</div>`;
 
     // Centered play button — visual indicator only
@@ -349,8 +350,9 @@ function openDetail(itemId) {
   const cur  = lang === 'ar' ? (menu.restaurant.currency_ar || 'ج.م') : (menu.restaurant.currency_en || 'EGP');
 
   // Image
+  const detailPos = item.image_position ? `style="object-position:${item.image_position}"` : '';
   $('detail-img-wrap').innerHTML = item.image
-    ? `<img src="${item.image}" alt="${name}">`
+    ? `<img src="${item.image}" alt="${name}" ${detailPos}>`
     : `<div class="detail-img-ph">🍽️</div>`;
 
   // Badges

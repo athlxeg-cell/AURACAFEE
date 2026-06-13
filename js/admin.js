@@ -105,6 +105,7 @@ function refreshAll() {
   updateStats();
   loadContactForm();
   loadAboutForm();
+  renderReviewsList();
 }
 
 function markUnsaved() { $('unsaved-badge').style.display = 'inline-block'; }
@@ -717,6 +718,24 @@ function delItem(id) {
   renderVisTable(); updateStats(); markUnsaved(); toast('Item deleted');
 }
 
+/* ── Image position picker ── */
+function loadImagePicker(url, posX = 50, posY = 50) {
+  const wrap = $('edit-img-preview-wrap');
+  const img  = $('edit-img-crop-img');
+  if (!wrap || !img) return;
+  if (!url) { wrap.style.display = 'none'; return; }
+  img.src = url;
+  wrap.style.display = 'block';
+  $('edit-pos-x').value = posX;
+  $('edit-pos-y').value = posY;
+  img.style.objectPosition = posX + '% ' + posY + '%';
+}
+
+function updateImgPosition() {
+  const img = $('edit-img-crop-img');
+  if (img) img.style.objectPosition = $('edit-pos-x').value + '% ' + $('edit-pos-y').value + '%';
+}
+
 /* ── Edit item modal ── */
 function openEditModal(id) {
   const item = menu.items.find(i => i.id===id);
@@ -732,8 +751,11 @@ function openEditModal(id) {
   $('edit-visible').checked  = item.visible!==false;
   $('edit-featured').checked = !!item.featured;
   syncCatDropdowns();
-  $('edit-cat-sel').value    = item.category;
-  previewUrl('edit-image','edit-img-prev');
+  $('edit-cat-sel').value = item.category;
+  // Load image position picker
+  const pos = item.image_position || '50% 50%';
+  const parts = pos.replace(/%/g,'').trim().split(/\s+/).map(Number);
+  loadImagePicker(item.image||'', isNaN(parts[0])?50:parts[0], isNaN(parts[1])?50:parts[1]);
   $('edit-modal').classList.add('open');
 }
 
@@ -747,12 +769,13 @@ function saveEditModal() {
   item.name_en = en; item.name_ar = ar;
   item.description_en = $('edit-desc-en').value.trim();
   item.description_ar = $('edit-desc-ar').value.trim();
-  item.price     = parseFloat($('edit-price').value)||item.price;
-  item.category  = $('edit-cat-sel').value;
-  item.image     = $('edit-image').value.trim();
-  item.video_url = $('edit-video').value.trim();
-  item.visible   = $('edit-visible').checked;
-  item.featured  = $('edit-featured').checked;
+  item.price          = parseFloat($('edit-price').value)||item.price;
+  item.category       = $('edit-cat-sel').value;
+  item.image          = $('edit-image').value.trim();
+  item.video_url      = $('edit-video').value.trim();
+  item.visible        = $('edit-visible').checked;
+  item.featured       = $('edit-featured').checked;
+  item.image_position = $('edit-pos-x').value + '% ' + $('edit-pos-y').value + '%';
   $('edit-modal').classList.remove('open');
   renderVisTable(); renderPhotoGrid(); updateStats(); markUnsaved(); toast('Item updated');
 }
@@ -760,7 +783,11 @@ function saveEditModal() {
 async function uploadEditImage() {
   const file = $('edit-image-file').files[0];
   if (!file) return;
-  await uploadImageFile(file, url => { $('edit-image').value = url; previewUrl('edit-image','edit-img-prev'); toast('Image uploaded'); });
+  await uploadImageFile(file, url => {
+    $('edit-image').value = url;
+    loadImagePicker(url, 50, 50);
+    toast('Image uploaded');
+  });
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -786,17 +813,95 @@ function saveContact() {
 function loadAboutForm() {
   if (!menu) return;
   const r = menu.restaurant;
-  ['name_en','name_ar','tagline_en','tagline_ar','about_en','about_ar'].forEach(f => {
+  ['name_en','name_ar','tagline_en','tagline_ar','about_en','about_ar','about_video'].forEach(f => {
     const el = $('r-'+f); if(el) el.value = r[f]||'';
   });
 }
 
 function saveAbout() {
   const r = menu.restaurant;
-  ['name_en','name_ar','tagline_en','tagline_ar','about_en','about_ar'].forEach(f => {
+  ['name_en','name_ar','tagline_en','tagline_ar','about_en','about_ar','about_video'].forEach(f => {
     const el = $('r-'+f); if(el) r[f] = el.value.trim();
   });
   markUnsaved(); toast('Restaurant info saved (remember to Save & Publish)');
+}
+
+/* ══════════════════════════════════════════════════════════════
+   REVIEWS
+══════════════════════════════════════════════════════════════ */
+function renderReviewsList() {
+  const list = $('rev-list');
+  if (!list || !menu) return;
+  const reviews = menu.restaurant.reviews || [];
+  if (!reviews.length) {
+    list.innerHTML = '<p style="color:var(--muted);font-size:.83rem;padding:8px 0">No reviews yet — add one above.</p>';
+    return;
+  }
+  list.innerHTML = reviews.map(r => `
+    <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)">
+      <div style="flex:1;min-width:0">
+        <div style="font-weight:600;font-size:.84rem">${r.name} <span style="color:#f5c518">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</span></div>
+        <div style="font-size:.78rem;color:var(--muted);margin-top:3px">${r.comment_en}</div>
+      </div>
+      <div style="display:flex;gap:6px;flex-shrink:0">
+        <button class="btn btn-icon btn-sm" data-edit-rev="${r.id}">✏️</button>
+        <button class="btn btn-icon btn-danger btn-sm" data-del-rev="${r.id}">🗑</button>
+      </div>
+    </div>`).join('');
+  list.querySelectorAll('[data-edit-rev]').forEach(b => b.addEventListener('click', () => editReview(b.dataset.editRev)));
+  list.querySelectorAll('[data-del-rev]').forEach(b  => b.addEventListener('click', () => deleteReview(b.dataset.delRev)));
+}
+
+function saveReview() {
+  if (!menu) return;
+  if (!menu.restaurant.reviews) menu.restaurant.reviews = [];
+  const reviews = menu.restaurant.reviews;
+  const id           = $('rev-id').value;
+  const name         = $('rev-name').value.trim();
+  const stars        = parseInt($('rev-stars').value) || 5;
+  const comment_en   = $('rev-comment-en').value.trim();
+  const comment_ar   = $('rev-comment-ar').value.trim();
+  if (!name || !comment_en) { toast('Name and English comment required', 'err'); return; }
+  if (!id && reviews.length >= 5) { toast('Maximum 5 reviews allowed', 'err'); return; }
+  if (id) {
+    const r = reviews.find(x => x.id === id);
+    if (r) { r.name = name; r.stars = stars; r.comment_en = comment_en; r.comment_ar = comment_ar; }
+  } else {
+    reviews.push({ id: 'rev-' + Date.now(), name, stars, comment_en, comment_ar });
+  }
+  clearRevForm();
+  renderReviewsList();
+  markUnsaved();
+  toast('Review saved');
+}
+
+function editReview(id) {
+  const r = (menu.restaurant.reviews || []).find(x => x.id === id);
+  if (!r) return;
+  $('rev-id').value          = r.id;
+  $('rev-name').value        = r.name;
+  $('rev-stars').value       = r.stars;
+  $('rev-comment-en').value  = r.comment_en || '';
+  $('rev-comment-ar').value  = r.comment_ar || '';
+  $('save-rev-btn').textContent = 'Update Review';
+  $('rev-name').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function deleteReview(id) {
+  if (!menu || !confirm('Delete this review?')) return;
+  menu.restaurant.reviews = (menu.restaurant.reviews || []).filter(x => x.id !== id);
+  renderReviewsList();
+  markUnsaved();
+  toast('Review deleted');
+}
+
+function clearRevForm() {
+  $('rev-id').value = '';
+  $('rev-name').value = '';
+  $('rev-stars').value = '5';
+  $('rev-comment-en').value = '';
+  $('rev-comment-ar').value = '';
+  $('save-rev-btn').textContent = 'Add Review';
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -1032,13 +1137,19 @@ Mango Smoothie, عصير مانجو, Fresh mango blended with ice, مانجو ط
   $('edit-modal-close').addEventListener('click', () => $('edit-modal').classList.remove('open'));
   $('edit-cancel-btn').addEventListener('click',  () => $('edit-modal').classList.remove('open'));
   $('edit-save-btn').addEventListener('click', saveEditModal);
-  $('edit-image').addEventListener('input', () => previewUrl('edit-image','edit-img-prev'));
+  $('edit-image').addEventListener('input', () => loadImagePicker($('edit-image').value.trim()));
   $('edit-image-file').addEventListener('change', uploadEditImage);
   $('edit-modal').addEventListener('click', e => { if(e.target===$('edit-modal')) $('edit-modal').classList.remove('open'); });
+  $('edit-pos-x').addEventListener('input', updateImgPosition);
+  $('edit-pos-y').addEventListener('input', updateImgPosition);
 
   // Contact & About
   $('save-contact-btn').addEventListener('click', saveContact);
   $('save-about-btn').addEventListener('click', saveAbout);
+
+  // Reviews
+  $('save-rev-btn').addEventListener('click', saveReview);
+  $('clear-rev-btn').addEventListener('click', clearRevForm);
 
   // Save & Publish
   $('download-btn').addEventListener('click', downloadJSON);

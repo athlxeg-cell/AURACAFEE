@@ -623,6 +623,11 @@
             <textarea id="r-about_ar" class="fi" style="min-height:100px" placeholder="قصتك هنا…" dir="rtl"></textarea>
           </div>
         </div>
+        <div class="form-group" style="margin-top:4px">
+          <label class="label">🎬 About Us Video (YouTube URL)</label>
+          <input id="r-about_video" class="fi" type="url" placeholder="https://www.youtube.com/watch?v=…">
+          <p class="input-hint">Shown on the About Us page. Paste a YouTube link — it loads only when clicked (no performance impact).</p>
+        </div>
         <button id="save-about-btn" class="btn btn-gold">Save Restaurant Info</button>
       </div>
 
@@ -668,6 +673,45 @@
         </div>
 
         <button id="save-contact-btn" class="btn btn-gold">Save Contact Info</button>
+      </div>
+
+      <!-- Reviews -->
+      <div class="card">
+        <div class="card-title">⭐ Customer Reviews</div>
+        <p class="section-hint">Add up to 5 reviews shown on the About Us page. You can edit or delete them anytime.</p>
+
+        <input type="hidden" id="rev-id">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="label">Reviewer Name</label>
+            <input id="rev-name" class="fi" type="text" placeholder="e.g. Ahmed K.">
+          </div>
+          <div class="form-group">
+            <label class="label">Stars</label>
+            <select id="rev-stars" class="fi">
+              <option value="5">⭐⭐⭐⭐⭐ — 5 stars</option>
+              <option value="4">⭐⭐⭐⭐ — 4 stars</option>
+              <option value="3">⭐⭐⭐ — 3 stars</option>
+              <option value="2">⭐⭐ — 2 stars</option>
+              <option value="1">⭐ — 1 star</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="label">Comment (English)</label>
+            <textarea id="rev-comment-en" class="fi" placeholder="Their review in English…" style="min-height:70px"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="label">Comment (Arabic)</label>
+            <textarea id="rev-comment-ar" class="fi" placeholder="تعليقهم بالعربية…" dir="rtl" style="min-height:70px"></textarea>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button id="save-rev-btn" class="btn btn-gold">Add Review</button>
+          <button id="clear-rev-btn" class="btn btn-muted">Clear</button>
+        </div>
+        <div id="rev-list" style="margin-top:16px"></div>
       </div>
     </div>
 
@@ -761,7 +805,25 @@
         <input id="edit-image-file" type="file" accept="image/*" style="display:none">
       </label>
       <input id="edit-image" class="fi" type="url" placeholder="https://… (auto-filled after upload)" style="margin-top:8px">
-      <div id="edit-img-prev" class="img-prev-box"><span>Preview</span></div>
+      <div id="edit-img-preview-wrap" style="display:none;margin-top:12px">
+        <p class="input-hint" style="margin-bottom:8px">Adjust sliders to control what shows inside the card frame</p>
+        <div style="display:flex;gap:16px;align-items:flex-start">
+          <div style="flex-shrink:0">
+            <div style="font-size:.65rem;color:var(--muted);text-align:center;margin-bottom:4px">Card preview</div>
+            <div id="edit-img-crop" style="width:120px;height:120px;overflow:hidden;border-radius:8px;border:2px solid var(--gold);background:var(--n600);position:relative">
+              <img id="edit-img-crop-img" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%" alt="">
+            </div>
+          </div>
+          <div style="flex:1;min-width:0">
+            <label class="label" style="font-size:.72rem">⬅ Horizontal ➡</label>
+            <input id="edit-pos-x" type="range" min="0" max="100" value="50" style="width:100%;accent-color:var(--gold);margin-bottom:2px">
+            <div style="display:flex;justify-content:space-between;font-size:.62rem;color:var(--muted);margin-bottom:12px"><span>Left</span><span>Right</span></div>
+            <label class="label" style="font-size:.72rem">⬆ Vertical ⬇</label>
+            <input id="edit-pos-y" type="range" min="0" max="100" value="50" style="width:100%;accent-color:var(--gold);margin-bottom:2px">
+            <div style="display:flex;justify-content:space-between;font-size:.62rem;color:var(--muted)"><span>Top</span><span>Bottom</span></div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="form-group">
