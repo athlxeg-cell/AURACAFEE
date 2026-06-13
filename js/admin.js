@@ -718,8 +718,15 @@ function delItem(id) {
   renderVisTable(); updateStats(); markUnsaved(); toast('Item deleted');
 }
 
-/* ── Image position picker ── */
-function loadImagePicker(url, posX = 50, posY = 50) {
+/* ── Image position / zoom picker ── */
+function applyPickerTransform(x, y, z) {
+  const img = $('edit-img-crop-img');
+  if (!img) return;
+  img.style.objectPosition = x + '% ' + y + '%';
+  img.style.transform = 'scale(' + (z / 100) + ')';
+}
+
+function loadImagePicker(url, posX = 50, posY = 50, zoom = 100) {
   const wrap = $('edit-img-preview-wrap');
   const img  = $('edit-img-crop-img');
   if (!wrap || !img) return;
@@ -728,12 +735,16 @@ function loadImagePicker(url, posX = 50, posY = 50) {
   wrap.style.display = 'block';
   $('edit-pos-x').value = posX;
   $('edit-pos-y').value = posY;
-  img.style.objectPosition = posX + '% ' + posY + '%';
+  $('edit-pos-z').value = zoom;
+  applyPickerTransform(posX, posY, zoom);
 }
 
 function updateImgPosition() {
-  const img = $('edit-img-crop-img');
-  if (img) img.style.objectPosition = $('edit-pos-x').value + '% ' + $('edit-pos-y').value + '%';
+  applyPickerTransform(
+    parseFloat($('edit-pos-x').value),
+    parseFloat($('edit-pos-y').value),
+    parseFloat($('edit-pos-z').value)
+  );
 }
 
 /* ── Edit item modal ── */
@@ -755,7 +766,8 @@ function openEditModal(id) {
   // Load image position picker
   const pos = item.image_position || '50% 50%';
   const parts = pos.replace(/%/g,'').trim().split(/\s+/).map(Number);
-  loadImagePicker(item.image||'', isNaN(parts[0])?50:parts[0], isNaN(parts[1])?50:parts[1]);
+  const zoom = Math.round((parseFloat(item.image_zoom) || 1) * 100);
+  loadImagePicker(item.image||'', isNaN(parts[0])?50:parts[0], isNaN(parts[1])?50:parts[1], zoom);
   $('edit-modal').classList.add('open');
 }
 
@@ -776,6 +788,7 @@ function saveEditModal() {
   item.visible        = $('edit-visible').checked;
   item.featured       = $('edit-featured').checked;
   item.image_position = $('edit-pos-x').value + '% ' + $('edit-pos-y').value + '%';
+  item.image_zoom     = (parseFloat($('edit-pos-z').value) / 100).toFixed(2);
   $('edit-modal').classList.remove('open');
   renderVisTable(); renderPhotoGrid(); updateStats(); markUnsaved(); toast('Item updated');
 }
@@ -1142,6 +1155,78 @@ Mango Smoothie, عصير مانجو, Fresh mango blended with ice, مانجو ط
   $('edit-modal').addEventListener('click', e => { if(e.target===$('edit-modal')) $('edit-modal').classList.remove('open'); });
   $('edit-pos-x').addEventListener('input', updateImgPosition);
   $('edit-pos-y').addEventListener('input', updateImgPosition);
+  $('edit-pos-z').addEventListener('input', updateImgPosition);
+
+  // Drag-to-pan + scroll-to-zoom on the crop preview
+  (function () {
+    const crop = $('edit-img-crop');
+    if (!crop) return;
+    let dragging = false, startMX, startMY, startPX, startPY;
+
+    function getPos() {
+      return { x: parseFloat($('edit-pos-x').value), y: parseFloat($('edit-pos-y').value) };
+    }
+
+    // Mouse drag
+    crop.addEventListener('mousedown', e => {
+      e.preventDefault();
+      dragging = true;
+      startMX = e.clientX; startMY = e.clientY;
+      const p = getPos(); startPX = p.x; startPY = p.y;
+      crop.style.cursor = 'grabbing';
+    });
+    document.addEventListener('mousemove', e => {
+      if (!dragging) return;
+      const scale = parseFloat($('edit-pos-z').value) / 100;
+      // Pixel delta → % change (invert so dragging right shows left side)
+      const nx = Math.min(100, Math.max(0, startPX - (e.clientX - startMX) / scale));
+      const ny = Math.min(100, Math.max(0, startPY - (e.clientY - startMY) / scale));
+      $('edit-pos-x').value = nx;
+      $('edit-pos-y').value = ny;
+      applyPickerTransform(nx, ny, parseFloat($('edit-pos-z').value));
+    });
+    document.addEventListener('mouseup', () => { dragging = false; crop.style.cursor = 'grab'; });
+
+    // Scroll wheel to zoom
+    crop.addEventListener('wheel', e => {
+      e.preventDefault();
+      const zEl = $('edit-pos-z');
+      const newZ = Math.min(300, Math.max(100, parseFloat(zEl.value) + (e.deltaY < 0 ? 10 : -10)));
+      zEl.value = newZ;
+      updateImgPosition();
+    }, { passive: false });
+
+    // Touch: one finger = pan, two fingers = pinch zoom
+    let lastTouches = null;
+    crop.addEventListener('touchstart', e => {
+      e.preventDefault();
+      if (e.touches.length === 1) {
+        dragging = true;
+        startMX = e.touches[0].clientX; startMY = e.touches[0].clientY;
+        const p = getPos(); startPX = p.x; startPY = p.y;
+      }
+      lastTouches = Array.from(e.touches);
+    }, { passive: false });
+    crop.addEventListener('touchmove', e => {
+      e.preventDefault();
+      if (e.touches.length === 1 && dragging) {
+        const scale = parseFloat($('edit-pos-z').value) / 100;
+        const nx = Math.min(100, Math.max(0, startPX - (e.touches[0].clientX - startMX) / scale));
+        const ny = Math.min(100, Math.max(0, startPY - (e.touches[0].clientY - startMY) / scale));
+        $('edit-pos-x').value = nx; $('edit-pos-y').value = ny;
+        applyPickerTransform(nx, ny, parseFloat($('edit-pos-z').value));
+      } else if (e.touches.length === 2 && lastTouches && lastTouches.length === 2) {
+        const prev = Math.hypot(lastTouches[0].clientX - lastTouches[1].clientX, lastTouches[0].clientY - lastTouches[1].clientY);
+        const curr = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        const zEl = $('edit-pos-z');
+        const newZ = Math.min(300, Math.max(100, parseFloat(zEl.value) * (curr / prev)));
+        zEl.value = newZ;
+        updateImgPosition();
+      }
+      lastTouches = Array.from(e.touches);
+    }, { passive: false });
+    crop.addEventListener('touchend', () => { dragging = false; lastTouches = null; });
+  })();
 
   // Contact & About
   $('save-contact-btn').addEventListener('click', saveContact);

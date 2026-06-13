@@ -18,11 +18,7 @@
 <header class="navbar">
   <div class="nav-left">
     <div class="brand">
-      <img class="brand-logo" src="images/logo.png" alt="AURA" onerror="this.style.display='none'">
-      <div class="brand-text">
-        <span class="brand-name" id="brand-name">AURA</span>
-        <span class="brand-tag"  id="brand-tag">Lounge &amp; Café</span>
-      </div>
+      <img class="brand-logo" src="images/logo-gold.png" alt="AURA Lounge &amp; Café">
     </div>
   </div>
   <div class="nav-right">
@@ -125,8 +121,6 @@
     const c = r.contact || {};
 
     // Branding
-    document.getElementById('brand-name').textContent   = l(r.name_en, r.name_ar);
-    document.getElementById('brand-tag').textContent    = l(r.tagline_en, r.tagline_ar);
     document.getElementById('footer-brand').textContent = l(r.name_en, r.name_ar);
     document.getElementById('menu-link').textContent    = t[lang].menu;
     document.getElementById('about-title').textContent  = t[lang].about;

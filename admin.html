@@ -805,22 +805,25 @@
         <input id="edit-image-file" type="file" accept="image/*" style="display:none">
       </label>
       <input id="edit-image" class="fi" type="url" placeholder="https://… (auto-filled after upload)" style="margin-top:8px">
-      <div id="edit-img-preview-wrap" style="display:none;margin-top:12px">
-        <p class="input-hint" style="margin-bottom:8px">Adjust sliders to control what shows inside the card frame</p>
-        <div style="display:flex;gap:16px;align-items:flex-start">
+      <div id="edit-img-preview-wrap" style="display:none;margin-top:14px">
+        <p class="input-hint" style="margin-bottom:8px">🖱 Drag inside frame to pan &nbsp;·&nbsp; Scroll wheel to zoom</p>
+        <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
           <div style="flex-shrink:0">
-            <div style="font-size:.65rem;color:var(--muted);text-align:center;margin-bottom:4px">Card preview</div>
-            <div id="edit-img-crop" style="width:120px;height:120px;overflow:hidden;border-radius:8px;border:2px solid var(--gold);background:var(--n600);position:relative">
-              <img id="edit-img-crop-img" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%" alt="">
+            <div style="font-size:.65rem;color:var(--muted);text-align:center;margin-bottom:5px">Card preview</div>
+            <div id="edit-img-crop" style="width:140px;height:140px;overflow:hidden;border-radius:8px;border:2px solid var(--gold);background:var(--n600);position:relative;cursor:grab;user-select:none;touch-action:none">
+              <img id="edit-img-crop-img" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;transform:scale(1);transform-origin:center center;pointer-events:none;user-select:none;display:block" alt="">
             </div>
           </div>
-          <div style="flex:1;min-width:0">
+          <div style="flex:1;min-width:130px">
             <label class="label" style="font-size:.72rem">⬅ Horizontal ➡</label>
             <input id="edit-pos-x" type="range" min="0" max="100" value="50" style="width:100%;accent-color:var(--gold);margin-bottom:2px">
-            <div style="display:flex;justify-content:space-between;font-size:.62rem;color:var(--muted);margin-bottom:12px"><span>Left</span><span>Right</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:.62rem;color:var(--muted);margin-bottom:10px"><span>Left</span><span>Right</span></div>
             <label class="label" style="font-size:.72rem">⬆ Vertical ⬇</label>
             <input id="edit-pos-y" type="range" min="0" max="100" value="50" style="width:100%;accent-color:var(--gold);margin-bottom:2px">
-            <div style="display:flex;justify-content:space-between;font-size:.62rem;color:var(--muted)"><span>Top</span><span>Bottom</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:.62rem;color:var(--muted);margin-bottom:10px"><span>Top</span><span>Bottom</span></div>
+            <label class="label" style="font-size:.72rem">🔍 Zoom</label>
+            <input id="edit-pos-z" type="range" min="100" max="300" value="100" style="width:100%;accent-color:var(--gold);margin-bottom:2px">
+            <div style="display:flex;justify-content:space-between;font-size:.62rem;color:var(--muted)"><span>1×</span><span>3×</span></div>
           </div>
         </div>
       </div>

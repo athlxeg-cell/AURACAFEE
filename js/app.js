@@ -290,9 +290,11 @@ function renderItemCards(items) {
     const desc   = t(item, 'description');
     const hasVid = item.video_url && item.video_url.trim();
 
-    const imgPos  = item.image_position ? `object-position:${item.image_position}` : '';
+    const imgStyles = [];
+    if (item.image_position) imgStyles.push(`object-position:${item.image_position}`);
+    if (item.image_zoom && parseFloat(item.image_zoom) !== 1) imgStyles.push(`transform:scale(${item.image_zoom});transform-origin:center`);
     const imgHtml = item.image
-      ? `<img src="${item.image}" alt="${name}" loading="lazy" style="${imgPos}">`
+      ? `<img src="${item.image}" alt="${name}" loading="lazy" style="${imgStyles.join(';')}">`
       : `<div class="item-card-img-ph">🍽️</div>`;
 
     // Centered play button — visual indicator only
@@ -350,9 +352,11 @@ function openDetail(itemId) {
   const cur  = lang === 'ar' ? (menu.restaurant.currency_ar || 'ج.م') : (menu.restaurant.currency_en || 'EGP');
 
   // Image
-  const detailPos = item.image_position ? `style="object-position:${item.image_position}"` : '';
+  const detailStyles = [];
+  if (item.image_position) detailStyles.push(`object-position:${item.image_position}`);
+  if (item.image_zoom && parseFloat(item.image_zoom) !== 1) detailStyles.push(`transform:scale(${item.image_zoom});transform-origin:center`);
   $('detail-img-wrap').innerHTML = item.image
-    ? `<img src="${item.image}" alt="${name}" ${detailPos}>`
+    ? `<img src="${item.image}" alt="${name}" style="${detailStyles.join(';')}">`
     : `<div class="detail-img-ph">🍽️</div>`;
 
   // Badges
