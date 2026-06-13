@@ -251,7 +251,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-k5x",
@@ -290,7 +290,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-0az",
@@ -355,7 +355,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-svd",
@@ -381,7 +381,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-116",
@@ -485,7 +485,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-kom",
@@ -498,7 +498,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-p96",
@@ -537,7 +537,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-ndj",
@@ -589,7 +589,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-fp5",
@@ -615,7 +615,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-l1q",
@@ -628,7 +628,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-4a1",
@@ -706,7 +706,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-dxg",
@@ -732,7 +732,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-jef",
@@ -771,7 +771,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-18q",
@@ -823,7 +823,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-zgj",
@@ -862,7 +862,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-laa",
@@ -914,7 +914,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-zna",
@@ -1044,7 +1044,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-6pd",
@@ -1070,7 +1070,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-g0h",
@@ -1096,7 +1096,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-js2",
@@ -1187,7 +1187,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-m45",
@@ -1265,7 +1265,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-nes",
@@ -1369,7 +1369,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-0dj",
@@ -1421,7 +1421,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-f70",
@@ -1564,7 +1564,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-d7j",
@@ -1616,7 +1616,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-cyt",
@@ -1811,11 +1811,11 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-iui",
-      "category": "juices",
+      "category": "desserts",
       "name_en": "Fruit Salad",
       "name_ar": "فروت سالاد",
       "description_en": "",
@@ -1824,7 +1824,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-a6a",
@@ -1954,7 +1954,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-zkq",
@@ -2136,7 +2136,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-hj7",
@@ -2175,7 +2175,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-qc0",
@@ -2279,7 +2279,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-2cx",
@@ -2370,7 +2370,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-5ve",
@@ -2396,7 +2396,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-4zk",
@@ -2448,7 +2448,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-6t8",
@@ -2526,7 +2526,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-ovs",
@@ -2604,7 +2604,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781316294666-hft",
@@ -2630,7 +2630,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781316294666-ehx",
@@ -2669,7 +2669,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781316294666-wj6",
@@ -2682,7 +2682,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781316294666-pvm",
@@ -2708,7 +2708,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781316294666-lxf",
@@ -2747,7 +2747,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781316294666-iuc",
@@ -2786,7 +2786,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781316294666-tgl",
@@ -2812,7 +2812,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781316294666-u5n",
@@ -2877,7 +2877,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781316294666-jmw",
@@ -2903,7 +2903,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781316294666-7hq",
@@ -3033,7 +3033,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781316294666-dbr",
@@ -3059,7 +3059,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781316294666-4ou",
@@ -3085,7 +3085,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781316294666-63s",
@@ -3215,7 +3215,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781317393203",
