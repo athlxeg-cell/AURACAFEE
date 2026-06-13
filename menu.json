@@ -184,6 +184,14 @@
       "image": "",
       "section": "main-menu",
       "visible": true
+    },
+    {
+      "id": "soft-drinks",
+      "name_en": "SOFT DRINKS",
+      "name_ar": "سوفت درينك",
+      "image": "",
+      "section": "main-menu",
+      "visible": true
     }
   ],
   "items": [
