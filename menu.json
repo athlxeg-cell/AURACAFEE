@@ -2760,10 +2760,12 @@
       "description_en": "Hot Dog, Beef Bacon & Omelette served with Potato Wedges, Italian Salad, Grilled Corn, and Mushrooms.",
       "description_ar": "هوت دوغ وبيف بيكون وامليت يقدم مع بطاطس ويدجز وسلاد ايطالي وذرة مشوية وماشروم",
       "price": 250,
-      "image": "",
+      "image": "blob:https://web.whatsapp.com/b0cace07-181c-43e5-a644-d1f5624a2f16",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-ao2",
@@ -2773,10 +2775,12 @@
       "description_en": "Red & Yellow Cheddar Slices, Smoked Pepperoni, Fried Eggs, Italian Salad, Potato Wedges, Grilled Corn, and Mushrooms.",
       "description_ar": "شرائح شيدر احمر واصفر وببروني مدخن وبيض عيون وسلاد ايطالي وبطاطس ويدجز وذرة مشوية وماشروم",
       "price": 225,
-      "image": "",
+      "image": "blob:https://web.whatsapp.com/faa17ab5-9536-4e6d-a55c-05a41745e85b",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-92w",
@@ -2786,10 +2790,12 @@
       "description_en": "Omelette Roll Stuffed with Smoked Turkey and Topped with Cheddar Slices, served with Potato Wedges, Grilled Corn, and Mushrooms.",
       "description_ar": "اومليت رول محشي تركي مدخن مغطاه بشرائح الشيدر يقدم مع بطاطس ويدجز وذرة مشوية وماشروم",
       "price": 235,
-      "image": "",
+      "image": "blob:https://web.whatsapp.com/b56da760-d1a5-4a69-b4d5-1eadfd2c8914",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-tgl",
@@ -2799,10 +2805,12 @@
       "description_en": "BBQ Hot Dog with Bell Peppers and Onions, served with Mashed Potatoes, Italian Salad, Grilled Corn, and Mushrooms.",
       "description_ar": "هوتدوغ بالباربكيو مع فلفل اللوان وبصل وبطاطس بوريه وسلاد ايطالي وذرة مشوية ومشروم",
       "price": 260,
-      "image": "",
+      "image": "blob:https://web.whatsapp.com/270aa75b-f210-45b8-9803-96bcc1e92ac6",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-vgz",
