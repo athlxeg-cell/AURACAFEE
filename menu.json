@@ -2745,10 +2745,12 @@
       "description_en": "Foul Medames - Egyptian Falafel - Omelette - 4 Assorted Mini Manakish - Baba Ghanoush - Moutabal - Hummus - Cheese with Tomatoes - Mixed Cold Cuts - Mixed Cheese - Butter & Jam - Mixed Pickles - Mixed Vegetables",
       "description_ar": "فول-طعمية-اومليت-4مناقيش سواريه-بابا غنوج-متبل-حمص ناعم-جبنة بالطاطم-ميكس لحوم باردة-ميكس اجبان-زبدة مربى-مخلل مشكل-خضار مشكل",
       "price": 445,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-15-at-2.49.41-am.jpeg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-iuc",
