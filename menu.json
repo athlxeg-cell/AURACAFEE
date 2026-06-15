@@ -236,10 +236,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 129,
-      "image": "/images/whatsapp-image-2026-06-13-at-7.47.16-pm.jpeg",
-      "video_url": "https://www.youtube.com/watch?v=EofW3evQGzw",
+      "image": "",
+      "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-9kz",
@@ -249,10 +251,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 89,
-      "image": "/images/img-20260613-wa0004.jpg",
+      "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "2.30"
     },
     {
       "id": "item-1781312173067-tn3",
@@ -262,10 +266,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 165,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-15-at-2.48.02-am.jpeg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "46% 94%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-0az",
@@ -512,7 +518,9 @@
       "image": "/images/whatsapp-image-2026-06-13-at-7.20.19-pm.jpeg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "46% 88%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-hiz",
@@ -1250,10 +1258,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 115,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-15-at-2.48.05-am-1.jpeg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-dla",
@@ -1328,10 +1338,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 115,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-15-at-2.48.04-am-1.jpeg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 95%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-knz",
@@ -2381,10 +2393,12 @@
       "description_en": "Classic Crème Brûlée with a caramelized top, consisting of sponge cake, caramel cream, and nuts.",
       "description_ar": "كريم بورليه اكلاسيكي بسطح كراميل محمر يتكون من( سبونج كيك. كريم كراميل . مكسرات )",
       "price": 165,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-15-at-2.48.04-am.jpeg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 86%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-8x5",
@@ -2459,10 +2473,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 199,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-15-at-2.48.05-am-2.jpeg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 45%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-m4u",
