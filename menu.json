@@ -3015,10 +3015,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 135,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-15-at-2.48.05-am.jpeg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 27%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-a00",
