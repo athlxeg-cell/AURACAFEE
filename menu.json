@@ -2749,7 +2749,7 @@
       "video_url": "",
       "visible": true,
       "featured": true,
-      "image_position": "50% 50%",
+      "image_position": "50% 64%",
       "image_zoom": "1.00"
     },
     {
@@ -2764,7 +2764,7 @@
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 50%",
+      "image_position": "50% 84%",
       "image_zoom": "1.00"
     },
     {
@@ -2775,11 +2775,11 @@
       "description_en": "Red & Yellow Cheddar Slices, Smoked Pepperoni, Fried Eggs, Italian Salad, Potato Wedges, Grilled Corn, and Mushrooms.",
       "description_ar": "شرائح شيدر احمر واصفر وببروني مدخن وبيض عيون وسلاد ايطالي وبطاطس ويدجز وذرة مشوية وماشروم",
       "price": 225,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-15-at-2.49.41-am-3.jpeg",
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 50%",
+      "image_position": "50% 79%",
       "image_zoom": "1.00"
     },
     {
@@ -2794,7 +2794,7 @@
       "video_url": "",
       "visible": true,
       "featured": true,
-      "image_position": "50% 50%",
+      "image_position": "59% 100%",
       "image_zoom": "1.00"
     },
     {
@@ -2809,7 +2809,7 @@
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 50%",
+      "image_position": "50% 98%",
       "image_zoom": "1.00"
     },
     {
