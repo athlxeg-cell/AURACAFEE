@@ -70,7 +70,7 @@
       "id": "bbq",
       "name_en": "BBQ",
       "name_ar": "المشويات",
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-17-at-7.06.23-pm.jpeg",
       "section": "main-menu",
       "visible": true
     },
@@ -78,7 +78,7 @@
       "id": "main-dishes",
       "name_en": "MAIN DISHES",
       "name_ar": "الاطباق الرئيسية",
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-17-at-7.08.12-pm.jpeg",
       "section": "main-menu",
       "visible": true
     },
@@ -86,7 +86,7 @@
       "id": "pasta",
       "name_en": "PASTA",
       "name_ar": "باستا",
-      "image": "/images/whatsapp-image-2026-06-13-at-8.02.53-pm.jpeg",
+      "image": "/images/whatsapp-image-2026-06-17-at-7.11.50-pm-2.jpeg",
       "section": "main-menu",
       "visible": true
     },
@@ -110,7 +110,7 @@
       "id": "mnakish",
       "name_en": "MANAKISH",
       "name_ar": "مناقيش",
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-17-at-7.11.50-pm.jpeg",
       "section": "main-menu",
       "visible": true
     },
@@ -119,14 +119,14 @@
       "section": "main-menu",
       "name_en": "Hot Drinks",
       "name_ar": "مشروبات ساخنة",
-      "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=200&q=70",
+      "image": "/images/whatsapp-image-2026-06-17-at-7.15.28-pm.jpeg",
       "visible": true
     },
     {
       "id": "soft-drinks",
       "name_en": "SOFT DRINKS",
       "name_ar": "سوفت درينك",
-      "image": "",
+      "image": "/images/dsc09925.jpg",
       "section": "main-menu",
       "visible": true
     },
@@ -183,7 +183,7 @@
       "section": "main-menu",
       "name_en": "Desserts",
       "name_ar": "حلويات",
-      "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=200&q=70",
+      "image": "/images/whatsapp-image-2026-06-17-at-7.09.30-pm.jpeg",
       "visible": true
     },
     {
@@ -222,7 +222,7 @@
       "id": "manakish",
       "name_en": "MANAKISH",
       "name_ar": "مناقيش",
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-17-at-7.11.50-pm-1.jpeg",
       "section": "breakfast",
       "visible": true
     }
@@ -471,10 +471,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 135,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-17-at-12.49.43-pm.jpeg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.18"
     },
     {
       "id": "item-1781312173067-jp2",
@@ -2556,10 +2558,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 199,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-17-at-7.11.50-pm-3.jpeg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.27"
     },
     {
       "id": "item-1781312173067-6t8",
@@ -3043,10 +3047,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 295,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-17-at-7.18.31-pm.jpeg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.17"
     },
     {
       "id": "item-1781316294666-7hq",
