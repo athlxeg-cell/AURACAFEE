@@ -19,6 +19,14 @@ let navLevel   = 0;      // 0=sections, 1=categories, 2=items
 /* ── i18n helper ── */
 const t = (obj, key) => obj[key + '_' + lang] || obj[key + '_en'] || '';
 
+/* ── Image optimization via Vercel ── */
+function imgSrc(url, width) {
+  if (!url) return '';
+  // Already a relative/data URL — skip optimization
+  if (url.startsWith('/') || url.startsWith('data:')) return url;
+  return `/_vercel/image?url=${encodeURIComponent(url)}&w=${width}&q=75`;
+}
+
 /* ============================================================
    BOOT
    ============================================================ */
@@ -152,7 +160,7 @@ function renderSections() {
     const name = t(sec, 'name');
     const desc = t(sec, 'description');
     const bg   = sec.image
-      ? `<img class="sec-card-bg" src="${sec.image}" alt="${name}" loading="lazy">`
+      ? `<img class="sec-card-bg" src="${imgSrc(sec.image, 400)}" alt="${name}" loading="lazy">`
       : `<div class="sec-card-ph">${emojis[sec.id] || '📋'}</div>`;
 
     return `
@@ -199,7 +207,7 @@ function renderCategories(secId) {
     const icon = $('section-header-icon');
     const emojis = { 'main-menu': '🍽️', 'delivery': '🛵', 'breakfast': '🌅' };
     icon.innerHTML = sec.image
-      ? `<img src="${sec.image}" alt="${t(sec,'name')}" loading="lazy">`
+      ? `<img src="${imgSrc(sec.image, 120)}" alt="${t(sec,'name')}" loading="lazy">`
       : emojis[secId] || '📋';
     $('section-header-name').textContent = t(sec, 'name');
     $('section-header-desc').textContent = t(sec, 'description');
@@ -217,7 +225,7 @@ function renderCategories(secId) {
     const name  = t(cat, 'name');
     const count = (menu.items || []).filter(it => it.category === cat.id && it.visible !== false).length;
     const img   = cat.image
-      ? `<img class="cat-card-bg" src="${cat.image}" alt="${name}" loading="lazy">`
+      ? `<img class="cat-card-bg" src="${imgSrc(cat.image, 400)}" alt="${name}" loading="lazy">`
       : `<div class="cat-card-ph">🍽️</div>`;
 
     return `
@@ -263,7 +271,7 @@ function renderItems(catId) {
   if (cat) {
     catName.textContent = t(cat, 'name');
     catImg.innerHTML = cat.image
-      ? `<img src="${cat.image}" alt="${t(cat,'name')}" loading="lazy">`
+      ? `<img src="${imgSrc(cat.image, 400)}" alt="${t(cat,'name')}" loading="lazy">`
       : '🍽️';
   }
 
@@ -294,7 +302,7 @@ function renderItemCards(items) {
     if (item.image_position) imgStyles.push(`object-position:${item.image_position}`);
     if (item.image_zoom && parseFloat(item.image_zoom) !== 1) imgStyles.push(`transform:scale(${item.image_zoom});transform-origin:center`);
     const imgHtml = item.image
-      ? `<img src="${item.image}" alt="${name}" loading="lazy" style="${imgStyles.join(';')}">`
+      ? `<img src="${imgSrc(item.image, 240)}" alt="${name}" loading="lazy" style="${imgStyles.join(';')}">`
       : `<div class="item-card-img-ph">🍽️</div>`;
 
     // Centered play button — visual indicator only
@@ -356,7 +364,7 @@ function openDetail(itemId) {
   if (item.image_position) detailStyles.push(`object-position:${item.image_position}`);
   if (item.image_zoom && parseFloat(item.image_zoom) !== 1) detailStyles.push(`transform:scale(${item.image_zoom});transform-origin:center`);
   $('detail-img-wrap').innerHTML = item.image
-    ? `<img src="${item.image}" alt="${name}" style="${detailStyles.join(';')}">`
+    ? `<img src="${imgSrc(item.image, 800)}" alt="${name}" style="${detailStyles.join(';')}">`
     : `<div class="detail-img-ph">🍽️</div>`;
 
   // Badges
