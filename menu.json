@@ -443,7 +443,7 @@
       "description_en": "",
       "description_ar": "",
       "price": 89,
-      "image": "/images/dsc09891.jpg",
+      "image": "",
       "video_url": "",
       "visible": true,
       "featured": false,
@@ -751,10 +751,12 @@
       "description_en": "Penne Pasta baked with béchamel sauce, mushrooms, sweet corn, mozzarella cheese, and chicken slices.",
       "description_ar": "باستا بينا مطهيه بصوص الباشاميل و المشروم و الذرة و موزريلا  مع شرائح الفراخ",
       "price": 289,
-      "image": "",
+      "image": "/images/dsc09850.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-j21",
@@ -779,10 +781,12 @@
       "description_en": "Spaghetti Pasta with red sauce, meatballs, and Parmesan cheese.",
       "description_ar": "مكرونة اسباجيتي مع ريد صوص و كرات اللحم مع جبنة البارميزان",
       "price": 295,
-      "image": "",
+      "image": "/images/dsc09839.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-4cn",
@@ -792,10 +796,12 @@
       "description_en": "Pasta with shrimp in a creamy white sauce, flavored with garlic and black pepper.",
       "description_ar": "مكرونة بالجمبري مع صوص كريمي أبيض متبل بالثوم و الفلفل الاسود",
       "price": 375,
-      "image": "",
+      "image": "/images/dsc09849.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-cmo",
@@ -805,10 +811,12 @@
       "description_en": "Italian tomato sauce with shredded mozzarella, mozzarella sticks, Parmesan cheese, olive oil, and fresh basil.",
       "description_ar": "صلصة طماطم الايطالي  و موزريلا مبشورة و موزريلا  صوابع و  بارميزان مع   زيت الزيتون مع الريحان الفريش",
       "price": 330,
-      "image": "",
+      "image": "/images/dsc09862.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-18q",
