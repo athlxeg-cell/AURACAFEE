@@ -738,10 +738,12 @@
       "description_en": "Fettuccine Pasta with Sweet & Sour sauce, crispy chicken pieces, bell peppers, a hint of black seed (Nigella seeds), and sesame seeds.",
       "description_ar": "باستا فيتوتشيني  بصوص السويت & ساور مع قطع الفراخ المقرمش مع فلفل الوان و لمسه من حبه البركة و سمسم",
       "price": 275,
-      "image": "",
+      "image": "/images/dsc09841.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-jef",
