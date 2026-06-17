@@ -540,7 +540,7 @@
       "description_en": "Lamb Ribs | Kebab | Kofta",
       "description_ar": "ريش .  كباب . كفتة",
       "price": 595,
-      "image": "/images/dsc09874.jpg",
+      "image": "",
       "video_url": "",
       "visible": true,
       "featured": false,
@@ -555,10 +555,12 @@
       "description_en": "Lamb Ribs | Kebab | Kofta | Tareb",
       "description_ar": "ريش .  كباب . كفتة . طرب",
       "price": 695,
-      "image": "",
+      "image": "/images/dsc09874.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.33"
     },
     {
       "id": "item-1781312173067-ndj",
