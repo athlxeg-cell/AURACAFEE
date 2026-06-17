@@ -826,10 +826,12 @@
       "description_en": "Italian tomato sauce with shredded mozzarella, mozzarella sticks, turkey, a touch of Parmesan cheese, olive oil, and arugula.",
       "description_ar": "صلصة طماطم الايطالي مع موزربلا مبشورة مع موزريلا صوابع مع تيركي و لمسه من البارميزان مع زيت الزيتون و جرجير",
       "price": 379,
-      "image": "",
+      "image": "/images/dsc09872.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-wul",
@@ -839,10 +841,12 @@
       "description_en": "Truffle sauce with shredded mozzarella, mozzarella sticks, Parmesan cheese, fresh mushrooms, fresh basil, and premium French truffle oil.",
       "description_ar": "صوص ترافل  مع موزريلا مبشورة مع موزريلا صوابع مع جبنة البارميزان مع ماشروم فريش مع ريحان فريش مع زيت الترافيل الفرنسي الفاخر",
       "price": 435,
-      "image": "",
+      "image": "/images/dsc09856.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-v1q",
@@ -852,10 +856,12 @@
       "description_en": "Pesto sauce with shredded mozzarella, mozzarella sticks, a touch of Parmesan cheese, fresh basil, and olive oil.",
       "description_ar": "صوص البستو مع موزريلا مبشورة مع موزربلا صوابع مع لمسة من البارميزان مع الريحان الفريش و الزيت الزيتون",
       "price": 379,
-      "image": "",
+      "image": "/images/dsc09863.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-23v",
@@ -865,10 +871,12 @@
       "description_en": "Italian tomato sauce with shredded mozzarella, mozzarella sticks, pepperoni, a touch of Parmesan cheese, a hint of hot honey, and olive oil.",
       "description_ar": "صوص الطماطم الايطالي مع موزريلا مبشورة وز موزريلا صوابع مع بيبروني و لمسه من البارميزان و لمسه من الهوت هاني و الزيت الزيتون",
       "price": 399,
-      "image": "",
+      "image": "/images/dsc09878.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-zgj",
