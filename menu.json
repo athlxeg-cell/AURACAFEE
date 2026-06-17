@@ -3220,10 +3220,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 155,
-      "image": "",
+      "image": "/images/dsc09885.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.35"
     },
     {
       "id": "item-1781316294666-mfm",
@@ -3233,10 +3235,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 195,
-      "image": "",
+      "image": "/images/dsc09870.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.27"
     },
     {
       "id": "item-1781316294666-63s",
@@ -3246,10 +3250,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 235,
-      "image": "",
+      "image": "/images/dsc09882.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.24"
     },
     {
       "id": "item-1781316294666-yrj",
@@ -3259,10 +3265,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 235,
-      "image": "",
+      "image": "/images/dsc09877.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.25"
     },
     {
       "id": "item-1781316294666-kva",
@@ -3285,10 +3293,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 285,
-      "image": "",
+      "image": "/images/dsc09871.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.18"
     },
     {
       "id": "item-1781316294666-8jb",
@@ -3298,10 +3308,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 299,
-      "image": "",
+      "image": "/images/dsc09880.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.26"
     },
     {
       "id": "item-1781316294666-rgs",
@@ -3311,10 +3323,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 335,
-      "image": "",
+      "image": "/images/dsc09883.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.32"
     },
     {
       "id": "item-1781317038345",
