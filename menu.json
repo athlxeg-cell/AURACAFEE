@@ -27,7 +27,7 @@
       "name_ar": "القائمة الرئيسية",
       "description_en": "Full dine-in experience — drinks, food & desserts",
       "description_ar": "تجربة الجلوس الكاملة — مشروبات وأكل وحلويات",
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-13-at-7.20.19-pm.jpeg",
       "visible": true
     },
     {
@@ -70,7 +70,7 @@
       "id": "bbq",
       "name_en": "BBQ",
       "name_ar": "المشويات",
-      "image": "/images/whatsapp-image-2026-06-17-at-7.06.23-pm.jpeg",
+      "image": "",
       "section": "main-menu",
       "visible": true
     },
@@ -78,7 +78,7 @@
       "id": "main-dishes",
       "name_en": "MAIN DISHES",
       "name_ar": "الاطباق الرئيسية",
-      "image": "/images/whatsapp-image-2026-06-17-at-7.08.12-pm.jpeg",
+      "image": "",
       "section": "main-menu",
       "visible": true
     },
@@ -86,7 +86,7 @@
       "id": "pasta",
       "name_en": "PASTA",
       "name_ar": "باستا",
-      "image": "/images/whatsapp-image-2026-06-17-at-7.11.50-pm-2.jpeg",
+      "image": "/images/whatsapp-image-2026-06-13-at-8.02.53-pm.jpeg",
       "section": "main-menu",
       "visible": true
     },
@@ -102,7 +102,7 @@
       "id": "calzone-sandwichs",
       "name_en": "CALZONE SANDWICHS",
       "name_ar": "كاليزوني ساندويتش",
-      "image": "/images/whatsapp-image-2026-06-17-at-7.18.31-pm-1.jpeg",
+      "image": "",
       "section": "main-menu",
       "visible": true
     },
@@ -110,7 +110,7 @@
       "id": "mnakish",
       "name_en": "MANAKISH",
       "name_ar": "مناقيش",
-      "image": "/images/whatsapp-image-2026-06-17-at-7.11.50-pm.jpeg",
+      "image": "",
       "section": "main-menu",
       "visible": true
     },
@@ -119,7 +119,7 @@
       "section": "main-menu",
       "name_en": "Hot Drinks",
       "name_ar": "مشروبات ساخنة",
-      "image": "/images/whatsapp-image-2026-06-17-at-7.15.28-pm.jpeg",
+      "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=200&q=70",
       "visible": true
     },
     {
@@ -183,7 +183,7 @@
       "section": "main-menu",
       "name_en": "Desserts",
       "name_ar": "حلويات",
-      "image": "/images/whatsapp-image-2026-06-17-at-7.09.30-pm.jpeg",
+      "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=200&q=70",
       "visible": true
     },
     {
@@ -214,7 +214,7 @@
       "id": "calzone-breakfast",
       "name_en": "CALZONE BREAKFAST",
       "name_ar": "كاليزوني",
-      "image": "/images/whatsapp-image-2026-06-17-at-7.18.31-pm.jpeg",
+      "image": "",
       "section": "breakfast",
       "visible": true
     },
@@ -222,7 +222,7 @@
       "id": "manakish",
       "name_en": "MANAKISH",
       "name_ar": "مناقيش",
-      "image": "/images/whatsapp-image-2026-06-17-at-7.11.50-pm-1.jpeg",
+      "image": "",
       "section": "breakfast",
       "visible": true
     }
