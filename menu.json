@@ -102,7 +102,7 @@
       "id": "calzone-sandwichs",
       "name_en": "CALZONE SANDWICHS",
       "name_ar": "كاليزوني ساندويتش",
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-17-at-7.18.31-pm-1.jpeg",
       "section": "main-menu",
       "visible": true
     },
@@ -126,7 +126,7 @@
       "id": "soft-drinks",
       "name_en": "SOFT DRINKS",
       "name_ar": "سوفت درينك",
-      "image": "/images/dsc09925.jpg",
+      "image": "",
       "section": "main-menu",
       "visible": true
     },
@@ -214,7 +214,7 @@
       "id": "calzone-breakfast",
       "name_en": "CALZONE BREAKFAST",
       "name_ar": "كاليزوني",
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-17-at-7.18.31-pm.jpeg",
       "section": "breakfast",
       "visible": true
     },
@@ -471,12 +471,10 @@
       "description_en": "",
       "description_ar": "",
       "price": 135,
-      "image": "/images/whatsapp-image-2026-06-17-at-12.49.43-pm.jpeg",
+      "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false,
-      "image_position": "50% 50%",
-      "image_zoom": "1.18"
+      "featured": false
     },
     {
       "id": "item-1781312173067-jp2",
@@ -2558,12 +2556,10 @@
       "description_en": "",
       "description_ar": "",
       "price": 199,
-      "image": "/images/whatsapp-image-2026-06-17-at-7.11.50-pm-3.jpeg",
+      "image": "",
       "video_url": "",
       "visible": true,
-      "featured": true,
-      "image_position": "50% 50%",
-      "image_zoom": "1.27"
+      "featured": true
     },
     {
       "id": "item-1781312173067-6t8",
@@ -3047,12 +3043,10 @@
       "description_en": "",
       "description_ar": "",
       "price": 295,
-      "image": "/images/whatsapp-image-2026-06-17-at-7.18.31-pm.jpeg",
+      "image": "",
       "video_url": "",
       "visible": true,
-      "featured": true,
-      "image_position": "50% 50%",
-      "image_zoom": "1.17"
+      "featured": true
     },
     {
       "id": "item-1781316294666-7hq",
