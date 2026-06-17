@@ -236,7 +236,7 @@
       "description_en": "",
       "description_ar": "",
       "price": 129,
-      "image": "/images/whatsapp-image-2026-06-15-at-3.26.46-pm.jpeg",
+      "image": "/images/dsc09820.jpg",
       "video_url": "",
       "visible": true,
       "featured": true,
@@ -266,11 +266,11 @@
       "description_en": "",
       "description_ar": "",
       "price": 165,
-      "image": "/images/whatsapp-image-2026-06-15-at-2.48.02-am.jpeg",
+      "image": "/images/dsc09822.jpg",
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "46% 81%",
+      "image_position": "50% 50%",
       "image_zoom": "1.00"
     },
     {
@@ -281,10 +281,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 185,
-      "image": "",
+      "image": "/images/dsc09821.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-p8y",
@@ -307,10 +309,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 129,
-      "image": "",
+      "image": "/images/dsc09819.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-878",
@@ -424,10 +428,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 89,
-      "image": "",
+      "image": "/images/dsc09892.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-k87",
@@ -437,10 +443,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 89,
-      "image": "",
+      "image": "/images/dsc09891.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-8lw",
@@ -502,10 +510,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 385,
-      "image": "",
+      "image": "/images/dsc09832.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-p96",
@@ -515,11 +525,11 @@
       "description_en": "Shish Tawook | Kebab | Kofta",
       "description_ar": "شيش طاووق . كباب . كفتة",
       "price": 495,
-      "image": "/images/whatsapp-image-2026-06-13-at-7.20.19-pm.jpeg",
+      "image": "/images/dsc09834.jpg",
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "46% 88%",
+      "image_position": "50% 50%",
       "image_zoom": "1.00"
     },
     {
@@ -530,10 +540,12 @@
       "description_en": "Lamb Ribs | Kebab | Kofta",
       "description_ar": "ريش .  كباب . كفتة",
       "price": 595,
-      "image": "",
+      "image": "/images/dsc09874.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-2sr",
@@ -556,10 +568,12 @@
       "description_en": "Crispy Chicken Breast Strips served with French Fries, Garlic Sauce, and Coleslaw",
       "description_ar": "قطع صدور دجاج مقرمشة تقدم مع فرايز و تومية و كول سلو",
       "price": 375,
-      "image": "",
+      "image": "/images/dsc09833.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-6oi",
@@ -569,10 +583,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 195,
-      "image": "",
+      "image": "/images/dsc09853.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-j09",
@@ -582,10 +598,12 @@
       "description_en": "Crispy Chicken Breast Strips stuffed with Mozzarella, Cheddar, Smoked Turkey, and Corn, topped with Cheddar slices, served with French Fries, Garlic Sauce, and Coleslaw.",
       "description_ar": "قطع من صدور الدجاج المقرمشة محشية موزريلا و شيدر و تيركي مدخن و ذرة مغطاه بشرائح الشيدرتقدم مع فرايز و ثومية و كول سلو",
       "price": 399,
-      "image": "",
+      "image": "/images/dsc09837.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-drb",
@@ -608,10 +626,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 445,
-      "image": "",
+      "image": "/images/dsc09852.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-ys8",
@@ -621,10 +641,12 @@
       "description_en": "Tender Beef Fillet slices with pineapple sauce and caramelized pineapple pieces, served with 2 side dishes of your choice.",
       "description_ar": "شرائح من لحم الفليتو بصوص الأ ناناس مع قطع الأناناس المكرمل تقدم مع 2 سايد من اختيارك",
       "price": 620,
-      "image": "",
+      "image": "/images/dsc09848.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-l1q",
@@ -634,10 +656,12 @@
       "description_en": "Beef Fillet slices with demi-glace sauce, served with 2 side dishes of your choice.",
       "description_ar": "شرائح من لحم الفليتو مع صوص الديمي جلاس تقدم مع 2 سايد من اخيارك",
       "price": 529,
-      "image": "",
+      "image": "/images/dsc09847.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-4a1",
@@ -649,7 +673,7 @@
       "price": 525,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -662,7 +686,7 @@
       "price": 22,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -675,7 +699,7 @@
       "price": 22,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -688,7 +712,7 @@
       "price": 525,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -701,7 +725,7 @@
       "price": 450,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -712,10 +736,12 @@
       "description_en": "Fettuccine Pasta with Alfredo sauce, chicken slices, mushrooms, and Parmesan cheese.",
       "description_ar": "باستا فيتوتشيني بصوص الالفريدو مع شرائح الفراخ و المشروم و جبنه البارميزان",
       "price": 275,
-      "image": "",
+      "image": "/images/dsc09845.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-dxg",
