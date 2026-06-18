@@ -27,16 +27,7 @@
       "name_ar": "القائمة الرئيسية",
       "description_en": "Full dine-in experience — drinks, food & desserts",
       "description_ar": "تجربة الجلوس الكاملة — مشروبات وأكل وحلويات",
-      "image": "/images/whatsapp-image-2026-06-18-at-4.10.05-pm.jpeg",
-      "visible": true
-    },
-    {
-      "id": "breakfast",
-      "name_en": "Breakfast",
-      "name_ar": "فطار",
-      "description_en": "Morning specials served until 12pm",
-      "description_ar": "أكلات الصباح المميزة حتى الظهر",
-      "image": "/images/whatsapp-image-2026-06-18-at-4.10.05-pm-1.jpeg",
+      "image": "",
       "visible": true
     },
     {
@@ -46,7 +37,16 @@
       "description_en": "Order from home — same great taste, delivered to you",
       "description_ar": "اطلب من المنزل — نفس الطعم الرائع يوصلك",
       "image": "",
-      "visible": false
+      "visible": true
+    },
+    {
+      "id": "breakfast",
+      "name_en": "Breakfast",
+      "name_ar": "فطار",
+      "description_en": "Morning specials served until 12pm",
+      "description_ar": "أكلات الصباح المميزة حتى الظهر",
+      "image": "",
+      "visible": true
     }
   ],
   "categories": [
@@ -54,7 +54,7 @@
       "id": "salad",
       "name_en": "SALAD",
       "name_ar": "سلطات",
-      "image": "/images/whatsapp-image-2026-06-15-at-2.48.02-am-1.jpeg",
+      "image": "",
       "section": "main-menu",
       "visible": true
     },
@@ -62,7 +62,7 @@
       "id": "appetizers",
       "name_en": "APPETIZERS",
       "name_ar": "المقبلات",
-      "image": "/images/whatsapp-image-2026-06-18-at-4.06.30-pm.jpeg",
+      "image": "",
       "section": "main-menu",
       "visible": true
     },
@@ -70,7 +70,7 @@
       "id": "bbq",
       "name_en": "BBQ",
       "name_ar": "المشويات",
-      "image": "/images/dsc09874.jpg",
+      "image": "",
       "section": "main-menu",
       "visible": true
     },
@@ -78,7 +78,7 @@
       "id": "main-dishes",
       "name_en": "MAIN DISHES",
       "name_ar": "الاطباق الرئيسية",
-      "image": "/images/whatsapp-image-2026-06-18-at-4.13.38-pm.jpeg",
+      "image": "",
       "section": "main-menu",
       "visible": true
     },
@@ -86,7 +86,7 @@
       "id": "pasta",
       "name_en": "PASTA",
       "name_ar": "باستا",
-      "image": "/images/whatsapp-image-2026-06-18-at-4.13.38-pm-1.jpeg",
+      "image": "/images/whatsapp-image-2026-06-13-at-8.02.53-pm.jpeg",
       "section": "main-menu",
       "visible": true
     },
@@ -102,7 +102,7 @@
       "id": "calzone-sandwichs",
       "name_en": "CALZONE SANDWICHS",
       "name_ar": "كاليزوني ساندويتش",
-      "image": "/images/dsc09913.jpg",
+      "image": "",
       "section": "main-menu",
       "visible": true
     },
@@ -110,7 +110,7 @@
       "id": "mnakish",
       "name_en": "MANAKISH",
       "name_ar": "مناقيش",
-      "image": "/images/whatsapp-image-2026-06-17-at-7.11.50-pm.jpeg",
+      "image": "",
       "section": "main-menu",
       "visible": true
     },
@@ -119,14 +119,14 @@
       "section": "main-menu",
       "name_en": "Hot Drinks",
       "name_ar": "مشروبات ساخنة",
-      "image": "/images/whatsapp-image-2026-06-17-at-7.15.28-pm.jpeg",
+      "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=200&q=70",
       "visible": true
     },
     {
       "id": "soft-drinks",
       "name_en": "SOFT DRINKS",
       "name_ar": "سوفت درينك",
-      "image": "/images/dsc09925.jpg",
+      "image": "",
       "section": "main-menu",
       "visible": true
     },
@@ -135,14 +135,14 @@
       "section": "main-menu",
       "name_en": "ICED COFFEE",
       "name_ar": "ايس كوفي",
-      "image": "/images/dsc09920.jpg",
+      "image": "https://images.unsplash.com/photo-1499638673689-79a0b5115d87?w=200&q=70",
       "visible": true
     },
     {
       "id": "juices",
       "name_en": "JUICES",
       "name_ar": "عصائر",
-      "image": "/images/dsc09924.jpg",
+      "image": "",
       "section": "main-menu",
       "visible": true
     },
@@ -151,14 +151,14 @@
       "section": "main-menu",
       "name_en": "Smoothies",
       "name_ar": "سموذي",
-      "image": "/images/dsc09909.jpg",
+      "image": "https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=200&q=70",
       "visible": true
     },
     {
       "id": "mojito",
       "name_en": "MOJITO",
       "name_ar": "موخيتو",
-      "image": "/images/dsc09922.jpg",
+      "image": "",
       "section": "main-menu",
       "visible": true
     },
@@ -166,7 +166,7 @@
       "id": "frappe",
       "name_en": "FRAPPE",
       "name_ar": "فرابيه",
-      "image": "/images/dsc09919.jpg",
+      "image": "",
       "section": "main-menu",
       "visible": true
     },
@@ -174,7 +174,7 @@
       "id": "milkshake",
       "name_en": "MILKSHAKE",
       "name_ar": "ميلك شيك",
-      "image": "/images/dsc09923.jpg",
+      "image": "",
       "section": "main-menu",
       "visible": true
     },
@@ -183,14 +183,14 @@
       "section": "main-menu",
       "name_en": "Desserts",
       "name_ar": "حلويات",
-      "image": "/images/whatsapp-image-2026-06-17-at-7.09.30-pm.jpeg",
+      "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=200&q=70",
       "visible": true
     },
     {
       "id": "ice-cream",
       "name_en": "ICE CREAM",
       "name_ar": "ايس كريم",
-      "image": "/images/whatsapp-image-2026-06-18-at-5.10.32-pm.jpeg",
+      "image": "",
       "section": "main-menu",
       "visible": true
     },
@@ -198,7 +198,7 @@
       "id": "breakfast-dishes",
       "name_en": "BREAKFAST DISHES",
       "name_ar": "اطباق الفطار",
-      "image": "/images/whatsapp-image-2026-06-15-at-2.49.41-am-1.jpeg",
+      "image": "",
       "section": "breakfast",
       "visible": true
     },
@@ -206,7 +206,7 @@
       "id": "special-breakfast",
       "name_en": "SPECIAL BREAKFAST",
       "name_ar": "اطباق الفطار المميزة",
-      "image": "/images/whatsapp-image-2026-06-18-at-4.10.05-pm-1.jpeg",
+      "image": "",
       "section": "breakfast",
       "visible": true
     },
@@ -214,7 +214,7 @@
       "id": "calzone-breakfast",
       "name_en": "CALZONE BREAKFAST",
       "name_ar": "كاليزوني",
-      "image": "/images/dsc09914.jpg",
+      "image": "",
       "section": "breakfast",
       "visible": true
     },
@@ -222,7 +222,7 @@
       "id": "manakish",
       "name_en": "MANAKISH",
       "name_ar": "مناقيش",
-      "image": "/images/whatsapp-image-2026-06-18-at-4.01.47-pm.jpeg",
+      "image": "",
       "section": "breakfast",
       "visible": true
     }
@@ -236,11 +236,11 @@
       "description_en": "",
       "description_ar": "",
       "price": 129,
-      "image": "",
-      "video_url": "https://youtu.be/bjScCFx36JA?si=ONHYGQ-qtIngo0GZ",
+      "image": "/images/dsc09820.jpg",
+      "video_url": "",
       "visible": true,
       "featured": true,
-      "image_position": "50% 100%",
+      "image_position": "50% 50%",
       "image_zoom": "1.00"
     },
     {
@@ -266,11 +266,11 @@
       "description_en": "",
       "description_ar": "",
       "price": 165,
-      "image": "/images/whatsapp-image-2026-06-15-at-2.48.02-am.jpeg",
-      "video_url": "https://youtu.be/bjScCFx36JA?si=ONHYGQ-qtIngo0GZ",
+      "image": "/images/dsc09822.jpg",
+      "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 100%",
+      "image_position": "50% 50%",
       "image_zoom": "1.00"
     },
     {
@@ -281,10 +281,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 185,
-      "image": "",
+      "image": "/images/dsc09821.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-p8y",
@@ -307,10 +309,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 129,
-      "image": "",
+      "image": "/images/dsc09819.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-878",
@@ -424,10 +428,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 89,
-      "image": "",
+      "image": "/images/dsc09892.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-k87",
@@ -440,7 +446,9 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-8lw",
@@ -502,10 +510,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 385,
-      "image": "",
+      "image": "/images/dsc09832.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-p96",
@@ -515,11 +525,11 @@
       "description_en": "Shish Tawook | Kebab | Kofta",
       "description_ar": "شيش طاووق . كباب . كفتة",
       "price": 495,
-      "image": "/images/whatsapp-image-2026-06-13-at-7.20.19-pm.jpeg",
+      "image": "/images/dsc09834.jpg",
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "46% 88%",
+      "image_position": "50% 50%",
       "image_zoom": "1.00"
     },
     {
@@ -530,10 +540,12 @@
       "description_en": "Lamb Ribs | Kebab | Kofta",
       "description_ar": "ريش .  كباب . كفتة",
       "price": 595,
-      "image": "",
+      "image": "/images/dsc09874.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-2sr",
@@ -556,10 +568,12 @@
       "description_en": "Crispy Chicken Breast Strips served with French Fries, Garlic Sauce, and Coleslaw",
       "description_ar": "قطع صدور دجاج مقرمشة تقدم مع فرايز و تومية و كول سلو",
       "price": 375,
-      "image": "",
+      "image": "/images/dsc09833.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-6oi",
@@ -569,10 +583,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 195,
-      "image": "",
+      "image": "/images/dsc09853.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-j09",
@@ -582,10 +598,12 @@
       "description_en": "Crispy Chicken Breast Strips stuffed with Mozzarella, Cheddar, Smoked Turkey, and Corn, topped with Cheddar slices, served with French Fries, Garlic Sauce, and Coleslaw.",
       "description_ar": "قطع من صدور الدجاج المقرمشة محشية موزريلا و شيدر و تيركي مدخن و ذرة مغطاه بشرائح الشيدرتقدم مع فرايز و ثومية و كول سلو",
       "price": 399,
-      "image": "",
+      "image": "/images/dsc09837.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-drb",
@@ -608,10 +626,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 445,
-      "image": "",
+      "image": "/images/dsc09852.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-ys8",
@@ -621,10 +641,12 @@
       "description_en": "Tender Beef Fillet slices with pineapple sauce and caramelized pineapple pieces, served with 2 side dishes of your choice.",
       "description_ar": "شرائح من لحم الفليتو بصوص الأ ناناس مع قطع الأناناس المكرمل تقدم مع 2 سايد من اختيارك",
       "price": 620,
-      "image": "",
+      "image": "/images/dsc09848.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-l1q",
@@ -634,10 +656,12 @@
       "description_en": "Beef Fillet slices with demi-glace sauce, served with 2 side dishes of your choice.",
       "description_ar": "شرائح من لحم الفليتو مع صوص الديمي جلاس تقدم مع 2 سايد من اخيارك",
       "price": 529,
-      "image": "",
+      "image": "/images/dsc09847.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-4a1",
@@ -649,7 +673,7 @@
       "price": 525,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -662,7 +686,7 @@
       "price": 22,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -675,7 +699,7 @@
       "price": 22,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -688,7 +712,7 @@
       "price": 525,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -701,7 +725,7 @@
       "price": 450,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -712,10 +736,12 @@
       "description_en": "Fettuccine Pasta with Alfredo sauce, chicken slices, mushrooms, and Parmesan cheese.",
       "description_ar": "باستا فيتوتشيني بصوص الالفريدو مع شرائح الفراخ و المشروم و جبنه البارميزان",
       "price": 275,
-      "image": "",
+      "image": "/images/dsc09845.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-dxg",
@@ -725,10 +751,12 @@
       "description_en": "Penne Pasta baked with béchamel sauce, mushrooms, sweet corn, mozzarella cheese, and chicken slices.",
       "description_ar": "باستا بينا مطهيه بصوص الباشاميل و المشروم و الذرة و موزريلا  مع شرائح الفراخ",
       "price": 289,
-      "image": "",
+      "image": "/images/dsc09850.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-j21",
@@ -738,10 +766,12 @@
       "description_en": "Fettuccine Pasta with Sweet & Sour sauce, crispy chicken pieces, bell peppers, a hint of black seed (Nigella seeds), and sesame seeds.",
       "description_ar": "باستا فيتوتشيني  بصوص السويت & ساور مع قطع الفراخ المقرمش مع فلفل الوان و لمسه من حبه البركة و سمسم",
       "price": 275,
-      "image": "",
+      "image": "/images/dsc09841.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "49% 59%",
+      "image_zoom": "1.79"
     },
     {
       "id": "item-1781312173067-jef",
@@ -751,10 +781,12 @@
       "description_en": "Spaghetti Pasta with red sauce, meatballs, and Parmesan cheese.",
       "description_ar": "مكرونة اسباجيتي مع ريد صوص و كرات اللحم مع جبنة البارميزان",
       "price": 295,
-      "image": "",
+      "image": "/images/dsc09839.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-4cn",
@@ -764,10 +796,12 @@
       "description_en": "Pasta with shrimp in a creamy white sauce, flavored with garlic and black pepper.",
       "description_ar": "مكرونة بالجمبري مع صوص كريمي أبيض متبل بالثوم و الفلفل الاسود",
       "price": 375,
-      "image": "",
+      "image": "/images/dsc09849.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-cmo",
@@ -777,10 +811,12 @@
       "description_en": "Italian tomato sauce with shredded mozzarella, mozzarella sticks, Parmesan cheese, olive oil, and fresh basil.",
       "description_ar": "صلصة طماطم الايطالي  و موزريلا مبشورة و موزريلا  صوابع و  بارميزان مع   زيت الزيتون مع الريحان الفريش",
       "price": 330,
-      "image": "",
+      "image": "/images/dsc09862.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-18q",
@@ -790,10 +826,12 @@
       "description_en": "Italian tomato sauce with shredded mozzarella, mozzarella sticks, turkey, a touch of Parmesan cheese, olive oil, and arugula.",
       "description_ar": "صلصة طماطم الايطالي مع موزربلا مبشورة مع موزريلا صوابع مع تيركي و لمسه من البارميزان مع زيت الزيتون و جرجير",
       "price": 379,
-      "image": "",
+      "image": "/images/dsc09872.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-wul",
@@ -803,10 +841,12 @@
       "description_en": "Truffle sauce with shredded mozzarella, mozzarella sticks, Parmesan cheese, fresh mushrooms, fresh basil, and premium French truffle oil.",
       "description_ar": "صوص ترافل  مع موزريلا مبشورة مع موزريلا صوابع مع جبنة البارميزان مع ماشروم فريش مع ريحان فريش مع زيت الترافيل الفرنسي الفاخر",
       "price": 435,
-      "image": "",
+      "image": "/images/dsc09856.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-v1q",
@@ -816,10 +856,12 @@
       "description_en": "Pesto sauce with shredded mozzarella, mozzarella sticks, a touch of Parmesan cheese, fresh basil, and olive oil.",
       "description_ar": "صوص البستو مع موزريلا مبشورة مع موزربلا صوابع مع لمسة من البارميزان مع الريحان الفريش و الزيت الزيتون",
       "price": 379,
-      "image": "",
+      "image": "/images/dsc09863.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-23v",
@@ -829,10 +871,12 @@
       "description_en": "Italian tomato sauce with shredded mozzarella, mozzarella sticks, pepperoni, a touch of Parmesan cheese, a hint of hot honey, and olive oil.",
       "description_ar": "صوص الطماطم الايطالي مع موزريلا مبشورة وز موزريلا صوابع مع بيبروني و لمسه من البارميزان و لمسه من الهوت هاني و الزيت الزيتون",
       "price": 399,
-      "image": "",
+      "image": "/images/dsc09878.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-zgj",
