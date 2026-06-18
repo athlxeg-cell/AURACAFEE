@@ -54,7 +54,7 @@
       "id": "salad",
       "name_en": "SALAD",
       "name_ar": "سلطات",
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-15-at-2.48.02-am.jpeg",
       "section": "main-menu",
       "visible": true
     },
@@ -78,7 +78,7 @@
       "id": "main-dishes",
       "name_en": "MAIN DISHES",
       "name_ar": "الاطباق الرئيسية",
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-17-at-7.08.12-pm.jpeg",
       "section": "main-menu",
       "visible": true
     },
@@ -86,7 +86,7 @@
       "id": "pasta",
       "name_en": "PASTA",
       "name_ar": "باستا",
-      "image": "/images/whatsapp-image-2026-06-13-at-8.02.53-pm.jpeg",
+      "image": "/images/whatsapp-image-2026-06-17-at-7.11.50-pm-2.jpeg",
       "section": "main-menu",
       "visible": true
     },
@@ -110,7 +110,7 @@
       "id": "mnakish",
       "name_en": "MANAKISH",
       "name_ar": "مناقيش",
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-17-at-7.11.50-pm.jpeg",
       "section": "main-menu",
       "visible": true
     },
@@ -119,14 +119,14 @@
       "section": "main-menu",
       "name_en": "Hot Drinks",
       "name_ar": "مشروبات ساخنة",
-      "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=200&q=70",
+      "image": "/images/whatsapp-image-2026-06-17-at-7.15.28-pm.jpeg",
       "visible": true
     },
     {
       "id": "soft-drinks",
       "name_en": "SOFT DRINKS",
       "name_ar": "سوفت درينك",
-      "image": "",
+      "image": "/images/dsc09925.jpg",
       "section": "main-menu",
       "visible": true
     },
@@ -135,14 +135,14 @@
       "section": "main-menu",
       "name_en": "ICED COFFEE",
       "name_ar": "ايس كوفي",
-      "image": "https://images.unsplash.com/photo-1499638673689-79a0b5115d87?w=200&q=70",
+      "image": "/images/dsc09920.jpg",
       "visible": true
     },
     {
       "id": "juices",
       "name_en": "JUICES",
       "name_ar": "عصائر",
-      "image": "",
+      "image": "/images/dsc09924.jpg",
       "section": "main-menu",
       "visible": true
     },
@@ -151,14 +151,14 @@
       "section": "main-menu",
       "name_en": "Smoothies",
       "name_ar": "سموذي",
-      "image": "https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=200&q=70",
+      "image": "/images/dsc09909.jpg",
       "visible": true
     },
     {
       "id": "mojito",
       "name_en": "MOJITO",
       "name_ar": "موخيتو",
-      "image": "",
+      "image": "/images/dsc09922.jpg",
       "section": "main-menu",
       "visible": true
     },
@@ -166,7 +166,7 @@
       "id": "frappe",
       "name_en": "FRAPPE",
       "name_ar": "فرابيه",
-      "image": "",
+      "image": "/images/dsc09919.jpg",
       "section": "main-menu",
       "visible": true
     },
@@ -174,7 +174,7 @@
       "id": "milkshake",
       "name_en": "MILKSHAKE",
       "name_ar": "ميلك شيك",
-      "image": "",
+      "image": "/images/dsc09923.jpg",
       "section": "main-menu",
       "visible": true
     },
@@ -183,7 +183,7 @@
       "section": "main-menu",
       "name_en": "Desserts",
       "name_ar": "حلويات",
-      "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=200&q=70",
+      "image": "/images/whatsapp-image-2026-06-17-at-7.09.30-pm.jpeg",
       "visible": true
     },
     {
@@ -198,7 +198,7 @@
       "id": "breakfast-dishes",
       "name_en": "BREAKFAST DISHES",
       "name_ar": "اطباق الفطار",
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-15-at-2.49.41-am-1.jpeg",
       "section": "breakfast",
       "visible": true
     },
@@ -222,7 +222,7 @@
       "id": "manakish",
       "name_en": "MANAKISH",
       "name_ar": "مناقيش",
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-18-at-4.01.47-pm.jpeg",
       "section": "breakfast",
       "visible": true
     }
