@@ -1,13 +1,4 @@
 {
-  "images": {
-    "domains": [
-      "raw.githubusercontent.com",
-      "images.unsplash.com",
-      "img.youtube.com"
-    ],
-    "sizes": [120, 240, 400, 800],
-    "formats": ["image/webp", "image/avif"]
-  },
   "headers": [
     {
       "source": "/menu.json",
