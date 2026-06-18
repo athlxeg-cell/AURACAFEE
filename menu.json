@@ -54,7 +54,7 @@
       "id": "salad",
       "name_en": "SALAD",
       "name_ar": "سلطات",
-      "image": "/images/whatsapp-image-2026-06-15-at-2.48.02-am.jpeg",
+      "image": "/images/whatsapp-image-2026-06-15-at-2.48.02-am-1.jpeg",
       "section": "main-menu",
       "visible": true
     },
@@ -78,7 +78,7 @@
       "id": "main-dishes",
       "name_en": "MAIN DISHES",
       "name_ar": "الاطباق الرئيسية",
-      "image": "/images/whatsapp-image-2026-06-17-at-7.08.12-pm.jpeg",
+      "image": "/images/whatsapp-image-2026-06-18-at-4.13.38-pm.jpeg",
       "section": "main-menu",
       "visible": true
     },
@@ -86,7 +86,7 @@
       "id": "pasta",
       "name_en": "PASTA",
       "name_ar": "باستا",
-      "image": "/images/whatsapp-image-2026-06-17-at-7.11.50-pm-2.jpeg",
+      "image": "/images/whatsapp-image-2026-06-18-at-4.13.38-pm-1.jpeg",
       "section": "main-menu",
       "visible": true
     },
