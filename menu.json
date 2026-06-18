@@ -27,16 +27,7 @@
       "name_ar": "القائمة الرئيسية",
       "description_en": "Full dine-in experience — drinks, food & desserts",
       "description_ar": "تجربة الجلوس الكاملة — مشروبات وأكل وحلويات",
-      "image": "",
-      "visible": true
-    },
-    {
-      "id": "delivery",
-      "name_en": "Delivery",
-      "name_ar": "توصيل",
-      "description_en": "Order from home — same great taste, delivered to you",
-      "description_ar": "اطلب من المنزل — نفس الطعم الرائع يوصلك",
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-18-at-4.06.29-pm-1.jpeg",
       "visible": true
     },
     {
@@ -45,6 +36,15 @@
       "name_ar": "فطار",
       "description_en": "Morning specials served until 12pm",
       "description_ar": "أكلات الصباح المميزة حتى الظهر",
+      "image": "/images/whatsapp-image-2026-06-18-at-4.06.30-pm-1.jpeg",
+      "visible": true
+    },
+    {
+      "id": "delivery",
+      "name_en": "Delivery",
+      "name_ar": "توصيل",
+      "description_en": "Order from home — same great taste, delivered to you",
+      "description_ar": "اطلب من المنزل — نفس الطعم الرائع يوصلك",
       "image": "",
       "visible": true
     }
@@ -62,7 +62,7 @@
       "id": "appetizers",
       "name_en": "APPETIZERS",
       "name_ar": "المقبلات",
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-18-at-4.06.30-pm.jpeg",
       "section": "main-menu",
       "visible": true
     },
