@@ -27,7 +27,16 @@
       "name_ar": "القائمة الرئيسية",
       "description_en": "Full dine-in experience — drinks, food & desserts",
       "description_ar": "تجربة الجلوس الكاملة — مشروبات وأكل وحلويات",
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-18-at-4.10.05-pm.jpeg",
+      "visible": true
+    },
+    {
+      "id": "breakfast",
+      "name_en": "Breakfast",
+      "name_ar": "فطار",
+      "description_en": "Morning specials served until 12pm",
+      "description_ar": "أكلات الصباح المميزة حتى الظهر",
+      "image": "/images/whatsapp-image-2026-06-18-at-4.10.05-pm-1.jpeg",
       "visible": true
     },
     {
@@ -37,16 +46,7 @@
       "description_en": "Order from home — same great taste, delivered to you",
       "description_ar": "اطلب من المنزل — نفس الطعم الرائع يوصلك",
       "image": "",
-      "visible": true
-    },
-    {
-      "id": "breakfast",
-      "name_en": "Breakfast",
-      "name_ar": "فطار",
-      "description_en": "Morning specials served until 12pm",
-      "description_ar": "أكلات الصباح المميزة حتى الظهر",
-      "image": "",
-      "visible": true
+      "visible": false
     }
   ],
   "categories": [
@@ -54,7 +54,7 @@
       "id": "salad",
       "name_en": "SALAD",
       "name_ar": "سلطات",
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-15-at-2.48.02-am-1.jpeg",
       "section": "main-menu",
       "visible": true
     },
@@ -62,7 +62,7 @@
       "id": "appetizers",
       "name_en": "APPETIZERS",
       "name_ar": "المقبلات",
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-18-at-4.06.30-pm.jpeg",
       "section": "main-menu",
       "visible": true
     },
@@ -70,7 +70,7 @@
       "id": "bbq",
       "name_en": "BBQ",
       "name_ar": "المشويات",
-      "image": "",
+      "image": "/images/dsc09874.jpg",
       "section": "main-menu",
       "visible": true
     },
@@ -78,7 +78,7 @@
       "id": "main-dishes",
       "name_en": "MAIN DISHES",
       "name_ar": "الاطباق الرئيسية",
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-18-at-4.13.38-pm.jpeg",
       "section": "main-menu",
       "visible": true
     },
@@ -102,7 +102,7 @@
       "id": "calzone-sandwichs",
       "name_en": "CALZONE SANDWICHS",
       "name_ar": "كاليزوني ساندويتش",
-      "image": "",
+      "image": "/images/dsc09915.jpg",
       "section": "main-menu",
       "visible": true
     },
@@ -110,7 +110,7 @@
       "id": "mnakish",
       "name_en": "MANAKISH",
       "name_ar": "مناقيش",
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-18-at-4.01.47-pm.jpeg",
       "section": "main-menu",
       "visible": true
     },
@@ -119,14 +119,14 @@
       "section": "main-menu",
       "name_en": "Hot Drinks",
       "name_ar": "مشروبات ساخنة",
-      "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=200&q=70",
+      "image": "/images/whatsapp-image-2026-06-17-at-7.15.28-pm.jpeg",
       "visible": true
     },
     {
       "id": "soft-drinks",
       "name_en": "SOFT DRINKS",
       "name_ar": "سوفت درينك",
-      "image": "",
+      "image": "/images/dsc09925.jpg",
       "section": "main-menu",
       "visible": true
     },
@@ -135,14 +135,14 @@
       "section": "main-menu",
       "name_en": "ICED COFFEE",
       "name_ar": "ايس كوفي",
-      "image": "https://images.unsplash.com/photo-1499638673689-79a0b5115d87?w=200&q=70",
+      "image": "/images/dsc09920.jpg",
       "visible": true
     },
     {
       "id": "juices",
       "name_en": "JUICES",
       "name_ar": "عصائر",
-      "image": "",
+      "image": "/images/dsc09924.jpg",
       "section": "main-menu",
       "visible": true
     },
@@ -151,14 +151,14 @@
       "section": "main-menu",
       "name_en": "Smoothies",
       "name_ar": "سموذي",
-      "image": "https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=200&q=70",
+      "image": "/images/dsc09909.jpg",
       "visible": true
     },
     {
       "id": "mojito",
       "name_en": "MOJITO",
       "name_ar": "موخيتو",
-      "image": "",
+      "image": "/images/dsc09921.jpg",
       "section": "main-menu",
       "visible": true
     },
@@ -166,7 +166,7 @@
       "id": "frappe",
       "name_en": "FRAPPE",
       "name_ar": "فرابيه",
-      "image": "",
+      "image": "/images/dsc09919.jpg",
       "section": "main-menu",
       "visible": true
     },
@@ -174,7 +174,7 @@
       "id": "milkshake",
       "name_en": "MILKSHAKE",
       "name_ar": "ميلك شيك",
-      "image": "",
+      "image": "/images/dsc09923.jpg",
       "section": "main-menu",
       "visible": true
     },
@@ -183,14 +183,14 @@
       "section": "main-menu",
       "name_en": "Desserts",
       "name_ar": "حلويات",
-      "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=200&q=70",
+      "image": "/images/whatsapp-image-2026-06-17-at-7.09.30-pm.jpeg",
       "visible": true
     },
     {
       "id": "ice-cream",
       "name_en": "ICE CREAM",
       "name_ar": "ايس كريم",
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-18-at-5.10.32-pm.jpeg",
       "section": "main-menu",
       "visible": true
     },
@@ -198,7 +198,7 @@
       "id": "breakfast-dishes",
       "name_en": "BREAKFAST DISHES",
       "name_ar": "اطباق الفطار",
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-15-at-2.49.41-am.jpeg",
       "section": "breakfast",
       "visible": true
     },
@@ -206,7 +206,7 @@
       "id": "special-breakfast",
       "name_en": "SPECIAL BREAKFAST",
       "name_ar": "اطباق الفطار المميزة",
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-18-at-4.06.30-pm-1.jpeg",
       "section": "breakfast",
       "visible": true
     },
@@ -214,7 +214,7 @@
       "id": "calzone-breakfast",
       "name_en": "CALZONE BREAKFAST",
       "name_ar": "كاليزوني",
-      "image": "",
+      "image": "/images/dsc09915.jpg",
       "section": "breakfast",
       "visible": true
     },
@@ -222,7 +222,7 @@
       "id": "manakish",
       "name_en": "MANAKISH",
       "name_ar": "مناقيش",
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-17-at-7.11.50-pm.jpeg",
       "section": "breakfast",
       "visible": true
     }
@@ -540,7 +540,7 @@
       "description_en": "Lamb Ribs | Kebab | Kofta",
       "description_ar": "ريش .  كباب . كفتة",
       "price": 595,
-      "image": "/images/dsc09874.jpg",
+      "image": "",
       "video_url": "",
       "visible": true,
       "featured": false,
@@ -555,15 +555,17 @@
       "description_en": "Lamb Ribs | Kebab | Kofta | Tareb",
       "description_ar": "ريش .  كباب . كفتة . طرب",
       "price": 695,
-      "image": "",
+      "image": "/images/dsc09874.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.29"
     },
     {
       "id": "item-1781312173067-ndj",
       "category": "main-dishes",
-      "name_en": "Crispy Chicken",
+      "name_en": "Cranshy Chicken",
       "name_ar": "كرانشي تشكن",
       "description_en": "Crispy Chicken Breast Strips served with French Fries, Garlic Sauce, and Coleslaw",
       "description_ar": "قطع صدور دجاج مقرمشة تقدم مع فرايز و تومية و كول سلو",
@@ -573,7 +575,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.16"
     },
     {
       "id": "item-1781312173067-6oi",
@@ -886,10 +888,12 @@
       "description_en": "Italian tomato sauce with shredded mozzarella, mozzarella sticks, pepperoni, Parmesan cheese, and olive oil.",
       "description_ar": "صوص الطماطم الايطالي مع موزريلا مبشورة وز موزريلا صوابع مع بيبروني و البارميزان و   الزيت الزيتون",
       "price": 389,
-      "image": "",
+      "image": "/images/dsc09878.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.17"
     },
     {
       "id": "item-1781312173067-urg",
@@ -899,10 +903,12 @@
       "description_en": "Mozzarella | Halloumi | Roumy Cheese | Parmesan",
       "description_ar": "موزريلا . حلوم . رومي  . بارميزان",
       "price": 275,
-      "image": "",
+      "image": "/images/dsc09917.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.15"
     },
     {
       "id": "item-1781312173067-jm8",
@@ -912,10 +918,12 @@
       "description_en": "Mozzarella | Halloumi | Roquefort | Parmesan",
       "description_ar": "موزريلا . حلوم . ريكفورد . بارميزان",
       "price": 315,
-      "image": "",
+      "image": "/images/dsc09917.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.20"
     },
     {
       "id": "item-1781312173067-laa",
@@ -925,10 +933,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 330,
-      "image": "",
+      "image": "/images/dsc09917.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.15"
     },
     {
       "id": "item-1781312173067-5jt",
@@ -938,10 +948,12 @@
       "description_en": "Crispy chicken breast pieces with lettuce and cocktail sauce.",
       "description_ar": "قطع من صدور الدجاح المقرمشة مع الخس و صوص الكوكتيل",
       "price": 330,
-      "image": "",
+      "image": "/images/dsc09888.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.14"
     },
     {
       "id": "item-1781312173067-lom",
@@ -951,10 +963,12 @@
       "description_en": "Crispy chicken breast pieces with lettuce, ranch sauce, and smoked turkey slices.",
       "description_ar": "قطع من صدور المقرمشة مع الخس وصوص رانش وشرائح تركي مدخن",
       "price": 350,
-      "image": "",
+      "image": "/images/dsc09888.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-6pn",
@@ -964,10 +978,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 359,
-      "image": "",
+      "image": "/images/dsc09913.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.16"
     },
     {
       "id": "item-1781312173067-zna",
@@ -977,10 +993,12 @@
       "description_en": "Grilled chicken breast pieces with lettuce, avocado, and Parmesan cheese.",
       "description_ar": "قطع من صدور دجاج مشوية مع الخس والافكادو وجبنة بارميزان",
       "price": 395,
-      "image": "",
+      "image": "/images/dsc09913.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.25"
     },
     {
       "id": "item-1781312173067-w2s",
@@ -990,10 +1008,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 300,
-      "image": "",
+      "image": "/images/dsc09917.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.13"
     },
     {
       "id": "item-1781312173067-oow",
@@ -1003,10 +1023,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 335,
-      "image": "",
+      "image": "/images/dsc09917.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.11"
     },
     {
       "id": "item-1781312173067-0y3",
@@ -1016,10 +1038,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 335,
-      "image": "",
+      "image": "/images/dsc09913.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.15"
     },
     {
       "id": "item-1781312173067-tra",
@@ -1029,10 +1053,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 399,
-      "image": "",
+      "image": "/images/dsc09917.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.07"
     },
     {
       "id": "item-1781312173067-2vy",
@@ -1042,10 +1068,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 399,
-      "image": "",
+      "image": "/images/dsc09917.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-b3b",
@@ -1055,10 +1083,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 425,
-      "image": "",
+      "image": "/images/dsc09917.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.16"
     },
     {
       "id": "item-1781312173067-q3h",
@@ -1068,10 +1098,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 145,
-      "image": "",
+      "image": "/images/dsc09859.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.14"
     },
     {
       "id": "item-1781312173067-tri",
@@ -1081,10 +1113,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 195,
-      "image": "",
+      "image": "/images/dsc09865.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.15"
     },
     {
       "id": "item-1781312173067-naq",
@@ -1094,10 +1128,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 135,
-      "image": "",
+      "image": "/images/dsc09859.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.16"
     },
     {
       "id": "item-1781312173067-6pd",
@@ -1107,10 +1143,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 155,
-      "image": "",
+      "image": "/images/dsc09885.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.15"
     },
     {
       "id": "item-1781312173067-eq0",
@@ -1120,10 +1158,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 195,
-      "image": "",
+      "image": "/images/dsc09870.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.18"
     },
     {
       "id": "item-1781312173067-g0h",
@@ -1133,10 +1173,12 @@
       "description_en": "Mozzarella | Halloumi | Roumy Cheese | Parmesan",
       "description_ar": "موزريلا .  حلوم .  رومي  .  بارميزان",
       "price": 220,
-      "image": "",
+      "image": "/images/dsc09879.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.15"
     },
     {
       "id": "item-1781312173067-pnx",
@@ -1146,10 +1188,12 @@
       "description_en": "Mozzarella | Halloumi | Roquefort | Parmesan",
       "description_ar": "موزريلا .  حلوم .  ريكفورد  .  بارميزان",
       "price": 245,
-      "image": "",
+      "image": "/images/dsc09879.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "49% 45%",
+      "image_zoom": "1.28"
     },
     {
       "id": "item-1781312173067-js2",
@@ -1159,10 +1203,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 235,
-      "image": "",
+      "image": "/images/dsc09877.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.28"
     },
     {
       "id": "item-1781312173067-aja",
@@ -1172,10 +1218,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 235,
-      "image": "",
+      "image": "/images/dsc09884.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.30"
     },
     {
       "id": "item-1781312173067-ikf",
@@ -1198,10 +1246,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 285,
-      "image": "",
+      "image": "/images/dsc09871.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.23"
     },
     {
       "id": "item-1781312173067-0tk",
@@ -1211,10 +1261,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 299,
-      "image": "",
+      "image": "/images/dsc09880.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.23"
     },
     {
       "id": "item-1781312173067-efh",
@@ -1224,10 +1276,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 335,
-      "image": "",
+      "image": "/images/dsc09883.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.20"
     },
     {
       "id": "item-1781312173067-y11",
@@ -1618,10 +1672,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 165,
-      "image": "",
+      "image": "/images/dsc09920.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.11"
     },
     {
       "id": "item-1781312173067-d7j",
@@ -1670,10 +1726,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 125,
-      "image": "",
+      "image": "/images/dsc09924.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-cyt",
@@ -1917,10 +1975,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 145,
-      "image": "",
+      "image": "/images/dsc09910.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.10"
     },
     {
       "id": "item-1781312173067-uvt",
@@ -1930,10 +1990,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 145,
-      "image": "",
+      "image": "/images/dsc09909.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.10"
     },
     {
       "id": "item-1781312173067-i70",
@@ -2099,10 +2161,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 235,
-      "image": "",
+      "image": "/images/dsc09921.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-hov",
@@ -2138,10 +2202,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 195,
-      "image": "",
+      "image": "/images/dsc09922.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.13"
     },
     {
       "id": "item-1781312173067-7sa",
@@ -2190,10 +2256,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 99,
-      "image": "",
+      "image": "/images/dsc09925.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-hj7",
@@ -2229,10 +2297,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 185,
-      "image": "",
+      "image": "/images/dsc09919.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.21"
     },
     {
       "id": "item-1781312173067-qc0",
@@ -2333,10 +2403,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 195,
-      "image": "",
+      "image": "/images/dsc09923.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-2cx",
@@ -2424,10 +2496,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 165,
-      "image": "",
+      "image": "/images/dsc09904.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.27"
     },
     {
       "id": "item-1781312173067-5ve",
@@ -2452,10 +2526,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 165,
-      "image": "",
+      "image": "/images/dsc09905.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.19"
     },
     {
       "id": "item-1781312173067-4zk",
@@ -2465,10 +2541,12 @@
       "description_en": "Fudge Cake | Belgian Chocolate | Crispy Chocolate | Hazelnut Dough",
       "description_ar": "فادج كيك .  شوكوﻻ بالجيكي . كريسبي شوكليت . عجينة البندق",
       "price": 165,
-      "image": "",
+      "image": "/images/dsc09906.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.17"
     },
     {
       "id": "item-1781312173067-o7h",
@@ -2504,10 +2582,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 199,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-17-at-7.11.50-pm-3.jpeg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "29% 48%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-6t8",
@@ -2532,10 +2612,12 @@
       "description_en": "Italian dough with French pastry cream, pistachio sauce, and pistachio nuts.",
       "description_ar": "عجينة ايطالية مع  كريمة بستشيرا الفرنسية مع صوص البستاشيو و الفستق الحلبي",
       "price": 224,
-      "image": "",
+      "image": "/images/dsc09828.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.24"
     },
     {
       "id": "item-1781312173067-4kp",
@@ -2545,10 +2627,12 @@
       "description_en": "Italian dough with French pastry cream, Lotus sauce, crushed Lotus, and Lotus biscuits.",
       "description_ar": "عجينة ايطالية مع  كريمة بستشيرا الفرنسية مع صوص اللوتس و اللوتس مجروش و بسكويت اللوتس",
       "price": 199,
-      "image": "",
+      "image": "/images/dsc09830.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.19"
     },
     {
       "id": "item-1781312173067-wfo",
@@ -2558,10 +2642,12 @@
       "description_en": "Italian dough with French pastry cream, Oreo sauce, crushed Oreo, and Oreo biscuits.",
       "description_ar": "عجينة ايطالية مع  كريمة بستشيرا الفرنسية مع صوص اوريو و اوريو مجروش و سكوت اوريو",
       "price": 199,
-      "image": "",
+      "image": "/images/dsc09823.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.20"
     },
     {
       "id": "item-1781312173067-cnw",
@@ -2662,10 +2748,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 95,
-      "image": "",
+      "image": "/images/dsc09894.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 48%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-hft",
@@ -2714,10 +2802,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 85,
-      "image": "",
+      "image": "/images/dsc09896.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-xh8",
@@ -2727,10 +2817,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 195,
-      "image": "",
+      "image": "/images/dsc09900.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.18"
     },
     {
       "id": "item-1781316294666-wj6",
@@ -2740,10 +2832,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 235,
-      "image": "",
+      "image": "/images/dsc09898.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.22"
     },
     {
       "id": "item-1781316294666-pvm",
@@ -2880,10 +2974,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 275,
-      "image": "",
+      "image": "/images/dsc09917.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-u5n",
@@ -2893,10 +2989,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 315,
-      "image": "",
+      "image": "/images/dsc09917.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-jg4",
@@ -2906,10 +3004,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 330,
-      "image": "",
+      "image": "/images/dsc09917.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-4fq",
@@ -2919,10 +3019,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 220,
-      "image": "",
+      "image": "/images/dsc09917.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-os5",
@@ -2932,10 +3034,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 190,
-      "image": "",
+      "image": "/images/dsc09917.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-2p0",
@@ -2945,10 +3049,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 235,
-      "image": "",
+      "image": "/images/dsc09917.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-jmw",
@@ -2958,10 +3064,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 215,
-      "image": "",
+      "image": "/images/dsc09917.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-c36",
@@ -2971,10 +3079,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 295,
-      "image": "",
+      "image": "/images/dsc09917.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-7hq",
@@ -2984,10 +3094,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 295,
-      "image": "",
+      "image": "/images/dsc09917.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-vmm",
@@ -2997,10 +3109,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 300,
-      "image": "",
+      "image": "/images/dsc09917.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-1c5",
@@ -3010,10 +3124,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 335,
-      "image": "",
+      "image": "/images/dsc09917.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-tx5",
@@ -3023,10 +3139,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 330,
-      "image": "",
+      "image": "/images/dsc09913.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-4ya",
@@ -3036,10 +3154,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 395,
-      "image": "",
+      "image": "/images/dsc09913.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-fhh",
@@ -3049,10 +3169,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 399,
-      "image": "",
+      "image": "/images/dsc09917.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-i09",
@@ -3062,10 +3184,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 445,
-      "image": "",
+      "image": "/images/dsc09917.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-bzm",
@@ -3103,10 +3227,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 195,
-      "image": "",
+      "image": "/images/dsc09865.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.17"
     },
     {
       "id": "item-1781316294666-dbr",
@@ -3116,10 +3242,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 220,
-      "image": "",
+      "image": "/images/dsc09879.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.21"
     },
     {
       "id": "item-1781316294666-dmi",
@@ -3129,10 +3257,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 245,
-      "image": "",
+      "image": "/images/dsc09879.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.13"
     },
     {
       "id": "item-1781316294666-4ou",
@@ -3142,10 +3272,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 155,
-      "image": "",
+      "image": "/images/dsc09885.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.21"
     },
     {
       "id": "item-1781316294666-mfm",
@@ -3155,10 +3287,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 195,
-      "image": "",
+      "image": "/images/dsc09870.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.24"
     },
     {
       "id": "item-1781316294666-63s",
@@ -3168,10 +3302,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 235,
-      "image": "",
+      "image": "/images/dsc09870.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.18"
     },
     {
       "id": "item-1781316294666-yrj",
@@ -3181,10 +3317,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 235,
-      "image": "",
+      "image": "/images/dsc09877.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.19"
     },
     {
       "id": "item-1781316294666-kva",
@@ -3207,10 +3345,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 285,
-      "image": "",
+      "image": "/images/dsc09871.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.15"
     },
     {
       "id": "item-1781316294666-8jb",
@@ -3220,10 +3360,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 299,
-      "image": "",
+      "image": "/images/dsc09880.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.17"
     },
     {
       "id": "item-1781316294666-rgs",
@@ -3233,10 +3375,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 335,
-      "image": "",
+      "image": "/images/dsc09883.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.14"
     },
     {
       "id": "item-1781317038345",
