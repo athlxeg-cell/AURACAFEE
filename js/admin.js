@@ -670,6 +670,8 @@ async function uploadImageFile(file, onSuccess) {
 
 /* ══════════════════════════════════════════════════════════════
    BATCH OPTIMIZE EXISTING IMAGES
+   Phase 1: compress each image + create GitHub blob (no commit = no deployment)
+   Phase 2: one single commit with ALL blobs = 1 deployment total
 ══════════════════════════════════════════════════════════════ */
 async function batchOptimizeImages() {
   const btn      = $('batch-optimize-btn');
@@ -678,19 +680,18 @@ async function batchOptimizeImages() {
   const label    = $('batch-label');
 
   if (!adminPw) { toast('Please log in first', 'err'); return; }
-  if (!confirm('This will compress all existing photos on GitHub (same filenames, same URLs). Continue?')) return;
+  if (!confirm('This compresses all photos and pushes them in ONE GitHub commit (1 deployment). Continue?')) return;
 
   btn.disabled = true;
   progress.style.display = 'block';
-  label.textContent = 'Fetching image list…';
   bar.style.width = '0%';
 
-  // 1. Get list of images from GitHub
+  // ── Step 1: Get image list ──────────────────────────────────
+  label.textContent = 'Fetching image list from GitHub…';
   let images = [];
   try {
     const r = await fetch('/api/list-images', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ password: adminPw }),
     });
     const d = await r.json();
@@ -698,59 +699,82 @@ async function batchOptimizeImages() {
     images = d.images || [];
   } catch(e) {
     toast('Error: ' + e.message, 'err');
-    btn.disabled = false; progress.style.display = 'none';
-    return;
+    btn.disabled = false; progress.style.display = 'none'; return;
   }
 
-  // Filter: only images above the skip threshold
   const toProcess = images.filter(img => img.size > COMPRESS_SKIP_KB * 1024);
   if (!toProcess.length) {
-    toast('All images are already optimized!');
-    btn.disabled = false; progress.style.display = 'none';
-    return;
+    label.textContent = 'All images are already small — nothing to do!';
+    toast('All images already optimized!');
+    btn.disabled = false; return;
   }
 
+  // ── Phase 1: Compress + create blobs (no deployment triggered) ──
+  const blobs = [];
   let done = 0, skipped = 0, errors = 0;
+  const total = toProcess.length;
 
   for (const img of toProcess) {
-    label.textContent = `Compressing ${done + 1} of ${toProcess.length}: ${img.name}`;
-    bar.style.width = Math.round((done / toProcess.length) * 100) + '%';
+    label.textContent = `Phase 1/2 — Compressing ${done + 1} of ${total}: ${img.name}`;
+    bar.style.width = Math.round((done / total) * 90) + '%'; // 0–90% for phase 1
 
     try {
-      // Fetch the image file directly from the site
       const fetchRes = await fetch('/images/' + img.name);
       if (!fetchRes.ok) throw new Error('fetch failed');
       const blob = await fetchRes.blob();
 
-      // Compress
       const compressed = await compressImageBlob(blob, COMPRESS_MAX_PX, COMPRESS_QUALITY);
-
-      // Only re-upload if actually smaller
       if (compressed.size >= blob.size) { skipped++; done++; continue; }
 
-      // Convert to base64
       const base64 = await new Promise(res => {
         const r = new FileReader();
-        r.onload = e => res(e.target.result.split(',')[1]);
+        r.onload = e => res(e.target.result);
         r.readAsDataURL(compressed);
       });
 
-      // Re-upload to GitHub (same filename → same URL)
-      const uploadRes = await fetch('/api/upload-image', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ password: adminPw, filename: img.name, content: base64, mimeType: 'image/jpeg' }),
+      // Create GitHub blob (NO commit = NO Vercel deployment)
+      const blobRes = await fetch('/api/create-blob', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: adminPw, content: base64, filename: img.name }),
       });
-      if (!uploadRes.ok) throw new Error('upload failed');
+      if (!blobRes.ok) throw new Error('blob creation failed');
+      const blobData = await blobRes.json();
+      blobs.push({ path: 'images/' + img.name, sha: blobData.sha });
 
     } catch { errors++; }
     done++;
   }
 
-  bar.style.width = '100%';
-  const msg = `Done! ${done - skipped - errors} compressed, ${skipped} already small, ${errors} errors.`;
-  label.textContent = msg;
-  toast(msg);
+  if (!blobs.length) {
+    label.textContent = `Done — ${skipped} already small, ${errors} errors. Nothing to commit.`;
+    toast('Nothing to optimize.'); btn.disabled = false; return;
+  }
+
+  // ── Phase 2: ONE single commit with all blobs = 1 deployment ──
+  label.textContent = `Phase 2/2 — Creating 1 commit for ${blobs.length} optimized photos…`;
+  bar.style.width = '92%';
+
+  try {
+    const commitRes = await fetch('/api/batch-commit', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        password: adminPw,
+        files: blobs,
+        message: `[AURA Admin] Optimize ${blobs.length} images — 1 deployment`,
+      }),
+    });
+    const commitData = await commitRes.json();
+    if (!commitRes.ok) throw new Error(commitData.error || 'Commit failed');
+
+    bar.style.width = '100%';
+    const msg = `✅ Done! ${blobs.length} photos compressed, ${skipped} skipped, ${errors} errors. 1 Vercel deployment triggered.`;
+    label.textContent = msg;
+    toast(msg);
+  } catch(e) {
+    label.textContent = 'Commit failed: ' + e.message;
+    toast('Commit error: ' + e.message, 'err');
+  }
+
   btn.disabled = false;
 }
 
