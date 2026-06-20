@@ -593,9 +593,60 @@ function renderPhotoGrid() {
 }
 
 /* ══════════════════════════════════════════════════════════════
-   IMAGE UPLOAD HELPER
+   IMAGE COMPRESSION
 ══════════════════════════════════════════════════════════════ */
+const COMPRESS_MAX_PX  = 1200;   // max width or height in pixels
+const COMPRESS_QUALITY = 0.82;   // JPEG quality (0-1)
+const COMPRESS_SKIP_KB = 150;    // skip files already under this size (KB)
+
+/**
+ * Compress an image Blob/File using Canvas API.
+ * Returns a new Blob (JPEG) that is smaller.
+ */
+function compressImageBlob(blob, maxPx, quality) {
+  return new Promise((resolve, reject) => {
+    const url = URL.createObjectURL(blob);
+    const img = new Image();
+    img.onload = () => {
+      URL.revokeObjectURL(url);
+      let w = img.naturalWidth;
+      let h = img.naturalHeight;
+      if (w > maxPx || h > maxPx) {
+        if (w >= h) { h = Math.round(h * maxPx / w); w = maxPx; }
+        else        { w = Math.round(w * maxPx / h); h = maxPx; }
+      }
+      const canvas = document.createElement('canvas');
+      canvas.width = w; canvas.height = h;
+      canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+      canvas.toBlob(b => b ? resolve(b) : reject(new Error('Canvas toBlob failed')), 'image/jpeg', quality);
+    };
+    img.onerror = reject;
+    img.src = url;
+  });
+}
+
+/**
+ * Compress a File, then upload to GitHub.
+ * Files already under COMPRESS_SKIP_KB are uploaded as-is.
+ */
 async function uploadImageFile(file, onSuccess) {
+  let uploadBlob = file;
+  let uploadName = file.name;
+  let uploadMime = file.type;
+
+  // Compress if large enough to benefit
+  if (file.size > COMPRESS_SKIP_KB * 1024) {
+    try {
+      const compressed = await compressImageBlob(file, COMPRESS_MAX_PX, COMPRESS_QUALITY);
+      if (compressed.size < file.size) {
+        uploadBlob = compressed;
+        // Force .jpg extension for compressed output
+        uploadName = file.name.replace(/\.[^.]+$/, '') + '.jpg';
+        uploadMime = 'image/jpeg';
+      }
+    } catch { /* fallback to original if compression fails */ }
+  }
+
   return new Promise(resolve => {
     const reader = new FileReader();
     reader.onload = async e => {
@@ -605,7 +656,7 @@ async function uploadImageFile(file, onSuccess) {
         const res = await fetch('/api/upload-image', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ password: adminPw, filename: file.name, content, mimeType: file.type }),
+          body: JSON.stringify({ password: adminPw, filename: uploadName, content, mimeType: uploadMime }),
         });
         const data = await res.json();
         if (res.ok) { onSuccess(data.url); }
@@ -613,8 +664,94 @@ async function uploadImageFile(file, onSuccess) {
       } catch { toast('Network error during upload', 'err'); }
       resolve();
     };
-    reader.readAsDataURL(file);
+    reader.readAsDataURL(uploadBlob);
   });
+}
+
+/* ══════════════════════════════════════════════════════════════
+   BATCH OPTIMIZE EXISTING IMAGES
+══════════════════════════════════════════════════════════════ */
+async function batchOptimizeImages() {
+  const btn      = $('batch-optimize-btn');
+  const progress = $('batch-progress');
+  const bar      = $('batch-bar');
+  const label    = $('batch-label');
+
+  if (!adminPw) { toast('Please log in first', 'err'); return; }
+  if (!confirm('This will compress all existing photos on GitHub (same filenames, same URLs). Continue?')) return;
+
+  btn.disabled = true;
+  progress.style.display = 'block';
+  label.textContent = 'Fetching image list…';
+  bar.style.width = '0%';
+
+  // 1. Get list of images from GitHub
+  let images = [];
+  try {
+    const r = await fetch('/api/list-images', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: adminPw }),
+    });
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.error || 'Failed to list images');
+    images = d.images || [];
+  } catch(e) {
+    toast('Error: ' + e.message, 'err');
+    btn.disabled = false; progress.style.display = 'none';
+    return;
+  }
+
+  // Filter: only images above the skip threshold
+  const toProcess = images.filter(img => img.size > COMPRESS_SKIP_KB * 1024);
+  if (!toProcess.length) {
+    toast('All images are already optimized!');
+    btn.disabled = false; progress.style.display = 'none';
+    return;
+  }
+
+  let done = 0, skipped = 0, errors = 0;
+
+  for (const img of toProcess) {
+    label.textContent = `Compressing ${done + 1} of ${toProcess.length}: ${img.name}`;
+    bar.style.width = Math.round((done / toProcess.length) * 100) + '%';
+
+    try {
+      // Fetch the image file directly from the site
+      const fetchRes = await fetch('/images/' + img.name);
+      if (!fetchRes.ok) throw new Error('fetch failed');
+      const blob = await fetchRes.blob();
+
+      // Compress
+      const compressed = await compressImageBlob(blob, COMPRESS_MAX_PX, COMPRESS_QUALITY);
+
+      // Only re-upload if actually smaller
+      if (compressed.size >= blob.size) { skipped++; done++; continue; }
+
+      // Convert to base64
+      const base64 = await new Promise(res => {
+        const r = new FileReader();
+        r.onload = e => res(e.target.result.split(',')[1]);
+        r.readAsDataURL(compressed);
+      });
+
+      // Re-upload to GitHub (same filename → same URL)
+      const uploadRes = await fetch('/api/upload-image', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: adminPw, filename: img.name, content: base64, mimeType: 'image/jpeg' }),
+      });
+      if (!uploadRes.ok) throw new Error('upload failed');
+
+    } catch { errors++; }
+    done++;
+  }
+
+  bar.style.width = '100%';
+  const msg = `Done! ${done - skipped - errors} compressed, ${skipped} already small, ${errors} errors.`;
+  label.textContent = msg;
+  toast(msg);
+  btn.disabled = false;
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -1235,6 +1372,10 @@ Mango Smoothie, عصير مانجو, Fresh mango blended with ice, مانجو ط
   // Reviews
   $('save-rev-btn').addEventListener('click', saveReview);
   $('clear-rev-btn').addEventListener('click', clearRevForm);
+
+  // Batch optimize
+  const optimizeBtn = $('batch-optimize-btn');
+  if (optimizeBtn) optimizeBtn.addEventListener('click', batchOptimizeImages);
 
   // Save & Publish
   $('download-btn').addEventListener('click', downloadJSON);

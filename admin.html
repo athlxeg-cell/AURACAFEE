@@ -535,9 +535,23 @@
          STEP 4: PHOTOS
     ───────────────────────────────── -->
     <div class="step-panel" id="step-photos">
+
+      <!-- Batch Optimize Card -->
+      <div class="card" style="border-color:rgba(201,169,110,.3);margin-bottom:16px">
+        <div class="card-title">⚡ Optimize Existing Photos</div>
+        <p class="section-hint">Compress all photos already on GitHub — same URLs, same filenames, just smaller files. Do this once to make your site load faster for customers.</p>
+        <button id="batch-optimize-btn" class="btn btn-gold" onclick="batchOptimizeImages()">⚡ Optimize All Photos Now</button>
+        <div id="batch-progress" style="display:none;margin-top:14px">
+          <div id="batch-label" style="font-size:.8rem;color:var(--muted);margin-bottom:6px">Starting…</div>
+          <div style="background:var(--n600);border-radius:99px;height:8px;overflow:hidden">
+            <div id="batch-bar" style="height:100%;background:var(--gold);border-radius:99px;width:0%;transition:width .3s"></div>
+          </div>
+        </div>
+      </div>
+
       <div class="card" style="padding-bottom:16px">
         <div class="card-title">🖼️ Assign Photos &amp; Videos</div>
-        <p class="section-hint">Upload an image for each item (max 5MB). You can also add a YouTube video URL per item.</p>
+        <p class="section-hint">Upload an image for each item (max 5MB). New uploads are automatically compressed. You can also add a YouTube video URL per item.</p>
         <div class="filter-bar">
           <input  id="photo-search"    class="fi" type="search" placeholder="Search items…">
           <select id="photo-filter-cat" class="fi"></select>
