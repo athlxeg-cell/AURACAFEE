@@ -241,7 +241,7 @@
       "visible": true,
       "featured": true,
       "image_position": "50% 50%",
-      "image_zoom": "1.23"
+      "image_zoom": "1.30"
     },
     {
       "id": "item-1781312173067-9kz",
@@ -271,7 +271,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.26"
+      "image_zoom": "1.35"
     },
     {
       "id": "item-1781312173067-0az",
@@ -286,7 +286,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.26"
+      "image_zoom": "1.38"
     },
     {
       "id": "item-1781312173067-p8y",
@@ -314,7 +314,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.24"
+      "image_zoom": "1.34"
     },
     {
       "id": "item-1781312173067-878",
@@ -575,7 +575,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.22"
+      "image_zoom": "1.14"
     },
     {
       "id": "item-1781312173067-6oi",
@@ -600,12 +600,12 @@
       "description_en": "Crispy Chicken Breast Strips stuffed with Mozzarella, Cheddar, Smoked Turkey, and Corn, topped with Cheddar slices, served with French Fries, Garlic Sauce, and Coleslaw.",
       "description_ar": "قطع من صدور الدجاج المقرمشة محشية موزريلا و شيدر و تيركي مدخن و ذرة مغطاه بشرائح الشيدرتقدم مع فرايز و ثومية و كول سلو",
       "price": 399,
-      "image": "/images/dsc09837.jpg",
+      "image": "/images/dsc09852.jpg",
       "video_url": "",
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.21"
+      "image_zoom": "1.22"
     },
     {
       "id": "item-1781312173067-drb",
@@ -628,12 +628,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 445,
-      "image": "/images/dsc09852.jpg",
+      "image": "/images/dsc09837.jpg",
       "video_url": "",
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.23"
+      "image_zoom": "1.22"
     },
     {
       "id": "item-1781312173067-ys8",
@@ -3533,6 +3533,71 @@
       "description_en": "",
       "description_ar": "",
       "price": 145,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false
+    },
+    {
+      "id": "item-1781986419584",
+      "category": "main-dishes",
+      "name_en": "Chicken Escalope Pane",
+      "name_ar": "تشكن اسكالوب بانيه",
+      "description_en": "Crispy chicken breast fillets served with French fries, Italian salad, garlic sauce, and coleslaw.",
+      "description_ar": "قطع من صدور الدجاج المقرمش، تقدم مع فرايز، سلاد إيطالي، تومية، وكول سلو.",
+      "price": 425,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false
+    },
+    {
+      "id": "item-1781986471576",
+      "category": "main-dishes",
+      "name_en": "Chicken Escalope Malibu",
+      "name_ar": "تشكن اسكالوب ماليبو",
+      "description_en": "Crispy chicken breast fillets topped with peeled tomato sauce, Italian mozzarella cheese, and parmesan cheese, served with red sauce pasta.",
+      "description_ar": "قطع من صدور الدجاج المقرمش مغطاة بصوص البيلد توميتو وجبنة الموزاريلا الإيطالية والبارميزان، وتقدم مع باستا ريد صوص.",
+      "price": 499,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false
+    },
+    {
+      "id": "item-1781986725096",
+      "category": "pizza",
+      "name_en": "Chicken Ranch Pizza",
+      "name_ar": "بيتزا تشكن رانش",
+      "description_en": "Italian tomato sauce, shredded mozzarella, mozzarella sticks, grilled chicken pieces, ranch sauce, parmesan cheese, finished with olive oil and oregano",
+      "description_ar": "صلصة طماطم إيطالية، موزاريلا مبشورة، موزاريلا صوابع، قطع دجاج مشوية، صوص الرانش، جبنة البارميزان، مع زيت الزيتون والأوريغانو",
+      "price": 485,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false
+    },
+    {
+      "id": "item-1781986881120",
+      "category": "pizza",
+      "name_en": "Chicken BBQ Pizza",
+      "name_ar": "بيتزا تشكن باربكيو",
+      "description_en": "Italian tomato sauce, shredded mozzarella, mozzarella sticks, grilled chicken pieces, BBQ sauce, parmesan cheese, finished with olive oil and red onions",
+      "description_ar": "صلصة طماطم إيطالية، موزاريلا مبشورة، موزاريلا صوابع، قطع دجاج مشوية، صوص الباربكيو، جبنة البارميزان، مع زيت الزيتون والبصل الأحمر",
+      "price": 495,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false
+    },
+    {
+      "id": "item-1781987028771",
+      "category": "main-dishes",
+      "name_en": "Grilled Chicken",
+      "name_ar": "جريلد تشكن",
+      "description_en": "Grilled chicken breast fillets served with your choice of two side dishes",
+      "description_ar": "قطع من صدور الدجاج المشوية، تقدم مع اختيارك من طبقين جانبيين.",
+      "price": 399,
       "image": "",
       "video_url": "",
       "visible": true,
