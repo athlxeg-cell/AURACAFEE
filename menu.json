@@ -743,7 +743,7 @@
       "visible": true,
       "featured": true,
       "image_position": "50% 50%",
-      "image_zoom": "1.27"
+      "image_zoom": "1.43"
     },
     {
       "id": "item-1781312173067-dxg",
@@ -862,8 +862,8 @@
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 50%",
-      "image_zoom": "1.17"
+      "image_position": "45% 55%",
+      "image_zoom": "1.23"
     },
     {
       "id": "item-1781312173067-23v",
@@ -1192,8 +1192,8 @@
       "video_url": "",
       "visible": true,
       "featured": true,
-      "image_position": "49% 45%",
-      "image_zoom": "1.28"
+      "image_position": "50% 45%",
+      "image_zoom": "1.27"
     },
     {
       "id": "item-1781312173067-js2",
@@ -1280,7 +1280,7 @@
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 50%",
+      "image_position": "53% 50%",
       "image_zoom": "1.20"
     },
     {
@@ -2500,8 +2500,8 @@
       "video_url": "",
       "visible": true,
       "featured": true,
-      "image_position": "50% 50%",
-      "image_zoom": "1.46"
+      "image_position": "41% 50%",
+      "image_zoom": "1.80"
     },
     {
       "id": "item-1781312173067-5ve",
@@ -2531,7 +2531,7 @@
       "visible": true,
       "featured": true,
       "image_position": "50% 50%",
-      "image_zoom": "1.46"
+      "image_zoom": "1.67"
     },
     {
       "id": "item-1781312173067-4zk",
@@ -2546,7 +2546,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.44"
+      "image_zoom": "1.70"
     },
     {
       "id": "item-1781312173067-o7h",
@@ -2631,7 +2631,7 @@
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 50%",
+      "image_position": "46% 50%",
       "image_zoom": "1.28"
     },
     {
