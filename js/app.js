@@ -122,6 +122,7 @@ function showView(viewId) {
   ['view-sections','view-categories','view-items'].forEach(id => {
     $(id).style.display = id === viewId ? '' : 'none';
   });
+  window.scrollTo({ top: 0, behavior: 'instant' });
 }
 
 function updateBackBtn() {
