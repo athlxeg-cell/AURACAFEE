@@ -18,7 +18,7 @@
       "address_ar": "مصر – القاهرة الجديدة – مدينتي – مول All Seasons Park – المدخل 1",
       "maps_url": "https://maps.app.goo.gl/rpv7Pbzh4ChCHNPv5?g_st=ac"
     },
-    "about_video": "https://www.youtube.com/watch?v=OQac93ARgQE&list=RDOQac93ARgQE&start_radio=1"
+    "about_video": ""
   },
   "sections": [
     {
@@ -241,7 +241,7 @@
       "visible": true,
       "featured": true,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.23"
     },
     {
       "id": "item-1781312173067-9kz",
@@ -271,7 +271,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.26"
     },
     {
       "id": "item-1781312173067-0az",
@@ -286,7 +286,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.26"
     },
     {
       "id": "item-1781312173067-p8y",
@@ -314,7 +314,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.24"
     },
     {
       "id": "item-1781312173067-878",
@@ -433,7 +433,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.29"
     },
     {
       "id": "item-1781312173067-k87",
@@ -515,7 +515,7 @@
       "visible": true,
       "featured": true,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.25"
     },
     {
       "id": "item-1781312173067-p96",
@@ -530,7 +530,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.23"
     },
     {
       "id": "item-1781312173067-hiz",
@@ -575,7 +575,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.16"
+      "image_zoom": "1.22"
     },
     {
       "id": "item-1781312173067-6oi",
@@ -590,7 +590,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.18"
     },
     {
       "id": "item-1781312173067-j09",
@@ -605,7 +605,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.21"
     },
     {
       "id": "item-1781312173067-drb",
@@ -633,7 +633,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.23"
     },
     {
       "id": "item-1781312173067-ys8",
@@ -648,7 +648,7 @@
       "visible": true,
       "featured": true,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.22"
     },
     {
       "id": "item-1781312173067-l1q",
@@ -663,7 +663,7 @@
       "visible": true,
       "featured": true,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.23"
     },
     {
       "id": "item-1781312173067-4a1",
@@ -743,7 +743,7 @@
       "visible": true,
       "featured": true,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.15"
     },
     {
       "id": "item-1781312173067-dxg",
@@ -758,7 +758,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.30"
     },
     {
       "id": "item-1781312173067-j21",
@@ -773,7 +773,7 @@
       "visible": true,
       "featured": true,
       "image_position": "49% 59%",
-      "image_zoom": "1.79"
+      "image_zoom": "1.75"
     },
     {
       "id": "item-1781312173067-jef",
@@ -788,7 +788,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.26"
     },
     {
       "id": "item-1781312173067-4cn",
@@ -803,7 +803,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.25"
     },
     {
       "id": "item-1781312173067-cmo",
@@ -818,7 +818,7 @@
       "visible": true,
       "featured": true,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.21"
     },
     {
       "id": "item-1781312173067-18q",
@@ -833,7 +833,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.18"
     },
     {
       "id": "item-1781312173067-wul",
@@ -863,7 +863,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.17"
     },
     {
       "id": "item-1781312173067-23v",
@@ -878,7 +878,7 @@
       "visible": true,
       "featured": true,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.18"
     },
     {
       "id": "item-1781312173067-zgj",
@@ -1098,7 +1098,7 @@
       "description_en": "",
       "description_ar": "",
       "price": 145,
-      "image": "/images/dsc09859.jpg",
+      "image": "",
       "video_url": "",
       "visible": true,
       "featured": false,
@@ -2822,7 +2822,7 @@
       "visible": true,
       "featured": true,
       "image_position": "50% 50%",
-      "image_zoom": "1.18"
+      "image_zoom": "1.27"
     },
     {
       "id": "item-1781316294666-wj6",
@@ -2837,7 +2837,7 @@
       "visible": true,
       "featured": true,
       "image_position": "50% 50%",
-      "image_zoom": "1.22"
+      "image_zoom": "1.36"
     },
     {
       "id": "item-1781316294666-pvm",
@@ -2979,7 +2979,7 @@
       "visible": true,
       "featured": true,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.15"
     },
     {
       "id": "item-1781316294666-u5n",
@@ -2994,7 +2994,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.14"
     },
     {
       "id": "item-1781316294666-jg4",
@@ -3009,7 +3009,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.13"
     },
     {
       "id": "item-1781316294666-4fq",
@@ -3039,7 +3039,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.13"
     },
     {
       "id": "item-1781316294666-2p0",
@@ -3054,7 +3054,7 @@
       "visible": true,
       "featured": true,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.16"
     },
     {
       "id": "item-1781316294666-jmw",
@@ -3069,7 +3069,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.10"
     },
     {
       "id": "item-1781316294666-c36",
@@ -3084,7 +3084,7 @@
       "visible": true,
       "featured": true,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.14"
     },
     {
       "id": "item-1781316294666-7hq",
@@ -3099,7 +3099,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.10"
     },
     {
       "id": "item-1781316294666-vmm",
@@ -3114,7 +3114,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.10"
     },
     {
       "id": "item-1781316294666-1c5",
@@ -3129,7 +3129,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781316294666-tx5",
@@ -3144,7 +3144,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.15"
     },
     {
       "id": "item-1781316294666-4ya",
@@ -3159,7 +3159,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.18"
     },
     {
       "id": "item-1781316294666-fhh",
@@ -3174,7 +3174,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.18"
     },
     {
       "id": "item-1781316294666-i09",
@@ -3189,7 +3189,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.18"
     },
     {
       "id": "item-1781316294666-bzm",
@@ -3204,7 +3204,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 100%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.15"
     },
     {
       "id": "item-1781316294666-a00",
