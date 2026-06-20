@@ -33,9 +33,18 @@ module.exports = async function handler(req, res) {
 
   const base = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}`;
 
+  // 0. Auto-detect default branch (handles both "main" and "master")
+  const repoRes = await fetch(base, { headers });
+  if (!repoRes.ok) return res.status(500).json({ error: 'Could not fetch repo info' });
+  const repoInfo = await repoRes.json();
+  const branch = repoInfo.default_branch || 'main';
+
   // 1. Get HEAD SHA
-  const refRes = await fetch(`${base}/git/refs/heads/main`, { headers });
-  if (!refRes.ok) return res.status(500).json({ error: 'Could not get branch ref' });
+  const refRes = await fetch(`${base}/git/refs/heads/${branch}`, { headers });
+  if (!refRes.ok) {
+    const errBody = await refRes.json().catch(() => ({}));
+    return res.status(500).json({ error: `Could not get branch ref (${branch}): ${errBody.message || refRes.status}` });
+  }
   const ref = await refRes.json();
   const headSha = ref.object.sha;
 
@@ -58,7 +67,10 @@ module.exports = async function handler(req, res) {
     headers,
     body: JSON.stringify({ base_tree: treeSha, tree: treeItems }),
   });
-  if (!newTreeRes.ok) return res.status(500).json({ error: 'Could not create tree' });
+  if (!newTreeRes.ok) {
+    const errBody = await newTreeRes.json().catch(() => ({}));
+    return res.status(500).json({ error: `Could not create tree: ${errBody.message || newTreeRes.status}` });
+  }
   const newTree = await newTreeRes.json();
 
   // 4. Create the commit
@@ -71,16 +83,22 @@ module.exports = async function handler(req, res) {
       parents: [headSha],
     }),
   });
-  if (!newCommitRes.ok) return res.status(500).json({ error: 'Could not create commit' });
+  if (!newCommitRes.ok) {
+    const errBody = await newCommitRes.json().catch(() => ({}));
+    return res.status(500).json({ error: `Could not create commit: ${errBody.message || newCommitRes.status}` });
+  }
   const newCommit = await newCommitRes.json();
 
   // 5. Update branch ref to point to new commit
-  const updateRefRes = await fetch(`${base}/git/refs/heads/main`, {
+  const updateRefRes = await fetch(`${base}/git/refs/heads/${branch}`, {
     method: 'PATCH',
     headers,
-    body: JSON.stringify({ sha: newCommit.sha }),
+    body: JSON.stringify({ sha: newCommit.sha, force: false }),
   });
-  if (!updateRefRes.ok) return res.status(500).json({ error: 'Could not update branch ref' });
+  if (!updateRefRes.ok) {
+    const errBody = await updateRefRes.json().catch(() => ({}));
+    return res.status(500).json({ error: `Could not update branch ref (${branch}): ${errBody.message || updateRefRes.status}` });
+  }
 
-  return res.status(200).json({ success: true, commit: newCommit.sha, filesUpdated: files.length });
+  return res.status(200).json({ success: true, commit: newCommit.sha, branch, filesUpdated: files.length });
 };
