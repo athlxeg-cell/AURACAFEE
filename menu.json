@@ -225,9 +225,32 @@
       "image": "/images/whatsapp-image-2026-06-17-at-7.11.50-pm.jpeg",
       "section": "breakfast",
       "visible": true
+    },
+    {
+      "id": "soup",
+      "name_en": "soup",
+      "name_ar": "شوربة",
+      "image": "",
+      "section": "main-menu",
+      "visible": true
     }
   ],
   "items": [
+    {
+      "id": "item-1781312173067-9kz",
+      "category": "salad",
+      "name_en": "Oriental Salad",
+      "name_ar": "شرقي",
+      "description_en": "",
+      "description_ar": "",
+      "price": 99,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.30"
+    },
     {
       "id": "item-1781312173067-hxe",
       "category": "salad",
@@ -235,7 +258,7 @@
       "name_ar": "فتوش",
       "description_en": "",
       "description_ar": "",
-      "price": 129,
+      "price": 149,
       "image": "/images/dsc09820.jpg",
       "video_url": "",
       "visible": true,
@@ -244,19 +267,34 @@
       "image_zoom": "1.30"
     },
     {
-      "id": "item-1781312173067-9kz",
+      "id": "item-1781312173067-k5x",
       "category": "salad",
-      "name_en": "Oriental Salad",
-      "name_ar": "شرقي",
+      "name_en": "Tabbouleh",
+      "name_ar": "تبولة",
       "description_en": "",
       "description_ar": "",
-      "price": 89,
-      "image": "",
+      "price": 165,
+      "image": "/images/dsc09819.jpg",
       "video_url": "",
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "2.30"
+      "image_zoom": "1.34"
+    },
+    {
+      "id": "item-1781312173067-p8y",
+      "category": "salad",
+      "name_en": "Arugula Salad",
+      "name_ar": "جرجير",
+      "description_en": "",
+      "description_ar": "",
+      "price": 165,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.34"
     },
     {
       "id": "item-1781312173067-tn3",
@@ -265,7 +303,7 @@
       "name_ar": "جريك",
       "description_en": "",
       "description_ar": "",
-      "price": 165,
+      "price": 175,
       "image": "/images/dsc09822.jpg",
       "video_url": "",
       "visible": true,
@@ -280,41 +318,13 @@
       "name_ar": "تشكن سيزر",
       "description_en": "",
       "description_ar": "",
-      "price": 185,
+      "price": 215,
       "image": "/images/dsc09821.jpg",
       "video_url": "",
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.38"
-    },
-    {
-      "id": "item-1781312173067-p8y",
-      "category": "salad",
-      "name_en": "Arugula Salad",
-      "name_ar": "جرجير",
-      "description_en": "",
-      "description_ar": "",
-      "price": 129,
-      "image": "",
-      "video_url": "",
-      "visible": true,
-      "featured": true
-    },
-    {
-      "id": "item-1781312173067-k5x",
-      "category": "salad",
-      "name_en": "Tabbouleh",
-      "name_ar": "تبولة",
-      "description_en": "",
-      "description_ar": "",
-      "price": 129,
-      "image": "/images/dsc09819.jpg",
-      "video_url": "",
-      "visible": true,
-      "featured": false,
-      "image_position": "50% 50%",
-      "image_zoom": "1.34"
     },
     {
       "id": "item-1781312173067-878",
@@ -470,11 +480,13 @@
       "name_ar": "ماش تشيز",
       "description_en": "",
       "description_ar": "",
-      "price": 135,
+      "price": 155,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.34"
     },
     {
       "id": "item-1781312173067-jp2",
@@ -578,19 +590,17 @@
       "image_zoom": "1.14"
     },
     {
-      "id": "item-1781312173067-6oi",
+      "id": "item-1781987028771",
       "category": "main-dishes",
-      "name_en": "Chicken Ranch",
-      "name_ar": "تشكن رانش",
-      "description_en": "",
-      "description_ar": "",
-      "price": 195,
-      "image": "/images/dsc09853.jpg",
+      "name_en": "Grilled Chicken",
+      "name_ar": "جريلد تشكن",
+      "description_en": "Grilled chicken breast fillets served with your choice of two side dishes",
+      "description_ar": "قطع من صدور الدجاج المشوية، تقدم مع اختيارك من طبقين جانبيين.",
+      "price": 399,
+      "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false,
-      "image_position": "50% 50%",
-      "image_zoom": "1.18"
+      "featured": false
     },
     {
       "id": "item-1781312173067-j09",
@@ -608,17 +618,47 @@
       "image_zoom": "1.22"
     },
     {
+      "id": "item-1781312173067-6oi",
+      "category": "main-dishes",
+      "name_en": "Chicken Ranch",
+      "name_ar": "تشكن رانش",
+      "description_en": "",
+      "description_ar": "",
+      "price": 399,
+      "image": "/images/dsc09853.jpg",
+      "video_url": "",
+      "visible": true,
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.18"
+    },
+    {
+      "id": "item-1781986419584",
+      "category": "main-dishes",
+      "name_en": "Chicken Escalope Pane",
+      "name_ar": "تشكن اسكالوب بانيه",
+      "description_en": "Crispy chicken breast fillets served with French fries, Italian salad, garlic sauce, and coleslaw.",
+      "description_ar": "قطع من صدور الدجاج المقرمش، تقدم مع فرايز، سلاد إيطالي، تومية، وكول سلو.",
+      "price": 425,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false
+    },
+    {
       "id": "item-1781312173067-drb",
       "category": "main-dishes",
       "name_en": "Sweet & Sour Chicken",
       "name_ar": "تشكن سويت & ساور",
       "description_en": "Grilled Chicken served with Sweet & Sour sauce and pineapple slices, with 2 side dishes of your choice.",
       "description_ar": "فراخ مشوية على الجريل مع صوص سويت & ساور مع شرائح اناناس مع 2 سايد من اختيارك",
-      "price": 439,
+      "price": 449,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.18"
     },
     {
       "id": "item-1781312173067-fp5",
@@ -627,13 +667,54 @@
       "name_ar": "كوردن بلو",
       "description_en": "",
       "description_ar": "",
-      "price": 445,
+      "price": 449,
       "image": "/images/dsc09837.jpg",
       "video_url": "",
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.22"
+    },
+    {
+      "id": "item-1781986471576",
+      "category": "main-dishes",
+      "name_en": "Chicken Escalope Malibu",
+      "name_ar": "تشكن اسكالوب ماليبو",
+      "description_en": "Crispy chicken breast fillets topped with peeled tomato sauce, Italian mozzarella cheese, and parmesan cheese, served with red sauce pasta.",
+      "description_ar": "قطع من صدور الدجاج المقرمش مغطاة بصوص البيلد توميتو وجبنة الموزاريلا الإيطالية والبارميزان، وتقدم مع باستا ريد صوص.",
+      "price": 499,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false
+    },
+    {
+      "id": "item-1781999501651",
+      "category": "main-dishes",
+      "name_en": "classic steak",
+      "name_ar": "كلاسيك ستيك",
+      "description_en": "Tender beef fillet slices served with your choice of two side dishes",
+      "description_ar": "شرائح من لحم الفيليتو الطري، تقدم مع اختيارك من طبقين جانبيين.",
+      "price": 535,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false
+    },
+    {
+      "id": "item-1781312173067-l1q",
+      "category": "main-dishes",
+      "name_en": "Beef Stroganoff",
+      "name_ar": "بيف استرجنوف",
+      "description_en": "Beef Fillet slices with demi-glace sauce, served with 2 side dishes of your choice.",
+      "description_ar": "شرائح من لحم الفليتو مع صوص الديمي جلاس تقدم مع 2 سايد من اخيارك",
+      "price": 575,
+      "image": "/images/dsc09847.jpg",
+      "video_url": "",
+      "visible": true,
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.25"
     },
     {
       "id": "item-1781312173067-ys8",
@@ -651,21 +732,6 @@
       "image_zoom": "1.22"
     },
     {
-      "id": "item-1781312173067-l1q",
-      "category": "main-dishes",
-      "name_en": "Beef Stroganoff",
-      "name_ar": "بيف استرجنوف",
-      "description_en": "Beef Fillet slices with demi-glace sauce, served with 2 side dishes of your choice.",
-      "description_ar": "شرائح من لحم الفليتو مع صوص الديمي جلاس تقدم مع 2 سايد من اخيارك",
-      "price": 529,
-      "image": "/images/dsc09847.jpg",
-      "video_url": "",
-      "visible": true,
-      "featured": true,
-      "image_position": "50% 50%",
-      "image_zoom": "1.23"
-    },
-    {
       "id": "item-1781312173067-4a1",
       "category": "main-dishes",
       "name_en": "Aleppo-Style Meat Skillet",
@@ -679,65 +745,13 @@
       "featured": false
     },
     {
-      "id": "item-1781312173067-0iu",
-      "category": "main-dishes",
-      "name_en": "Lamb Shank Ouzi",
-      "name_ar": "اوزي بالموزة",
-      "description_en": "Veal or lamb shank pieces cooked with basmati rice and nuts, wrapped in crispy baked pastry and prepared with traditional ghee.",
-      "description_ar": "قطع من الموزة بتلو او الضاني مطهي مع أرز بسمتي بالمكسرات داخل رقائق هاشه مخبوزة بالسمون البلدي",
-      "price": 22,
-      "image": "",
-      "video_url": "",
-      "visible": false,
-      "featured": false
-    },
-    {
-      "id": "item-1781312173067-yid",
-      "category": "main-dishes",
-      "name_en": "Lamb Shank Fatteh",
-      "name_ar": "فته موزة",
-      "description_en": "Lamb Shank (Veal or Lamb) served with Egyptian rice with nuts, toasted bread, and a signature sauce.",
-      "description_ar": "موزة بتلو او ضاني تقدم مع أرز مصري بالمكسرات و عيش محمص مع صلصة مميزة",
-      "price": 22,
-      "image": "",
-      "video_url": "",
-      "visible": false,
-      "featured": false
-    },
-    {
-      "id": "item-1781312173067-vvc",
-      "category": "main-dishes",
-      "name_en": "Meat & Onion Tagine",
-      "name_ar": "طاجن لحمة بالبصل",
-      "description_en": "",
-      "description_ar": "",
-      "price": 525,
-      "image": "",
-      "video_url": "",
-      "visible": false,
-      "featured": false
-    },
-    {
-      "id": "item-1781312173067-9mt",
-      "category": "main-dishes",
-      "name_en": "Shish Kebab Tagine with Mozzarella",
-      "name_ar": "طاجن شيش بالموزريلا",
-      "description_en": "Lamb Shank (Veal or Lamb) served with Egyptian rice with nuts, toasted bread, and a signature sauce.",
-      "description_ar": "قطع من صدور الدجاج المشوية مع الفرايز و الموزريلا و الماشروم و الذرة تقدم مع ثومية و كولسلو",
-      "price": 450,
-      "image": "",
-      "video_url": "",
-      "visible": false,
-      "featured": false
-    },
-    {
       "id": "item-1781312173067-g43",
       "category": "pasta",
       "name_en": "Fettuccine Alfredo",
       "name_ar": "الفريدو",
       "description_en": "Fettuccine Pasta with Alfredo sauce, chicken slices, mushrooms, and Parmesan cheese.",
       "description_ar": "باستا فيتوتشيني بصوص الالفريدو مع شرائح الفراخ و المشروم و جبنه البارميزان",
-      "price": 275,
+      "price": 285,
       "image": "/images/dsc09845.jpg",
       "video_url": "",
       "visible": true,
@@ -746,28 +760,13 @@
       "image_zoom": "1.43"
     },
     {
-      "id": "item-1781312173067-dxg",
-      "category": "pasta",
-      "name_en": "Pasta Negresco",
-      "name_ar": "نجريسكو",
-      "description_en": "Penne Pasta baked with béchamel sauce, mushrooms, sweet corn, mozzarella cheese, and chicken slices.",
-      "description_ar": "باستا بينا مطهيه بصوص الباشاميل و المشروم و الذرة و موزريلا  مع شرائح الفراخ",
-      "price": 289,
-      "image": "/images/dsc09850.jpg",
-      "video_url": "",
-      "visible": true,
-      "featured": false,
-      "image_position": "50% 50%",
-      "image_zoom": "1.46"
-    },
-    {
       "id": "item-1781312173067-j21",
       "category": "pasta",
       "name_en": "Sweet & Sour Pasta",
       "name_ar": "سويت & ساور",
       "description_en": "Fettuccine Pasta with Sweet & Sour sauce, crispy chicken pieces, bell peppers, a hint of black seed (Nigella seeds), and sesame seeds.",
       "description_ar": "باستا فيتوتشيني  بصوص السويت & ساور مع قطع الفراخ المقرمش مع فلفل الوان و لمسه من حبه البركة و سمسم",
-      "price": 275,
+      "price": 285,
       "image": "/images/dsc09841.jpg",
       "video_url": "",
       "visible": true,
@@ -776,13 +775,28 @@
       "image_zoom": "1.75"
     },
     {
+      "id": "item-1781312173067-dxg",
+      "category": "pasta",
+      "name_en": "Pasta Negresco",
+      "name_ar": "نجريسكو",
+      "description_en": "Penne Pasta baked with béchamel sauce, mushrooms, sweet corn, mozzarella cheese, and chicken slices.",
+      "description_ar": "باستا بينا مطهيه بصوص الباشاميل و المشروم و الذرة و موزريلا  مع شرائح الفراخ",
+      "price": 299,
+      "image": "/images/dsc09850.jpg",
+      "video_url": "",
+      "visible": true,
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.46"
+    },
+    {
       "id": "item-1781312173067-jef",
       "category": "pasta",
       "name_en": "Bolognese Pasta",
       "name_ar": "بولونيز",
       "description_en": "Spaghetti Pasta with red sauce, meatballs, and Parmesan cheese.",
       "description_ar": "مكرونة اسباجيتي مع ريد صوص و كرات اللحم مع جبنة البارميزان",
-      "price": 295,
+      "price": 315,
       "image": "/images/dsc09839.jpg",
       "video_url": "",
       "visible": true,
@@ -797,7 +811,7 @@
       "name_ar": "باستا جمبري",
       "description_en": "Pasta with shrimp in a creamy white sauce, flavored with garlic and black pepper.",
       "description_ar": "مكرونة بالجمبري مع صوص كريمي أبيض متبل بالثوم و الفلفل الاسود",
-      "price": 375,
+      "price": 385,
       "image": "/images/dsc09849.jpg",
       "video_url": "",
       "visible": true,
@@ -812,7 +826,7 @@
       "name_ar": "مارجريتا كلاسيك",
       "description_en": "Italian tomato sauce with shredded mozzarella, mozzarella sticks, Parmesan cheese, olive oil, and fresh basil.",
       "description_ar": "صلصة طماطم الايطالي  و موزريلا مبشورة و موزريلا  صوابع و  بارميزان مع   زيت الزيتون مع الريحان الفريش",
-      "price": 330,
+      "price": 350,
       "image": "/images/dsc09862.jpg",
       "video_url": "",
       "visible": true,
@@ -834,21 +848,6 @@
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.18"
-    },
-    {
-      "id": "item-1781312173067-wul",
-      "category": "pizza",
-      "name_en": "Truffle Mushroom Pizza",
-      "name_ar": "ترافيل ماشروم",
-      "description_en": "Truffle sauce with shredded mozzarella, mozzarella sticks, Parmesan cheese, fresh mushrooms, fresh basil, and premium French truffle oil.",
-      "description_ar": "صوص ترافل  مع موزريلا مبشورة مع موزريلا صوابع مع جبنة البارميزان مع ماشروم فريش مع ريحان فريش مع زيت الترافيل الفرنسي الفاخر",
-      "price": 435,
-      "image": "/images/dsc09856.jpg",
-      "video_url": "",
-      "visible": true,
-      "featured": false,
-      "image_position": "50% 50%",
-      "image_zoom": "1.27"
     },
     {
       "id": "item-1781312173067-v1q",
@@ -894,6 +893,21 @@
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.17"
+    },
+    {
+      "id": "item-1781312173067-wul",
+      "category": "pizza",
+      "name_en": "Truffle Mushroom Pizza",
+      "name_ar": "ترافيل ماشروم",
+      "description_en": "Truffle sauce with shredded mozzarella, mozzarella sticks, Parmesan cheese, fresh mushrooms, fresh basil, and premium French truffle oil.",
+      "description_ar": "صوص ترافل  مع موزريلا مبشورة مع موزريلا صوابع مع جبنة البارميزان مع ماشروم فريش مع ريحان فريش مع زيت الترافيل الفرنسي الفاخر",
+      "price": 435,
+      "image": "/images/dsc09856.jpg",
+      "video_url": "",
+      "visible": true,
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.27"
     },
     {
       "id": "item-1781312173067-urg",
@@ -1070,7 +1084,7 @@
       "price": 399,
       "image": "/images/dsc09917.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -1085,7 +1099,7 @@
       "price": 425,
       "image": "/images/dsc09917.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.16"
@@ -1290,11 +1304,13 @@
       "name_ar": "اسبريسو سينجل",
       "description_en": "",
       "description_ar": "",
-      "price": 79,
+      "price": 89,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.18"
     },
     {
       "id": "item-1781312173067-m45",
@@ -1303,11 +1319,13 @@
       "name_ar": "اسبريسو دبل",
       "description_en": "",
       "description_ar": "",
-      "price": 99,
+      "price": 109,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.18"
     },
     {
       "id": "item-1781312173067-nof",
@@ -1316,11 +1334,13 @@
       "name_ar": "ماكياتو سنجل شوت",
       "description_en": "",
       "description_ar": "",
-      "price": 89,
+      "price": 109,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.18"
     },
     {
       "id": "item-1781312173067-rnt",
@@ -1329,11 +1349,13 @@
       "name_ar": "ماكياتو دبل شوت",
       "description_en": "",
       "description_ar": "",
-      "price": 99,
+      "price": 129,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.18"
     },
     {
       "id": "item-1781312173067-ybt",
@@ -1355,7 +1377,7 @@
       "name_ar": "لاتيه",
       "description_en": "",
       "description_ar": "",
-      "price": 115,
+      "price": 125,
       "image": "/images/whatsapp-image-2026-06-15-at-2.48.05-am-1.jpeg",
       "video_url": "",
       "visible": true,
@@ -1383,11 +1405,13 @@
       "name_ar": "موكا",
       "description_en": "",
       "description_ar": "",
-      "price": 125,
+      "price": 135,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 60%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-0rr",
@@ -1396,11 +1420,13 @@
       "name_ar": "وايت موكا",
       "description_en": "",
       "description_ar": "",
-      "price": 125,
+      "price": 135,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 60%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-pfk",
@@ -1409,11 +1435,13 @@
       "name_ar": "كورتادو",
       "description_en": "",
       "description_ar": "",
-      "price": 109,
+      "price": 129,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 60%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-54i",
@@ -1422,11 +1450,13 @@
       "name_ar": "فلايت وايت",
       "description_en": "",
       "description_ar": "",
-      "price": 119,
+      "price": 129,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 60%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-1em",
@@ -1476,11 +1506,13 @@
       "name_ar": "قهوة تركي سنجل بن العميد",
       "description_en": "",
       "description_ar": "",
-      "price": 65,
+      "price": 69,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 77%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-0dj",
@@ -1489,11 +1521,13 @@
       "name_ar": "قهوة تركي دبل بن العميد",
       "description_en": "",
       "description_ar": "",
-      "price": 85,
+      "price": 99,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 77%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-xbz",
@@ -1502,11 +1536,13 @@
       "name_ar": "قهوة فرنساوي",
       "description_en": "",
       "description_ar": "",
-      "price": 89,
+      "price": 99,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 77%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-raq",
@@ -1515,11 +1551,13 @@
       "name_ar": "قهوة بندق",
       "description_en": "",
       "description_ar": "",
-      "price": 89,
+      "price": 99,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 77%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-f5k",
@@ -1528,11 +1566,13 @@
       "name_ar": "شاي",
       "description_en": "",
       "description_ar": "",
-      "price": 50,
+      "price": 60,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 77%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-f70",
@@ -1541,11 +1581,13 @@
       "name_ar": "شاي أخضر",
       "description_en": "",
       "description_ar": "",
-      "price": 55,
+      "price": 65,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 77%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-ko9",
@@ -1554,11 +1596,13 @@
       "name_ar": "شاي نكهات",
       "description_en": "",
       "description_ar": "",
-      "price": 60,
+      "price": 69,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 77%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-ax4",
@@ -1567,11 +1611,13 @@
       "name_ar": "شاي براد",
       "description_en": "",
       "description_ar": "",
-      "price": 125,
+      "price": 155,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 77%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-15n",
@@ -1606,11 +1652,13 @@
       "name_ar": "كوكتيل اعشاب",
       "description_en": "",
       "description_ar": "",
-      "price": 75,
+      "price": 85,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 77%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-vog",
@@ -1725,7 +1773,7 @@
       "name_ar": "برتقال",
       "description_en": "",
       "description_ar": "",
-      "price": 125,
+      "price": 135,
       "image": "/images/dsc09924.jpg",
       "video_url": "",
       "visible": true,
@@ -1740,11 +1788,13 @@
       "name_ar": "مانجو",
       "description_en": "",
       "description_ar": "",
-      "price": 135,
+      "price": 145,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-ju1",
@@ -1753,11 +1803,13 @@
       "name_ar": "فراولة",
       "description_en": "",
       "description_ar": "",
-      "price": 135,
+      "price": 145,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-m4b",
@@ -1766,11 +1818,13 @@
       "name_ar": "فلوريدا كوكتيل",
       "description_en": "",
       "description_ar": "",
-      "price": 155,
+      "price": 165,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-vj2",
@@ -1779,11 +1833,13 @@
       "name_ar": "موز باللبن",
       "description_en": "",
       "description_ar": "",
-      "price": 139,
+      "price": 149,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-fad",
@@ -1792,11 +1848,13 @@
       "name_ar": "كيوي",
       "description_en": "",
       "description_ar": "",
-      "price": 139,
+      "price": 149,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-up8",
@@ -1805,11 +1863,13 @@
       "name_ar": "أناناس",
       "description_en": "",
       "description_ar": "",
-      "price": 145,
+      "price": 155,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-zzv",
@@ -1818,11 +1878,13 @@
       "name_ar": "ليمون",
       "description_en": "",
       "description_ar": "",
-      "price": 125,
+      "price": 135,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-9e7",
@@ -1831,11 +1893,13 @@
       "name_ar": "ليمون نعناع",
       "description_en": "",
       "description_ar": "",
-      "price": 135,
+      "price": 145,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-cx4",
@@ -1844,11 +1908,13 @@
       "name_ar": "جوافة",
       "description_en": "",
       "description_ar": "",
-      "price": 135,
+      "price": 145,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-j2u",
@@ -1857,11 +1923,13 @@
       "name_ar": "جوافة باللبن",
       "description_en": "",
       "description_ar": "",
-      "price": 139,
+      "price": 149,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-t43",
@@ -1870,11 +1938,13 @@
       "name_ar": "جوافه بالعناع",
       "description_en": "",
       "description_ar": "",
-      "price": 139,
+      "price": 145,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-9yf",
@@ -1906,14 +1976,16 @@
       "id": "item-1781312173067-7qt",
       "category": "juices",
       "name_en": "Avocado, Mango & Honey (No Nuts)",
-      "name_ar": "افوكاد مانجو و عسل ﻻو مكسرات",
+      "name_ar": "افوكاد مانجو و عسل و مكسرات",
       "description_en": "",
       "description_ar": "",
       "price": 225,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-sy8",
@@ -1929,17 +2001,19 @@
       "featured": true
     },
     {
-      "id": "item-1781312173067-iui",
+      "id": "item-1781312173067-5ve",
       "category": "desserts",
-      "name_en": "Fruit Salad",
-      "name_ar": "فروت سالاد",
-      "description_en": "",
-      "description_ar": "",
-      "price": 299,
-      "image": "",
+      "name_en": "Caramel & Nuts Crème Brûlée",
+      "name_ar": "كريم بورليه كراميل مكسرات",
+      "description_en": "Classic Crème Brûlée with a caramelized top, consisting of sponge cake, caramel cream, and nuts.",
+      "description_ar": "كريم بورليه اكلاسيكي بسطح كراميل محمر يتكون من( سبونج كيك. كريم كراميل . مكسرات )",
+      "price": 165,
+      "image": "/images/whatsapp-image-2026-06-15-at-2.48.04-am.jpeg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": false,
+      "image_position": "50% 57%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-a6a",
@@ -1948,11 +2022,13 @@
       "name_ar": "ليمون",
       "description_en": "",
       "description_ar": "",
-      "price": 135,
+      "price": 145,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-5uv",
@@ -1961,11 +2037,13 @@
       "name_ar": "ليمون نعناع",
       "description_en": "",
       "description_ar": "",
-      "price": 145,
+      "price": 155,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-1xa",
@@ -1974,7 +2052,7 @@
       "name_ar": "فراولة",
       "description_en": "",
       "description_ar": "",
-      "price": 145,
+      "price": 155,
       "image": "/images/dsc09910.jpg",
       "video_url": "",
       "visible": true,
@@ -1989,7 +2067,7 @@
       "name_ar": "منجا",
       "description_en": "",
       "description_ar": "",
-      "price": 145,
+      "price": 155,
       "image": "/images/dsc09909.jpg",
       "video_url": "",
       "visible": true,
@@ -2004,11 +2082,13 @@
       "name_ar": "بلو بري",
       "description_en": "",
       "description_ar": "",
-      "price": 155,
+      "price": 165,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.10"
     },
     {
       "id": "item-1781312173067-cqo",
@@ -2017,11 +2097,13 @@
       "name_ar": "مكس بري",
       "description_en": "",
       "description_ar": "",
-      "price": 155,
+      "price": 165,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.10"
     },
     {
       "id": "item-1781312173067-fgf",
@@ -2030,11 +2112,13 @@
       "name_ar": "باشن فروت",
       "description_en": "",
       "description_ar": "",
-      "price": 155,
+      "price": 165,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.10"
     },
     {
       "id": "item-1781312173067-0zs",
@@ -2043,11 +2127,13 @@
       "name_ar": "أناناس",
       "description_en": "",
       "description_ar": "",
-      "price": 165,
+      "price": 175,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.10"
     },
     {
       "id": "item-1781312173067-icj",
@@ -2056,11 +2142,13 @@
       "name_ar": "أناناس كيوي",
       "description_en": "",
       "description_ar": "",
-      "price": 169,
+      "price": 179,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.10"
     },
     {
       "id": "item-1781312173067-oxb",
@@ -2216,11 +2304,13 @@
       "name_ar": "مياه معدنية",
       "description_en": "",
       "description_ar": "",
-      "price": 39,
+      "price": 29,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.10"
     },
     {
       "id": "item-1781312173067-po4",
@@ -2255,7 +2345,7 @@
       "name_ar": "ريد بلو",
       "description_en": "",
       "description_ar": "",
-      "price": 99,
+      "price": 115,
       "image": "/images/dsc09925.jpg",
       "video_url": "",
       "visible": true,
@@ -2270,11 +2360,13 @@
       "name_ar": "ريد بلو زيرو",
       "description_en": "",
       "description_ar": "",
-      "price": 99,
+      "price": 115,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-4aw",
@@ -2350,11 +2442,13 @@
       "name_ar": "ميلك شيك فراولة",
       "description_en": "",
       "description_ar": "",
-      "price": 165,
+      "price": 175,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-vxd",
@@ -2363,11 +2457,13 @@
       "name_ar": "ميلك شيك مانجو",
       "description_en": "",
       "description_ar": "",
-      "price": 165,
+      "price": 175,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-c59",
@@ -2376,11 +2472,13 @@
       "name_ar": "ميلك شيك شكوﻻته",
       "description_en": "",
       "description_ar": "",
-      "price": 169,
+      "price": 179,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-soc",
@@ -2389,11 +2487,13 @@
       "name_ar": "ميلك شيك فانيليا",
       "description_en": "",
       "description_ar": "",
-      "price": 169,
+      "price": 179,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-6qz",
@@ -2443,11 +2543,13 @@
       "name_ar": "ميلك شيك اوريو",
       "description_en": "",
       "description_ar": "",
-      "price": 185,
+      "price": 195,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-92u",
@@ -2456,11 +2558,13 @@
       "name_ar": "ميلك شيك نوتيلا",
       "description_en": "",
       "description_ar": "",
-      "price": 185,
+      "price": 195,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-xwx",
@@ -2469,11 +2573,13 @@
       "name_ar": "ميلك شيك كراميل",
       "description_en": "",
       "description_ar": "",
-      "price": 165,
+      "price": 175,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-kwb",
@@ -2482,11 +2588,13 @@
       "name_ar": "ميلك شيك بلو بري",
       "description_en": "",
       "description_ar": "",
-      "price": 165,
+      "price": 175,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-dx5",
@@ -2502,21 +2610,6 @@
       "featured": true,
       "image_position": "41% 50%",
       "image_zoom": "1.80"
-    },
-    {
-      "id": "item-1781312173067-5ve",
-      "category": "desserts",
-      "name_en": "Caramel & Nuts Crème Brûlée",
-      "name_ar": "كريم بورليه كراميل مكسرات",
-      "description_en": "Classic Crème Brûlée with a caramelized top, consisting of sponge cake, caramel cream, and nuts.",
-      "description_ar": "كريم بورليه اكلاسيكي بسطح كراميل محمر يتكون من( سبونج كيك. كريم كراميل . مكسرات )",
-      "price": 165,
-      "image": "/images/whatsapp-image-2026-06-15-at-2.48.04-am.jpeg",
-      "video_url": "",
-      "visible": true,
-      "featured": false,
-      "image_position": "50% 57%",
-      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-8x5",
@@ -2558,7 +2651,7 @@
       "price": 155,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -2571,7 +2664,7 @@
       "price": 175,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -2605,21 +2698,6 @@
       "image_zoom": "1.00"
     },
     {
-      "id": "item-1781312173067-m4u",
-      "category": "desserts",
-      "name_en": "Ora Pistachio",
-      "name_ar": "اورا بستاشيو",
-      "description_en": "Italian dough with French pastry cream, pistachio sauce, and pistachio nuts.",
-      "description_ar": "عجينة ايطالية مع  كريمة بستشيرا الفرنسية مع صوص البستاشيو و الفستق الحلبي",
-      "price": 224,
-      "image": "/images/dsc09828.jpg",
-      "video_url": "",
-      "visible": true,
-      "featured": false,
-      "image_position": "50% 50%",
-      "image_zoom": "1.34"
-    },
-    {
       "id": "item-1781312173067-4kp",
       "category": "desserts",
       "name_en": "Ora Lotus",
@@ -2650,6 +2728,34 @@
       "image_zoom": "1.31"
     },
     {
+      "id": "item-1781312173067-m4u",
+      "category": "desserts",
+      "name_en": "Ora Pistachio",
+      "name_ar": "اورا بستاشيو",
+      "description_en": "Italian dough with French pastry cream, pistachio sauce, and pistachio nuts.",
+      "description_ar": "عجينة ايطالية مع  كريمة بستشيرا الفرنسية مع صوص البستاشيو و الفستق الحلبي",
+      "price": 224,
+      "image": "/images/dsc09828.jpg",
+      "video_url": "",
+      "visible": true,
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.34"
+    },
+    {
+      "id": "item-1781317038345",
+      "category": "desserts",
+      "name_en": "Kunafa with Ice Cream and Beirut Cotton Candy",
+      "name_ar": "كنافة بالايس كريم مع غزل بيروت",
+      "description_en": "",
+      "description_ar": "",
+      "price": 275,
+      "image": "",
+      "video_url": "",
+      "visible": false,
+      "featured": false
+    },
+    {
       "id": "item-1781312173067-cnw",
       "category": "ice-cream",
       "name_en": "Mixed Ice Cream",
@@ -2676,19 +2782,6 @@
       "featured": true
     },
     {
-      "id": "item-1781312173067-ovs",
-      "category": "ice-cream",
-      "name_en": "Chocolamo",
-      "name_ar": "شوكولامو",
-      "description_en": "3 scoops of chocolate ice cream topped with whipped cream, Nutella, KitKat biscuits, and sweetened condensed milk.",
-      "description_ar": "3بولات من ايس كريم شوكليت مع كريم شانتيه ونوتيلا وبسكويت كيت كات وحليب مكثف محلى",
-      "price": 225,
-      "image": "",
-      "video_url": "",
-      "visible": true,
-      "featured": false
-    },
-    {
       "id": "item-1781312173067-z41",
       "category": "ice-cream",
       "name_en": "Lotus Moo",
@@ -2696,6 +2789,19 @@
       "description_en": "3 scoops of Lotus ice cream topped with whipped cream, crushed Lotus biscuits, Lotus sauce, Lotus biscuits, and sweetened condensed milk.",
       "description_ar": "3 بولات من ايس كريم لوتس مع كريم شانتيه ولوتس مجروش وبسكويت لوتس وصوص لوتس وحليب مكثف محلى",
       "price": 235,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false
+    },
+    {
+      "id": "item-1781312173067-ovs",
+      "category": "ice-cream",
+      "name_en": "Chocolamo",
+      "name_ar": "شوكولامو",
+      "description_en": "3 scoops of chocolate ice cream topped with whipped cream, Nutella, KitKat biscuits, and sweetened condensed milk.",
+      "description_ar": "3بولات من ايس كريم شوكليت مع كريم شانتيه ونوتيلا وبسكويت كيت كات وحليب مكثف محلى",
+      "price": 225,
       "image": "",
       "video_url": "",
       "visible": true,
@@ -3383,17 +3489,17 @@
       "image_zoom": "1.14"
     },
     {
-      "id": "item-1781317038345",
+      "id": "item-1781312173067-iui",
       "category": "desserts",
-      "name_en": "Kunafa with Ice Cream and Beirut Cotton Candy",
-      "name_ar": "كنافة بالايس كريم مع غزل بيروت",
+      "name_en": "Fruit Salad",
+      "name_ar": "فروت سالاد",
       "description_en": "",
       "description_ar": "",
-      "price": 275,
+      "price": 299,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781317235422",
@@ -3506,11 +3612,13 @@
       "name_ar": "مانجا كيوي",
       "description_en": "",
       "description_ar": "",
-      "price": 155,
+      "price": 165,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781317620535",
@@ -3519,11 +3627,13 @@
       "name_ar": "برتقال كيوي",
       "description_en": "",
       "description_ar": "",
-      "price": 145,
+      "price": 155,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781317644635",
@@ -3532,49 +3642,38 @@
       "name_ar": "مانجو خوخ",
       "description_en": "",
       "description_ar": "",
-      "price": 145,
+      "price": 155,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
-      "id": "item-1781986419584",
+      "id": "item-1781312173067-0iu",
       "category": "main-dishes",
-      "name_en": "Chicken Escalope Pane",
-      "name_ar": "تشكن اسكالوب بانيه",
-      "description_en": "Crispy chicken breast fillets served with French fries, Italian salad, garlic sauce, and coleslaw.",
-      "description_ar": "قطع من صدور الدجاج المقرمش، تقدم مع فرايز، سلاد إيطالي، تومية، وكول سلو.",
-      "price": 425,
+      "name_en": "Lamb Shank Ouzi",
+      "name_ar": "اوزي بالموزة",
+      "description_en": "Veal or lamb shank pieces cooked with basmati rice and nuts, wrapped in crispy baked pastry and prepared with traditional ghee.",
+      "description_ar": "قطع من الموزة بتلو او الضاني مطهي مع أرز بسمتي بالمكسرات داخل رقائق هاشه مخبوزة بالسمون البلدي",
+      "price": 22,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
-      "id": "item-1781986471576",
+      "id": "item-1781312173067-yid",
       "category": "main-dishes",
-      "name_en": "Chicken Escalope Malibu",
-      "name_ar": "تشكن اسكالوب ماليبو",
-      "description_en": "Crispy chicken breast fillets topped with peeled tomato sauce, Italian mozzarella cheese, and parmesan cheese, served with red sauce pasta.",
-      "description_ar": "قطع من صدور الدجاج المقرمش مغطاة بصوص البيلد توميتو وجبنة الموزاريلا الإيطالية والبارميزان، وتقدم مع باستا ريد صوص.",
-      "price": 499,
+      "name_en": "Lamb Shank Fatteh",
+      "name_ar": "فته موزة",
+      "description_en": "Lamb Shank (Veal or Lamb) served with Egyptian rice with nuts, toasted bread, and a signature sauce.",
+      "description_ar": "موزة بتلو او ضاني تقدم مع أرز مصري بالمكسرات و عيش محمص مع صلصة مميزة",
+      "price": 22,
       "image": "",
       "video_url": "",
-      "visible": true,
-      "featured": false
-    },
-    {
-      "id": "item-1781986725096",
-      "category": "pizza",
-      "name_en": "Chicken Ranch Pizza",
-      "name_ar": "بيتزا تشكن رانش",
-      "description_en": "Italian tomato sauce, shredded mozzarella, mozzarella sticks, grilled chicken pieces, ranch sauce, parmesan cheese, finished with olive oil and oregano",
-      "description_ar": "صلصة طماطم إيطالية، موزاريلا مبشورة، موزاريلا صوابع، قطع دجاج مشوية، صوص الرانش، جبنة البارميزان، مع زيت الزيتون والأوريغانو",
-      "price": 485,
-      "image": "",
-      "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -3584,20 +3683,128 @@
       "name_ar": "بيتزا تشكن باربكيو",
       "description_en": "Italian tomato sauce, shredded mozzarella, mozzarella sticks, grilled chicken pieces, BBQ sauce, parmesan cheese, finished with olive oil and red onions",
       "description_ar": "صلصة طماطم إيطالية، موزاريلا مبشورة، موزاريلا صوابع، قطع دجاج مشوية، صوص الباربكيو، جبنة البارميزان، مع زيت الزيتون والبصل الأحمر",
+      "price": 485,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
+    },
+    {
+      "id": "item-1781986725096",
+      "category": "pizza",
+      "name_en": "Chicken Ranch Pizza",
+      "name_ar": "بيتزا تشكن رانش",
+      "description_en": "Italian tomato sauce, shredded mozzarella, mozzarella sticks, grilled chicken pieces, ranch sauce, parmesan cheese, finished with olive oil and oregano",
+      "description_ar": "صلصة طماطم إيطالية، موزاريلا مبشورة، موزاريلا صوابع، قطع دجاج مشوية، صوص الرانش، جبنة البارميزان، مع زيت الزيتون والأوريغانو",
       "price": 495,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
+    },
+    {
+      "id": "item-1781312173067-vvc",
+      "category": "main-dishes",
+      "name_en": "Meat & Onion Tagine",
+      "name_ar": "طاجن لحمة بالبصل",
+      "description_en": "",
+      "description_ar": "",
+      "price": 525,
+      "image": "",
+      "video_url": "",
+      "visible": false,
+      "featured": false
+    },
+    {
+      "id": "item-1781998409755",
+      "category": "pizza",
+      "name_en": "Shrimp Pizza",
+      "name_ar": "بيتزا جمبري",
+      "description_en": "Italian tomato sauce, shredded mozzarella, mozzarella sticks, shrimp, parmesan cheese, finished with olive oil and oregano",
+      "description_ar": "صلصة طماطم إيطالية، موزاريلا مبشورة، موزاريلا صوابع، جمبري، جبنة البارميزان، مع زيت الزيتون والأوريغانو",
+      "price": 499,
       "image": "",
       "video_url": "",
       "visible": true,
       "featured": false
     },
     {
-      "id": "item-1781987028771",
+      "id": "item-1781999030315",
+      "category": "soup",
+      "name_en": "cream soup",
+      "name_ar": "شوربة كريمة",
+      "description_en": "",
+      "description_ar": "",
+      "price": 115,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false
+    },
+    {
+      "id": "item-1781999063463",
+      "category": "soup",
+      "name_en": "Mushroom soup",
+      "name_ar": "شوربة مشروم",
+      "description_en": "",
+      "description_ar": "",
+      "price": 125,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false
+    },
+    {
+      "id": "item-1781999122198",
+      "category": "soup",
+      "name_en": "chicken mushroom soup",
+      "name_ar": "شوربة تشكن مشروم",
+      "description_en": "",
+      "description_ar": "",
+      "price": 155,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false
+    },
+    {
+      "id": "item-1781999162124",
+      "category": "soup",
+      "name_en": "shrimp soup",
+      "name_ar": "شوربة جمبري",
+      "description_en": "",
+      "description_ar": "",
+      "price": 215,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false
+    },
+    {
+      "id": "item-1781312173067-9mt",
       "category": "main-dishes",
-      "name_en": "Grilled Chicken",
-      "name_ar": "جريلد تشكن",
-      "description_en": "Grilled chicken breast fillets served with your choice of two side dishes",
-      "description_ar": "قطع من صدور الدجاج المشوية، تقدم مع اختيارك من طبقين جانبيين.",
-      "price": 399,
+      "name_en": "Shish Kebab Tagine with Mozzarella",
+      "name_ar": "طاجن شيش بالموزريلا",
+      "description_en": "Lamb Shank (Veal or Lamb) served with Egyptian rice with nuts, toasted bread, and a signature sauce.",
+      "description_ar": "قطع من صدور الدجاج المشوية مع الفرايز و الموزريلا و الماشروم و الذرة تقدم مع ثومية و كولسلو",
+      "price": 450,
+      "image": "",
+      "video_url": "",
+      "visible": false,
+      "featured": false
+    },
+    {
+      "id": "item-1781999698098",
+      "category": "main-dishes",
+      "name_en": "Onion Steak",
+      "name_ar": "أونيون ستيك",
+      "description_en": "Tender beef fillet slices served with onion sauce and caramelized onions, and your choice of two side dishes.",
+      "description_ar": "شرائح من لحم الفيليتو الطري مع صوص البصل والبصل المكرمل، وتقدم مع اختيارك من طبقين جانبيين.",
+      "price": 575,
       "image": "",
       "video_url": "",
       "visible": true,
