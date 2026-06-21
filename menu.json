@@ -585,7 +585,7 @@
       "image": "/images/dsc09833.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false,
+      "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.14"
     },
@@ -656,7 +656,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": true,
+      "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.18"
     },
@@ -717,6 +717,19 @@
       "image_zoom": "1.25"
     },
     {
+      "id": "item-1781999698098",
+      "category": "main-dishes",
+      "name_en": "Onion Steak",
+      "name_ar": "أونيون ستيك",
+      "description_en": "Tender beef fillet slices served with onion sauce and caramelized onions, and your choice of two side dishes.",
+      "description_ar": "شرائح من لحم الفيليتو الطري مع صوص البصل والبصل المكرمل، وتقدم مع اختيارك من طبقين جانبيين.",
+      "price": 575,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false
+    },
+    {
       "id": "item-1781312173067-ys8",
       "category": "main-dishes",
       "name_en": "Tropical Steak",
@@ -730,19 +743,6 @@
       "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.22"
-    },
-    {
-      "id": "item-1781312173067-4a1",
-      "category": "main-dishes",
-      "name_en": "Aleppo-Style Meat Skillet",
-      "name_ar": "معجوقة حلبي",
-      "description_en": "Minced meat stuffed with bell peppers, mozzarella, and mushrooms, served with 2 side dishes of your choice.",
-      "description_ar": "لحم مفروم محشية فلفل الوان مع موزريلا و مشروم مع 2 سايد من اختيارك",
-      "price": 525,
-      "image": "",
-      "video_url": "",
-      "visible": false,
-      "featured": false
     },
     {
       "id": "item-1781312173067-g43",
@@ -770,7 +770,7 @@
       "image": "/images/dsc09841.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true,
+      "featured": false,
       "image_position": "49% 59%",
       "image_zoom": "1.75"
     },
@@ -815,7 +815,7 @@
       "image": "/images/dsc09849.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false,
+      "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.46"
     },
@@ -875,7 +875,7 @@
       "image": "/images/dsc09878.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true,
+      "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.18"
     },
@@ -905,7 +905,7 @@
       "image": "/images/dsc09856.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false,
+      "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.27"
     },
@@ -920,7 +920,7 @@
       "image": "/images/dsc09917.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false,
+      "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.15"
     },
@@ -935,7 +935,7 @@
       "image": "/images/dsc09917.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true,
+      "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.20"
     },
@@ -995,7 +995,7 @@
       "image": "/images/dsc09913.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true,
+      "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.16"
     },
@@ -1070,7 +1070,7 @@
       "image": "/images/dsc09917.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false,
+      "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.07"
     },
@@ -1130,7 +1130,7 @@
       "image": "/images/dsc09865.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true,
+      "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.15"
     },
@@ -1175,7 +1175,7 @@
       "image": "/images/dsc09870.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true,
+      "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.18"
     },
@@ -1190,7 +1190,7 @@
       "image": "/images/dsc09879.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false,
+      "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.15"
     },
@@ -1205,7 +1205,7 @@
       "image": "/images/dsc09879.jpg",
       "video_url": "",
       "visible": true,
-      "featured": true,
+      "featured": false,
       "image_position": "50% 45%",
       "image_zoom": "1.27"
     },
@@ -1235,7 +1235,7 @@
       "image": "/images/dsc09884.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false,
+      "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.23"
     },
@@ -1293,7 +1293,7 @@
       "image": "/images/dsc09883.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false,
+      "featured": true,
       "image_position": "53% 50%",
       "image_zoom": "1.20"
     },
@@ -2041,7 +2041,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false,
+      "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
     },
@@ -2071,7 +2071,7 @@
       "image": "/images/dsc09909.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false,
+      "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.10"
     },
@@ -2161,7 +2161,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": false
     },
     {
       "id": "item-1781312173067-zkq",
@@ -2267,7 +2267,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-09q",
@@ -2496,6 +2496,36 @@
       "image_zoom": "1.12"
     },
     {
+      "id": "item-1781312173067-kwb",
+      "category": "milkshake",
+      "name_en": "Blueberry Milkshake",
+      "name_ar": "ميلك شيك بلو بري",
+      "description_en": "",
+      "description_ar": "",
+      "price": 175,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
+    },
+    {
+      "id": "item-1781312173067-xwx",
+      "category": "milkshake",
+      "name_en": "Caramel Milkshake",
+      "name_ar": "ميلك شيك كراميل",
+      "description_en": "",
+      "description_ar": "",
+      "price": 175,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
+    },
+    {
       "id": "item-1781312173067-6qz",
       "category": "milkshake",
       "name_en": "Pistachio Milkshake",
@@ -2562,37 +2592,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false,
-      "image_position": "50% 50%",
-      "image_zoom": "1.12"
-    },
-    {
-      "id": "item-1781312173067-xwx",
-      "category": "milkshake",
-      "name_en": "Caramel Milkshake",
-      "name_ar": "ميلك شيك كراميل",
-      "description_en": "",
-      "description_ar": "",
-      "price": 175,
-      "image": "",
-      "video_url": "",
-      "visible": true,
-      "featured": false,
-      "image_position": "50% 50%",
-      "image_zoom": "1.12"
-    },
-    {
-      "id": "item-1781312173067-kwb",
-      "category": "milkshake",
-      "name_en": "Blueberry Milkshake",
-      "name_ar": "ميلك شيك بلو بري",
-      "description_en": "",
-      "description_ar": "",
-      "price": 175,
-      "image": "",
-      "video_url": "",
-      "visible": true,
-      "featured": false,
+      "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
     },
@@ -2678,7 +2678,7 @@
       "image": "/images/whatsapp-image-2026-06-17-at-7.11.50-pm-3.jpeg",
       "video_url": "",
       "visible": true,
-      "featured": true,
+      "featured": false,
       "image_position": "29% 48%",
       "image_zoom": "1.12"
     },
@@ -2693,7 +2693,7 @@
       "image": "/images/whatsapp-image-2026-06-15-at-2.48.05-am-2.jpeg",
       "video_url": "",
       "visible": true,
-      "featured": false,
+      "featured": true,
       "image_position": "50% 45%",
       "image_zoom": "1.00"
     },
@@ -2766,7 +2766,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781312173067-v99",
@@ -2779,7 +2779,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": false
     },
     {
       "id": "item-1781312173067-z41",
@@ -3538,7 +3538,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": false
     },
     {
       "id": "item-1781317393203",
@@ -3651,25 +3651,25 @@
       "image_zoom": "1.12"
     },
     {
-      "id": "item-1781312173067-0iu",
+      "id": "item-1781312173067-4a1",
       "category": "main-dishes",
-      "name_en": "Lamb Shank Ouzi",
-      "name_ar": "اوزي بالموزة",
-      "description_en": "Veal or lamb shank pieces cooked with basmati rice and nuts, wrapped in crispy baked pastry and prepared with traditional ghee.",
-      "description_ar": "قطع من الموزة بتلو او الضاني مطهي مع أرز بسمتي بالمكسرات داخل رقائق هاشه مخبوزة بالسمون البلدي",
-      "price": 22,
+      "name_en": "Aleppo-Style Meat Skillet",
+      "name_ar": "معجوقة حلبي",
+      "description_en": "Minced meat stuffed with bell peppers, mozzarella, and mushrooms, served with 2 side dishes of your choice.",
+      "description_ar": "لحم مفروم محشية فلفل الوان مع موزريلا و مشروم مع 2 سايد من اختيارك",
+      "price": 525,
       "image": "",
       "video_url": "",
       "visible": false,
       "featured": false
     },
     {
-      "id": "item-1781312173067-yid",
+      "id": "item-1781312173067-0iu",
       "category": "main-dishes",
-      "name_en": "Lamb Shank Fatteh",
-      "name_ar": "فته موزة",
-      "description_en": "Lamb Shank (Veal or Lamb) served with Egyptian rice with nuts, toasted bread, and a signature sauce.",
-      "description_ar": "موزة بتلو او ضاني تقدم مع أرز مصري بالمكسرات و عيش محمص مع صلصة مميزة",
+      "name_en": "Lamb Shank Ouzi",
+      "name_ar": "اوزي بالموزة",
+      "description_en": "Veal or lamb shank pieces cooked with basmati rice and nuts, wrapped in crispy baked pastry and prepared with traditional ghee.",
+      "description_ar": "قطع من الموزة بتلو او الضاني مطهي مع أرز بسمتي بالمكسرات داخل رقائق هاشه مخبوزة بالسمون البلدي",
       "price": 22,
       "image": "",
       "video_url": "",
@@ -3707,13 +3707,13 @@
       "image_zoom": "1.12"
     },
     {
-      "id": "item-1781312173067-vvc",
+      "id": "item-1781312173067-yid",
       "category": "main-dishes",
-      "name_en": "Meat & Onion Tagine",
-      "name_ar": "طاجن لحمة بالبصل",
-      "description_en": "",
-      "description_ar": "",
-      "price": 525,
+      "name_en": "Lamb Shank Fatteh",
+      "name_ar": "فته موزة",
+      "description_en": "Lamb Shank (Veal or Lamb) served with Egyptian rice with nuts, toasted bread, and a signature sauce.",
+      "description_ar": "موزة بتلو او ضاني تقدم مع أرز مصري بالمكسرات و عيش محمص مع صلصة مميزة",
+      "price": 22,
       "image": "",
       "video_url": "",
       "visible": false,
@@ -3769,7 +3769,7 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": true
     },
     {
       "id": "item-1781999162124",
@@ -3785,6 +3785,19 @@
       "featured": false
     },
     {
+      "id": "item-1781312173067-vvc",
+      "category": "main-dishes",
+      "name_en": "Meat & Onion Tagine",
+      "name_ar": "طاجن لحمة بالبصل",
+      "description_en": "",
+      "description_ar": "",
+      "price": 525,
+      "image": "",
+      "video_url": "",
+      "visible": false,
+      "featured": false
+    },
+    {
       "id": "item-1781312173067-9mt",
       "category": "main-dishes",
       "name_en": "Shish Kebab Tagine with Mozzarella",
@@ -3795,19 +3808,6 @@
       "image": "",
       "video_url": "",
       "visible": false,
-      "featured": false
-    },
-    {
-      "id": "item-1781999698098",
-      "category": "main-dishes",
-      "name_en": "Onion Steak",
-      "name_ar": "أونيون ستيك",
-      "description_en": "Tender beef fillet slices served with onion sauce and caramelized onions, and your choice of two side dishes.",
-      "description_ar": "شرائح من لحم الفيليتو الطري مع صوص البصل والبصل المكرمل، وتقدم مع اختيارك من طبقين جانبيين.",
-      "price": 575,
-      "image": "",
-      "video_url": "",
-      "visible": true,
       "featured": false
     }
   ]
