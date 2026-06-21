@@ -51,6 +51,14 @@
   ],
   "categories": [
     {
+      "id": "soup",
+      "name_en": "soup",
+      "name_ar": "شوربة",
+      "image": "",
+      "section": "main-menu",
+      "visible": true
+    },
+    {
       "id": "salad",
       "name_en": "SALAD",
       "name_ar": "سلطات",
@@ -224,14 +232,6 @@
       "name_ar": "مناقيش",
       "image": "/images/whatsapp-image-2026-06-17-at-7.11.50-pm.jpeg",
       "section": "breakfast",
-      "visible": true
-    },
-    {
-      "id": "soup",
-      "name_en": "soup",
-      "name_ar": "شوربة",
-      "image": "",
-      "section": "main-menu",
       "visible": true
     }
   ],
@@ -498,7 +498,7 @@
       "price": 195,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -2778,7 +2778,7 @@
       "price": 235,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -3781,7 +3781,7 @@
       "price": 215,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
