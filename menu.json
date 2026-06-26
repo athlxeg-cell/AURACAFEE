@@ -2815,10 +2815,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 85,
-      "image": "",
+      "image": "/images/chatgpt-image-26--2026-11_04_48-.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-gqy",
@@ -2953,10 +2955,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 95,
-      "image": "",
+      "image": "/images/chatgpt-image-26--2026-11_07_02-.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-1mb",
