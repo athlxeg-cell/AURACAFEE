@@ -453,12 +453,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 89,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-27-at-12.20.02-am.jpg",
       "video_url": "",
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "image_zoom": "1.25"
     },
     {
       "id": "item-1781312173067-8lw",
@@ -2829,11 +2829,13 @@
       "name_ar": "طعمية",
       "description_en": "",
       "description_ar": "",
-      "price": 852,
+      "price": 85,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-c4k",
@@ -2983,10 +2985,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 89,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-27-at-12.20.02-am-1.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.23"
     },
     {
       "id": "item-1781316294666-rf4",
