@@ -653,12 +653,12 @@
       "description_en": "Grilled Chicken served with Sweet & Sour sauce and pineapple slices, with 2 side dishes of your choice.",
       "description_ar": "فراخ مشوية على الجريل مع صوص سويت & ساور مع شرائح اناناس مع 2 سايد من اختيارك",
       "price": 449,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-27-at-1.42.48-am.jpg",
       "video_url": "",
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.18"
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-fp5",
@@ -724,10 +724,12 @@
       "description_en": "Tender beef fillet slices served with onion sauce and caramelized onions, and your choice of two side dishes.",
       "description_ar": "شرائح من لحم الفيليتو الطري مع صوص البصل والبصل المكرمل، وتقدم مع اختيارك من طبقين جانبيين.",
       "price": 575,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-27-at-1.51.42-am.jpeg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.18"
     },
     {
       "id": "item-1781312173067-ys8",
@@ -3285,7 +3287,7 @@
       "price": 399,
       "image": "/images/dsc09917.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.18"
@@ -3300,7 +3302,7 @@
       "price": 445,
       "image": "/images/dsc09917.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.18"
@@ -3761,10 +3763,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 125,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-27-at-1.48.36-am.jpeg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.19"
     },
     {
       "id": "item-1781999122198",
