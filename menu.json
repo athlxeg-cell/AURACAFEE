@@ -1423,12 +1423,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 135,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-11.jpeg",
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 60%",
-      "image_zoom": "1.00"
+      "image_position": "50% 50%",
+      "image_zoom": "1.19"
     },
     {
       "id": "item-1781312173067-pfk",
@@ -1509,12 +1509,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 69,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-10.jpeg",
       "video_url": "",
       "visible": true,
       "featured": true,
-      "image_position": "50% 77%",
-      "image_zoom": "1.00"
+      "image_position": "50% 50%",
+      "image_zoom": "1.21"
     },
     {
       "id": "item-1781312173067-0dj",
@@ -1670,10 +1670,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 129,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-27-at-2.14.28-am-1.jpeg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 37%",
+      "image_zoom": "1.53"
     },
     {
       "id": "item-1781312173067-sny",
@@ -1709,10 +1711,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 144,
-      "image": "",
+      "image": "/images/dsc09920.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.24"
     },
     {
       "id": "item-1781312173067-9yb",
@@ -1791,12 +1795,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 145,
-      "image": "",
+      "image": "/images/dsc09909.jpg",
       "video_url": "",
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.12"
+      "image_zoom": "1.14"
     },
     {
       "id": "item-1781312173067-ju1",
@@ -1806,12 +1810,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 145,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm.jpeg",
       "video_url": "",
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.12"
+      "image_zoom": "1.16"
     },
     {
       "id": "item-1781312173067-m4b",
@@ -1881,12 +1885,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 135,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-7.jpeg",
       "video_url": "",
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.12"
+      "image_zoom": "1.16"
     },
     {
       "id": "item-1781312173067-9e7",
@@ -1896,12 +1900,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 145,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-4.jpeg",
       "video_url": "",
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.12"
+      "image_zoom": "1.15"
     },
     {
       "id": "item-1781312173067-cx4",
@@ -1956,10 +1960,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 195,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-9.jpeg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.15"
     },
     {
       "id": "item-1781312173067-82n",
@@ -1969,10 +1975,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 219,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-9.jpeg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.12"
     },
     {
       "id": "item-1781312173067-7qt",
@@ -1997,10 +2005,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 235,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-9.jpeg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.20"
     },
     {
       "id": "item-1781312173067-5ve",
@@ -2025,12 +2035,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 145,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-7.jpeg",
       "video_url": "",
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.12"
+      "image_zoom": "1.20"
     },
     {
       "id": "item-1781312173067-5uv",
@@ -2040,12 +2050,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 155,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-4.jpeg",
       "video_url": "",
       "visible": true,
       "featured": true,
       "image_position": "50% 50%",
-      "image_zoom": "1.12"
+      "image_zoom": "1.19"
     },
     {
       "id": "item-1781312173067-1xa",
@@ -2160,10 +2170,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 198,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-3.jpeg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.19"
     },
     {
       "id": "item-1781312173067-zkq",
@@ -2173,10 +2185,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 185,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-27-at-2.14.27-am.jpeg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.36"
     },
     {
       "id": "item-1781312173067-1fy",
@@ -2256,7 +2270,7 @@
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.12"
+      "image_zoom": "1.19"
     },
     {
       "id": "item-1781312173067-hov",
@@ -2419,10 +2433,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 195,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-27-at-2.14.27-am-2.jpeg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.28"
     },
     {
       "id": "item-1781312173067-td3",
@@ -2445,12 +2461,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 175,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-12.jpeg",
       "video_url": "",
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.12"
+      "image_zoom": "1.18"
     },
     {
       "id": "item-1781312173067-vxd",
@@ -2475,12 +2491,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 179,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-8.jpeg",
       "video_url": "",
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.12"
+      "image_zoom": "1.13"
     },
     {
       "id": "item-1781312173067-soc",
@@ -2520,12 +2536,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 175,
-      "image": "",
+      "image": "/images/dsc09919.jpg",
       "video_url": "",
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.12"
+      "image_zoom": "1.16"
     },
     {
       "id": "item-1781312173067-6qz",
@@ -2576,12 +2592,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 195,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-2.jpeg",
       "video_url": "",
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.12"
+      "image_zoom": "1.22"
     },
     {
       "id": "item-1781312173067-92u",
@@ -2591,12 +2607,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 195,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-27-at-2.14.27-am-2.jpeg",
       "video_url": "",
       "visible": true,
       "featured": true,
       "image_position": "50% 50%",
-      "image_zoom": "1.12"
+      "image_zoom": "1.39"
     },
     {
       "id": "item-1781312173067-dx5",
@@ -2765,10 +2781,12 @@
       "description_en": "3 scoops of ice cream topped with whipped cream.",
       "description_ar": "3 بولات من ايس كريم مع كريم شانتيه",
       "price": 175,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-27-at-2.14.28-am.jpeg",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.40"
     },
     {
       "id": "item-1781312173067-v99",
@@ -3597,10 +3615,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 185,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-27-at-2.14.27-am.jpeg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.34"
     },
     {
       "id": "item-1781317534735",
@@ -3610,10 +3630,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 185,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-27-at-2.14.27-am.jpeg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.35"
     },
     {
       "id": "item-1781317587918",
@@ -3623,12 +3645,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 165,
-      "image": "",
+      "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-6.jpeg",
       "video_url": "",
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.12"
+      "image_zoom": "1.21"
     },
     {
       "id": "item-1781317620535",
@@ -3821,6 +3843,21 @@
       "video_url": "",
       "visible": false,
       "featured": false
+    },
+    {
+      "id": "item-1782514637671",
+      "category": "smoothies",
+      "name_en": "watermelon",
+      "name_ar": "بطيخ",
+      "description_en": "",
+      "description_ar": "",
+      "price": 155,
+      "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-1.jpeg",
+      "video_url": "",
+      "visible": true,
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.24"
     }
   ]
 }
