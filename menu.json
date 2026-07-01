@@ -2022,7 +2022,7 @@
       "price": 165,
       "image": "/images/whatsapp-image-2026-06-15-at-2.48.04-am.jpeg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 57%",
       "image_zoom": "1.00"
@@ -2624,7 +2624,7 @@
       "price": 165,
       "image": "/images/dsc09904.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": true,
       "image_position": "41% 50%",
       "image_zoom": "1.80"
@@ -2639,7 +2639,7 @@
       "price": 165,
       "image": "/images/dsc09905.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.67"
@@ -2654,7 +2654,7 @@
       "price": 165,
       "image": "/images/dsc09906.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.70"
