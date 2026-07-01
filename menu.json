@@ -1782,7 +1782,7 @@
       "price": 135,
       "image": "/images/dsc09924.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -2624,7 +2624,7 @@
       "price": 165,
       "image": "/images/dsc09904.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": true,
       "image_position": "41% 50%",
       "image_zoom": "1.80"
@@ -2654,7 +2654,7 @@
       "price": 165,
       "image": "/images/dsc09906.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.70"
@@ -3664,7 +3664,7 @@
       "price": 155,
       "image": "",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
