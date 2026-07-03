@@ -1306,13 +1306,13 @@
       "name_ar": "اسبريسو سينجل",
       "description_en": "",
       "description_ar": "",
-      "price": 89,
+      "price": 99,
       "image": "",
       "video_url": "",
       "visible": true,
       "featured": true,
-      "image_position": "50% 50%",
-      "image_zoom": "1.18"
+      "image_position": "46% 51%",
+      "image_zoom": "1.53"
     },
     {
       "id": "item-1781312173067-m45",
@@ -1321,13 +1321,13 @@
       "name_ar": "اسبريسو دبل",
       "description_en": "",
       "description_ar": "",
-      "price": 109,
+      "price": 119,
       "image": "",
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 50%",
-      "image_zoom": "1.18"
+      "image_position": "46% 51%",
+      "image_zoom": "1.53"
     },
     {
       "id": "item-1781312173067-nof",
@@ -1339,7 +1339,7 @@
       "price": 109,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.18"
@@ -1354,7 +1354,7 @@
       "price": 129,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.18"
@@ -1369,7 +1369,7 @@
       "price": 109,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -1379,7 +1379,7 @@
       "name_ar": "لاتيه",
       "description_en": "",
       "description_ar": "",
-      "price": 125,
+      "price": 145,
       "image": "/images/whatsapp-image-2026-06-15-at-2.48.05-am-1.jpeg",
       "video_url": "",
       "visible": true,
@@ -1397,7 +1397,7 @@
       "price": 135,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": true
     },
     {
@@ -1410,7 +1410,7 @@
       "price": 135,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 60%",
       "image_zoom": "1.00"
@@ -1425,7 +1425,7 @@
       "price": 135,
       "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-11.jpeg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.19"
@@ -1440,7 +1440,7 @@
       "price": 129,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 60%",
       "image_zoom": "1.00"
@@ -1455,7 +1455,7 @@
       "price": 129,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 60%",
       "image_zoom": "1.00"
@@ -1467,7 +1467,7 @@
       "name_ar": "كابتشينو",
       "description_en": "",
       "description_ar": "",
-      "price": 115,
+      "price": 145,
       "image": "/images/whatsapp-image-2026-06-15-at-2.48.04-am-1.jpeg",
       "video_url": "",
       "visible": true,
@@ -1485,7 +1485,7 @@
       "price": 99,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -1498,7 +1498,7 @@
       "price": 99,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -1508,7 +1508,7 @@
       "name_ar": "قهوة تركي سنجل بن العميد",
       "description_en": "",
       "description_ar": "",
-      "price": 69,
+      "price": 79,
       "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-10.jpeg",
       "video_url": "",
       "visible": true,
@@ -1523,13 +1523,13 @@
       "name_ar": "قهوة تركي دبل بن العميد",
       "description_en": "",
       "description_ar": "",
-      "price": 99,
+      "price": 119,
       "image": "",
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 77%",
-      "image_zoom": "1.00"
+      "image_position": "50% 50%",
+      "image_zoom": "1.21"
     },
     {
       "id": "item-1781312173067-xbz",
@@ -1541,7 +1541,7 @@
       "price": 99,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 77%",
       "image_zoom": "1.00"
@@ -1556,7 +1556,7 @@
       "price": 99,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 77%",
       "image_zoom": "1.00"
@@ -1568,13 +1568,13 @@
       "name_ar": "شاي",
       "description_en": "",
       "description_ar": "",
-      "price": 60,
+      "price": 69,
       "image": "",
       "video_url": "",
       "visible": true,
       "featured": true,
-      "image_position": "50% 77%",
-      "image_zoom": "1.00"
+      "image_position": "50% 50%",
+      "image_zoom": "1.21"
     },
     {
       "id": "item-1781312173067-f70",
@@ -1601,7 +1601,7 @@
       "price": 69,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 77%",
       "image_zoom": "1.00"
@@ -1616,7 +1616,7 @@
       "price": 155,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 77%",
       "image_zoom": "1.00"
@@ -1631,7 +1631,7 @@
       "price": 85,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -1644,7 +1644,7 @@
       "price": 89,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -1657,7 +1657,7 @@
       "price": 85,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 77%",
       "image_zoom": "1.00"
@@ -1669,7 +1669,7 @@
       "name_ar": "هوت شوكلت",
       "description_en": "",
       "description_ar": "",
-      "price": 129,
+      "price": 145,
       "image": "/images/whatsapp-image-2026-06-27-at-2.14.28-am-1.jpeg",
       "video_url": "",
       "visible": true,
@@ -1687,7 +1687,7 @@
       "price": 139,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -1700,7 +1700,7 @@
       "price": 85,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -1710,7 +1710,7 @@
       "name_ar": "ايس لاتيه",
       "description_en": "",
       "description_ar": "",
-      "price": 144,
+      "price": 179,
       "image": "/images/dsc09920.jpg",
       "video_url": "",
       "visible": true,
@@ -1725,7 +1725,7 @@
       "name_ar": "ايس اسبانش لاتيه",
       "description_en": "",
       "description_ar": "",
-      "price": 165,
+      "price": 195,
       "image": "/images/dsc09920.jpg",
       "video_url": "",
       "visible": true,
@@ -1740,11 +1740,13 @@
       "name_ar": "ايس موكا",
       "description_en": "",
       "description_ar": "",
-      "price": 165,
+      "price": 185,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.24"
     },
     {
       "id": "item-1781312173067-g5q",
@@ -1756,7 +1758,7 @@
       "price": 139,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -1769,7 +1771,7 @@
       "price": 165,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -1779,10 +1781,10 @@
       "name_ar": "برتقال",
       "description_en": "",
       "description_ar": "",
-      "price": 135,
+      "price": 185,
       "image": "/images/dsc09924.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -1794,7 +1796,7 @@
       "name_ar": "مانجو",
       "description_en": "",
       "description_ar": "",
-      "price": 145,
+      "price": 185,
       "image": "/images/dsc09909.jpg",
       "video_url": "",
       "visible": true,
@@ -1809,7 +1811,7 @@
       "name_ar": "فراولة",
       "description_en": "",
       "description_ar": "",
-      "price": 145,
+      "price": 185,
       "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm.jpeg",
       "video_url": "",
       "visible": true,
@@ -1827,7 +1829,7 @@
       "price": 165,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -1842,7 +1844,7 @@
       "price": 149,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -1857,7 +1859,7 @@
       "price": 149,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -1872,7 +1874,7 @@
       "price": 155,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -1884,7 +1886,7 @@
       "name_ar": "ليمون",
       "description_en": "",
       "description_ar": "",
-      "price": 135,
+      "price": 185,
       "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-7.jpeg",
       "video_url": "",
       "visible": true,
@@ -1899,7 +1901,7 @@
       "name_ar": "ليمون نعناع",
       "description_en": "",
       "description_ar": "",
-      "price": 145,
+      "price": 185,
       "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-4.jpeg",
       "video_url": "",
       "visible": true,
@@ -1914,13 +1916,13 @@
       "name_ar": "جوافة",
       "description_en": "",
       "description_ar": "",
-      "price": 145,
+      "price": 185,
       "image": "",
       "video_url": "",
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.12"
+      "image_zoom": "1.15"
     },
     {
       "id": "item-1781312173067-j2u",
@@ -1932,7 +1934,7 @@
       "price": 149,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -1947,7 +1949,7 @@
       "price": 145,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -1962,7 +1964,7 @@
       "price": 195,
       "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-9.jpeg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.15"
@@ -1977,7 +1979,7 @@
       "price": 219,
       "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-9.jpeg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -1992,7 +1994,7 @@
       "price": 225,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -2007,7 +2009,7 @@
       "price": 235,
       "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-9.jpeg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.20"
@@ -2184,7 +2186,7 @@
       "name_ar": "بوهيتو بلو بري",
       "description_en": "",
       "description_ar": "",
-      "price": 185,
+      "price": 250,
       "image": "/images/whatsapp-image-2026-06-27-at-2.14.27-am.jpeg",
       "video_url": "",
       "visible": true,
@@ -2199,11 +2201,13 @@
       "name_ar": "موهيتو فراولة",
       "description_en": "",
       "description_ar": "",
-      "price": 185,
+      "price": 250,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.26"
     },
     {
       "id": "item-1781312173067-pt8",
@@ -2215,7 +2219,7 @@
       "price": 185,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -2228,7 +2232,7 @@
       "price": 185,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -2241,7 +2245,7 @@
       "price": 185,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -2254,7 +2258,7 @@
       "price": 195,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -2264,7 +2268,7 @@
       "name_ar": "موهيتو ريد دبل فليفر",
       "description_en": "",
       "description_ar": "",
-      "price": 235,
+      "price": 285,
       "image": "/images/dsc09921.jpg",
       "video_url": "",
       "visible": true,
@@ -2282,7 +2286,7 @@
       "price": 195,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": true
     },
     {
@@ -2295,7 +2299,7 @@
       "price": 215,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -2305,13 +2309,13 @@
       "name_ar": "موهيتو بلو كرواسان",
       "description_en": "",
       "description_ar": "",
-      "price": 195,
+      "price": 250,
       "image": "/images/dsc09922.jpg",
       "video_url": "",
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.13"
+      "image_zoom": "1.18"
     },
     {
       "id": "item-1781312173067-7sa",
@@ -2335,11 +2339,13 @@
       "name_ar": "سوفت درينك",
       "description_en": "",
       "description_ar": "",
-      "price": 55,
+      "price": 69,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.21"
     },
     {
       "id": "item-1781312173067-ogy",
@@ -2348,11 +2354,13 @@
       "name_ar": "بريل",
       "description_en": "",
       "description_ar": "",
-      "price": 59,
+      "price": 69,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.21"
     },
     {
       "id": "item-1781312173067-o8v",
@@ -2361,7 +2369,7 @@
       "name_ar": "ريد بلو",
       "description_en": "",
       "description_ar": "",
-      "price": 115,
+      "price": 135,
       "image": "/images/dsc09925.jpg",
       "video_url": "",
       "visible": true,
@@ -2376,7 +2384,7 @@
       "name_ar": "ريد بلو زيرو",
       "description_en": "",
       "description_ar": "",
-      "price": 115,
+      "price": 135,
       "image": "",
       "video_url": "",
       "visible": true,
@@ -2394,7 +2402,7 @@
       "price": 155,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -2404,13 +2412,13 @@
       "name_ar": "كراميل فرابيه",
       "description_en": "",
       "description_ar": "",
-      "price": 185,
+      "price": 235,
       "image": "/images/dsc09919.jpg",
       "video_url": "",
       "visible": true,
       "featured": true,
       "image_position": "50% 50%",
-      "image_zoom": "1.21"
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-qc0",
@@ -2419,11 +2427,13 @@
       "name_ar": "موكا فرابيه",
       "description_en": "",
       "description_ar": "",
-      "price": 185,
+      "price": 235,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 49%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-0tt",
@@ -2432,7 +2442,7 @@
       "name_ar": "نوتيلا فرابيه",
       "description_en": "",
       "description_ar": "",
-      "price": 195,
+      "price": 235,
       "image": "/images/whatsapp-image-2026-06-27-at-2.14.27-am-2.jpeg",
       "video_url": "",
       "visible": true,
@@ -2450,7 +2460,7 @@
       "price": 195,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -2463,7 +2473,7 @@
       "price": 175,
       "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-12.jpeg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.18"
@@ -2478,7 +2488,7 @@
       "price": 175,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -2493,7 +2503,7 @@
       "price": 179,
       "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-8.jpeg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.13"
@@ -2505,13 +2515,13 @@
       "name_ar": "ميلك شيك فانيليا",
       "description_en": "",
       "description_ar": "",
-      "price": 179,
+      "price": 235,
       "image": "",
       "video_url": "",
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.12"
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-kwb",
@@ -2523,7 +2533,7 @@
       "price": 175,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -2538,7 +2548,7 @@
       "price": 175,
       "image": "/images/dsc09919.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.16"
@@ -2553,7 +2563,7 @@
       "price": 195,
       "image": "/images/dsc09923.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -2568,7 +2578,7 @@
       "price": 195,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -2578,11 +2588,13 @@
       "name_ar": "ميلك شيك لوتس",
       "description_en": "",
       "description_ar": "",
-      "price": 195,
+      "price": 255,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-k4d",
@@ -2591,7 +2603,7 @@
       "name_ar": "ميلك شيك اوريو",
       "description_en": "",
       "description_ar": "",
-      "price": 195,
+      "price": 235,
       "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-2.jpeg",
       "video_url": "",
       "visible": true,
@@ -2606,7 +2618,7 @@
       "name_ar": "ميلك شيك نوتيلا",
       "description_en": "",
       "description_ar": "",
-      "price": 195,
+      "price": 245,
       "image": "/images/whatsapp-image-2026-06-27-at-2.14.27-am-2.jpeg",
       "video_url": "",
       "visible": true,
@@ -2783,7 +2795,7 @@
       "price": 175,
       "image": "/images/whatsapp-image-2026-06-27-at-2.14.28-am.jpeg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.40"
@@ -2811,7 +2823,7 @@
       "price": 235,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -2824,7 +2836,7 @@
       "price": 225,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -3541,7 +3553,7 @@
       "price": 195,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -3554,7 +3566,7 @@
       "price": 235,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -3567,7 +3579,7 @@
       "price": 235,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -3580,7 +3592,7 @@
       "price": 195,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -3593,7 +3605,7 @@
       "price": 195,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -3606,7 +3618,7 @@
       "price": 175,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -3619,7 +3631,7 @@
       "price": 185,
       "image": "/images/whatsapp-image-2026-06-27-at-2.14.27-am.jpeg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.23"
@@ -3634,7 +3646,7 @@
       "price": 185,
       "image": "/images/whatsapp-image-2026-06-27-at-2.14.27-am.jpeg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.24"
