@@ -846,7 +846,7 @@
       "price": 379,
       "image": "/images/dsc09872.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.18"
@@ -861,7 +861,7 @@
       "price": 379,
       "image": "/images/dsc09863.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "45% 55%",
       "image_zoom": "1.23"
@@ -906,7 +906,7 @@
       "price": 435,
       "image": "/images/dsc09856.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.27"
@@ -3775,7 +3775,7 @@
       "price": 499,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
