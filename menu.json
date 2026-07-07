@@ -801,7 +801,7 @@
       "price": 315,
       "image": "/images/dsc09839.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.44"
@@ -816,7 +816,7 @@
       "price": 385,
       "image": "/images/dsc09849.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.46"
