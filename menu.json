@@ -1758,7 +1758,7 @@
       "price": 139,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -1771,7 +1771,7 @@
       "price": 165,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -1784,7 +1784,7 @@
       "price": 135,
       "image": "/images/dsc09924.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -1829,7 +1829,7 @@
       "price": 165,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -1844,7 +1844,7 @@
       "price": 149,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -1859,7 +1859,7 @@
       "price": 149,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -1874,7 +1874,7 @@
       "price": 155,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -1919,7 +1919,7 @@
       "price": 139,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.15"
@@ -1934,7 +1934,7 @@
       "price": 149,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -1949,7 +1949,7 @@
       "price": 145,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -1964,7 +1964,7 @@
       "price": 195,
       "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-9.jpeg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.15"
@@ -1979,7 +1979,7 @@
       "price": 219,
       "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-9.jpeg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -1994,7 +1994,7 @@
       "price": 225,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -2009,7 +2009,7 @@
       "price": 235,
       "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-9.jpeg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.20"
