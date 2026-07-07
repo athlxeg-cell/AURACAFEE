@@ -951,7 +951,7 @@
       "price": 330,
       "image": "/images/dsc09917.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.15"
@@ -966,7 +966,7 @@
       "price": 330,
       "image": "/images/dsc09888.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.14"
@@ -981,7 +981,7 @@
       "price": 350,
       "image": "/images/dsc09888.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -996,7 +996,7 @@
       "price": 359,
       "image": "/images/dsc09913.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.16"
@@ -1011,7 +1011,7 @@
       "price": 395,
       "image": "/images/dsc09913.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.25"
@@ -1026,7 +1026,7 @@
       "price": 300,
       "image": "/images/dsc09917.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.13"
@@ -1056,7 +1056,7 @@
       "price": 335,
       "image": "/images/dsc09913.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.15"
@@ -1071,7 +1071,7 @@
       "price": 399,
       "image": "/images/dsc09917.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.07"
@@ -1086,7 +1086,7 @@
       "price": 399,
       "image": "/images/dsc09917.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -1101,7 +1101,7 @@
       "price": 425,
       "image": "/images/dsc09917.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.16"
