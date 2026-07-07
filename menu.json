@@ -2039,7 +2039,7 @@
       "price": 145,
       "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-7.jpeg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.20"
@@ -2054,7 +2054,7 @@
       "price": 155,
       "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-4.jpeg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.19"
@@ -2069,7 +2069,7 @@
       "price": 155,
       "image": "/images/dsc09910.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.10"
@@ -2084,7 +2084,7 @@
       "price": 155,
       "image": "/images/dsc09909.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.10"
@@ -2099,7 +2099,7 @@
       "price": 165,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.10"
@@ -2114,7 +2114,7 @@
       "price": 165,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.10"
@@ -2129,7 +2129,7 @@
       "price": 165,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.10"
@@ -2144,7 +2144,7 @@
       "price": 175,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.10"
@@ -2159,7 +2159,7 @@
       "price": 179,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.10"
@@ -2174,7 +2174,7 @@
       "price": 198,
       "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-3.jpeg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.19"
@@ -2219,7 +2219,7 @@
       "price": 185,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -2232,7 +2232,7 @@
       "price": 185,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -2245,7 +2245,7 @@
       "price": 185,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -2258,7 +2258,7 @@
       "price": 195,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -2286,7 +2286,7 @@
       "price": 195,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": true
     },
     {
@@ -2299,7 +2299,7 @@
       "price": 215,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -3592,7 +3592,7 @@
       "price": 195,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -3605,7 +3605,7 @@
       "price": 195,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -3618,7 +3618,7 @@
       "price": 175,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -3631,7 +3631,7 @@
       "price": 185,
       "image": "/images/whatsapp-image-2026-06-27-at-2.14.27-am.jpeg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.23"
@@ -3646,7 +3646,7 @@
       "price": 185,
       "image": "/images/whatsapp-image-2026-06-27-at-2.14.27-am.jpeg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.24"
@@ -3661,7 +3661,7 @@
       "price": 165,
       "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-6.jpeg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.21"
@@ -3676,7 +3676,7 @@
       "price": 155,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -3691,7 +3691,7 @@
       "price": 155,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -3868,7 +3868,7 @@
       "price": 155,
       "image": "/images/whatsapp-image-2026-06-26-at-11.03.36-pm-1.jpeg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.24"
