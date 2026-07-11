@@ -599,7 +599,7 @@
       "price": 399,
       "image": "",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false
     },
     {
@@ -612,7 +612,7 @@
       "price": 419,
       "image": "/images/dsc09852.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.22"
@@ -655,7 +655,7 @@
       "price": 449,
       "image": "/images/whatsapp-image-2026-06-27-at-1.42.48-am.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -670,7 +670,7 @@
       "price": 469,
       "image": "/images/dsc09837.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.22"
@@ -816,7 +816,7 @@
       "price": 385,
       "image": "/images/dsc09849.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.46"
@@ -996,7 +996,7 @@
       "price": 359,
       "image": "/images/dsc09913.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.16"
@@ -1056,7 +1056,7 @@
       "price": 335,
       "image": "/images/dsc09913.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.15"
@@ -3775,7 +3775,7 @@
       "price": 499,
       "image": "",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false
     },
     {
