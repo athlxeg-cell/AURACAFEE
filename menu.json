@@ -685,7 +685,7 @@
       "price": 499,
       "image": "",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false
     },
     {
