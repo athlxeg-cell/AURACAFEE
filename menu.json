@@ -3842,7 +3842,7 @@
       "price": 525,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -3855,7 +3855,7 @@
       "price": 450,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
