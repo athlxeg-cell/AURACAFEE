@@ -2795,7 +2795,7 @@
       "price": 175,
       "image": "/images/whatsapp-image-2026-06-27-at-2.14.28-am.jpeg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.40"
@@ -2810,7 +2810,7 @@
       "price": 235,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -2823,7 +2823,7 @@
       "price": 235,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -2836,7 +2836,7 @@
       "price": 225,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
