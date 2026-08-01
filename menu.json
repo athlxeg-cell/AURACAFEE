@@ -642,7 +642,7 @@
       "price": 425,
       "image": "",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false
     },
     {
@@ -1011,7 +1011,7 @@
       "price": 395,
       "image": "/images/dsc09913.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.25"
