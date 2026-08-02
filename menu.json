@@ -2681,7 +2681,7 @@
       "price": 155,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -2694,7 +2694,7 @@
       "price": 175,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
