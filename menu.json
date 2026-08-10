@@ -642,7 +642,7 @@
       "price": 425,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
