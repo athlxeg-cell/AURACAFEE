@@ -596,7 +596,22 @@
       "name_ar": "جريلد تشكن",
       "description_en": "Grilled chicken breast fillets served with your choice of two side dishes",
       "description_ar": "قطع من صدور الدجاج المشوية، تقدم مع اختيارك من طبقين جانبيين.",
-      "price": 399,
+      "price": 459,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false,
+      "image_position": "51% 87%",
+      "image_zoom": "1.22"
+    },
+    {
+      "id": "item-1786533745899",
+      "category": "main-dishes",
+      "name_en": "Grilled Chicken Mushroom",
+      "name_ar": "جريلد تشكن مشروم",
+      "description_en": "",
+      "description_ar": "",
+      "price": 475,
       "image": "",
       "video_url": "",
       "visible": true,
@@ -609,12 +624,12 @@
       "name_ar": "تشكن رول",
       "description_en": "Crispy Chicken Breast Strips stuffed with Mozzarella, Cheddar, Smoked Turkey, and Corn, topped with Cheddar slices, served with your choice of 2 sides, Garlic Sauce, and Coleslaw.",
       "description_ar": "قطع من صدور الدجاج المقرمشة محشية بجبنة الموزاريلا والشيدر والتيركي المدخن والذرة، مغطاة بشرائح الشيدر، وتُقدّم مع اختيارك من 2 سايد، ثومية وكول سلو.",
-      "price": 419,
+      "price": 439,
       "image": "/images/dsc09852.jpg",
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 50%",
+      "image_position": "51% 87%",
       "image_zoom": "1.22"
     },
     {
@@ -652,12 +667,12 @@
       "name_ar": "تشكن سويت & ساور",
       "description_en": "Grilled Chicken served with Sweet & Sour sauce and pineapple slices, with 2 side dishes of your choice.",
       "description_ar": "فراخ مشوية على الجريل مع صوص سويت & ساور مع شرائح اناناس مع 2 سايد من اختيارك",
-      "price": 449,
+      "price": 475,
       "image": "/images/whatsapp-image-2026-06-27-at-1.42.48-am.jpg",
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 50%",
+      "image_position": "100% 63%",
       "image_zoom": "1.12"
     },
     {
@@ -730,21 +745,6 @@
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.18"
-    },
-    {
-      "id": "item-1781312173067-ys8",
-      "category": "main-dishes",
-      "name_en": "Tropical Steak",
-      "name_ar": "تروبيكل ستيك",
-      "description_en": "Tender Beef Fillet slices with pineapple sauce and caramelized pineapple pieces, served with 2 side dishes of your choice.",
-      "description_ar": "شرائح من لحم الفليتو بصوص الأ ناناس مع قطع الأناناس المكرمل تقدم مع 2 سايد من اختيارك",
-      "price": 620,
-      "image": "/images/dsc09848.jpg",
-      "video_url": "",
-      "visible": true,
-      "featured": true,
-      "image_position": "50% 50%",
-      "image_zoom": "1.22"
     },
     {
       "id": "item-1781312173067-g43",
@@ -3697,17 +3697,19 @@
       "image_zoom": "1.12"
     },
     {
-      "id": "item-1781312173067-4a1",
+      "id": "item-1781312173067-ys8",
       "category": "main-dishes",
-      "name_en": "Aleppo-Style Meat Skillet",
-      "name_ar": "معجوقة حلبي",
-      "description_en": "Minced meat stuffed with bell peppers, mozzarella, and mushrooms, served with 2 side dishes of your choice.",
-      "description_ar": "لحم مفروم محشية فلفل الوان مع موزريلا و مشروم مع 2 سايد من اختيارك",
-      "price": 525,
-      "image": "",
+      "name_en": "Tropical Steak",
+      "name_ar": "تروبيكل ستيك",
+      "description_en": "Tender Beef Fillet slices with pineapple sauce and caramelized pineapple pieces, served with 2 side dishes of your choice.",
+      "description_ar": "شرائح من لحم الفليتو بصوص الأ ناناس مع قطع الأناناس المكرمل تقدم مع 2 سايد من اختيارك",
+      "price": 620,
+      "image": "/images/dsc09848.jpg",
       "video_url": "",
-      "visible": false,
-      "featured": false
+      "visible": true,
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.22"
     },
     {
       "id": "item-1781312173067-0iu",
@@ -3753,13 +3755,13 @@
       "image_zoom": "1.12"
     },
     {
-      "id": "item-1781312173067-yid",
+      "id": "item-1781312173067-4a1",
       "category": "main-dishes",
-      "name_en": "Lamb Shank Fatteh",
-      "name_ar": "فته موزة",
-      "description_en": "Lamb Shank (Veal or Lamb) served with Egyptian rice with nuts, toasted bread, and a signature sauce.",
-      "description_ar": "موزة بتلو او ضاني تقدم مع أرز مصري بالمكسرات و عيش محمص مع صلصة مميزة",
-      "price": 22,
+      "name_en": "Aleppo-Style Meat Skillet",
+      "name_ar": "معجوقة حلبي",
+      "description_en": "Minced meat stuffed with bell peppers, mozzarella, and mushrooms, served with 2 side dishes of your choice.",
+      "description_ar": "لحم مفروم محشية فلفل الوان مع موزريلا و مشروم مع 2 سايد من اختيارك",
+      "price": 525,
       "image": "",
       "video_url": "",
       "visible": false,
@@ -3833,6 +3835,19 @@
       "featured": false
     },
     {
+      "id": "item-1781312173067-yid",
+      "category": "main-dishes",
+      "name_en": "Lamb Shank Fatteh",
+      "name_ar": "فته موزة",
+      "description_en": "Lamb Shank (Veal or Lamb) served with Egyptian rice with nuts, toasted bread, and a signature sauce.",
+      "description_ar": "موزة بتلو او ضاني تقدم مع أرز مصري بالمكسرات و عيش محمص مع صلصة مميزة",
+      "price": 22,
+      "image": "",
+      "video_url": "",
+      "visible": false,
+      "featured": false
+    },
+    {
       "id": "item-1781312173067-vvc",
       "category": "main-dishes",
       "name_en": "Meat & Onion Tagine",
@@ -3840,19 +3855,6 @@
       "description_en": "",
       "description_ar": "",
       "price": 525,
-      "image": "",
-      "video_url": "",
-      "visible": false,
-      "featured": false
-    },
-    {
-      "id": "item-1781312173067-9mt",
-      "category": "main-dishes",
-      "name_en": "Shish Kebab Tagine with Mozzarella",
-      "name_ar": "طاجن شيش بالموزريلا",
-      "description_en": "Lamb Shank (Veal or Lamb) served with Egyptian rice with nuts, toasted bread, and a signature sauce.",
-      "description_ar": "قطع من صدور الدجاج المشوية مع الفرايز و الموزريلا و الماشروم و الذرة تقدم مع ثومية و كولسلو",
-      "price": 450,
       "image": "",
       "video_url": "",
       "visible": false,
@@ -3872,6 +3874,19 @@
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.24"
+    },
+    {
+      "id": "item-1781312173067-9mt",
+      "category": "main-dishes",
+      "name_en": "Shish Kebab Tagine with Mozzarella",
+      "name_ar": "طاجن شيش بالموزريلا",
+      "description_en": "Lamb Shank (Veal or Lamb) served with Egyptian rice with nuts, toasted bread, and a signature sauce.",
+      "description_ar": "قطع من صدور الدجاج المشوية مع الفرايز و الموزريلا و الماشروم و الذرة تقدم مع ثومية و كولسلو",
+      "price": 450,
+      "image": "",
+      "video_url": "",
+      "visible": false,
+      "featured": false
     }
   ]
 }
