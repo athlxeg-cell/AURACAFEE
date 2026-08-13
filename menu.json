@@ -3887,6 +3887,34 @@
       "video_url": "",
       "visible": false,
       "featured": false
+    },
+    {
+      "id": "item-1786647971588",
+      "category": "bbq",
+      "name_en": "Mixed Grill — 4 Persons",
+      "name_ar": "شواية ميكس جريل _ 4 افراد",
+      "description_en": "A generous 2 kg mixed grill platter featuring Shish, Kofta, Lamb Fat and Kebab, served with grilled vegetables, pineapple and corn, alongside garlic sauce, tahini and French fries.",
+      "description_ar": "تشكيلة مشاوي مشكلة بوزن إجمالي 2 كجم، تضم الشيش والكفتة واللية والكباب، مع الخضار المشوية والأناناس والذرة المشوية، وتُقدم مع التومية والطحينة والبطاطس المقلية.",
+      "price": 2299,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
+    },
+    {
+      "id": "item-1786648216069",
+      "category": "bbq",
+      "name_en": "Mixed Meat Grill — 4 Persons",
+      "name_ar": "ميكس لحوم _ 4 افراد",
+      "description_en": "A generous 2.25 kg mixed meat grill platter featuring Kofta, Kebab, Lamb Fat, Tarb and Lamb Chops, served with grilled vegetables, pineapple and corn, alongside garlic sauce, tahini and French fries.",
+      "description_ar": "تشكيلة مشاوي لحوم فاخرة بوزن إجمالي 2.25 كجم، تضم الكفتة والكباب واللية والطرب والريش، مع الخضار المشوية والأناناس والذرة المشوية، وتُقدم مع التومية والطحينة والبطاطس المقلية.",
+      "price": 2899,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false
     }
   ]
 }
