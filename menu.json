@@ -483,7 +483,7 @@
       "price": 155,
       "image": "",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.00"
@@ -511,7 +511,7 @@
       "price": 79,
       "image": "",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": true
     },
     {
