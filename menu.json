@@ -1996,7 +1996,7 @@
       "price": 195,
       "image": "/images/ami01361.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 35%",
       "image_zoom": "1.00"
@@ -2011,7 +2011,7 @@
       "price": 219,
       "image": "/images/ami01361.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 32%",
       "image_zoom": "1.00"
@@ -2026,7 +2026,7 @@
       "price": 225,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -2041,7 +2041,7 @@
       "price": 235,
       "image": "/images/ami01361.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": true,
       "image_position": "50% 35%",
       "image_zoom": "1.00"
