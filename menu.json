@@ -54,7 +54,7 @@
       "id": "soup",
       "name_en": "soup",
       "name_ar": "شوربة",
-      "image": "",
+      "image": "/images/ami01262.jpg",
       "section": "main-menu",
       "visible": true
     },
@@ -78,7 +78,7 @@
       "id": "bbq",
       "name_en": "BBQ",
       "name_ar": "المشويات",
-      "image": "/images/dsc09874.jpg",
+      "image": "/images/ami01454.jpg",
       "section": "main-menu",
       "visible": true
     },
@@ -86,7 +86,7 @@
       "id": "main-dishes",
       "name_en": "MAIN DISHES",
       "name_ar": "الاطباق الرئيسية",
-      "image": "/images/whatsapp-image-2026-06-18-at-4.13.38-pm.jpeg",
+      "image": "/images/ami01418.jpg",
       "section": "main-menu",
       "visible": true
     },
@@ -135,7 +135,7 @@
       "section": "main-menu",
       "name_en": "Hot Drinks",
       "name_ar": "مشروبات ساخنة",
-      "image": "/images/whatsapp-image-2026-06-17-at-7.15.28-pm.jpeg",
+      "image": "/images/ami01300.jpg",
       "visible": true
     },
     {
@@ -151,14 +151,14 @@
       "section": "main-menu",
       "name_en": "ICED COFFEE",
       "name_ar": "ايس كوفي",
-      "image": "/images/dsc09920.jpg",
+      "image": "/images/ami01325.jpg",
       "visible": true
     },
     {
       "id": "juices",
       "name_en": "JUICES",
       "name_ar": "عصائر",
-      "image": "/images/dsc09924.jpg",
+      "image": "/images/ami01365.jpg",
       "section": "main-menu",
       "visible": true
     },
@@ -167,14 +167,14 @@
       "section": "main-menu",
       "name_en": "Smoothies",
       "name_ar": "سموذي",
-      "image": "/images/dsc09909.jpg",
+      "image": "/images/ami01356.jpg",
       "visible": true
     },
     {
       "id": "mojito",
       "name_en": "MOJITO",
       "name_ar": "موخيتو",
-      "image": "/images/dsc09921.jpg",
+      "image": "/images/ami01385.jpg",
       "section": "main-menu",
       "visible": true
     },
@@ -182,7 +182,7 @@
       "id": "frappe",
       "name_en": "FRAPPE",
       "name_ar": "فرابيه",
-      "image": "/images/dsc09919.jpg",
+      "image": "/images/ami01332.jpg",
       "section": "main-menu",
       "visible": true
     },
@@ -190,7 +190,7 @@
       "id": "milkshake",
       "name_en": "MILKSHAKE",
       "name_ar": "ميلك شيك",
-      "image": "/images/dsc09923.jpg",
+      "image": "/images/ami01351.jpg",
       "section": "main-menu",
       "visible": true
     },
@@ -199,7 +199,7 @@
       "section": "main-menu",
       "name_en": "Desserts",
       "name_ar": "حلويات",
-      "image": "/images/whatsapp-image-2026-06-17-at-7.09.30-pm.jpeg",
+      "image": "/images/ami01312.jpg",
       "visible": true
     },
     {
@@ -3863,7 +3863,7 @@
       "description_en": "",
       "description_ar": "",
       "price": 125,
-      "image": "/images/ami01265.jpg",
+      "image": "/images/ami01262.jpg",
       "video_url": "",
       "visible": true,
       "featured": false,
@@ -3893,10 +3893,12 @@
       "description_en": "",
       "description_ar": "",
       "price": 215,
-      "image": "",
+      "image": "/images/ami01265.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-yid",
