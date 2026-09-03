@@ -737,7 +737,7 @@
       "price": 549,
       "image": "/images/ami01422.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 69%",
       "image_zoom": "1.00"
@@ -4073,6 +4073,19 @@
       "image": "",
       "video_url": "",
       "visible": false,
+      "featured": false
+    },
+    {
+      "id": "item-1788405743394",
+      "category": "bbq",
+      "name_en": "Grilled Lamb Chops Meal",
+      "name_ar": "وجبة الريش",
+      "description_en": "550g of grilled lamb chops, served with grilled vegetables, toasted bread, grilled corn, and grilled pineapple.",
+      "description_ar": "550 جم من ريش اللحم المشوية، تُقدّم مع الخضار المشوية، العيش المحمّر، الذرة المشوية والأناناس المشوي.",
+      "price": 890,
+      "image": "",
+      "video_url": "",
+      "visible": true,
       "featured": false
     }
   ]
