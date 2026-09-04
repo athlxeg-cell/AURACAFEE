@@ -4077,7 +4077,7 @@
     },
     {
       "id": "item-1788453856921",
-      "category": "soup",
+      "category": "burger",
       "name_en": "Crunchy Chicken",
       "name_ar": "كرانشي تشكن",
       "description_en": "Crispy chicken in a burger bun, with lettuce, pickles, and cocktail sauce.",
@@ -4086,11 +4086,13 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1788453891114",
-      "category": "soup",
+      "category": "burger",
       "name_en": "Buffalo Chicken",
       "name_ar": "بافلو تشكن",
       "description_en": "Crispy chicken in a burger bun, with Buffalo sauce, ranch sauce, lettuce, and pickles.",
@@ -4099,11 +4101,13 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1788453934454",
-      "category": "soup",
+      "category": "burger",
       "name_en": "Classic Burger",
       "name_ar": "كلاسيك برجر",
       "description_en": "Beef burger, lettuce, tomato, pickles, onion, and cocktail sauce.",
@@ -4112,11 +4116,13 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1788453972498",
-      "category": "soup",
+      "category": "burger",
       "name_en": "Classic Cheeseburger",
       "name_ar": "كلاسيك تشيز",
       "description_en": "Beef burger with cheddar, lettuce, tomato, pickles, onion, and cocktail sauce.",
@@ -4125,11 +4131,13 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1788454036160",
-      "category": "soup",
+      "category": "burger",
       "name_en": "Tasty Burger",
       "name_ar": "تيستي برجر",
       "description_en": "Beef burger with beef bacon, lettuce, pickles, and Tasty sauce.",
@@ -4138,7 +4146,9 @@
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     }
   ]
 }
