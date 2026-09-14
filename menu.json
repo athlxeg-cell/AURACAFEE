@@ -2376,28 +2376,28 @@
       "name_ar": "مياه معدنية",
       "description_en": "",
       "description_ar": "",
-      "price": 29,
+      "price": 34,
       "image": "",
       "video_url": "",
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.18"
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-po4",
       "category": "soft-drinks",
-      "name_en": "Mineral Water",
+      "name_en": "Soft drinks",
       "name_ar": "سوفت درينك",
       "description_en": "",
       "description_ar": "",
-      "price": 59,
+      "price": 69,
       "image": "",
       "video_url": "",
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.18"
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-ogy",
@@ -2406,13 +2406,13 @@
       "name_ar": "بريل",
       "description_en": "",
       "description_ar": "",
-      "price": 59,
+      "price": 79,
       "image": "",
       "video_url": "",
       "visible": true,
       "featured": false,
       "image_position": "50% 50%",
-      "image_zoom": "1.18"
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781312173067-o8v",
@@ -2421,7 +2421,7 @@
       "name_ar": "ريد بلو",
       "description_en": "",
       "description_ar": "",
-      "price": 109,
+      "price": 119,
       "image": "/images/dsc09925.jpg",
       "video_url": "",
       "visible": true,
@@ -2436,7 +2436,7 @@
       "name_ar": "ريد بلو زيرو",
       "description_en": "",
       "description_ar": "",
-      "price": 109,
+      "price": 119,
       "image": "",
       "video_url": "",
       "visible": true,
