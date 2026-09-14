@@ -666,23 +666,10 @@
       "price": 435,
       "image": "/images/ami01436.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 72%",
       "image_zoom": "1.00"
-    },
-    {
-      "id": "item-1781986419584",
-      "category": "main-dishes",
-      "name_en": "Chicken Escalope Pane",
-      "name_ar": "تشكن اسكالوب بانيه",
-      "description_en": "Crispy chicken breast fillets served with French fries, Italian salad, garlic sauce, and coleslaw.",
-      "description_ar": "قطع من صدور الدجاج المقرمش، تقدم مع فرايز، سلاد إيطالي، تومية، وكول سلو.",
-      "price": 425,
-      "image": "",
-      "video_url": "",
-      "visible": true,
-      "featured": false
     },
     {
       "id": "item-1781312173067-drb",
@@ -1007,7 +994,7 @@
       "price": 350,
       "image": "/images/dsc09888.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -1041,21 +1028,6 @@
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.25"
-    },
-    {
-      "id": "item-1781312173067-w2s",
-      "category": "calzone-sandwichs",
-      "name_en": "Lebanese Sausage Calzone",
-      "name_ar": "سجق اللبناني",
-      "description_en": "",
-      "description_ar": "",
-      "price": 300,
-      "image": "/images/dsc09917.jpg",
-      "video_url": "",
-      "visible": true,
-      "featured": false,
-      "image_position": "50% 50%",
-      "image_zoom": "1.13"
     },
     {
       "id": "item-1781312173067-oow",
@@ -1112,7 +1084,7 @@
       "price": 399,
       "image": "/images/dsc09917.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -1127,7 +1099,7 @@
       "price": 425,
       "image": "/images/dsc09917.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.16"
@@ -3798,23 +3770,10 @@
       "price": 495,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
-    },
-    {
-      "id": "item-1781312173067-4a1",
-      "category": "main-dishes",
-      "name_en": "Aleppo-Style Meat Skillet",
-      "name_ar": "معجوقة حلبي",
-      "description_en": "Minced meat stuffed with bell peppers, mozzarella, and mushrooms, served with 2 side dishes of your choice.",
-      "description_ar": "لحم مفروم محشية فلفل الوان مع موزريلا و مشروم مع 2 سايد من اختيارك",
-      "price": 525,
-      "image": "",
-      "video_url": "",
-      "visible": true,
-      "featured": false
     },
     {
       "id": "item-1781998409755",
@@ -3890,19 +3849,6 @@
       "image_zoom": "1.00"
     },
     {
-      "id": "item-1781312173067-vvc",
-      "category": "main-dishes",
-      "name_en": "Meat & Onion Tagine",
-      "name_ar": "طاجن لحمة بالبصل",
-      "description_en": "",
-      "description_ar": "",
-      "price": 525,
-      "image": "",
-      "video_url": "",
-      "visible": true,
-      "featured": false
-    },
-    {
       "id": "item-1782514637671",
       "category": "smoothies",
       "name_en": "watermelon",
@@ -3916,19 +3862,6 @@
       "featured": false,
       "image_position": "50% 39%",
       "image_zoom": "1.00"
-    },
-    {
-      "id": "item-1781312173067-9mt",
-      "category": "main-dishes",
-      "name_en": "Shish Kebab Tagine with Mozzarella",
-      "name_ar": "طاجن شيش بالموزريلا",
-      "description_en": "Lamb Shank (Veal or Lamb) served with Egyptian rice with nuts, toasted bread, and a signature sauce.",
-      "description_ar": "قطع من صدور الدجاج المشوية مع الفرايز و الموزريلا و الماشروم و الذرة تقدم مع ثومية و كولسلو",
-      "price": 450,
-      "image": "",
-      "video_url": "",
-      "visible": true,
-      "featured": false
     },
     {
       "id": "item-1788405743394",
