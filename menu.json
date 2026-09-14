@@ -2036,7 +2036,7 @@
       "price": 165,
       "image": "/images/ami01320.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.00"
@@ -2702,32 +2702,6 @@
       "image_zoom": "1.00"
     },
     {
-      "id": "item-1781312173067-o7h",
-      "category": "desserts",
-      "name_en": "Cheesecake",
-      "name_ar": "تشيز كيك",
-      "description_en": "",
-      "description_ar": "",
-      "price": 155,
-      "image": "",
-      "video_url": "",
-      "visible": true,
-      "featured": false
-    },
-    {
-      "id": "item-1781312173067-8gv",
-      "category": "desserts",
-      "name_en": "Molten Cake",
-      "name_ar": "مولتن كيك",
-      "description_en": "",
-      "description_ar": "",
-      "price": 175,
-      "image": "",
-      "video_url": "",
-      "visible": true,
-      "featured": false
-    },
-    {
       "id": "item-1781312173067-enr",
       "category": "desserts",
       "name_en": "Kunafa with Cream",
@@ -2801,19 +2775,6 @@
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.34"
-    },
-    {
-      "id": "item-1781317038345",
-      "category": "desserts",
-      "name_en": "Kunafa with Ice Cream and Beirut Cotton Candy",
-      "name_ar": "كنافة بالايس كريم مع غزل بيروت",
-      "description_en": "",
-      "description_ar": "",
-      "price": 275,
-      "image": "",
-      "video_url": "",
-      "visible": true,
-      "featured": false
     },
     {
       "id": "item-1781312173067-cnw",
@@ -3933,34 +3894,6 @@
       "featured": false
     },
     {
-      "id": "item-1788453488700",
-      "category": "desserts",
-      "name_en": "Nutella Cheesecake",
-      "name_ar": "تشيز كيك نوتيلا",
-      "description_en": "Creamy cheesecake with Nutella.",
-      "description_ar": "تشيز كيك كريمي مع نوتيلا.",
-      "price": 195,
-      "image": "",
-      "video_url": "",
-      "visible": true,
-      "featured": false,
-      "image_position": "50% 68%",
-      "image_zoom": "1.00"
-    },
-    {
-      "id": "item-1788453543044",
-      "category": "desserts",
-      "name_en": "Lotus Cheesecake",
-      "name_ar": "تشيز كيك لوتس",
-      "description_en": "Creamy cheesecake with Lotus.",
-      "description_ar": "تشيز كيك كريمي مع لوتس.",
-      "price": 215,
-      "image": "",
-      "video_url": "",
-      "visible": true,
-      "featured": false
-    },
-    {
       "id": "item-1788453577086",
       "category": "desserts",
       "name_en": "Nutella San Sebastian",
@@ -3982,6 +3915,32 @@
       "name_ar": "سان سباستيان لوتس",
       "description_en": "San Sebastian cheesecake with Lotus.",
       "description_ar": "سان سباستيان تشيز كيك مع لوتس.",
+      "price": 215,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false
+    },
+    {
+      "id": "item-1788895813122",
+      "category": "desserts",
+      "name_en": "Plain Cheesecake",
+      "name_ar": "شيز كيك سادة",
+      "description_en": "",
+      "description_ar": "",
+      "price": 175,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false
+    },
+    {
+      "id": "item-1788453543044",
+      "category": "desserts",
+      "name_en": "Lotus Cheesecake",
+      "name_ar": "تشيز كيك لوتس",
+      "description_en": "Creamy cheesecake with Lotus.",
+      "description_ar": "تشيز كيك كريمي مع لوتس.",
       "price": 215,
       "image": "",
       "video_url": "",
@@ -4077,6 +4036,21 @@
       "featured": false
     },
     {
+      "id": "item-1788453488700",
+      "category": "desserts",
+      "name_en": "Nutella Cheesecake",
+      "name_ar": "تشيز كيك نوتيلا",
+      "description_en": "Creamy cheesecake with Nutella.",
+      "description_ar": "تشيز كيك كريمي مع نوتيلا.",
+      "price": 195,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false,
+      "image_position": "50% 68%",
+      "image_zoom": "1.00"
+    },
+    {
       "id": "item-1788895739254",
       "category": "desserts",
       "name_en": "Blueberry Cheesecake",
@@ -4110,19 +4084,6 @@
       "description_en": "",
       "description_ar": "",
       "price": 195,
-      "image": "",
-      "video_url": "",
-      "visible": true,
-      "featured": false
-    },
-    {
-      "id": "item-1788895813122",
-      "category": "desserts",
-      "name_en": "Plain Cheesecake",
-      "name_ar": "شيز كيك سادة",
-      "description_en": "",
-      "description_ar": "",
-      "price": 175,
       "image": "",
       "video_url": "",
       "visible": true,
