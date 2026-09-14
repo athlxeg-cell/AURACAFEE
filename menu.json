@@ -3774,19 +3774,6 @@
       "image_zoom": "1.00"
     },
     {
-      "id": "item-1781312173067-0iu",
-      "category": "main-dishes",
-      "name_en": "Lamb Shank Ouzi",
-      "name_ar": "اوزي بالموزة",
-      "description_en": "Veal or lamb shank pieces cooked with basmati rice and nuts, wrapped in crispy baked pastry and prepared with traditional ghee.",
-      "description_ar": "قطع من الموزة بتلو او الضاني مطهي مع أرز بسمتي بالمكسرات داخل رقائق هاشه مخبوزة بالسمون البلدي",
-      "price": 22,
-      "image": "",
-      "video_url": "",
-      "visible": true,
-      "featured": false
-    },
-    {
       "id": "item-1781986881120",
       "category": "pizza",
       "name_en": "Chicken BBQ Pizza",
@@ -3901,19 +3888,6 @@
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.00"
-    },
-    {
-      "id": "item-1781312173067-yid",
-      "category": "main-dishes",
-      "name_en": "Lamb Shank Fatteh",
-      "name_ar": "فته موزة",
-      "description_en": "Lamb Shank (Veal or Lamb) served with Egyptian rice with nuts, toasted bread, and a signature sauce.",
-      "description_ar": "موزة بتلو او ضاني تقدم مع أرز مصري بالمكسرات و عيش محمص مع صلصة مميزة",
-      "price": 22,
-      "image": "",
-      "video_url": "",
-      "visible": true,
-      "featured": false
     },
     {
       "id": "item-1781312173067-vvc",
