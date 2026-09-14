@@ -359,7 +359,7 @@
       "price": 45,
       "image": "",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false
     },
     {
@@ -520,7 +520,7 @@
       "price": 195,
       "image": "",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false
     },
     {
@@ -543,7 +543,7 @@
       "name_ar": "شيش طاووق",
       "description_en": "450g of grilled Shish Tawook, served with grilled vegetables, roasted corn, grilled pineapple, Muhammara bread, garlic sauce, and tahini.",
       "description_ar": "450 غرام من الشيش طاووق المشوي، يُقدَّم مع الخضار المشوية والذرة والأناناس المشويين، وخبز المحمرة والتومية والطحينة.",
-      "price": 385,
+      "price": 420,
       "image": "/images/ami01462.jpg",
       "video_url": "",
       "visible": true,
@@ -558,7 +558,7 @@
       "name_ar": "مكس جريل",
       "description_en": "A 450g mixed grill platter featuring Shish Tawook, Kebab, and Kofta, served with grilled vegetables, roasted corn, grilled pineapple, Muhammara bread, garlic sauce, and tahini.",
       "description_ar": "طبق مشاوي مشكلة بوزن 450 غرام يضم شيش طاووق وكباب وكفتة، يُقدَّم مع الخضار المشوية والذرة والأناناس المشويين، وخبز المحمرة والتومية والطحينة.",
-      "price": 495,
+      "price": 539,
       "image": "/images/ami01460.jpg",
       "video_url": "",
       "visible": true,
@@ -681,7 +681,7 @@
       "price": 425,
       "image": "",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false
     },
     {
@@ -737,7 +737,7 @@
       "price": 549,
       "image": "/images/ami01422.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 69%",
       "image_zoom": "1.00"
@@ -1052,7 +1052,7 @@
       "price": 300,
       "image": "/images/dsc09917.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.13"
@@ -1112,7 +1112,7 @@
       "price": 399,
       "image": "/images/dsc09917.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -1127,7 +1127,7 @@
       "price": 425,
       "image": "/images/dsc09917.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.16"
@@ -1305,7 +1305,7 @@
       "price": 299,
       "image": "/images/dsc09880.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.23"
@@ -2064,7 +2064,7 @@
       "price": 165,
       "image": "/images/ami01320.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.00"
@@ -2529,7 +2529,7 @@
       "price": 175,
       "image": "/images/ami01338.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 42%",
       "image_zoom": "1.00"
@@ -2739,7 +2739,7 @@
       "price": 155,
       "image": "",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false
     },
     {
@@ -2752,7 +2752,7 @@
       "price": 175,
       "image": "",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false
     },
     {
@@ -2840,7 +2840,7 @@
       "price": 275,
       "image": "",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false
     },
     {
@@ -2853,7 +2853,7 @@
       "price": 175,
       "image": "/images/whatsapp-image-2026-06-27-at-2.14.28-am.jpeg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.40"
@@ -2868,7 +2868,7 @@
       "price": 235,
       "image": "",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false
     },
     {
@@ -2881,7 +2881,7 @@
       "price": 235,
       "image": "",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false
     },
     {
@@ -2894,7 +2894,7 @@
       "price": 225,
       "image": "",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false
     },
     {
@@ -3315,7 +3315,7 @@
       "price": 300,
       "image": "/images/dsc09917.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.10"
@@ -3375,7 +3375,7 @@
       "price": 399,
       "image": "/images/dsc09917.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.18"
@@ -3390,7 +3390,7 @@
       "price": 445,
       "image": "/images/dsc09917.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.18"
@@ -3783,7 +3783,7 @@
       "price": 22,
       "image": "",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false
     },
     {
@@ -3826,7 +3826,7 @@
       "price": 525,
       "image": "",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false
     },
     {
@@ -3912,7 +3912,7 @@
       "price": 22,
       "image": "",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false
     },
     {
@@ -3925,7 +3925,7 @@
       "price": 525,
       "image": "",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false
     },
     {
@@ -3953,7 +3953,7 @@
       "price": 450,
       "image": "",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false
     },
     {
