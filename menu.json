@@ -505,7 +505,7 @@
       "price": 155,
       "image": "/images/whatsapp-image-2026-06-18-at-4.06.30-pm.jpeg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 44%",
       "image_zoom": "1.00"
