@@ -520,7 +520,7 @@
       "price": 195,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -533,7 +533,7 @@
       "price": 79,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": true
     },
     {
@@ -546,7 +546,7 @@
       "price": 420,
       "image": "/images/ami01462.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": true,
       "image_position": "87% 51%",
       "image_zoom": "1.00"
@@ -561,7 +561,7 @@
       "price": 539,
       "image": "/images/ami01460.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.00"
@@ -576,7 +576,7 @@
       "price": 595,
       "image": "/images/ami01454.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.00"
@@ -591,7 +591,7 @@
       "price": 695,
       "image": "/images/ami01453.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.00"
@@ -651,7 +651,7 @@
       "price": 469,
       "image": "/images/ami01443.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 70%",
       "image_zoom": "1.00"
@@ -666,7 +666,7 @@
       "price": 435,
       "image": "/images/ami01436.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 72%",
       "image_zoom": "1.00"
@@ -696,7 +696,7 @@
       "price": 495,
       "image": "/images/ami01424.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 71%",
       "image_zoom": "1.00"
@@ -994,7 +994,7 @@
       "price": 350,
       "image": "/images/dsc09888.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -3731,7 +3731,7 @@
       "price": 495,
       "image": "",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.12"
@@ -3834,7 +3834,7 @@
       "price": 890,
       "image": "",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false
     },
     {
@@ -3847,7 +3847,7 @@
       "price": 2299,
       "image": "/images/ami01519.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "56% 43%",
       "image_zoom": "1.00"
@@ -3875,7 +3875,7 @@
       "price": 2899,
       "image": "/images/ami01486.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.00"
@@ -4099,7 +4099,7 @@
       "price": 640,
       "image": "",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false
     },
     {
@@ -4112,7 +4112,7 @@
       "price": 780,
       "image": "",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false
     },
     {
