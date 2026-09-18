@@ -582,19 +582,17 @@
       "image_zoom": "1.00"
     },
     {
-      "id": "item-1781312173067-2sr",
+      "id": "item-1789383962290",
       "category": "bbq",
-      "name_en": "Extra Mixed Meat Grill",
-      "name_ar": "مكس لحوم اكسترا",
-      "description_en": "650g of an extra mixed grill featuring Kofta, Kebab, Lamb Chops, and Tarb, served with grilled vegetables, roasted corn, grilled pineapple, Muhammara bread, garlic sauce, and tahini.",
-      "description_ar": "650 غرام من مكس اللحوم الإكسترا يضم كفتة وكباب وريش وطرب، يُقدَّم مع الخضار المشوية والذرة والأناناس المشويين، وخبز المحمرة والتومية والطحينة.",
-      "price": 695,
-      "image": "/images/ami01453.jpg",
+      "name_en": "Grilled Kofta",
+      "name_ar": "كفتة مشوية",
+      "description_en": "500g of grilled Kofta, served with grilled vegetables, roasted corn, grilled pineapple, Muhammara bread, garlic sauce, and tahini.",
+      "description_ar": "500 غرام من الكفتة المشوية، يُقدَّم مع الخضار المشوية والذرة والأناناس المشويين، وخبز المحمرة والتومية والطحينة.",
+      "price": 640,
+      "image": "",
       "video_url": "",
       "visible": true,
-      "featured": true,
-      "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "featured": false
     },
     {
       "id": "item-1781312173067-ndj",
@@ -3825,6 +3823,21 @@
       "image_zoom": "1.00"
     },
     {
+      "id": "item-1781312173067-2sr",
+      "category": "bbq",
+      "name_en": "Extra Mixed Meat Grill",
+      "name_ar": "مكس لحوم اكسترا",
+      "description_en": "650g of an extra mixed grill featuring Kofta, Kebab, Lamb Chops, and Tarb, served with grilled vegetables, roasted corn, grilled pineapple, Muhammara bread, garlic sauce, and tahini.",
+      "description_ar": "650 غرام من مكس اللحوم الإكسترا يضم كفتة وكباب وريش وطرب، يُقدَّم مع الخضار المشوية والذرة والأناناس المشويين، وخبز المحمرة والتومية والطحينة.",
+      "price": 695,
+      "image": "/images/ami01453.jpg",
+      "video_url": "",
+      "visible": true,
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
+    },
+    {
       "id": "item-1788405743394",
       "category": "bbq",
       "name_en": "Grilled Lamb Chops Meal",
@@ -3836,21 +3849,6 @@
       "video_url": "",
       "visible": true,
       "featured": false
-    },
-    {
-      "id": "item-1786647971588",
-      "category": "bbq",
-      "name_en": "Mixed Grill — 4 Persons",
-      "name_ar": "شواية ميكس جريل _ 4 افراد",
-      "description_en": "A generous 2.3 kg mixed grill platter featuring Shish, Kofta, Lamb Fat and Kebab, served with 2 grilled chicken breasts, grilled vegetables, pineapple and corn, alongside garlic sauce, tahini and French fries.",
-      "description_ar": "تشكيلة مشاوي مشكلة بوزن إجمالي 2.3 كجم، تضم الشيش والكفتة واللية والكباب، مع 2 صدر دجاج مشوي، وتُقدم مع الخضار المشوية والأناناس والذرة المشوية، إلى جانب التومية والطحينة والبطاطس المقلية.",
-      "price": 2299,
-      "image": "/images/ami01519.jpg",
-      "video_url": "",
-      "visible": true,
-      "featured": false,
-      "image_position": "56% 43%",
-      "image_zoom": "1.00"
     },
     {
       "id": "item-1786987710658",
@@ -3866,19 +3864,17 @@
       "featured": false
     },
     {
-      "id": "item-1786648216069",
+      "id": "item-1789384052757",
       "category": "bbq",
-      "name_en": "Mixed Meat Grill — 4 Persons",
-      "name_ar": "ميكس لحوم _ 4 افراد",
-      "description_en": "A generous 2.25 kg mixed meat grill platter featuring Kofta, Kebab, Lamb Fat, Tarb and Lamb Chops, served with grilled vegetables, pineapple and corn, alongside garlic sauce, tahini and French fries.",
-      "description_ar": "تشكيلة مشاوي لحوم فاخرة بوزن إجمالي 2.25 كجم، تضم الكفتة والكباب واللية والطرب والريش، مع الخضار المشوية والأناناس والذرة المشوية، وتُقدم مع التومية والطحينة والبطاطس المقلية.",
-      "price": 2899,
-      "image": "/images/ami01486.jpg",
+      "name_en": "Grilled Kebab",
+      "name_ar": "كباب مشوي",
+      "description_en": "500g of grilled Kebab, served with grilled vegetables, roasted corn, grilled pineapple, Muhammara bread, garlic sauce, and tahini.",
+      "description_ar": "500 غرام من الكباب المشوي، يُقدَّم مع الخضار المشوية والذرة والأناناس المشويين، وخبز المحمرة والتومية والطحينة.",
+      "price": 780,
+      "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false,
-      "image_position": "50% 50%",
-      "image_zoom": "1.00"
+      "featured": false
     },
     {
       "id": "item-1788453451429",
@@ -4090,30 +4086,34 @@
       "featured": false
     },
     {
-      "id": "item-1789383962290",
+      "id": "item-1786647971588",
       "category": "bbq",
-      "name_en": "Grilled Kofta",
-      "name_ar": "كفتة مشوية",
-      "description_en": "500g of grilled Kofta, served with grilled vegetables, roasted corn, grilled pineapple, Muhammara bread, garlic sauce, and tahini.",
-      "description_ar": "500 غرام من الكفتة المشوية، يُقدَّم مع الخضار المشوية والذرة والأناناس المشويين، وخبز المحمرة والتومية والطحينة.",
-      "price": 640,
-      "image": "",
+      "name_en": "Mixed Grill — 4 Persons",
+      "name_ar": "شواية ميكس جريل _ 4 افراد",
+      "description_en": "A generous 2.3 kg mixed grill platter featuring Shish, Kofta, Lamb Fat and Kebab, served with 2 grilled chicken breasts, grilled vegetables, pineapple and corn, alongside garlic sauce, tahini and French fries.",
+      "description_ar": "تشكيلة مشاوي مشكلة بوزن إجمالي 2.3 كجم، تضم الشيش والكفتة واللية والكباب، مع 2 صدر دجاج مشوي، وتُقدم مع الخضار المشوية والأناناس والذرة المشوية، إلى جانب التومية والطحينة والبطاطس المقلية.",
+      "price": 2299,
+      "image": "/images/ami01519.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "56% 43%",
+      "image_zoom": "1.00"
     },
     {
-      "id": "item-1789384052757",
+      "id": "item-1786648216069",
       "category": "bbq",
-      "name_en": "Grilled Kebab",
-      "name_ar": "كباب مشوي",
-      "description_en": "500g of grilled Kebab, served with grilled vegetables, roasted corn, grilled pineapple, Muhammara bread, garlic sauce, and tahini.",
-      "description_ar": "500 غرام من الكباب المشوي، يُقدَّم مع الخضار المشوية والذرة والأناناس المشويين، وخبز المحمرة والتومية والطحينة.",
-      "price": 780,
-      "image": "",
+      "name_en": "Mixed Meat Grill — 4 Persons",
+      "name_ar": "ميكس لحوم _ 4 افراد",
+      "description_en": "A generous 2.25 kg mixed meat grill platter featuring Kofta, Kebab, Lamb Fat, Tarb and Lamb Chops, served with grilled vegetables, pineapple and corn, alongside garlic sauce, tahini and French fries.",
+      "description_ar": "تشكيلة مشاوي لحوم فاخرة بوزن إجمالي 2.25 كجم، تضم الكفتة والكباب واللية والطرب والريش، مع الخضار المشوية والأناناس والذرة المشوية، وتُقدم مع التومية والطحينة والبطاطس المقلية.",
+      "price": 2899,
+      "image": "/images/ami01486.jpg",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1789385225179",
