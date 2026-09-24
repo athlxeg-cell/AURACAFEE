@@ -123,14 +123,6 @@
       "visible": true
     },
     {
-      "id": "burger",
-      "name_en": "burger",
-      "name_ar": "برجر",
-      "image": "",
-      "section": "main-menu",
-      "visible": true
-    },
-    {
       "id": "hot-drinks",
       "section": "main-menu",
       "name_en": "Hot Drinks",
@@ -3945,7 +3937,7 @@
     },
     {
       "id": "item-1788453856921",
-      "category": "burger",
+      "category": "",
       "name_en": "Crunchy Chicken",
       "name_ar": "كرانشي تشكن",
       "description_en": "Crispy breaded chicken breast served in a burger bun with lettuce, pickles, and cocktail sauce, accompanied by fries.",
@@ -3960,7 +3952,7 @@
     },
     {
       "id": "item-1788453891114",
-      "category": "burger",
+      "category": "",
       "name_en": "Buffalo Chicken",
       "name_ar": "بافلو تشكن",
       "description_en": "Breaded chicken breast served in a burger bun with buffalo sauce, ranch sauce, lettuce, and pickles, accompanied by fries.",
@@ -3975,7 +3967,7 @@
     },
     {
       "id": "item-1788453934454",
-      "category": "burger",
+      "category": "",
       "name_en": "Classic Burger",
       "name_ar": "كلاسيك برجر",
       "description_en": "A beef burger patty served in a burger bun with lettuce, tomato, pickles, onion, and cocktail sauce, accompanied by fries.",
@@ -3990,7 +3982,7 @@
     },
     {
       "id": "item-1788453972498",
-      "category": "burger",
+      "category": "",
       "name_en": "Classic Cheeseburger",
       "name_ar": "كلاسيك تشيز",
       "description_en": "A beef burger patty with cheddar cheese, served in a burger bun with lettuce, tomato, pickles, onion, and cocktail sauce, accompanied by fries.",
@@ -4005,7 +3997,7 @@
     },
     {
       "id": "item-1788454036160",
-      "category": "burger",
+      "category": "",
       "name_en": "Tasty Burger",
       "name_ar": "تيستي برجر",
       "description_en": "A beef burger patty with beef bacon, served in a burger bun with lettuce, pickles, and Tasty sauce, accompanied by fries.",
