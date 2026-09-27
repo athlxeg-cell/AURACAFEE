@@ -3886,8 +3886,8 @@
     {
       "id": "item-1788453577086",
       "category": "desserts",
-      "name_en": "Nutella San Sebastian",
-      "name_ar": "سان سباستيان نوتيلا",
+      "name_en": "Nutella Spanish San Sebastián",
+      "name_ar": "سان سباستيان اسباني بنوتيلا",
       "description_en": "San Sebastian cheesecake with Nutella.",
       "description_ar": "سان سباستيان تشيز كيك مع نوتيلا.",
       "price": 195,
@@ -3895,21 +3895,23 @@
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 68%",
+      "image_position": "50% 50%",
       "image_zoom": "1.00"
     },
     {
       "id": "item-1788453599832",
       "category": "desserts",
-      "name_en": "Lotus San Sebastian",
-      "name_ar": "سان سباستيان لوتس",
+      "name_en": "Lotus Spanish San Sebastián",
+      "name_ar": "سان سباستيان اسباني لوتس",
       "description_en": "San Sebastian cheesecake with Lotus.",
       "description_ar": "سان سباستيان تشيز كيك مع لوتس.",
       "price": 215,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1788895813122",
