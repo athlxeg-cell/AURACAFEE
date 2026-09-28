@@ -1230,19 +1230,6 @@
       "image_zoom": "1.23"
     },
     {
-      "id": "item-1781312173067-ikf",
-      "category": "mnakish",
-      "name_en": "Mozzarella with Mushrooms & Sweet Corn Manakish",
-      "name_ar": "موزريلا مع ماشروم و ذرة",
-      "description_en": "",
-      "description_ar": "",
-      "price": 225,
-      "image": "",
-      "video_url": "",
-      "visible": true,
-      "featured": false
-    },
-    {
       "id": "item-1781312173067-de2",
       "category": "mnakish",
       "name_en": "Shish Tawook & Mozzarella Manakish",
@@ -1256,21 +1243,6 @@
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.18"
-    },
-    {
-      "id": "item-1781312173067-0tk",
-      "category": "mnakish",
-      "name_en": "Lebanese Sujuk Manakish",
-      "name_ar": "سجق اللبناني",
-      "description_en": "",
-      "description_ar": "",
-      "price": 299,
-      "image": "/images/dsc09880.jpg",
-      "video_url": "",
-      "visible": true,
-      "featured": false,
-      "image_position": "50% 50%",
-      "image_zoom": "1.23"
     },
     {
       "id": "item-1781312173067-efh",
