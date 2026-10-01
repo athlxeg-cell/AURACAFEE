@@ -2628,7 +2628,7 @@
       "price": 195,
       "image": "/images/ami01319.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.00"
@@ -2643,7 +2643,7 @@
       "price": 195,
       "image": "/images/ami01311.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.00"
@@ -2658,7 +2658,7 @@
       "price": 195,
       "image": "/images/ami01318.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": true,
       "image_position": "50% 39%",
       "image_zoom": "1.00"
@@ -3852,7 +3852,7 @@
       "price": 219,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -3865,7 +3865,7 @@
       "price": 195,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.00"
@@ -3880,7 +3880,7 @@
       "price": 215,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.00"
@@ -3895,7 +3895,7 @@
       "price": 175,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -3908,7 +3908,7 @@
       "price": 215,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -4009,7 +4009,7 @@
       "price": 195,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 68%",
       "image_zoom": "1.00"
@@ -4024,7 +4024,7 @@
       "price": 195,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -4037,7 +4037,7 @@
       "price": 195,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -4050,7 +4050,7 @@
       "price": 195,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
