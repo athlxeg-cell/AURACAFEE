@@ -2829,11 +2829,13 @@
       "name_ar": "بيض مسلوق",
       "description_en": "",
       "description_ar": "",
-      "price": 95,
+      "price": 119,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-m6f",
@@ -2857,11 +2859,13 @@
       "name_ar": "لومليت خضار",
       "description_en": "",
       "description_ar": "",
-      "price": 115,
+      "price": 119,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-1ed",
@@ -2896,7 +2900,7 @@
       "name_ar": "جبنة بالطماطم",
       "description_en": "",
       "description_ar": "",
-      "price": 85,
+      "price": 99,
       "image": "/images/dsc09896.jpg",
       "video_url": "",
       "visible": true,
@@ -2926,7 +2930,7 @@
       "name_ar": "طبق ميكس لحوم",
       "description_en": "",
       "description_ar": "",
-      "price": 235,
+      "price": 250,
       "image": "/images/dsc09898.jpg",
       "video_url": "",
       "visible": true,
@@ -2941,7 +2945,7 @@
       "name_ar": "حمص ناعم",
       "description_en": "",
       "description_ar": "",
-      "price": 95,
+      "price": 129,
       "image": "/images/chatgpt-image-26--2026-11_07_02-.jpg",
       "video_url": "",
       "visible": true,
@@ -2956,11 +2960,13 @@
       "name_ar": "حمص ناعم باللحمة والمكسرات",
       "description_en": "",
       "description_ar": "",
-      "price": 165,
+      "price": 225,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": true
+      "featured": true,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-lxf",
@@ -2969,7 +2975,7 @@
       "name_ar": "بابا غنوج",
       "description_en": "",
       "description_ar": "",
-      "price": 89,
+      "price": 99,
       "image": "/images/whatsapp-image-2026-06-27-at-12.20.02-am-1.jpg",
       "video_url": "",
       "visible": true,
