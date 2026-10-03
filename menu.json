@@ -248,7 +248,7 @@
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 50%",
+      "image_position": "50% 72%",
       "image_zoom": "1.00"
     },
     {
@@ -263,7 +263,7 @@
       "video_url": "",
       "visible": true,
       "featured": true,
-      "image_position": "50% 50%",
+      "image_position": "50% 74%",
       "image_zoom": "1.00"
     },
     {
@@ -278,7 +278,7 @@
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 50%",
+      "image_position": "50% 75%",
       "image_zoom": "1.00"
     },
     {
@@ -293,7 +293,7 @@
       "video_url": "",
       "visible": true,
       "featured": true,
-      "image_position": "50% 50%",
+      "image_position": "50% 73%",
       "image_zoom": "1.00"
     },
     {
@@ -323,7 +323,7 @@
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 50%",
+      "image_position": "50% 72%",
       "image_zoom": "1.00"
     },
     {
@@ -441,7 +441,7 @@
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 50%",
+      "image_position": "50% 74%",
       "image_zoom": "1.00"
     },
     {
@@ -456,7 +456,7 @@
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 50%",
+      "image_position": "50% 70%",
       "image_zoom": "1.00"
     },
     {
@@ -471,7 +471,7 @@
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 50%",
+      "image_position": "50% 71%",
       "image_zoom": "1.00"
     },
     {
@@ -1468,7 +1468,7 @@
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 50%",
+      "image_position": "50% 76%",
       "image_zoom": "1.00"
     },
     {
@@ -1648,7 +1648,7 @@
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 50%",
+      "image_position": "50% 61%",
       "image_zoom": "1.00"
     },
     {
@@ -2812,7 +2812,7 @@
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 50%",
+      "image_position": "50% 71%",
       "image_zoom": "1.00"
     },
     {
@@ -2842,7 +2842,7 @@
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 50%",
+      "image_position": "50% 73%",
       "image_zoom": "1.00"
     },
     {
@@ -2872,7 +2872,7 @@
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 50%",
+      "image_position": "50% 73%",
       "image_zoom": "1.00"
     },
     {
@@ -2887,7 +2887,7 @@
       "video_url": "",
       "visible": true,
       "featured": true,
-      "image_position": "50% 50%",
+      "image_position": "50% 76%",
       "image_zoom": "1.00"
     },
     {
@@ -2902,7 +2902,7 @@
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 50%",
+      "image_position": "50% 76%",
       "image_zoom": "1.00"
     },
     {
@@ -2917,7 +2917,7 @@
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 50%",
+      "image_position": "50% 73%",
       "image_zoom": "1.00"
     },
     {
@@ -2962,7 +2962,7 @@
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 50%",
+      "image_position": "50% 82%",
       "image_zoom": "1.00"
     },
     {
@@ -2977,7 +2977,7 @@
       "video_url": "",
       "visible": true,
       "featured": true,
-      "image_position": "50% 63%",
+      "image_position": "50% 81%",
       "image_zoom": "1.00"
     },
     {
@@ -3007,7 +3007,7 @@
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 69%",
+      "image_position": "50% 77%",
       "image_zoom": "1.00"
     },
     {
@@ -3889,7 +3889,7 @@
       "video_url": "",
       "visible": false,
       "featured": false,
-      "image_position": "50% 50%",
+      "image_position": "50% 74%",
       "image_zoom": "1.00"
     },
     {
@@ -3928,11 +3928,11 @@
       "description_en": "Creamy cheesecake with Lotus.",
       "description_ar": "تشيز كيك كريمي مع لوتس.",
       "price": 215,
-      "image": "/images/dsc05478.jpg",
+      "image": "/images/dsc05592.jpg",
       "video_url": "",
       "visible": false,
       "featured": false,
-      "image_position": "50% 50%",
+      "image_position": "50% 74%",
       "image_zoom": "1.00"
     },
     {
@@ -4035,7 +4035,7 @@
       "video_url": "",
       "visible": false,
       "featured": false,
-      "image_position": "50% 50%",
+      "image_position": "50% 68%",
       "image_zoom": "1.00"
     },
     {
@@ -4050,7 +4050,7 @@
       "video_url": "",
       "visible": false,
       "featured": false,
-      "image_position": "50% 64%",
+      "image_position": "50% 71%",
       "image_zoom": "1.00"
     },
     {
