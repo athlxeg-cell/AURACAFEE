@@ -4142,6 +4142,32 @@
       "video_url": "",
       "visible": true,
       "featured": false
+    },
+    {
+      "id": "item-1791006448722",
+      "category": "breakfast-dishes",
+      "name_en": "Spicy Labneh",
+      "name_ar": "لبنة مدعبلة",
+      "description_en": "",
+      "description_ar": "",
+      "price": 125,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false
+    },
+    {
+      "id": "item-1791006504522",
+      "category": "breakfast-dishes",
+      "name_en": "Makdous",
+      "name_ar": "مكدوس",
+      "description_en": "",
+      "description_ar": "",
+      "price": 195,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false
     }
   ]
 }
