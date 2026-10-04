@@ -703,7 +703,7 @@
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 64%",
+      "image_position": "50% 80%",
       "image_zoom": "1.00"
     },
     {
@@ -1618,7 +1618,7 @@
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 71%",
+      "image_position": "50% 65%",
       "image_zoom": "1.00"
     },
     {
@@ -2323,7 +2323,7 @@
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 50%",
+      "image_position": "50% 33%",
       "image_zoom": "1.00"
     },
     {
@@ -2636,7 +2636,7 @@
       "price": 195,
       "image": "/images/ami01319.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.00"
@@ -2649,7 +2649,7 @@
       "description_en": "",
       "description_ar": "",
       "price": 195,
-      "image": "/images/ami01311.jpg",
+      "image": "",
       "video_url": "",
       "visible": true,
       "featured": true,
@@ -2666,7 +2666,7 @@
       "price": 195,
       "image": "/images/ami01318.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": true,
       "image_position": "50% 39%",
       "image_zoom": "1.00"
@@ -3872,7 +3872,7 @@
       "price": 219,
       "image": "/images/dsc05791.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 68%",
       "image_zoom": "1.00"
@@ -3887,7 +3887,7 @@
       "price": 195,
       "image": "/images/dsc05636.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 74%",
       "image_zoom": "1.00"
@@ -3902,7 +3902,7 @@
       "price": 215,
       "image": "/images/dsc05396.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 66%",
       "image_zoom": "1.00"
@@ -3917,7 +3917,7 @@
       "price": 175,
       "image": "",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false
     },
     {
@@ -3930,7 +3930,7 @@
       "price": 215,
       "image": "/images/dsc05592.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 74%",
       "image_zoom": "1.00"
@@ -4033,7 +4033,7 @@
       "price": 195,
       "image": "/images/dsc05776.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 68%",
       "image_zoom": "1.00"
@@ -4048,7 +4048,7 @@
       "price": 195,
       "image": "/images/dsc05792.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 71%",
       "image_zoom": "1.00"
@@ -4063,7 +4063,7 @@
       "price": 195,
       "image": "/images/dsc05794.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 67%",
       "image_zoom": "1.00"
@@ -4078,7 +4078,7 @@
       "price": 195,
       "image": "/images/dsc05795.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": false,
       "image_position": "50% 70%",
       "image_zoom": "1.00"
@@ -4125,7 +4125,7 @@
       "video_url": "",
       "visible": true,
       "featured": false,
-      "image_position": "50% 69%",
+      "image_position": "50% 40%",
       "image_zoom": "1.00"
     },
     {
