@@ -3071,15 +3071,17 @@
     {
       "id": "item-1791178151526",
       "category": "special-breakfast",
-      "name_en": "Extra Breakfast Tray (21 Items)",
-      "name_ar": "صينية فطار إكسترا (21 صنف)",
-      "description_en": "Kiri Cheese, Braided Cheese, Chilled Grape Leaves, Makdous, Baba Ghanoush, Moutabal, Tomato Cheese, Seasoned Labneh, Mixed Cheese Platter, Luncheon Meat, Omelet, Foul Medames, Falafel, Egyptian Feteer, Smooth Hummus, White Honey, Black Honey Molasses, Jam, Butter, Pickles, and Mixed Cheese Manousheh on Italian-Style Dough.",
-      "description_ar": "جبنة كيري، جبنة شلل، ورق عنب بارد، مكدوس، بابا غنوج، متبل، جبنة بالطماطم، لبنة مدعبلة، مكس أجبان، لانشون، أومليت، فول، طعمية، فطير، حمص ناعم، عسل أبيض، عسل أسود، مربى، زبدة، مخلل، ومنقوشة مكس أجبان بالعجينة الإيطالية.",
+      "name_en": "Extra Breakfast Tray (20 Items)",
+      "name_ar": "صينية فطار إكسترا (20 صنف)",
+      "description_en": "Kiri Cheese, Braided Cheese, Makdous, Baba Ghanoush, Moutabal, Tomato Cheese, Seasoned Labneh, Mixed Cheese Platter, Luncheon Meat, Omelet, Foul Medames, Falafel, Egyptian Feteer, Smooth Hummus, White Honey, Black Honey Molasses, Jam, Butter, Pickles, and Mixed Cheese Manousheh on Italian-Style Dough.",
+      "description_ar": "جبنة كيري، جبنة شلل،مكدوس، بابا غنوج، متبل، جبنة بالطماطم، لبنة مدعبلة، مكس أجبان، لانشون، أومليت، فول، طعمية، فطير، حمص ناعم، عسل أبيض، عسل أسود، مربى، زبدة، مخلل، ومنقوشة مكس أجبان بالعجينة الإيطالية.",
       "price": 795,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 86%",
+      "image_zoom": "1.00"
     },
     {
       "id": "item-1781316294666-vgz",
