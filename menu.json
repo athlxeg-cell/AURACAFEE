@@ -2823,7 +2823,7 @@
       "price": 85,
       "image": "/images/dsc05803.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 73%",
       "image_zoom": "1.00"
