@@ -4142,6 +4142,19 @@
       "featured": false,
       "image_position": "50% 69%",
       "image_zoom": "1.00"
+    },
+    {
+      "id": "item-1791529792405",
+      "category": "special-breakfast",
+      "name_en": "Extra Breakfast Tray",
+      "name_ar": "صينية فطار إكسترا",
+      "description_en": "Kiri Cheese, Shallal Cheese, Cold Stuffed Vine Leaves, Makdous, Baba Ghanoush, Mutabbal, Cheese with Tomatoes, Olive Oil Labneh Balls, Mixed Cheese Selection, Luncheon Meat, Omelette, Foul Medames, Egyptian Taameya, Feteer, Smooth Hummus, White Honey, Black Honey, Jam, Butter, Pickles, Mixed Cheese Manousheh with Italian Dough.",
+      "description_ar": "جبنة كيري، جبنة شلل، ورق عنب ساقع، مكدوس، بابا غنوج، متبل، جبنة بالطماطم، لبنة مدعبلة، ميكس أجبان، لانشون، أومليت، فول، طعمية، فطير، حمص ناعم، عسل أبيض، عسل أسود، مربى، زبدة، مخلل، منقوشة ميكس أجبان بالعجينة الإيطالية.",
+      "price": 795,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false
     }
   ]
 }
