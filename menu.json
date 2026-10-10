@@ -2983,8 +2983,8 @@
       "category": "special-breakfast",
       "name_en": "Breakfast Tray (3–4 Persons)",
       "name_ar": "صينية فطار 3_4اشخاص",
-      "description_en": "Foul, Falafel, Omelet, Za’atar Manousheh with Vegetables on Napoli Dough, Baba Ghanoush, Moutabal, Hummus, Cheese with Tomatoes, Mixed Cold Cuts, Mixed Cheese Platter, Butter & Jam, Feteer, Honey Ramekin, Nutella Ramekin, Mixed Pickles, and Fresh Mixed Vegetables.",
-      "description_ar": "فول، طعمية، أومليت، منقوشة ظعتر خضار بعجينة نابولي ، بابا غنوج، متبل، حمص ناعم، جبنة بالطماطم، ميكس لحوم باردة، ميكس أجبان، زبدة ومربى، فطير، ريميكل عسل، ريميكل نوتيلا، مخلل مشكل، وخضار مشكل.",
+      "description_en": "Foul, Falafel, Omelet, Za’atar Manousheh with Vegetable, Baba Ghanoush, Moutabal, Hummus, Cheese with Tomatoes, Mixed Cold Cuts, Mixed Cheese Platter, Butter & Jam, Feteer, Honey Ramekin, Nutella Ramekin, Mixed Pickles, and Fresh Mixed Vegetables.",
+      "description_ar": "فول، طعمية، أومليت، منقوشة زعتر خضار  ، بابا غنوج، متبل، حمص ناعم، جبنة بالطماطم، ميكس لحوم باردة، ميكس أجبان، زبدة ومربى، فطير، ريميكل عسل، ريميكل نوتيلا، مخلل مشكل، وخضار مشكل.",
       "price": 595,
       "image": "/images/whatsapp-image-2026-06-15-at-2.49.41-am.jpeg",
       "video_url": "",
@@ -4148,13 +4148,15 @@
       "category": "special-breakfast",
       "name_en": "Extra Breakfast Tray",
       "name_ar": "صينية فطار إكسترا",
-      "description_en": "Kiri Cheese, Shallal Cheese, Cold Stuffed Vine Leaves, Makdous, Baba Ghanoush, Mutabbal, Cheese with Tomatoes, Olive Oil Labneh Balls, Mixed Cheese Selection, Luncheon Meat, Omelette, Foul Medames, Egyptian Taameya, Feteer, Smooth Hummus, White Honey, Black Honey, Jam, Butter, Pickles, Mixed Cheese Manousheh with Italian Dough.",
-      "description_ar": "جبنة كيري، جبنة شلل، ورق عنب ساقع، مكدوس، بابا غنوج، متبل، جبنة بالطماطم، لبنة مدعبلة، ميكس أجبان، لانشون، أومليت، فول، طعمية، فطير، حمص ناعم، عسل أبيض، عسل أسود، مربى، زبدة، مخلل، منقوشة ميكس أجبان بالعجينة الإيطالية.",
+      "description_en": "Kiri Cheese, Shallal Cheese, Cold Stuffed Vine Leaves, Makdous, Baba Ghanoush, Mutabbal, Cheese with Tomatoes, Olive Oil Labneh Balls, Mixed Cheese Selection, Luncheon Meat, Omelette, Foul Medames, Egyptian Taameya, Feteer, Smooth Hummus, White Honey, Black Honey, Jam, Butter, Pickles, Mixed Cheese Manousheh.",
+      "description_ar": "جبنة كيري، جبنة شلل، ورق عنب ساقع، مكدوس، بابا غنوج، متبل، جبنة بالطماطم، لبنة مدعبلة، ميكس أجبان، لانشون، أومليت، فول، طعمية، فطير، حمص ناعم، عسل أبيض، عسل أسود، مربى، زبدة، مخلل، منقوشة ميكس أجبان .",
       "price": 795,
       "image": "",
       "video_url": "",
       "visible": true,
-      "featured": false
+      "featured": false,
+      "image_position": "50% 64%",
+      "image_zoom": "1.00"
     }
   ]
 }
