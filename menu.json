@@ -2724,8 +2724,8 @@
       "price": 175,
       "image": "",
       "video_url": "",
-      "visible": true,
-      "featured": true,
+      "visible": false,
+      "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.40"
     },
@@ -2739,7 +2739,7 @@
       "price": 235,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -2752,7 +2752,7 @@
       "price": 235,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
@@ -2765,7 +2765,7 @@
       "price": 225,
       "image": "",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false
     },
     {
