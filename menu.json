@@ -911,7 +911,7 @@
       "price": 435,
       "image": "/images/dsc09856.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": true,
       "image_position": "50% 50%",
       "image_zoom": "1.27"
