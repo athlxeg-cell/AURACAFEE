@@ -641,7 +641,7 @@
       "price": 469,
       "image": "/images/ami01443.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 70%",
       "image_zoom": "1.00"
@@ -686,7 +686,7 @@
       "price": 495,
       "image": "/images/ami01424.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 71%",
       "image_zoom": "1.00"
