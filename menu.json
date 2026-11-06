@@ -3621,7 +3621,7 @@
       "price": 669,
       "image": "/images/ami01441.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": true,
       "image_position": "50% 54%",
       "image_zoom": "1.00"
