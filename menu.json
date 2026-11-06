@@ -261,7 +261,7 @@
       "price": 149,
       "image": "/images/dsc05864.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": true,
       "image_position": "50% 74%",
       "image_zoom": "1.00"
