@@ -233,6 +233,14 @@
       "image": "/images/whatsapp-image-2026-06-17-at-7.11.50-pm.jpeg",
       "section": "breakfast",
       "visible": true
+    },
+    {
+      "id": "shisha",
+      "name_en": "Shisha",
+      "name_ar": "شيشة",
+      "image": "",
+      "section": "main-menu",
+      "visible": true
     }
   ],
   "items": [
@@ -4172,6 +4180,99 @@
       "featured": false,
       "image_position": "99% 100%",
       "image_zoom": "1.00"
+    },
+    {
+      "id": "item-1794162186895",
+      "category": "shisha",
+      "name_en": "Copper Shisha",
+      "name_ar": "شيشة نحاس",
+      "description_en": "",
+      "description_ar": "",
+      "price": 195,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false
+    },
+    {
+      "id": "item-1794162223737",
+      "category": "shisha",
+      "name_en": "AMY Apple Shisha",
+      "name_ar": "شيشة إيمي بنكهة التفاح",
+      "description_en": "",
+      "description_ar": "",
+      "price": 215,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false
+    },
+    {
+      "id": "item-1794162257856",
+      "category": "shisha",
+      "name_en": "AMY Fruit Shisha",
+      "name_ar": "شيشة إيمي بنكهة الفواكه",
+      "description_en": "",
+      "description_ar": "",
+      "price": 215,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false
+    },
+    {
+      "id": "item-1794162306417",
+      "category": "shisha",
+      "name_en": "AMY Shisha with AURA Flavor",
+      "name_ar": "شيشة إيمي بنكهة أورا",
+      "description_en": "",
+      "description_ar": "",
+      "price": 250,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false,
+      "image_position": "50% 50%",
+      "image_zoom": "1.00"
+    },
+    {
+      "id": "item-1794162334665",
+      "category": "shisha",
+      "name_en": "Special Fruit Shisha",
+      "name_ar": "شيشة سبيشل بنكهة الفواكه",
+      "description_en": "",
+      "description_ar": "",
+      "price": 275,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false
+    },
+    {
+      "id": "item-1794162401759",
+      "category": "shisha",
+      "name_en": "Special Shisha with AURA Flavor",
+      "name_ar": "شيشة سبيشل بنكهة أورا",
+      "description_en": "",
+      "description_ar": "",
+      "price": 285,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false
+    },
+    {
+      "id": "item-1794162426226",
+      "category": "shisha",
+      "name_en": "Extra Ice",
+      "name_ar": "إضافة نكهة ثلج",
+      "description_en": "",
+      "description_ar": "",
+      "price": 35,
+      "image": "",
+      "video_url": "",
+      "visible": true,
+      "featured": false
     }
   ]
 }
