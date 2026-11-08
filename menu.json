@@ -261,7 +261,7 @@
       "price": 149,
       "image": "/images/dsc05864.jpg",
       "video_url": "",
-      "visible": false,
+      "visible": true,
       "featured": true,
       "image_position": "50% 74%",
       "image_zoom": "1.00"
@@ -653,7 +653,7 @@
       "name_ar": "تشكن رانش",
       "description_en": "",
       "description_ar": "",
-      "price": 435,
+      "price": 465,
       "image": "/images/ami01436.jpg",
       "video_url": "",
       "visible": true,
@@ -4144,6 +4144,19 @@
       "featured": false,
       "image_position": "50% 69%",
       "image_zoom": "1.00"
+    },
+    {
+      "id": "item-1794159087010",
+      "category": "special-breakfast",
+      "name_en": "Sandwich Smoked salmon",
+      "name_ar": "ساندويتش سموكد سلمون",
+      "description_en": "",
+      "description_ar": "",
+      "price": 390,
+      "image": "/images/dsc07524.jpg",
+      "video_url": "",
+      "visible": true,
+      "featured": false
     },
     {
       "id": "item-1791529792405",
