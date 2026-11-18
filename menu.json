@@ -2659,7 +2659,7 @@
       "price": 195,
       "image": "/images/dsc05636.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 74%",
       "image_zoom": "1.00"
@@ -2674,7 +2674,7 @@
       "price": 215,
       "image": "/images/dsc05396.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 66%",
       "image_zoom": "1.00"
@@ -3863,7 +3863,7 @@
       "price": 199,
       "image": "/images/dsc09823.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.31"
@@ -3878,7 +3878,7 @@
       "price": 224,
       "image": "/images/dsc09828.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "50% 50%",
       "image_zoom": "1.34"
@@ -3983,7 +3983,7 @@
       "price": 199,
       "image": "/images/dsc09830.jpg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "46% 50%",
       "image_zoom": "1.28"
@@ -3998,7 +3998,7 @@
       "price": 249,
       "image": "/images/whatsapp-image-2026-06-15-at-2.48.05-am-2.jpeg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": true,
       "image_position": "50% 45%",
       "image_zoom": "1.00"
@@ -4013,7 +4013,7 @@
       "price": 249,
       "image": "/images/whatsapp-image-2026-06-17-at-7.11.50-pm-3.jpeg",
       "video_url": "",
-      "visible": true,
+      "visible": false,
       "featured": false,
       "image_position": "29% 48%",
       "image_zoom": "1.12"
